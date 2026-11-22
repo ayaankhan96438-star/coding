@@ -84,3 +84,7 @@ The shared `codeora-logo.svg` asset is the selected C + O orbital monogram. It i
 ## Original Codeora monogram asset
 
 The selected brand mark is concept #7 from the first Codeora logo sheet: a deep-green hexagon enclosing a dark lowercase C and code symbol. The mark is extracted from the supplied concept artwork and embedded in `codeora-logo.svg`; the `DIGITAL PRODUCTS` tagline is intentionally omitted from the brand lockup.
+
+## Login controls and Firebase activation
+
+The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, forgot-password, and phone OTP controls interactive even before Firebase is configured. Until `firebase-config.js` contains the real Firebase Web App settings and the providers are enabled in Firebase Authentication, submissions show an explicit setup message; the site never fakes a successful login. See `FIREBASE_SETUP.md` for the one-time setup.
