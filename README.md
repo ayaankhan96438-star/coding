@@ -97,3 +97,19 @@ The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, 
 - A real browser reload/refresh (F5 or the browser refresh button) deliberately clears all question completion and gamification progress on this device and, when signed in, writes the cleared state to the learner's Firestore progress document. Normal navigation between Codeora pages does not clear progress.
 - The course header action is labelled **Lessons**.
 - The reset button is bound directly after each editor render so it remains active after changing questions.
+
+
+## Languages Studio (Python, HTML, CSS and JavaScript)
+
+Open `python.html` (the navigation label is **Languages**) to use the Codeora Languages Studio. The page follows the existing SQL course colour and typography system and provides:
+
+- A CodeMirror editor with line numbers, language modes, bracket matching, indentation and a fallback plain editor if the editor CDN is unavailable.
+- Python execution in the browser through Pyodide (the first Python run downloads its runtime; an internet connection is needed for that first load).
+- HTML, CSS and JavaScript together in an isolated live-preview iframe, plus a console output panel.
+- Practice and Build Project modes, starter exercises, a default `codeora-project` file tree, new files/folders, and language switching.
+- Browser autosave using local storage. **Save to laptop** uses the browser's File System Access API: in Chrome/Edge on `localhost` or HTTPS, choose a parent folder and Codeora writes a `codeora-project` folder with its real file/folder structure. **Open folder** imports an existing project folder. The alternative Download project action creates a ZIP when JSZip is available.
+- A starter `package.json`, `.vscode/extensions.json` and README for continuing in desktop VS Code.
+
+### Important browser/runtime boundaries
+
+This is a browser IDE, not a full desktop VS Code installation. The browser can run Python via Pyodide and HTML/CSS/JavaScript preview, but it cannot start arbitrary local OS processes or run a real Node/npm installation inside the page. Save the project to the laptop, open it in desktop VS Code, then run `npm install` and `npm run dev` in the local terminal to install/use npm packages. The built-in terminal explains this rather than pretending to execute native commands. Folder read/write access requires an explicit user folder selection and browser permission.
