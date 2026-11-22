@@ -97,3 +97,12 @@ The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, 
 - The practice header includes a dedicated **Reset progress** action with a confirmation step.
 - Confirming clears all solved/attempted question states and XP locally, syncs the reset snapshot to the signed-in learner's Firestore record, and returns practice to Lesson 1 / Question 1.
 - A normal browser refresh still preserves progress; learners can deliberately clear it with **Reset progress**.
+
+
+## Task reset behavior (22 November 2026)
+
+- The course header no longer exposes a global reset-all-progress control.
+- The SQL editor button is labelled **Reset progress** and resets only the currently selected task.
+- A task reset removes that task's solved/attempted state and reverses its one-time 25 XP award if it had been solved; other tasks and streak history remain unchanged.
+- Progress remains saved across browser refreshes. Refreshing the page does not reset course progress.
+- The former **Interactive Tutorial** header label is now **Lessons**.

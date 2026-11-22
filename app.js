@@ -28,7 +28,6 @@ let progressData = {};
 let gamificationData = createDefaultGamification();
 let hintVisible = false;
 let solutionVisible = false;
-let resetConfirmationVisible = false;
 let autoAdvanceTimer = null;
 let navigationVersion = 0;
 let currentTopicSlug = 'select-statement';
@@ -592,7 +591,7 @@ function renderInteractiveTutorial() {
   const group = SQL_TOPIC_GROUPS[safeGroupIndex];
   root.innerHTML = `
     <div class="tutorial-menu-head">
-      <div><span class="tutorial-menu-eyebrow">ALL LESSONS</span><strong>Interactive Tutorial</strong></div>
+      <div><span class="tutorial-menu-eyebrow">ALL LESSONS</span><strong>Lessons</strong></div>
       <button type="button" class="tutorial-close" data-action="close-tutorial" aria-label="Close lessons">×</button>
     </div>
     <div class="tutorial-menu-layout">
@@ -885,7 +884,7 @@ function render() {
           <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Write your SQL query here…" disabled></textarea>
           <div class="editor-footer">
             <p id="answer-message" class="answer-message" role="status" aria-live="polite" hidden></p>
-            <button type="button" class="course-button secondary reset-button" data-action="reset-question" id="reset-button">Reset query</button>
+            <button type="button" class="course-button secondary reset-button" data-action="reset-current-task" id="reset-current-task-button">Reset progress</button>
           </div>
         </section>
       </div>
@@ -1345,67 +1344,51 @@ function insertTableName(tableName) {
   textarea.setSelectionRange(position, position);
 }
 
-function requestProgressReset() {
-  resetConfirmationVisible = true;
-  const resetButton = $('#reset-progress-button');
-  const confirmation = $('#reset-progress-confirmation');
-  if (resetButton) resetButton.hidden = true;
-  if (confirmation) confirmation.hidden = false;
-}
+async function resetCurrentTaskProgress() {
+  const selection = getQuestionById(currentQuestionId);
+  if (!selection) return;
 
-function cancelProgressReset() {
-  resetConfirmationVisible = false;
-  const resetButton = $('#reset-progress-button');
-  const confirmation = $('#reset-progress-confirmation');
-  if (resetButton) resetButton.hidden = false;
-  if (confirmation) confirmation.hidden = true;
-}
+  const { question, lessonIndex } = selection;
+  cancelAutoAdvance();
 
-async function confirmProgressReset() {
-  if (!resetConfirmationVisible) return;
+  // Remove only this task's completion/attempt record. All other task records stay intact.
+  delete progressData[question.id];
 
-  // Reset every completion/attempt record, the XP ledger and the resume pointer.
-  progressData = {};
-  gamificationData = createDefaultGamification();
-  const firstQuestionId = lessons[0]?.questions[0]?.id || '';
-  try {
-    localStorage.removeItem(PROGRESS_KEY);
-    localStorage.removeItem(GAMIFICATION_KEY);
-    if (firstQuestionId) localStorage.setItem(SELECTED_QUESTION_KEY, firstQuestionId);
-    else localStorage.removeItem(SELECTED_QUESTION_KEY);
-  } catch (error) {
-    console.warn('Codeora progress could not be cleared from localStorage.', error);
+  // If this task had awarded its one-time solved XP, reverse only that task's 25 XP.
+  // Daily practice bonus and streak history are intentionally preserved.
+  if (gamificationData.awardedQuestionIds.includes(question.id)) {
+    gamificationData.awardedQuestionIds = gamificationData.awardedQuestionIds.filter((id) => id !== question.id);
+    gamificationData.xp = Math.max(0, gamificationData.xp - XP_PER_QUESTION);
   }
 
-  initializeProgressRecords();
+  try {
+    localStorage.setItem(SELECTED_QUESTION_KEY, question.id);
+  } catch (error) {
+    console.warn('Codeora could not save the selected task after reset.', error);
+  }
+
+  saveProgress();
   saveGamification();
-  cancelProgressReset();
-  updateProgress();
-  renderAchievements();
   nav();
   renderQuestionList();
+  updateProgress();
+  renderAchievements();
 
-  // saveProgress/saveGamification update the signed-in learner's Firestore snapshot too.
+  // Force a final cloud write after both local progress and XP have been updated.
   try {
     await window.QueryPathAccount?.saveAccountState?.();
   } catch (error) {
-    console.warn('Codeora reset was saved locally, but cloud sync could not be confirmed.', error);
+    console.warn('This task was reset locally, but cloud sync could not be confirmed.', error);
   }
 
-  if (document.body.dataset.page === 'practice' && firstQuestionId) {
-    await openLesson(0, false, firstQuestionId);
-    const message = $('#answer-message');
-    if (message) {
-      message.hidden = false;
-      message.className = 'answer-message good';
-      message.textContent = 'All course progress has been reset. Every question is unsolved again.';
-    }
-  } else {
-    const status = $('#status');
-    if (status) status.textContent = 'All course progress has been reset. Every question is unsolved again.';
+  await openLesson(lessonIndex, false, question.id);
+  const message = $('#answer-message');
+  if (message) {
+    message.hidden = false;
+    message.className = 'answer-message good';
+    message.textContent = 'This task is unsolved again. Your other completed tasks are unchanged.';
   }
 }
-
 function refreshFinishLessonButton() {
   const button = $('#finish-lesson-button');
   if (!button || !lessons[currentLessonIndex]) return;
@@ -1568,11 +1551,8 @@ document.addEventListener('click', (event) => {
   else if (action === 'open-lesson') { event.preventDefault(); currentTopicSlug = getDefaultTopicForLesson(Number(control.dataset.lessonIndex))?.slug || 'select-statement'; openLesson(Number(control.dataset.lessonIndex)); }
   else if (action === 'open-topic') { event.preventDefault(); const topic = TOPIC_BY_SLUG[control.dataset.topicSlug]; if (topic) { currentTopicSlug = topic.slug; setTutorialMenuOpen(false); openLesson(topic.lessonIndex); } }
   else if (action === 'select-question') selectQuestion(control.dataset.questionId);
-  else if (action === 'reset-question') resetQuery();
   else if (action === 'submit-answer') submitAnswer();
-  else if (action === 'reset-progress') requestProgressReset();
-  else if (action === 'confirm-progress-reset') confirmProgressReset();
-  else if (action === 'cancel-progress-reset') cancelProgressReset();
+  else if (action === 'reset-current-task') resetCurrentTaskProgress();
   else if (action === 'retry-database') openLesson(currentLessonIndex, false, currentQuestionId);
 });
 

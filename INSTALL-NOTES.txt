@@ -1,0 +1,3 @@
+Extract these files into the root of /home/coding1, replacing the matching files.
+Firebase Web App config is filled in for codeora-8d289.
+Enable providers in Firebase Console before expecting real sign-in.
