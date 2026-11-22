@@ -1,6 +1,6 @@
 # Activate Codeora sign-in and cloud progress
 
-The login interface and Firebase integration are included, but real sign-in needs a Firebase project owned by the site operator. Do not ask learners to paste credentials. Configure the project once before deployment.
+The login interface and Firebase modular SDK integration are included. The Codeora Web App config is now filled in for Firebase project `codeora-8d289`. The site owner must still enable the providers in Firebase Console and configure the OAuth credentials for Facebook and GitHub.
 
 ## 1. Create and register the Firebase web app
 
@@ -19,7 +19,7 @@ In Firebase Console, open **Authentication → Sign-in method** and enable:
 - **Email/Password** — enable the Email/Password method.
 - **Phone** — enable phone sign-in and configure the project's SMS/verification requirements. Firebase uses reCAPTCHA on the web before sending an SMS. Tell learners that an SMS may arrive and standard rates may apply; obtain their consent. Firebase documents that phone numbers provided for auth are sent to and stored by Google for abuse prevention. SMS quotas, pricing, and regional restrictions may apply.
 
-In **Authentication → Settings → Authorized domains**, add the exact domain where Codeora will be hosted. For Google/Facebook/GitHub/email testing, add `localhost` if it is not already listed. For GitHub Pages or another host, add that deployed hostname too. **Firebase phone authentication does not accept `localhost` as a hosted domain**; test SMS OTP from an authorized deployed hostname. Also set the SMS region policy to allow the countries you intend to serve (for an Indian audience, allow India / +91).
+In **Authentication → Settings → Authorized domains**, add `localhost` for local testing (if it is not already listed) and `ayaankhan96438-star.github.io` for the current GitHub Pages host. Add any other exact deployed hostname too. Do not enter `https://` or a path such as `/coding/`; enter only the hostname. **Firebase phone authentication does not accept `localhost` as a hosted domain**; test SMS OTP from an authorized deployed hostname. Also set the SMS region policy to allow the countries you intend to serve (for an Indian audience, allow India / +91).
 
 ## 3. Enable Cloud Firestore and apply rules
 
@@ -41,7 +41,7 @@ Codeora stores the account record at `users/{uid}/querypath/progress`. It includ
 
 ## Notes
 
-- Firebase config placeholders are intentional. Until replaced and the console setup is complete, the login page clearly reports that authentication is not configured; it does not pretend a user was signed in.
+- Real sign-in will work only after the corresponding provider is enabled in Firebase Authentication. A configured Web App key alone does not enable Google, Facebook, GitHub, Email/Password, or Phone providers.
 - Local progress continues to work without Firebase, using this browser's `localStorage`, so the standalone learning app still runs before cloud auth is activated.
 - A first-time sign-in imports the browser's existing guest progress into the first account once. Later accounts do not inherit another account's saved browser data.
 - The browser communicates with Firebase directly using the signed-in user's Firebase session. No admin key or private server credential is stored in the frontend.

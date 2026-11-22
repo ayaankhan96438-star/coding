@@ -14,6 +14,11 @@ const explainError = (error) => {
   }
   const messages = {
     'auth/invalid-email': 'Enter a valid email address.',
+    'auth/api-key-not-valid': 'Firebase rejected the Web API key. Check that firebase-config.js matches the Codeora Web App.',
+    'auth/invalid-api-key': 'Firebase rejected the Web API key. Check the API key in firebase-config.js.',
+    'auth/configuration-not-found': 'Firebase Authentication is not enabled for this project. Open Firebase Console → Authentication → Get started.',
+    'auth/network-request-failed': 'Network request failed. Check your internet connection and try again.',
+    'auth/internal-error': 'Firebase returned an internal error. Check the enabled sign-in provider and authorized domain.',
     'auth/invalid-credential': 'Email or password is incorrect.',
     'auth/user-not-found': 'No account was found with this email.',
     'auth/wrong-password': 'Email or password is incorrect.',
@@ -65,9 +70,11 @@ if (accountState?.user) {
 }
 
 async function runAction(button, action, successMessage = 'Signed in successfully. Opening your learning space…') {
-  const label = button.textContent;
+  const labelNode = button.querySelector('.provider-label');
+  const label = labelNode ? labelNode.textContent : button.textContent;
   button.disabled = true;
-  button.textContent = 'Please wait…';
+  if (labelNode) labelNode.textContent = 'Please wait…';
+  else button.textContent = 'Please wait…';
   try {
     if (!canCallAccount(action.method)) throw new Error(unavailableMessage);
     await action.run();
@@ -77,7 +84,8 @@ async function runAction(button, action, successMessage = 'Signed in successfull
     setStatus(explainError(error), 'error');
   } finally {
     button.disabled = false;
-    button.textContent = label;
+    if (labelNode) labelNode.textContent = label;
+    else button.textContent = label;
   }
 }
 
