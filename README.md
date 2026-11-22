@@ -90,19 +90,10 @@ The selected brand mark is concept #7 from the first Codeora logo sheet: a deep-
 The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, forgot-password, and phone OTP controls interactive even before Firebase is configured. Until `firebase-config.js` contains the real Firebase Web App settings and the providers are enabled in Firebase Authentication, submissions show an explicit setup message; the site never fakes a successful login. See `FIREBASE_SETUP.md` for the one-time setup.
 
 
-## Empty SQL editor and course reset
+## Latest task reset and browser refresh behavior
 
-- Lesson SQL editors now open empty so learners write the complete query themselves.
-- The SQL Playground editor also starts empty.
-- The practice header includes a dedicated **Reset progress** action with a confirmation step.
-- Confirming clears all solved/attempted question states and XP locally, syncs the reset snapshot to the signed-in learner's Firestore record, and returns practice to Lesson 1 / Question 1.
-- A normal browser refresh still preserves progress; learners can deliberately clear it with **Reset progress**.
-
-
-## Task reset behavior (22 November 2026)
-
-- The course header no longer exposes a global reset-all-progress control.
-- The SQL editor button is labelled **Reset progress** and resets only the currently selected task.
-- A task reset removes that task's solved/attempted state and reverses its one-time 25 XP award if it had been solved; other tasks and streak history remain unchanged.
-- Progress remains saved across browser refreshes. Refreshing the page does not reset course progress.
-- The former **Interactive Tutorial** header label is now **Lessons**.
+- Lesson SQL editors and the SQL Playground open blank.
+- The editor button is **Reset progress** and resets only the currently selected question, including that question's attempts and its one-time XP award. Other question progress remains intact.
+- A real browser reload/refresh (F5 or the browser refresh button) deliberately clears all question completion and gamification progress on this device and, when signed in, writes the cleared state to the learner's Firestore progress document. Normal navigation between Codeora pages does not clear progress.
+- The course header action is labelled **Lessons**.
+- The reset button is bound directly after each editor render so it remains active after changing questions.

@@ -1,6 +1,7 @@
 import { isUnlocked } from './access.js?v=20261122-platform-tracks-sequence-02';
 import { createFreshDatabase } from './database.js?v=20261122-platform-tracks-sequence-02';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
+import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
@@ -884,7 +885,7 @@ function render() {
           <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Write your SQL query here…" disabled></textarea>
           <div class="editor-footer">
             <p id="answer-message" class="answer-message" role="status" aria-live="polite" hidden></p>
-            <button type="button" class="course-button secondary reset-button" data-action="reset-current-task" id="reset-current-task-button">Reset progress</button>
+            <button type="button" class="course-button secondary reset-button" id="reset-current-task-button">Reset progress</button>
           </div>
         </section>
       </div>
@@ -914,6 +915,27 @@ function render() {
   renderQuestionList();
   renderSchemaViewer();
   refreshFinishLessonButton();
+
+  // The editor is re-rendered on every task navigation, so bind the reset action
+  // directly to the current button instead of relying on document-level delegation.
+  const resetButton = $('#reset-current-task-button');
+  if (resetButton) {
+    resetButton.addEventListener('click', async () => {
+      resetButton.disabled = true;
+      try {
+        await resetCurrentTaskProgress();
+      } catch (error) {
+        console.error('Could not reset the current Codeora task:', error);
+        const message = $('#answer-message');
+        if (message) {
+          message.hidden = false;
+          message.className = 'answer-message bad';
+          message.textContent = `Could not reset this task: ${error.message || 'Unknown error'}`;
+        }
+        resetButton.disabled = false;
+      }
+    });
+  }
 }
 
 function renderSchemaViewer() {
@@ -1346,47 +1368,44 @@ function insertTableName(tableName) {
 
 async function resetCurrentTaskProgress() {
   const selection = getQuestionById(currentQuestionId);
-  if (!selection) return;
+  if (!selection) {
+    throw new Error('No active task is selected. Open a lesson task first.');
+  }
 
   const { question, lessonIndex } = selection;
   cancelAutoAdvance();
+  navigationVersion += 1;
 
-  // Remove only this task's completion/attempt record. All other task records stay intact.
-  delete progressData[question.id];
-
-  // If this task had awarded its one-time solved XP, reverse only that task's 25 XP.
-  // Daily practice bonus and streak history are intentionally preserved.
-  if (gamificationData.awardedQuestionIds.includes(question.id)) {
-    gamificationData.awardedQuestionIds = gamificationData.awardedQuestionIds.filter((id) => id !== question.id);
-    gamificationData.xp = Math.max(0, gamificationData.xp - XP_PER_QUESTION);
-  }
+  // Reset only this question. Every other task and its XP remain unchanged.
+  const nextState = resetSingleTaskProgress(progressData, gamificationData, question.id, XP_PER_QUESTION);
+  progressData = nextState.progress;
+  gamificationData = nextState.gamification;
 
   try {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(progressData));
+    localStorage.setItem(GAMIFICATION_KEY, JSON.stringify(gamificationData));
     localStorage.setItem(SELECTED_QUESTION_KEY, question.id);
   } catch (error) {
-    console.warn('Codeora could not save the selected task after reset.', error);
+    throw new Error(`The browser could not save the reset: ${error.message}`);
   }
 
-  saveProgress();
-  saveGamification();
   nav();
-  renderQuestionList();
-  updateProgress();
+  renderDashboard();
   renderAchievements();
+  updateProgress();
 
-  // Force a final cloud write after both local progress and XP have been updated.
-  try {
-    await window.QueryPathAccount?.saveAccountState?.();
-  } catch (error) {
-    console.warn('This task was reset locally, but cloud sync could not be confirmed.', error);
-  }
-
+  // Wait for the signed-in account's Firestore write before rebuilding the task UI.
+  const cloudSaved = await window.QueryPathAccount?.saveAccountState?.();
   await openLesson(lessonIndex, false, question.id);
+
   const message = $('#answer-message');
   if (message) {
     message.hidden = false;
     message.className = 'answer-message good';
-    message.textContent = 'This task is unsolved again. Your other completed tasks are unchanged.';
+    const signedIn = Boolean(window.QueryPathAccountState?.user);
+    message.textContent = signedIn && cloudSaved === false
+      ? 'This task is unsolved again on this device, but cloud sync failed. Check your account connection.'
+      : 'This task is unsolved again. Your other completed tasks are unchanged.';
   }
 }
 function refreshFinishLessonButton() {
@@ -1433,6 +1452,21 @@ async function start() {
   try {
     // Wait until the signed-in learner's cloud progress has been restored before rendering the course.
     if (window.QueryPathAccountReady) await window.QueryPathAccountReady;
+
+    // Product requirement: a browser Refresh (F5 / reload button) starts a fresh
+    // course run and clears all task completion + XP. Normal navigation between
+    // Codeora pages does not clear progress.
+    const refreshedByBrowser = wasBrowserReload(window.performance);
+    if (refreshedByBrowser) {
+      const cleared = clearAllCourseProgress();
+      progressData = cleared.progress;
+      gamificationData = cleared.gamification;
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progressData));
+      localStorage.setItem(GAMIFICATION_KEY, JSON.stringify(gamificationData));
+      localStorage.removeItem(SELECTED_QUESTION_KEY);
+      await window.QueryPathAccount?.saveAccountState?.();
+    }
+
     loadProgress();
     loadGamification();
     const controller = new AbortController();
@@ -1515,6 +1549,14 @@ async function start() {
       renderHomePage();
     }
     updateProgress();
+    if (refreshedByBrowser && document.body.dataset.page === 'practice') {
+      const refreshMessage = $('#answer-message');
+      if (refreshMessage) {
+        refreshMessage.hidden = false;
+        refreshMessage.className = 'answer-message good';
+        refreshMessage.textContent = 'Browser refresh detected: all task progress has been reset. Start again from any unlocked task.';
+      }
+    }
     window.QueryPathReady = true;
   } catch (error) {
     window.QueryPathFailed = true;
@@ -1552,7 +1594,6 @@ document.addEventListener('click', (event) => {
   else if (action === 'open-topic') { event.preventDefault(); const topic = TOPIC_BY_SLUG[control.dataset.topicSlug]; if (topic) { currentTopicSlug = topic.slug; setTutorialMenuOpen(false); openLesson(topic.lessonIndex); } }
   else if (action === 'select-question') selectQuestion(control.dataset.questionId);
   else if (action === 'submit-answer') submitAnswer();
-  else if (action === 'reset-current-task') resetCurrentTaskProgress();
   else if (action === 'retry-database') openLesson(currentLessonIndex, false, currentQuestionId);
 });
 
