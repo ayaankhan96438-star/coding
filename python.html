@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Practice Python, HTML, CSS and JavaScript or build multi-file projects in Codeora Languages Studio.">
   <title>Codeora · Languages</title>
-  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-language-workspace-02">
-  <link rel="stylesheet" href="course.css?v=20261122-language-workspace-02">
-  <link rel="stylesheet" href="languages.css?v=20261122-language-workspace-02">
+  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-language-workspace-03">
+  <link rel="stylesheet" href="course.css?v=20261122-language-workspace-03">
+  <link rel="stylesheet" href="languages.css?v=20261122-language-workspace-03">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
 </head>
@@ -17,7 +17,7 @@
     <header class="course-header">
       <div class="course-brand-stack">
         <a class="course-brand" href="index.html" aria-label="Codeora home">
-          <img class="course-logo" src="codeora-logo.svg?v=20261122-language-workspace-02" alt="">
+          <img class="course-logo" src="codeora-logo.svg?v=20261122-language-workspace-03" alt="">
           <span class="brand-copy"><strong>codeora</strong><small>Learn. Code. Build.</small></span>
         </a>
         <nav class="track-links" aria-label="Learning tracks">
@@ -26,7 +26,6 @@
         </nav>
       </div>
       <div class="course-header-actions">
-        <a class="tutorial-jump" href="index.html"><span aria-hidden="true">▤</span> Lessons</a>
         <a class="account-link" data-account-link href="login.html">Sign up</a>
       </div>
     </header>
@@ -125,21 +124,59 @@
             <div class="console-wrap" id="console-wrap" hidden><div class="console-head"><span>OUTPUT</span><button type="button" id="clear-console-btn">Clear</button></div><pre id="console-output">Run your code to see output here.</pre></div>
             <div class="project-checklist"><span>PROJECT QUICK START</span><p><b>1.</b> Edit <code>index.html</code></p><p><b>2.</b> Style it in <code>style.css</code></p><p><b>3.</b> Add behavior in <code>script.js</code></p></div>
           </div>
-          <div class="terminal-panel">
-            <button type="button" class="terminal-heading" id="terminal-toggle" aria-expanded="true"><span>›_</span> Terminal <small>Browser commands</small><b>⌃</b></button>
-            <div class="terminal-body" id="terminal-body">
-              <div class="terminal-output" id="terminal-output">Codeora terminal ready. Type <b>help</b> to see available commands.</div>
-              <form id="terminal-form" class="terminal-form"><label for="terminal-input">›</label><input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command..."><button type="submit">Run</button></form>
+        </aside>
+
+        <section class="terminal-panel" aria-label="Workspace bottom panel">
+          <div class="terminal-topbar">
+            <div class="bottom-panel-tabs" role="tablist" aria-label="Terminal panels">
+              <button type="button" class="bottom-panel-tab" data-bottom-tab="problems" role="tab" aria-selected="false">Problems <span id="problems-count">0</span></button>
+              <button type="button" class="bottom-panel-tab" data-bottom-tab="output" role="tab" aria-selected="false">Output</button>
+              <button type="button" class="bottom-panel-tab" data-bottom-tab="debug" role="tab" aria-selected="false">Debug Console</button>
+              <button type="button" class="bottom-panel-tab active" data-bottom-tab="terminal" role="tab" aria-selected="true">Terminal</button>
+            </div>
+            <div class="terminal-actions">
+              <label class="terminal-shell-label" for="terminal-shell-select">SHELL</label>
+              <select id="terminal-shell-select" title="Choose the terminal environment">
+                <option value="browser">Browser terminal</option>
+                <option value="bash">Bash (local in VS Code)</option>
+              </select>
+              <button type="button" class="terminal-action-btn" id="new-terminal-btn" title="Create a new terminal">＋ New Terminal</button>
+              <button type="button" class="terminal-action-btn" id="split-terminal-btn" title="Split the terminal panel">Split Terminal</button>
             </div>
           </div>
-        </aside>
+
+          <section class="bottom-panel-view problems-view" data-bottom-view="problems" role="tabpanel" hidden>
+            <div class="bottom-view-heading">PROBLEMS <span id="problems-summary">No problems detected</span></div>
+            <div id="problems-list" class="problems-list"><p class="empty-panel-message">No problems have been detected in this workspace.</p></div>
+          </section>
+          <section class="bottom-panel-view output-view" data-bottom-view="output" role="tabpanel" hidden>
+            <div class="bottom-view-heading">OUTPUT</div>
+            <pre id="output-panel-content" class="bottom-output-content">Run your code to see output here.</pre>
+          </section>
+          <section class="bottom-panel-view debug-view" data-bottom-view="debug" role="tabpanel" hidden>
+            <div class="bottom-view-heading">DEBUG CONSOLE</div>
+            <pre id="debug-console-content" class="bottom-output-content">Debug messages will appear here.</pre>
+          </section>
+          <section class="bottom-panel-view terminal-view" data-bottom-view="terminal" role="tabpanel">
+            <div class="terminal-sessions" id="terminal-sessions">
+              <article class="terminal-session" data-session-id="1">
+                <div class="terminal-session-title">Terminal 1 <span>Browser terminal</span></div>
+                <pre class="terminal-output" data-terminal-output>Codeora terminal ready. Type help to see available commands.</pre>
+                <form class="terminal-form" data-terminal-form>
+                  <label aria-hidden="true">›</label><input data-terminal-input autocomplete="off" spellcheck="false" placeholder="Type a command..."><button type="submit">Run</button>
+                </form>
+              </article>
+            </div>
+            <p class="terminal-capability-note" id="terminal-capability-note">Browser terminal supports workspace commands. Choose Bash to see how to run real shell commands on your laptop.</p>
+          </section>
+        </section>
       </section>
       <p class="studio-footnote">Your work is saved in this browser automatically. Choose <b>Save to laptop</b> to write the project into a folder on your computer.</p>
     </main>
     <footer class="site-footer">Codeora · Languages Studio</footer>
   </div>
 
-  <script src="account-bootstrap.js?v=20261122-language-workspace-02"></script>
+  <script src="account-bootstrap.js?v=20261122-language-workspace-03"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
@@ -149,6 +186,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="languages.js?v=20261122-language-workspace-02"></script>
+  <script src="languages.js?v=20261122-language-workspace-03"></script>
 </body>
 </html>

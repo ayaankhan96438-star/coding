@@ -74,6 +74,13 @@
   let dirty = false;
   let consoleLines = [];
   let isRendering = false;
+  let activeBottomPanel = 'terminal';
+  let terminalSessions = [{ id: 1, output: 'Codeora terminal ready. Type help to see available commands.' }];
+  let nextTerminalId = 2;
+  let activeTerminalId = 1;
+  let splitTerminal = false;
+  let terminalShell = 'browser';
+  let workspaceProblems = [];
 
   function setStatus(message, isError = false) {
     $('save-state').textContent = message;
@@ -254,13 +261,88 @@
     editor?.setOption('mode', codeMirrorModes[state.language]);
     updateFileUI(); saveBrowserState();
   }
+  function setBottomPanelTab(panel) {
+    const allowed = ['problems', 'output', 'debug', 'terminal'];
+    activeBottomPanel = allowed.includes(panel) ? panel : 'terminal';
+    document.querySelectorAll('[data-bottom-tab]').forEach((button) => {
+      const active = button.dataset.bottomTab === activeBottomPanel;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-selected', String(active));
+    });
+    document.querySelectorAll('[data-bottom-view]').forEach((view) => {
+      view.hidden = view.dataset.bottomView !== activeBottomPanel;
+    });
+  }
+  function renderProblems() {
+    const list = $('problems-list');
+    const count = workspaceProblems.length;
+    $('problems-count').textContent = String(count);
+    $('problems-summary').textContent = count ? `${count} issue${count === 1 ? '' : 's'}` : 'No problems detected';
+    list.replaceChildren();
+    if (!count) {
+      const empty = document.createElement('p'); empty.className = 'empty-panel-message';
+      empty.textContent = 'No problems have been detected in this workspace.'; list.append(empty); return;
+    }
+    workspaceProblems.forEach((problem) => {
+      const row = document.createElement('div'); row.className = `problem-row ${problem.kind === 'warning' ? 'warning' : 'error'}`;
+      const mark = document.createElement('span'); mark.className = 'problem-mark'; mark.textContent = problem.kind === 'warning' ? '!' : '×';
+      const message = document.createElement('span'); message.textContent = problem.message;
+      row.append(mark, message); list.append(row);
+    });
+  }
+  function addProblem(message, kind = 'error') {
+    workspaceProblems.push({ message: String(message), kind });
+    renderProblems();
+  }
   function appendConsole(value, kind = 'log') {
     const text = typeof value === 'string' ? value : (() => { try { return JSON.stringify(value, null, 2); } catch { return String(value); } })();
     consoleLines.push({ text, kind });
-    $('console-output').textContent = consoleLines.map((line) => line.text).join('\n') || 'No output.';
+    const joined = consoleLines.map((line) => line.text).join('\n') || 'No output.';
+    $('console-output').textContent = joined;
+    $('output-panel-content').textContent = joined;
+    $('debug-console-content').textContent = consoleLines.map((line) => `${line.kind.toUpperCase()}: ${line.text}`).join('\n') || 'Debug messages will appear here.';
+    if (kind === 'error') { addProblem(text); setBottomPanelTab('problems'); }
+    else setBottomPanelTab('output');
     setOutputTab('console');
   }
-  function clearConsole() { consoleLines = []; $('console-output').textContent = 'Console cleared.'; }
+  function clearConsole() {
+    consoleLines = [];
+    $('console-output').textContent = 'Console cleared.';
+    $('output-panel-content').textContent = 'Console cleared.';
+    $('debug-console-content').textContent = 'Debug messages will appear here.';
+  }
+  function clearProblems() { workspaceProblems = []; renderProblems(); }
+  function renderTerminalSessions() {
+    const container = $('terminal-sessions');
+    container.replaceChildren();
+    const visibleSessions = splitTerminal ? terminalSessions.slice(-2) : terminalSessions.filter((session) => session.id === activeTerminalId);
+    visibleSessions.forEach((session) => {
+      const article = document.createElement('article'); article.className = 'terminal-session'; article.dataset.sessionId = String(session.id);
+      const heading = document.createElement('div'); heading.className = 'terminal-session-title';
+      const title = document.createElement('strong'); title.textContent = `Terminal ${session.id}`;
+      const shell = document.createElement('span'); shell.textContent = terminalShell === 'bash' ? 'Bash · laptop' : 'Browser terminal';
+      heading.append(title, shell);
+      const output = document.createElement('pre'); output.className = 'terminal-output'; output.dataset.terminalOutput = ''; output.textContent = session.output;
+      const form = document.createElement('form'); form.className = 'terminal-form'; form.dataset.terminalForm = '';
+      const prompt = document.createElement('label'); prompt.textContent = terminalShell === 'bash' ? '$' : '›';
+      const input = document.createElement('input'); input.dataset.terminalInput = ''; input.autocomplete = 'off'; input.spellcheck = false; input.placeholder = terminalShell === 'bash' ? 'Bash runs in your local VS Code terminal…' : 'Type a workspace command…';
+      const run = document.createElement('button'); run.type = 'submit'; run.textContent = 'Run';
+      form.append(prompt, input, run); article.append(heading, output, form); container.append(article);
+    });
+    container.classList.toggle('is-split', splitTerminal && visibleSessions.length > 1);
+  }
+  function createTerminalSession() {
+    const session = { id: nextTerminalId++, output: `Terminal ${nextTerminalId - 1} ready. Type help to see supported workspace commands.` };
+    terminalSessions.push(session); activeTerminalId = session.id; splitTerminal = false;
+    renderTerminalSessions(); setBottomPanelTab('terminal');
+  }
+  function toggleSplitTerminal() {
+    if (!splitTerminal) {
+      if (terminalSessions.length < 2) terminalSessions.push({ id: nextTerminalId++, output: 'Split terminal ready. Each pane keeps its own command history.' });
+      splitTerminal = true;
+    } else splitTerminal = false;
+    renderTerminalSessions(); setBottomPanelTab('terminal');
+  }
   function findProjectFile(names) {
     return names.map((name) => state.files[name]).find((content) => typeof content === 'string') || '';
   }
@@ -354,6 +436,7 @@
     }
   }
   function runCode() {
+    clearProblems();
     if (editor && state.activeFile) state.files[state.activeFile] = editor.getValue();
     saveBrowserState();
     if (state.language === 'python' || state.activeFile.endsWith('.py')) runPython();
@@ -452,26 +535,34 @@
     });
     alert(`${count} project files are being downloaded separately. For a folder-preserving ZIP, connect to the internet and retry.`);
   }
-  function handleTerminal(command) {
+  function handleTerminal(command, sessionId) {
+    const session = terminalSessions.find((item) => item.id === sessionId);
+    if (!session) return;
     const value = command.trim();
     const lower = value.toLowerCase();
-    const output = $('terminal-output');
-    const write = (text) => { output.textContent += `\n${text}`; output.scrollTop = output.scrollHeight; };
-    write(`$ ${value}`);
+    const write = (text) => { session.output += `${session.output ? '\n' : ''}${text}`; };
     if (!value) return;
-    if (lower === 'help') write('Available: help, ls, pwd, clear, run, npm init -y.\nPython/JavaScript run from the Run button. Save the folder to use real npm in your laptop terminal.');
-    else if (lower === 'clear') output.textContent = '';
-    else if (lower === 'pwd') write('/codeora-project');
-    else if (lower === 'ls' || lower === 'dir') write(Object.keys(state.files).sort().join('   ') || '(empty folder)');
-    else if (lower === 'run') runCode();
-    else if (lower === 'npm init -y') {
-      if (!state.files['package.json']) { state.files['package.json'] = JSON.stringify({ name: 'codeora-project', version: '1.0.0', private: true, scripts: { dev: 'vite --host 0.0.0.0', build: 'vite build' } }, null, 2); write('Created package.json in the Codeora workspace.'); }
-      else write('package.json already exists in this project.');
-      openFile('package.json');
+    if (terminalShell === 'bash') {
+      write(`$ ${value}`);
+      write('Bash cannot run inside a browser tab. Use Save to laptop, open this project in VS Code, then choose Terminal → New Terminal to run real Bash commands.');
+    } else if (lower === 'clear') session.output = '';
+    else {
+      write(`$ ${value}`);
+      if (lower === 'help') write('Available: help, ls, pwd, clear, run, npm init -y.\nFor real npm install or OS commands, save the project and open it in VS Code.');
+      else if (lower === 'pwd') write('/codeora-project');
+      else if (lower === 'ls' || lower === 'dir') write(Object.keys(state.files).sort().join('   ') || '(empty folder)');
+      else if (lower === 'run') runCode();
+      else if (lower === 'npm init -y') {
+        if (!state.files['package.json']) { state.files['package.json'] = JSON.stringify({ name: 'codeora-project', version: '1.0.0', private: true, scripts: { dev: 'vite --host 0.0.0.0', build: 'vite build' } }, null, 2); write('Created package.json in the Codeora workspace.'); }
+        else write('package.json already exists in this project.');
+        openFile('package.json');
+      }
+      else if (lower.startsWith('npm install')) write('A real npm/Node.js process cannot run inside this browser-only editor. Save the folder, open it in VS Code, then run npm install in its terminal.');
+      else if (lower.startsWith('python ') || lower.startsWith('python3 ') || lower.startsWith('node ')) write('Use the Run button to execute the current Python or JavaScript file in the browser runtime.');
+      else write(`Command not available in the browser terminal: ${value}\nType help for supported workspace commands.`);
     }
-    else if (lower.startsWith('npm install')) write('A real npm/Node.js process cannot run inside this browser-only editor. Use Save to laptop, open the folder in VS Code, then run npm install in its terminal.');
-    else if (lower.startsWith('python ') || lower.startsWith('python3 ') || lower.startsWith('node ')) write('Use the Run button to execute the current Python or JavaScript file in the browser runtime.');
-    else write(`Command not available in the browser terminal: ${value}\nType help for supported workspace commands.`);
+    renderTerminalSessions();
+    setBottomPanelTab('terminal');
   }
 
   function initializeEditor() {
@@ -546,13 +637,23 @@
     document.addEventListener('click', (event) => {
       if (!event.target.closest('.preview-more-wrap')) closePreviewMenu();
     });
-    $('terminal-toggle').addEventListener('click', () => {
-      const body = $('terminal-body'); body.hidden = !body.hidden;
-      $('terminal-toggle').setAttribute('aria-expanded', String(!body.hidden));
-      $('terminal-toggle').lastElementChild.textContent = body.hidden ? '⌄' : '⌃';
+    document.querySelectorAll('[data-bottom-tab]').forEach((button) => button.addEventListener('click', () => setBottomPanelTab(button.dataset.bottomTab)));
+    $('new-terminal-btn').addEventListener('click', createTerminalSession);
+    $('split-terminal-btn').addEventListener('click', toggleSplitTerminal);
+    $('terminal-shell-select').addEventListener('change', (event) => {
+      terminalShell = event.target.value;
+      $('terminal-capability-note').textContent = terminalShell === 'bash'
+        ? 'Bash is available in the local terminal on your laptop. Save this folder, open it in VS Code, then use Terminal → New Terminal.'
+        : 'Browser terminal supports workspace commands. Real npm and operating-system commands run in your laptop terminal.';
+      renderTerminalSessions(); setBottomPanelTab('terminal');
     });
-    $('terminal-form').addEventListener('submit', (event) => {
-      event.preventDefault(); const input = $('terminal-input'); handleTerminal(input.value); input.value = '';
+    $('terminal-sessions').addEventListener('submit', (event) => {
+      const form = event.target.closest('[data-terminal-form]');
+      if (!form) return;
+      event.preventDefault();
+      const sessionId = Number(form.closest('[data-session-id]')?.dataset.sessionId);
+      const input = form.querySelector('[data-terminal-input]');
+      handleTerminal(input.value, sessionId);
     });
     window.addEventListener('beforeunload', () => {
       if (editor && state.activeFile) state.files[state.activeFile] = editor.getValue();
@@ -565,5 +666,8 @@
   updateFileUI();
   setMode(state.mode);
   setOutputTab(state.outputTab);
+  renderTerminalSessions();
+  renderProblems();
+  setBottomPanelTab('terminal');
   saveBrowserState();
 })();

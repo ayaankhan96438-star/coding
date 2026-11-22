@@ -113,3 +113,12 @@ Open `python.html` (the navigation label is **Languages**) to use the Codeora La
 ### Important browser/runtime boundaries
 
 This is a browser IDE, not a full desktop VS Code installation. The browser can run Python via Pyodide and HTML/CSS/JavaScript preview, but it cannot start arbitrary local OS processes or run a real Node/npm installation inside the page. Save the project to the laptop, open it in desktop VS Code, then run `npm install` and `npm run dev` in the local terminal to install/use npm packages. The built-in terminal explains this rather than pretending to execute native commands. Folder read/write access requires an explicit user folder selection and browser permission.
+
+## Languages Studio workspace update
+
+- The Languages page uses a full-width bottom panel spanning the editor and project preview columns.
+- Bottom panel tabs: Problems, Output, Debug Console, and Terminal.
+- New Terminal creates a separate browser-workspace terminal session; Split Terminal displays two sessions side by side.
+- The shell selector distinguishes the browser workspace command runner from Bash on the local laptop. A browser page cannot launch a user's OS shell; save the project and open it in VS Code to use real Bash and npm.
+- The SQL landing page no longer flashes the temporary “Loading your SQL lesson…” placeholder or the tagline footer while its lesson module starts.
+- The SQL Lessons shortcut is omitted from the Languages page header.
