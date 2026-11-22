@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01">
+  <meta name="theme-color" content="#fbfcfe">
+  <meta name="description" content="Codeora — learn, code and build.">
+  <title>Guided Explanations · Codeora</title>
+  <link rel="stylesheet" href="style.css?v=20261122-codeora-logo7-no-digital-products-01">
+</head>
+<body data-page="explanations">
+  
+
+<header>
+  <a class="brand" href="index.html" aria-label="Codeora home"><img class="brand-logo" src="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01" alt=""> <span>codeora</span></a>
+  <nav class="top-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="lessons.html">Lessons</a><a href="practice.html">Practice</a><details class="nav-menu" data-active="true"><summary>Study<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="explanations.html" aria-current="page">Explanations</a><a href="solutions.html">Solutions</a><a href="quiz.html">Quiz Zone</a><a href="challenges.html">Challenges</a></div></details><details class="nav-menu" data-active="false"><summary>Tools<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="playground.html">SQL Playground</a><a href="visualizer.html">SQL Visualizer</a><a href="projects.html">Projects</a><a href="history.html">Query History</a><a href="search.html">Course Search</a><a href="help.html">SQL Help & Tutor</a></div></details><details class="nav-menu" data-active="false"><summary>My Learning<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="bookmarks.html">Bookmarks</a><a href="mistakes.html">Mistake Notebook</a><a href="rewards.html">Rewards</a><a href="profile.html">Profile</a><a href="certificate.html">Certificate</a><a href="premium.html">Premium</a><a href="shortcuts.html">Keyboard Shortcuts</a></div></details></nav>
+  <div class="progress-box">
+    <small>SOLVED <b id="progress">0 / 100</b></small>
+    <button type="button" class="reset-progress" data-action="reset-progress">Reset progress</button>
+    <div class="reset-confirmation" id="reset-progress-confirmation" hidden>
+      <span>Reset all progress?</span>
+      <button type="button" data-action="confirm-progress-reset">Confirm</button>
+      <button type="button" data-action="cancel-progress-reset">Cancel</button>
+    </div>
+  </div>
+</header>
+<div id="load-error" class="load-error page-error" role="alert" hidden></div>
+<main class="page-shell">
+  <section class="page-hero compact-hero"><p class="eyebrow">CONCEPTS, EXAMPLES AND OUTPUT</p><h1>Understand the <em>why.</em></h1><p class="lead">Choose a question from the practice page and review its concept, reusable SQL pattern and expected sample output here.</p><a class="page-button secondary" href="practice.html">Back to practice →</a></section>
+  <section id="explanation-content" class="explanation-page-content"><p class="dashboard-loading">Loading the explanation…</p></section>
+  <footer>Codeora · Guided explanations</footer>
+</main>
+  
+  <script>
+    (() => {
+      const showBootError = (message) => {
+        const target = document.getElementById('load-error');
+        if (target) { target.hidden = false; target.textContent = message; }
+      };
+      if (window.location.protocol === 'file:') {
+        showBootError('Open Codeora through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+      } else {
+        window.addEventListener('error', (event) => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
+            showBootError('Codeora could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+          }
+        }, true);
+        window.setTimeout(() => {
+          if (!window.CodeoraStarted && !window.CodeoraFailed) showBootError('Codeora did not start. Check that app.js and lessons.json are beside this page.');
+        }, 8000);
+      }
+    })();
+  </script>
+  <script src="account-bootstrap.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+  <script src="professional.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+  <script type="module" src="app.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+</body>
+</html>

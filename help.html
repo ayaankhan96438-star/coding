@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01">
+  <meta name="theme-color" content="#fbfcfe">
+  <meta name="description" content="Get guided SQL help, understand errors and learn query concepts with Codeora.">
+  <title>SQL Help & Tutor · Codeora</title>
+  <link rel="stylesheet" href="style.css?v=20261122-codeora-logo7-no-digital-products-01">
+</head>
+<body data-page="help">
+  
+
+<header>
+  <a class="brand" href="index.html" aria-label="Codeora home"><img class="brand-logo" src="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01" alt=""> <span>codeora</span></a>
+  <nav class="top-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="lessons.html">Lessons</a><a href="practice.html">Practice</a><details class="nav-menu" data-active="false"><summary>Study<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="explanations.html">Explanations</a><a href="solutions.html">Solutions</a><a href="quiz.html">Quiz Zone</a><a href="challenges.html">Challenges</a></div></details><details class="nav-menu" data-active="true"><summary>Tools<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="playground.html">SQL Playground</a><a href="visualizer.html">SQL Visualizer</a><a href="projects.html">Projects</a><a href="history.html">Query History</a><a href="search.html">Course Search</a><a href="help.html" aria-current="page">SQL Help & Tutor</a></div></details><details class="nav-menu" data-active="false"><summary>My Learning<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="bookmarks.html">Bookmarks</a><a href="mistakes.html">Mistake Notebook</a><a href="rewards.html">Rewards</a><a href="profile.html">Profile</a><a href="certificate.html">Certificate</a><a href="premium.html">Premium</a><a href="shortcuts.html">Keyboard Shortcuts</a></div></details></nav>
+  <div class="progress-box"><small>SOLVED <b id="progress">0 / 100</b></small></div>
+</header>
+
+<div id="professional-error" class="load-error page-error" role="alert" hidden></div>
+<main class="page-shell help-page">
+  <section class="page-hero compact-hero help-hero">
+    <p class="eyebrow">CODEORA LEARNING SUPPORT</p>
+    <h1>Stuck on SQL?<br><em>Let's work it out.</em></h1>
+    <p class="lead">Ask a concept question, paste a SQL error, or share a query. Get a clear explanation and a practical next step.</p>
+    <div class="pills"><span>Step-by-step explanations</span><span>SQL error guide</span><span>Private on this device</span></div>
+  </section>
+
+  <section id="help-context" class="help-context" hidden aria-live="polite"></section>
+
+  <section class="help-workspace" aria-labelledby="help-title">
+    <div class="tool-card help-ask-card">
+      <div class="tool-card-head"><div><p class="eyebrow">YOUR SQL STUDY PARTNER</p><h2 id="help-title">What do you need help with?</h2></div><span class="help-status-pill">GUIDED TUTOR</span></div>
+      <label class="help-label" for="help-mode">I want to…</label>
+      <select id="help-mode" class="tool-select help-mode">
+        <option value="auto">Automatically detect what I need</option>
+        <option value="doubt">Understand an SQL concept</option>
+        <option value="error">Understand an SQL error</option>
+        <option value="query">Explain my SQL query</option>
+      </select>
+      <label class="help-label" for="help-input">Describe your doubt or paste your SQL</label>
+      <textarea id="help-input" class="tool-editor help-input" rows="7" spellcheck="false" placeholder="Example: What is the difference between WHERE and HAVING?&#10;&#10;Or paste an error: no such column: student_name&#10;&#10;Or paste a query: SELECT name FROM students WHERE city = 'Delhi';"></textarea>
+      <div class="help-actions"><button id="help-ask" class="btn run" type="button">Get an explanation →</button><button id="help-clear" class="btn utility" type="button">Clear</button></div>
+      <p class="help-privacy">Your text is processed in this browser. This guided tutor does not send your queries to an AI service.</p>
+      <div id="help-answer" class="help-answer" aria-live="polite"><div class="help-empty"><span>?</span><b>Your explanation will appear here.</b><p>Start with a question or choose one of the topics below.</p></div></div>
+    </div>
+
+    <aside class="help-side">
+      <div class="tool-card help-topics-card">
+        <p class="eyebrow">QUICK START</p><h2>Choose a topic</h2>
+        <div class="help-topic-list">
+          <button type="button" data-help-prompt="Explain SELECT and FROM with a simple example."><span>01</span><b>SELECT & FROM</b><small>Choose columns and tables</small></button>
+          <button type="button" data-help-prompt="Explain WHERE and how to filter rows."><span>02</span><b>WHERE</b><small>Filter the rows you need</small></button>
+          <button type="button" data-help-prompt="Explain INNER JOIN and LEFT JOIN with an example."><span>03</span><b>JOIN</b><small>Connect related tables</small></button>
+          <button type="button" data-help-prompt="Explain GROUP BY and HAVING with an example."><span>04</span><b>GROUP BY</b><small>Summarise related records</small></button>
+          <button type="button" data-help-prompt="Explain NULL and how IS NULL works."><span>05</span><b>NULL values</b><small>Handle missing information</small></button>
+        </div>
+      </div>
+      <div class="tool-card help-support-card"><p class="eyebrow">NEED A PLACE TO PRACTISE?</p><h2>Try it in Codeora</h2><p>Use the sample database to run a query, inspect tables and learn from the output.</p><a class="page-button" href="playground.html">Open SQL Playground →</a><a class="help-text-link" href="lessons.html">Browse all lessons</a></div>
+    </aside>
+  </section>
+
+  <section class="page-section help-faq-section">
+    <div class="section-heading"><p class="eyebrow">COMMON QUESTIONS</p><h2>SQL help library</h2><p>Quick answers to the things learners often get stuck on.</p></div>
+    <div class="help-faq-grid">
+      <details><summary>Why do I get “no such table”?</summary><p>The table name in your query does not exist in the current database, or it is spelled differently. Open Database tables in Practice or Playground and copy the exact table name.</p><pre>SELECT name FROM sqlite_master WHERE type = 'table';</pre></details>
+      <details><summary>What is the difference between WHERE and HAVING?</summary><p><b>WHERE</b> filters individual rows before grouping. <b>HAVING</b> filters groups after GROUP BY has created them.</p><pre>SELECT city, COUNT(*)
+FROM students
+GROUP BY city
+HAVING COUNT(*) &gt; 1;</pre></details>
+      <details><summary>When should I use a JOIN?</summary><p>Use JOIN when the information you need is stored in more than one related table. Match the key columns that connect those tables.</p><pre>SELECT students.name, enrollments.status
+FROM students
+JOIN enrollments
+  ON students.id = enrollments.student_id;</pre></details>
+      <details><summary>Why does “= NULL” not work?</summary><p>NULL represents a missing or unknown value. Use <b>IS NULL</b> or <b>IS NOT NULL</b>, not an equality comparison.</p><pre>SELECT * FROM students
+WHERE email IS NULL;</pre></details>
+      <details><summary>What does “ambiguous column name” mean?</summary><p>More than one table in the query has a column with that name. Prefix the column with its table name or a table alias, such as students.id.</p></details>
+      <details><summary>How can I see why my answer is wrong?</summary><p>Run your query first, compare its output with the expected result, read the question hint, and use this tutor to explain the error or SQL concept. The reference solution becomes available after an incorrect attempt.</p></details>
+    </div>
+  </section>
+  <footer>Codeora · Learn by asking, testing and improving</footer>
+</main>
+<script src="account-bootstrap.js?v=20261122-codeora-logo7-no-digital-products-01"></script><script src="professional.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+<script type="module" src="app.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+</body>
+</html>

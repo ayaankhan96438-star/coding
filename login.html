@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="Sign in to Codeora to save your learning progress across devices.">
+  <title>Sign in · Codeora</title>
+  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01">
+  <link rel="stylesheet" href="style.css?v=20261122-codeora-logo7-no-digital-products-01">
+  <link rel="stylesheet" href="login.css?v=20261122-codeora-logo7-no-digital-products-01">
+</head>
+<body class="login-page" data-page="login">
+  <main class="login-shell">
+    <a class="login-brand" href="index.html">
+      <img src="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01" alt="">
+      <span><strong>codeora</strong><small>Learn. Code. Build.</small></span>
+    </a>
+    <section class="login-card" aria-labelledby="login-heading">
+      <div class="login-card-head">
+        <p class="login-eyebrow">YOUR LEARNING, SAVED</p>
+        <h1 id="login-heading">Welcome back</h1>
+        <p id="login-subtitle">Pick up your learning exactly where you left off.</p>
+      </div>
+      <div id="signed-in-panel" class="signed-in-panel" hidden>
+        <span class="signed-in-check">✓</span>
+        <div><b>You're already signed in</b><p id="signed-in-name">Codeora learner</p></div>
+        <button id="signed-out-continue" class="login-primary" type="button">Continue learning</button><button id="login-signout" class="text-action" type="button">Sign out</button>
+      </div>
+      <div class="login-methods">
+        <button id="google-login" class="provider-button google-provider" type="button"><span class="provider-mark google-mark">G</span>Continue with Google / Gmail</button>
+        <button id="facebook-login" class="provider-button facebook-provider" type="button"><span class="provider-mark facebook-mark">f</span>Continue with Facebook</button>
+        <button id="github-login" class="provider-button github-provider" type="button"><span class="provider-mark github-mark">⌘</span>Continue with GitHub</button>
+      </div>
+      <div class="login-divider"><span>or use email</span></div>
+      <form id="email-login-form" class="login-form">
+        <label for="email-address">Email address</label>
+        <input id="email-address" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="email-password">Password</label>
+        <input id="email-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+        <div class="login-form-meta"><button id="forgot-password" class="text-action" type="button">Forgot password?</button></div>
+        <button id="email-submit" class="login-primary" type="submit">Sign in with email</button>
+        <button id="create-account-toggle" class="text-action create-toggle" type="button">New here? Create account</button>
+      </form>
+      <div class="login-divider"><span>or use your phone</span></div>
+      <form id="phone-login-form" class="login-form phone-form">
+        <label for="phone-number">Phone number with country code</label>
+        <input id="phone-number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required>
+        <div id="recaptcha-container" class="recaptcha-container"></div><p class="phone-consent-note">We’ll send an SMS verification code. Message and data rates may apply. Your number is used for sign-in and verification.</p>
+        <button id="phone-send-code" class="login-primary" type="submit">Send verification code</button>
+      </form>
+      <form id="phone-verify-form" class="login-form phone-form" hidden>
+        <label for="phone-code">6-digit verification code</label>
+        <input id="phone-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="123456" required>
+        <button id="phone-verify-code" class="login-primary" type="submit">Verify and sign in</button>
+      </form>
+      <p id="login-status" class="login-status" role="status" aria-live="polite">Sign in to sync your progress between devices.</p>
+      <p class="login-legal">By continuing, you agree to use Codeora responsibly. Your learning progress is saved to your own account.</p>
+    </section>
+    <a class="login-back-link" href="index.html">← Back to Codeora</a>
+  </main>
+  <script src="account-bootstrap.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+  <script type="module" src="login.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+</body>
+</html>

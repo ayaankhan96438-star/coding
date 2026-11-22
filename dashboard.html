@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01">
+  <meta name="theme-color" content="#fbfcfe">
+  <meta name="description" content="Codeora — learn, code and build.">
+  <title>Your Dashboard · Codeora</title>
+  <link rel="stylesheet" href="style.css?v=20261122-codeora-logo7-no-digital-products-01">
+</head>
+<body data-page="dashboard">
+  
+
+<header>
+  <a class="brand" href="index.html" aria-label="Codeora home"><img class="brand-logo" src="codeora-logo.svg?v=20261122-codeora-logo7-no-digital-products-01" alt=""> <span>codeora</span></a>
+  <nav class="top-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="dashboard.html" aria-current="page">Dashboard</a><a href="lessons.html">Lessons</a><a href="practice.html">Practice</a><details class="nav-menu" data-active="false"><summary>Study<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="explanations.html">Explanations</a><a href="solutions.html">Solutions</a><a href="quiz.html">Quiz Zone</a><a href="challenges.html">Challenges</a></div></details><details class="nav-menu" data-active="false"><summary>Tools<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="playground.html">SQL Playground</a><a href="visualizer.html">SQL Visualizer</a><a href="projects.html">Projects</a><a href="history.html">Query History</a><a href="search.html">Course Search</a><a href="help.html">SQL Help & Tutor</a></div></details><details class="nav-menu" data-active="false"><summary>My Learning<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown"><a href="bookmarks.html">Bookmarks</a><a href="mistakes.html">Mistake Notebook</a><a href="rewards.html">Rewards</a><a href="profile.html">Profile</a><a href="certificate.html">Certificate</a><a href="premium.html">Premium</a><a href="shortcuts.html">Keyboard Shortcuts</a></div></details></nav>
+  <div class="progress-box">
+    <small>SOLVED <b id="progress">0 / 100</b></small>
+    <button type="button" class="reset-progress" data-action="reset-progress">Reset progress</button>
+    <div class="reset-confirmation" id="reset-progress-confirmation" hidden>
+      <span>Reset all progress?</span>
+      <button type="button" data-action="confirm-progress-reset">Confirm</button>
+      <button type="button" data-action="cancel-progress-reset">Cancel</button>
+    </div>
+  </div>
+</header>
+<div id="load-error" class="load-error page-error" role="alert" hidden></div>
+<main class="page-shell">
+  <section class="page-hero compact-hero"><p class="eyebrow">YOUR LEARNING SPACE</p><h1>Your progress,<br><em>at a glance.</em></h1><p class="lead">See what you have completed, how much experience you have earned and where to continue.</p></section>
+  <section class="dashboard-section dashboard-page-section">
+    <div class="dashboard-heading"><div><p class="eyebrow">LEARNING OVERVIEW</p><h2>Course progress</h2><p class="dashboard-subtitle">Your learning record is saved on this device.</p></div><div class="learner-level-pill"><span class="level-orbit">✦</span><span><small>CURRENT LEVEL</small><b id="dashboard-level-name">SQL Rookie</b></span></div></div>
+    <div id="dashboard-content" class="dashboard-content"><p class="dashboard-loading">Loading your progress…</p></div>
+    <div class="level-progress-card"><div class="level-progress-top"><span><b id="level-progress-title">Level 1 · SQL Rookie</b><small id="level-progress-caption">0 XP to next level</small></span><strong id="level-progress-value">0%</strong></div><div class="level-progress-track"><span id="level-progress-fill"></span></div></div>
+  </section>
+  <section class="page-section dashboard-actions"><div class="section-heading"><p class="eyebrow">KEEP GOING</p><h2>Your next step</h2></div><div class="portal-grid three-cards"><a class="portal-card" href="lessons.html"><b>Browse lessons</b><small>Choose a topic to continue.</small><span class="portal-arrow">View lessons →</span></a><a class="portal-card" href="practice.html"><b>Open SQL practice</b><small>Continue with the interactive editor.</small><span class="portal-arrow">Practice SQL →</span></a><a class="portal-card" href="rewards.html"><b>View your rewards</b><small>Check your XP and achievements.</small><span class="portal-arrow">See rewards →</span></a></div></section>
+  <footer>Codeora · Dashboard</footer>
+</main>
+  <script>
+    (() => {
+      const showBootError = (message) => {
+        const target = document.getElementById('load-error');
+        if (target) { target.hidden = false; target.textContent = message; }
+      };
+      if (window.location.protocol === 'file:') {
+        showBootError('Open Codeora through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+      } else {
+        window.addEventListener('error', (event) => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
+            showBootError('Codeora could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+          }
+        }, true);
+        window.setTimeout(() => {
+          if (!window.CodeoraStarted && !window.CodeoraFailed) showBootError('Codeora did not start. Check that app.js and lessons.json are beside this page.');
+        }, 8000);
+      }
+    })();
+  </script>
+  <script src="account-bootstrap.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+  <script src="professional.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+  <script type="module" src="app.js?v=20261122-codeora-logo7-no-digital-products-01"></script>
+</body>
+</html>
