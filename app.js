@@ -882,10 +882,10 @@ function render() {
         <div id="schema-viewer" class="table-preview">Preparing the sample table…</div>
         <section class="practice-area" aria-label="SQL query editor">
           <label class="editor-label" for="query">SQL query</label>
-          <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Type your SQL query here…" disabled>${escapeHtml(question?.starter || '')}</textarea>
+          <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Write your SQL query here…" disabled></textarea>
           <div class="editor-footer">
             <p id="answer-message" class="answer-message" role="status" aria-live="polite" hidden></p>
-            <button type="button" class="course-button secondary reset-button" data-action="reset-question" id="reset-button">Reset</button>
+            <button type="button" class="course-button secondary reset-button" data-action="reset-question" id="reset-button">Reset query</button>
           </div>
         </section>
       </div>
@@ -1361,24 +1361,49 @@ function cancelProgressReset() {
   if (confirmation) confirmation.hidden = true;
 }
 
-function confirmProgressReset() {
+async function confirmProgressReset() {
   if (!resetConfirmationVisible) return;
+
+  // Reset every completion/attempt record, the XP ledger and the resume pointer.
   progressData = {};
   gamificationData = createDefaultGamification();
+  const firstQuestionId = lessons[0]?.questions[0]?.id || '';
   try {
     localStorage.removeItem(PROGRESS_KEY);
     localStorage.removeItem(GAMIFICATION_KEY);
+    if (firstQuestionId) localStorage.setItem(SELECTED_QUESTION_KEY, firstQuestionId);
+    else localStorage.removeItem(SELECTED_QUESTION_KEY);
   } catch (error) {
     console.warn('Codeora progress could not be cleared from localStorage.', error);
   }
+
   initializeProgressRecords();
+  saveGamification();
   cancelProgressReset();
   updateProgress();
   renderAchievements();
   nav();
   renderQuestionList();
-  const status = $('#status');
-  if (status) status.textContent = 'Progress has been reset.';
+
+  // saveProgress/saveGamification update the signed-in learner's Firestore snapshot too.
+  try {
+    await window.QueryPathAccount?.saveAccountState?.();
+  } catch (error) {
+    console.warn('Codeora reset was saved locally, but cloud sync could not be confirmed.', error);
+  }
+
+  if (document.body.dataset.page === 'practice' && firstQuestionId) {
+    await openLesson(0, false, firstQuestionId);
+    const message = $('#answer-message');
+    if (message) {
+      message.hidden = false;
+      message.className = 'answer-message good';
+      message.textContent = 'All course progress has been reset. Every question is unsolved again.';
+    }
+  } else {
+    const status = $('#status');
+    if (status) status.textContent = 'All course progress has been reset. Every question is unsolved again.';
+  }
 }
 
 function refreshFinishLessonButton() {

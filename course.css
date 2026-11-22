@@ -678,6 +678,52 @@ body[data-page="home"], body[data-page="practice"] {
 .course-header-actions { margin-left: auto; display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex: 0 0 auto; }
 .tutorial-jump { order: 1; }
 .course-header-actions .account-link { order: 2; }
+.course-reset-progress {
+  order: 0;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #e0e4e8;
+  border-radius: 4px;
+  background: #fff;
+  color: #697586;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.course-reset-progress:hover { border-color: #c58b82; color: #a34f48; background: #fffafa; }
+.course-reset-confirmation {
+  position: absolute;
+  z-index: 30;
+  right: 118px;
+  top: calc(100% + 8px);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid #e2e5e8;
+  border-radius: 6px;
+  background: #fff;
+  color: #596575;
+  box-shadow: 0 8px 24px rgba(20, 30, 45, .12);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.course-reset-confirmation[hidden] { display: none; }
+.course-reset-confirmation button {
+  min-height: 27px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 3px;
+  background: #eef3f7;
+  color: #46576a;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.course-reset-confirmation button[data-action="confirm-progress-reset"] { background: #a74b43; color: #fff; }
+.course-header-actions { position: relative; }
+
 @media (max-width: 760px) {
   .course-header { align-items: center; }
   .course-header-actions { margin-left: auto; gap: 8px; }
@@ -691,4 +737,9 @@ body[data-page="home"], body[data-page="practice"] {
   .course-header-actions { gap: 6px; }
   .tutorial-jump { font-size: 10.5px; padding: 6px 7px; }
   .course-header-actions .account-link { min-height: 30px; padding: 0 8px; font-size: 10.5px; }
+}
+
+@media (max-width: 620px) {
+  .course-reset-progress { min-height: 29px; padding: 0 7px; font-size: 10px; }
+  .course-reset-confirmation { right: 0; top: calc(100% + 8px); white-space: normal; max-width: min(92vw, 330px); flex-wrap: wrap; }
 }

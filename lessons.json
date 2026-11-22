@@ -14,8 +14,7 @@
         "orderMatters": false,
         "hint": "The student names are in the student column. Select that column from school.",
         "explanation": "SELECT student returns the name recorded in each row of the school table.",
-        "example": "SELECT student FROM school",
-        "starter": "SELECT "
+        "example": "SELECT student FROM school"
       },
       {
         "id": "l1-courses-q2",
@@ -26,8 +25,7 @@
         "orderMatters": false,
         "hint": "Choose the teacher column from the school table.",
         "explanation": "The teacher column stores the name of the teacher assigned to each student.",
-        "example": "SELECT teacher FROM school",
-        "starter": "SELECT "
+        "example": "SELECT teacher FROM school"
       },
       {
         "id": "l1-courses-q3",
@@ -38,8 +36,7 @@
         "orderMatters": false,
         "hint": "The marks column contains each student’s score.",
         "explanation": "SELECT marks returns the score from every row.",
-        "example": "SELECT marks FROM school",
-        "starter": "SELECT "
+        "example": "SELECT marks FROM school"
       },
       {
         "id": "l1-courses-q4",
@@ -50,8 +47,7 @@
         "orderMatters": false,
         "hint": "Select student and marks, separated by a comma.",
         "explanation": "You can select more than one column. Write the two column names after SELECT and separate them with a comma.",
-        "example": "SELECT student, marks FROM school",
-        "starter": "SELECT "
+        "example": "SELECT student, marks FROM school"
       },
       {
         "id": "l1-courses-q5",
@@ -62,8 +58,7 @@
         "orderMatters": false,
         "hint": "Use the * symbol to select every column from school.",
         "explanation": "The asterisk (*) means all columns. This returns id, student, teacher, marks and class.",
-        "example": "SELECT * FROM school",
-        "starter": "SELECT "
+        "example": "SELECT * FROM school"
       },
       {
         "id": "l1-courses-q6",
@@ -74,8 +69,7 @@
         "orderMatters": false,
         "hint": "Choose student and class from school.",
         "explanation": "The class column tells which class each student belongs to.",
-        "example": "SELECT student, class FROM school",
-        "starter": "SELECT "
+        "example": "SELECT student, class FROM school"
       },
       {
         "id": "l1-courses-q7",
@@ -86,8 +80,7 @@
         "orderMatters": false,
         "hint": "Select teacher and marks from the same table.",
         "explanation": "The result shows the teacher name next to the score for each student.",
-        "example": "SELECT teacher, marks FROM school",
-        "starter": "SELECT "
+        "example": "SELECT teacher, marks FROM school"
       },
       {
         "id": "l1-courses-q8",
@@ -98,8 +91,7 @@
         "orderMatters": false,
         "hint": "Choose the student and teacher columns.",
         "explanation": "This query displays the student name and the assigned teacher side by side.",
-        "example": "SELECT student, teacher FROM school",
-        "starter": "SELECT "
+        "example": "SELECT student, teacher FROM school"
       },
       {
         "id": "l1-courses-q9",
@@ -110,8 +102,7 @@
         "orderMatters": false,
         "hint": "Select student, class and marks in that order.",
         "explanation": "A SELECT statement can return three columns. Separate each column name with a comma.",
-        "example": "SELECT student, class, marks FROM school",
-        "starter": "SELECT "
+        "example": "SELECT student, class, marks FROM school"
       },
       {
         "id": "l1-courses-q10",
@@ -122,8 +113,7 @@
         "orderMatters": false,
         "hint": "Select the id and student columns.",
         "explanation": "The id is the student record number. The student column stores the name.",
-        "example": "SELECT id, student FROM school",
-        "starter": "SELECT "
+        "example": "SELECT id, student FROM school"
       }
     ]
   },
@@ -142,8 +132,7 @@
         "orderMatters": false,
         "hint": "Use WHERE marks > 80. The > sign means greater than.",
         "explanation": "This returns the names and scores of students whose marks are above 80.",
-        "example": "SELECT student, marks FROM school WHERE marks > 80",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks > 80"
       },
       {
         "id": "l3-where-q2",
@@ -154,8 +143,7 @@
         "orderMatters": false,
         "hint": "Use WHERE marks < 70. The < sign means less than.",
         "explanation": "Only students with a score below 70 are returned.",
-        "example": "SELECT student, marks FROM school WHERE marks < 70",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks < 70"
       },
       {
         "id": "l3-where-q3",
@@ -166,8 +154,7 @@
         "orderMatters": false,
         "hint": "Use the equals sign with marks = 95.",
         "explanation": "The equals sign finds the row whose marks value is exactly 95.",
-        "example": "SELECT student, marks FROM school WHERE marks = 95",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks = 95"
       },
       {
         "id": "l3-where-q4",
@@ -178,8 +165,7 @@
         "orderMatters": false,
         "hint": "Filter the class column using WHERE class = 5.",
         "explanation": "This returns the students whose class value is 5.",
-        "example": "SELECT student, class FROM school WHERE class = 5",
-        "starter": "SELECT student, class FROM school WHERE "
+        "example": "SELECT student, class FROM school WHERE class = 5"
       },
       {
         "id": "l3-where-q5",
@@ -190,8 +176,7 @@
         "orderMatters": false,
         "hint": "Text values need single quotes: teacher = 'Neha'.",
         "explanation": "The condition matches rows where the teacher name is Neha.",
-        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha'",
-        "starter": "SELECT student, teacher FROM school WHERE "
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha'"
       },
       {
         "id": "l3-where-q6",
@@ -202,8 +187,7 @@
         "orderMatters": false,
         "hint": "Use >= to include 90 and any higher score.",
         "explanation": "Greater than or equal to includes the boundary value 90.",
-        "example": "SELECT student, marks FROM school WHERE marks >= 90",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks >= 90"
       },
       {
         "id": "l3-where-q7",
@@ -214,8 +198,7 @@
         "orderMatters": false,
         "hint": "Use BETWEEN 70 AND 90 on the marks column.",
         "explanation": "BETWEEN includes both 70 and 90.",
-        "example": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90"
       },
       {
         "id": "l3-where-q8",
@@ -226,8 +209,7 @@
         "orderMatters": false,
         "hint": "Compare teacher with the text value Ravi in single quotes.",
         "explanation": "This returns students whose teacher is Ravi.",
-        "example": "SELECT student, teacher FROM school WHERE teacher = 'Ravi'",
-        "starter": "SELECT student, teacher FROM school WHERE "
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Ravi'"
       },
       {
         "id": "l3-where-q9",
@@ -238,8 +220,7 @@
         "orderMatters": false,
         "hint": "Use WHERE class = 6.",
         "explanation": "The filter keeps only students in class 6.",
-        "example": "SELECT student, class FROM school WHERE class = 6",
-        "starter": "SELECT student, class FROM school WHERE "
+        "example": "SELECT student, class FROM school WHERE class = 6"
       },
       {
         "id": "l3-where-q10",
@@ -250,8 +231,7 @@
         "orderMatters": false,
         "hint": "Use an exact match: marks = 68.",
         "explanation": "The query returns the student row with 68 marks.",
-        "example": "SELECT student, marks FROM school WHERE marks = 68",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks = 68"
       }
     ]
   },
@@ -270,8 +250,7 @@
         "orderMatters": false,
         "hint": "Sort the marks column using DESC.",
         "explanation": "DESC puts the highest score first.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC",
-        "starter": "SELECT student, marks FROM school ORDER BY "
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC"
       },
       {
         "id": "l5-q2",
@@ -282,8 +261,7 @@
         "orderMatters": false,
         "hint": "Sort marks using ASC.",
         "explanation": "ASC puts the smallest score first.",
-        "example": "SELECT student, marks FROM school ORDER BY marks ASC",
-        "starter": "SELECT student, marks FROM school ORDER BY "
+        "example": "SELECT student, marks FROM school ORDER BY marks ASC"
       },
       {
         "id": "l5-q3",
@@ -294,8 +272,7 @@
         "orderMatters": false,
         "hint": "Sort the student column in ascending order.",
         "explanation": "ASC sorts text from A to Z.",
-        "example": "SELECT student FROM school ORDER BY student ASC",
-        "starter": "SELECT student FROM school ORDER BY "
+        "example": "SELECT student FROM school ORDER BY student ASC"
       },
       {
         "id": "l5-q4",
@@ -306,8 +283,7 @@
         "orderMatters": false,
         "hint": "Sort by class using ASC.",
         "explanation": "Ascending order places class 5 before class 6.",
-        "example": "SELECT student, class FROM school ORDER BY class ASC",
-        "starter": "SELECT student, class FROM school ORDER BY "
+        "example": "SELECT student, class FROM school ORDER BY class ASC"
       },
       {
         "id": "l5-q5",
@@ -318,8 +294,7 @@
         "orderMatters": false,
         "hint": "Sort marks from highest to lowest, then use LIMIT 3.",
         "explanation": "ORDER BY sorts the marks and LIMIT keeps the first three rows.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3",
-        "starter": "SELECT student, marks FROM school ORDER BY "
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3"
       },
       {
         "id": "l5-q6",
@@ -330,8 +305,7 @@
         "orderMatters": false,
         "hint": "Sort the teacher column using ASC.",
         "explanation": "Teacher names appear in alphabetical order.",
-        "example": "SELECT teacher FROM school ORDER BY teacher ASC",
-        "starter": "SELECT teacher FROM school ORDER BY "
+        "example": "SELECT teacher FROM school ORDER BY teacher ASC"
       },
       {
         "id": "l5-q7",
@@ -342,8 +316,7 @@
         "orderMatters": false,
         "hint": "Use DESC to reverse the alphabetical order.",
         "explanation": "DESC sorts names from Z to A.",
-        "example": "SELECT student FROM school ORDER BY student DESC",
-        "starter": "SELECT student FROM school ORDER BY "
+        "example": "SELECT student FROM school ORDER BY student DESC"
       },
       {
         "id": "l5-q8",
@@ -354,8 +327,7 @@
         "orderMatters": false,
         "hint": "Sort marks from low to high and use LIMIT 2.",
         "explanation": "This returns the two smallest marks.",
-        "example": "SELECT student, marks FROM school ORDER BY marks ASC LIMIT 2",
-        "starter": "SELECT student, marks FROM school ORDER BY "
+        "example": "SELECT student, marks FROM school ORDER BY marks ASC LIMIT 2"
       },
       {
         "id": "l5-q9",
@@ -366,8 +338,7 @@
         "orderMatters": false,
         "hint": "Use two sort columns: class first, then student.",
         "explanation": "SQL sorts by class first and uses student name to order rows within each class.",
-        "example": "SELECT student, class FROM school ORDER BY class ASC, student ASC",
-        "starter": "SELECT student, class FROM school ORDER BY "
+        "example": "SELECT student, class FROM school ORDER BY class ASC, student ASC"
       },
       {
         "id": "l5-q10",
@@ -378,8 +349,7 @@
         "orderMatters": false,
         "hint": "Sort marks in descending order and limit to four rows.",
         "explanation": "The result contains the four highest marks.",
-        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4",
-        "starter": "SELECT marks FROM school ORDER BY "
+        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4"
       }
     ]
   },
@@ -398,8 +368,7 @@
         "orderMatters": false,
         "hint": "Put DISTINCT immediately after SELECT.",
         "explanation": "DISTINCT removes repeated teacher names, so each teacher appears once.",
-        "example": "SELECT DISTINCT teacher FROM school",
-        "starter": "SELECT "
+        "example": "SELECT DISTINCT teacher FROM school"
       },
       {
         "id": "l2-distinct-q2",
@@ -410,8 +379,7 @@
         "orderMatters": false,
         "hint": "Use DISTINCT with the class column.",
         "explanation": "Some students are in the same class. DISTINCT shows each class value one time.",
-        "example": "SELECT DISTINCT class FROM school",
-        "starter": "SELECT "
+        "example": "SELECT DISTINCT class FROM school"
       },
       {
         "id": "l2-distinct-q3",
@@ -422,8 +390,7 @@
         "orderMatters": false,
         "hint": "Sort by id, then use LIMIT 5.",
         "explanation": "ORDER BY id gives a clear row order. LIMIT 5 returns only the first five names.",
-        "example": "SELECT student FROM school ORDER BY id LIMIT 5",
-        "starter": "SELECT "
+        "example": "SELECT student FROM school ORDER BY id LIMIT 5"
       },
       {
         "id": "l2-distinct-q4",
@@ -434,8 +401,7 @@
         "orderMatters": false,
         "hint": "Sort student in ascending order, then limit to three rows.",
         "explanation": "ASC sorts names alphabetically. LIMIT 3 keeps only the first three names.",
-        "example": "SELECT student FROM school ORDER BY student ASC LIMIT 3",
-        "starter": "SELECT "
+        "example": "SELECT student FROM school ORDER BY student ASC LIMIT 3"
       },
       {
         "id": "l2-distinct-q5",
@@ -446,8 +412,7 @@
         "orderMatters": false,
         "hint": "Sort marks from highest to lowest and show three rows.",
         "explanation": "DESC places the largest marks first. LIMIT 3 returns the top three scores.",
-        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 3",
-        "starter": "SELECT "
+        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 3"
       },
       {
         "id": "l2-distinct-q6",
@@ -458,8 +423,7 @@
         "orderMatters": false,
         "hint": "Use DISTINCT with marks.",
         "explanation": "DISTINCT removes repeated score values.",
-        "example": "SELECT DISTINCT marks FROM school",
-        "starter": "SELECT "
+        "example": "SELECT DISTINCT marks FROM school"
       },
       {
         "id": "l2-distinct-q7",
@@ -470,8 +434,7 @@
         "orderMatters": false,
         "hint": "Order by id and limit the result to four rows.",
         "explanation": "LIMIT 4 keeps the first four records in ID order.",
-        "example": "SELECT student FROM school ORDER BY id LIMIT 4",
-        "starter": "SELECT "
+        "example": "SELECT student FROM school ORDER BY id LIMIT 4"
       },
       {
         "id": "l2-distinct-q8",
@@ -482,8 +445,7 @@
         "orderMatters": false,
         "hint": "Select student and marks, sort by marks DESC, and add LIMIT 5.",
         "explanation": "This returns the five highest scores with each student name.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5",
-        "starter": "SELECT "
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5"
       },
       {
         "id": "l2-distinct-q9",
@@ -494,8 +456,7 @@
         "orderMatters": false,
         "hint": "Use DISTINCT teacher and then ORDER BY teacher ASC.",
         "explanation": "DISTINCT removes duplicates and ORDER BY sorts the remaining names.",
-        "example": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC",
-        "starter": "SELECT "
+        "example": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC"
       },
       {
         "id": "l2-distinct-q10",
@@ -506,8 +467,7 @@
         "orderMatters": false,
         "hint": "Sort marks from low to high and limit to two rows.",
         "explanation": "ASC places the smallest score first. LIMIT 2 returns two scores.",
-        "example": "SELECT marks FROM school ORDER BY marks ASC LIMIT 2",
-        "starter": "SELECT "
+        "example": "SELECT marks FROM school ORDER BY marks ASC LIMIT 2"
       }
     ]
   },
@@ -526,8 +486,7 @@
         "orderMatters": false,
         "hint": "Use AND between marks > 80 and class = 5.",
         "explanation": "AND keeps a row only when both conditions match.",
-        "example": "SELECT student, marks, class FROM school WHERE marks > 80 AND class = 5",
-        "starter": "SELECT student, marks, class FROM school WHERE "
+        "example": "SELECT student, marks, class FROM school WHERE marks > 80 AND class = 5"
       },
       {
         "id": "l4-q2",
@@ -538,8 +497,7 @@
         "orderMatters": false,
         "hint": "Use OR between the two teacher names. Put each name in single quotes.",
         "explanation": "OR returns a row when either teacher condition matches.",
-        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha' OR teacher = 'Ravi'",
-        "starter": "SELECT student, teacher FROM school WHERE "
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha' OR teacher = 'Ravi'"
       },
       {
         "id": "l4-q3",
@@ -550,8 +508,7 @@
         "orderMatters": false,
         "hint": "LIKE checks a text pattern. A% means starts with A.",
         "explanation": "The percent sign (%) matches any characters after the letter A.",
-        "example": "SELECT student FROM school WHERE student LIKE 'A%'",
-        "starter": "SELECT student FROM school WHERE "
+        "example": "SELECT student FROM school WHERE student LIKE 'A%'"
       },
       {
         "id": "l4-q4",
@@ -562,8 +519,7 @@
         "orderMatters": false,
         "hint": "Use BETWEEN 70 AND 90 with marks.",
         "explanation": "BETWEEN includes the start and end values.",
-        "example": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90"
       },
       {
         "id": "l4-q5",
@@ -574,8 +530,7 @@
         "orderMatters": false,
         "hint": "Use IN (5, 6) for the two class values.",
         "explanation": "IN checks whether class matches either value in the list.",
-        "example": "SELECT student, class FROM school WHERE class IN (5, 6)",
-        "starter": "SELECT student, class FROM school WHERE "
+        "example": "SELECT student, class FROM school WHERE class IN (5, 6)"
       },
       {
         "id": "l4-q6",
@@ -586,8 +541,7 @@
         "orderMatters": false,
         "hint": "Put NOT before the teacher condition.",
         "explanation": "NOT reverses the condition and leaves out rows where teacher is Neha.",
-        "example": "SELECT student, teacher FROM school WHERE NOT teacher = 'Neha'",
-        "starter": "SELECT student, teacher FROM school WHERE "
+        "example": "SELECT student, teacher FROM school WHERE NOT teacher = 'Neha'"
       },
       {
         "id": "l4-q7",
@@ -598,8 +552,7 @@
         "orderMatters": false,
         "hint": "Join both marks conditions using AND.",
         "explanation": "Both conditions must be true, so 75 and 95 are not included.",
-        "example": "SELECT student, marks FROM school WHERE marks > 75 AND marks < 95",
-        "starter": "SELECT student, marks FROM school WHERE "
+        "example": "SELECT student, marks FROM school WHERE marks > 75 AND marks < 95"
       },
       {
         "id": "l4-q8",
@@ -610,8 +563,7 @@
         "orderMatters": false,
         "hint": "Use %a% to find the letter a anywhere in the name.",
         "explanation": "The percent signs allow any characters before and after a.",
-        "example": "SELECT student FROM school WHERE student LIKE '%a%'",
-        "starter": "SELECT student FROM school WHERE "
+        "example": "SELECT student FROM school WHERE student LIKE '%a%'"
       },
       {
         "id": "l4-q9",
@@ -622,8 +574,7 @@
         "orderMatters": false,
         "hint": "Use != to mean not equal to.",
         "explanation": "The condition keeps records where class is different from 5.",
-        "example": "SELECT student, class FROM school WHERE class != 5",
-        "starter": "SELECT student, class FROM school WHERE "
+        "example": "SELECT student, class FROM school WHERE class != 5"
       },
       {
         "id": "l4-q10",
@@ -634,8 +585,7 @@
         "orderMatters": false,
         "hint": "Use >= 80 and class = 6 together with AND.",
         "explanation": "The result must meet both the marks and class conditions.",
-        "example": "SELECT student, marks, class FROM school WHERE marks >= 80 AND class = 6",
-        "starter": "SELECT student, marks, class FROM school WHERE "
+        "example": "SELECT student, marks, class FROM school WHERE marks >= 80 AND class = 6"
       }
     ]
   },

@@ -88,3 +88,12 @@ The selected brand mark is concept #7 from the first Codeora logo sheet: a deep-
 ## Login controls and Firebase activation
 
 The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, forgot-password, and phone OTP controls interactive even before Firebase is configured. Until `firebase-config.js` contains the real Firebase Web App settings and the providers are enabled in Firebase Authentication, submissions show an explicit setup message; the site never fakes a successful login. See `FIREBASE_SETUP.md` for the one-time setup.
+
+
+## Empty SQL editor and course reset
+
+- Lesson SQL editors now open empty so learners write the complete query themselves.
+- The SQL Playground editor also starts empty.
+- The practice header includes a dedicated **Reset progress** action with a confirmation step.
+- Confirming clears all solved/attempted question states and XP locally, syncs the reset snapshot to the signed-in learner's Firestore record, and returns practice to Lesson 1 / Question 1.
+- A normal browser refresh still preserves progress; learners can deliberately clear it with **Reset progress**.
