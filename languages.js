@@ -286,6 +286,33 @@
     setOutputTab('preview');
     setStatus('Preview updated');
   }
+  function closePreviewMenu() {
+    const menu = $('preview-more-menu');
+    const button = $('preview-more-btn');
+    if (menu) menu.hidden = true;
+    if (button) button.setAttribute('aria-expanded', 'false');
+  }
+  function openPreviewInNewTab() {
+    const html = makePreviewDocument();
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const opened = window.open(url, '_blank');
+    if (!opened) {
+      URL.revokeObjectURL(url);
+      externalPreviewUrls.delete(url);
+      setStatus('Browser blocked the new tab. Allow pop-ups for Codeora.', true);
+      alert('Your browser blocked the new tab. Allow pop-ups for Codeora, then try again.');
+      return;
+    }
+    setStatus('Live project opened in a new tab');
+    closePreviewMenu();
+  }
+  function openPreviewFullscreen() {
+    const frame = $('live-preview');
+    if (!frame.srcdoc || !frame.srcdoc.trim()) runPreview();
+    if (frame.requestFullscreen) frame.requestFullscreen().catch(() => setStatus('Fullscreen could not be opened', true));
+    closePreviewMenu();
+  }
   window.addEventListener('message', (event) => {
     if (event.source !== $('live-preview').contentWindow || event.data?.source !== 'codeora-preview') return;
     const args = Array.isArray(event.data.args) ? event.data.args.join(' ') : '';
@@ -507,6 +534,18 @@
       markDirty();
     });
     $('clear-console-btn').addEventListener('click', clearConsole);
+    $('preview-more-btn').addEventListener('click', (event) => {
+      event.stopPropagation();
+      const menu = $('preview-more-menu');
+      const willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      $('preview-more-btn').setAttribute('aria-expanded', String(willOpen));
+    });
+    $('open-preview-new-tab').addEventListener('click', openPreviewInNewTab);
+    $('preview-fullscreen').addEventListener('click', openPreviewFullscreen);
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.preview-more-wrap')) closePreviewMenu();
+    });
     $('terminal-toggle').addEventListener('click', () => {
       const body = $('terminal-body'); body.hidden = !body.hidden;
       $('terminal-toggle').setAttribute('aria-expanded', String(!body.hidden));

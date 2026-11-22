@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Practice Python, HTML, CSS and JavaScript or build multi-file projects in Codeora Languages Studio.">
   <title>Codeora · Languages</title>
-  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-languages-studio-01">
-  <link rel="stylesheet" href="course.css?v=20261122-languages-studio-01">
-  <link rel="stylesheet" href="languages.css?v=20261122-languages-studio-01">
+  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-language-workspace-02">
+  <link rel="stylesheet" href="course.css?v=20261122-language-workspace-02">
+  <link rel="stylesheet" href="languages.css?v=20261122-language-workspace-02">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
 </head>
@@ -17,7 +17,7 @@
     <header class="course-header">
       <div class="course-brand-stack">
         <a class="course-brand" href="index.html" aria-label="Codeora home">
-          <img class="course-logo" src="codeora-logo.svg?v=20261122-languages-studio-01" alt="">
+          <img class="course-logo" src="codeora-logo.svg?v=20261122-language-workspace-02" alt="">
           <span class="brand-copy"><strong>codeora</strong><small>Learn. Code. Build.</small></span>
         </a>
         <nav class="track-links" aria-label="Learning tracks">
@@ -36,7 +36,6 @@
         <div>
           <p class="language-eyebrow">CODEORA WORKSPACE</p>
           <h1>Languages <span>&amp; Projects</span></h1>
-          <p>Practice one language at a time, or bring HTML, CSS and JavaScript together in a real project workspace.</p>
         </div>
         <div class="language-runtime-note"><span class="runtime-dot"></span><span id="runtime-status">Browser workspace ready</span></div>
       </section>
@@ -112,14 +111,23 @@
           </div>
           <div class="right-panel-content project-side-content" id="project-panel">
             <div class="side-section-heading"><span class="side-section-icon">◫</span><div><strong>Project workspace</strong><small>Files connected in one preview</small></div></div>
-            <div class="preview-tabs"><button type="button" class="preview-tab active" data-output-tab="preview">Live preview</button><button type="button" class="preview-tab" data-output-tab="console">Console</button></div>
+            <div class="preview-head-row">
+              <div class="preview-tabs"><button type="button" class="preview-tab active" data-output-tab="preview">Live preview</button><button type="button" class="preview-tab" data-output-tab="console">Console</button></div>
+              <div class="preview-more-wrap">
+                <button type="button" class="preview-more-btn" id="preview-more-btn" aria-label="Live project options" aria-haspopup="menu" aria-expanded="false" title="Live project options">⋯</button>
+                <div class="preview-more-menu" id="preview-more-menu" role="menu" hidden>
+                  <button type="button" id="open-preview-new-tab" role="menuitem">Open in new browser tab</button>
+                  <button type="button" id="preview-fullscreen" role="menuitem">Open fullscreen</button>
+                </div>
+              </div>
+            </div>
             <div class="preview-wrap" id="preview-wrap"><iframe id="live-preview" title="Live project preview" sandbox="allow-scripts" srcdoc="<!doctype html><html><body style='font:14px Arial;padding:20px;color:#465466'>Press <b>Run</b> to preview your project.</body></html>"></iframe></div>
             <div class="console-wrap" id="console-wrap" hidden><div class="console-head"><span>OUTPUT</span><button type="button" id="clear-console-btn">Clear</button></div><pre id="console-output">Run your code to see output here.</pre></div>
             <div class="project-checklist"><span>PROJECT QUICK START</span><p><b>1.</b> Edit <code>index.html</code></p><p><b>2.</b> Style it in <code>style.css</code></p><p><b>3.</b> Add behavior in <code>script.js</code></p></div>
           </div>
           <div class="terminal-panel">
-            <button type="button" class="terminal-heading" id="terminal-toggle" aria-expanded="false"><span>›_</span> Terminal <small>Browser commands</small><b>⌄</b></button>
-            <div class="terminal-body" id="terminal-body" hidden>
+            <button type="button" class="terminal-heading" id="terminal-toggle" aria-expanded="true"><span>›_</span> Terminal <small>Browser commands</small><b>⌃</b></button>
+            <div class="terminal-body" id="terminal-body">
               <div class="terminal-output" id="terminal-output">Codeora terminal ready. Type <b>help</b> to see available commands.</div>
               <form id="terminal-form" class="terminal-form"><label for="terminal-input">›</label><input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command..."><button type="submit">Run</button></form>
             </div>
@@ -131,7 +139,7 @@
     <footer class="site-footer">Codeora · Languages Studio</footer>
   </div>
 
-  <script src="account-bootstrap.js?v=20261122-languages-studio-01"></script>
+  <script src="account-bootstrap.js?v=20261122-language-workspace-02"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
@@ -141,6 +149,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="languages.js?v=20261122-languages-studio-01"></script>
+  <script src="languages.js?v=20261122-language-workspace-02"></script>
 </body>
 </html>
