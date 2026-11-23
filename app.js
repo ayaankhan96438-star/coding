@@ -1449,11 +1449,20 @@ function showLoadError(message) {
 
 async function start() {
   window.QueryPathStarted = true;
-  // Warm the SQL.js script + WebAssembly in parallel with account and lesson loading.
-  // This removes the engine download from the first lesson-open interaction.
-  const sqlWarmup = loadSqlModule().catch((error) => { console.warn('SQL engine warm-up failed; it will retry when needed.', error); });
+  // Start downloading/initializing SQL.js immediately, without making the page wait for it.
+  // openLesson renders the lesson first and enables the editor as soon as the engine is ready.
+  void loadSqlModule().catch((error) => { console.warn('SQL engine warm-up failed; it will retry when needed.', error); });
+
+  // Fetch lesson data while Firebase restores the learner's account in parallel.
+  const lessonsController = new AbortController();
+  const lessonsTimeoutId = window.setTimeout(() => lessonsController.abort(), 15000);
+  const lessonsRequest = fetch(new URL('./lessons.json?v=20261123-fast-sql-start-05', document.baseURI), {
+    cache: 'default',
+    signal: lessonsController.signal
+  }).catch((error) => ({ requestError: error }));
+
   try {
-    // Wait until the signed-in learner's cloud progress has been restored before rendering the course.
+    // Keep the account restore before loading progress, so cloud data cannot be overwritten by stale local data.
     if (window.QueryPathAccountReady) await window.QueryPathAccountReady;
 
     // Product requirement: a browser Refresh (F5 / reload button) starts a fresh
@@ -1472,21 +1481,18 @@ async function start() {
 
     loadProgress();
     loadGamification();
-    const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 15000);
     let response;
     try {
-      response = await fetch(new URL('./lessons.json', document.baseURI), {
-        cache: 'no-store',
-        signal: controller.signal
-      });
+      const result = await lessonsRequest;
+      if (result?.requestError) throw result.requestError;
+      response = result;
     } catch (error) {
       if (error.name === 'AbortError') {
         throw new Error('Loading lessons.json timed out after 15 seconds. Check that the local server is running and that lessons.json is in the same folder as index.html.');
       }
       throw new Error(`Could not request lessons.json: ${error.message}. Open Codeora through its local web server, not by double-clicking index.html.`);
     } finally {
-      window.clearTimeout(timeoutId);
+      window.clearTimeout(lessonsTimeoutId);
     }
 
     if (!response.ok) throw new Error(`Could not load lessons.json (HTTP ${response.status}). Make sure lessons.json is beside index.html.`);
@@ -1506,7 +1512,6 @@ async function start() {
     renderAchievements();
     const page = document.body.dataset.page || 'home';
     if (page === 'practice') {
-      await sqlWarmup;
       const params = new URLSearchParams(window.location.search);
       let preferredQuestionId = params.get('question');
       let rawLesson = params.has('lesson') ? Number(params.get('lesson')) : 0;

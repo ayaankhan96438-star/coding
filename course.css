@@ -743,3 +743,35 @@ body[data-page="home"], body[data-page="practice"] {
   .course-reset-progress { min-height: 29px; padding: 0 7px; font-size: 10px; }
   .course-reset-confirmation { right: 0; top: calc(100% + 8px); white-space: normal; max-width: min(92vw, 330px); flex-wrap: wrap; }
 }
+
+
+/* Fast first paint while the SQL course restores account data and initializes its runner. */
+.sql-startup-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 150px;
+  margin: 34px auto;
+  padding: 26px 28px;
+  max-width: 920px;
+  border: 1px solid #e6ece8;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #ffffff 20%, #f5f8f6 42%, #ffffff 64%);
+  background-size: 220% 100%;
+  animation: sql-shell-shimmer 1.35s ease-in-out infinite;
+  color: #153d32;
+}
+.sql-startup-skeleton strong { display: block; font-size: 16px; }
+.sql-startup-skeleton p { margin: 6px 0 0; color: #64746c; font-size: 13px; }
+.sql-startup-dot {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  border-radius: 50%;
+  background: #2e7d5b;
+  box-shadow: 0 0 0 6px #e7f1eb;
+}
+@keyframes sql-shell-shimmer { to { background-position-x: -220%; } }
+@media (prefers-reduced-motion: reduce) {
+  .sql-startup-skeleton { animation: none; }
+}
