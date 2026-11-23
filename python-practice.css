@@ -140,3 +140,8 @@ body[data-page="python-practice"] {
 .py-page h1 { color: #101812; font-size: clamp(30px, 4vw, 40px); }
 .py-page a { color: #14532d; font-size: 15px; font-weight: 700; }
 .py-page p { padding: 12px 14px; border: 1px solid #dce5df; border-radius: 8px; background: #fff; }
+
+
+/* Beginner-friendly example-output note */
+.cb-example-note{margin:8px 0 0;color:#26342b;font-size:14px;line-height:1.6}
+.cb-expected strong{font-size:15px;color:#101812}

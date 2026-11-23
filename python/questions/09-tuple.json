@@ -2,86 +2,166 @@
   {
     "id": "py09q01",
     "title": "Create a tuple",
-    "level": "Easy",
-    "description": "Create or use a tuple as requested.",
+    "level": "Beginner",
+    "description": "Create a tuple with at least two values of your choice and print it.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "(4, 7)",
     "solution": "point = (4, 7)\nprint(point)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Tuple.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with create a tuple. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py09q02",
-    "title": "Access tuple item",
-    "level": "Easy",
-    "description": "Create or use a tuple as requested.",
+    "title": "Access a tuple item",
+    "level": "Beginner",
+    "description": "Create a tuple and print one item using its index.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Wed",
     "solution": "days = (\"Mon\", \"Tue\", \"Wed\")\nprint(days[2])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use an index inside square brackets to read a tuple item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Tuple.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with access a tuple item. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use an index inside square brackets to read a tuple item.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py09q03",
-    "title": "Tuple length",
-    "level": "Medium",
-    "description": "Create or use a tuple as requested.",
+    "title": "Find tuple length",
+    "level": "Beginner",
+    "description": "Create a tuple and print its number of items using len().",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "4",
     "solution": "values = (3, 6, 9, 12)\nprint(len(values))",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use len(...) on a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Tuple.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with find tuple length. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "len_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use len(...) on a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py09q04",
     "title": "Unpack a tuple",
-    "level": "Medium",
-    "description": "Create or use a tuple as requested.",
+    "level": "Beginner",
+    "description": "Create a tuple with two values, unpack it into two variables, and print both variables.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Aman\n21",
     "solution": "person = (\"Aman\", 21)\nname, age = person\nprint(name)\nprint(age)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign the tuple values to separate variables and display them.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Tuple.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with unpack a tuple. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_tuple_unpack"
+      ],
+      "minimums": {
+        "assignment_count": 2,
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Assign the tuple values to separate variables and display them.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py09q05",
-    "title": "Tuple membership",
-    "level": "Hard",
-    "description": "Create or use a tuple as requested.",
+    "title": "Check tuple membership",
+    "level": "Beginner",
+    "description": "Create a tuple and use in to check whether one of its values is present. Print True or False.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "True",
     "solution": "colors = (\"red\", \"blue\")\nprint(\"blue\" in colors)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the in membership operator on a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Tuple.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with check tuple membership. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "boolean",
+      "feedback": "Use the in membership operator on a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ],
+        [
+          "has_membership"
+        ]
+      ]
+    }
   }
 ]

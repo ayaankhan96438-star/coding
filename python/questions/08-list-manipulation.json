@@ -2,86 +2,166 @@
   {
     "id": "py08q01",
     "title": "Create a list",
-    "level": "Easy",
-    "description": "Use a list operation to produce the expected result.",
+    "level": "Beginner",
+    "description": "Create a list with at least three values of your choice and print the list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[2, 4, 6]",
     "solution": "numbers = [2, 4, 6]\nprint(numbers)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a Python list.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices List Manipulation.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with create a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a Python list.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py08q02",
-    "title": "Access an item",
-    "level": "Easy",
-    "description": "Use a list operation to produce the expected result.",
+    "title": "Access a list item",
+    "level": "Beginner",
+    "description": "Create a list and use an index to print one item from it.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "green",
     "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[1])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use square brackets with an index to access one list item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices List Manipulation.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with access a list item. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use square brackets with an index to access one list item.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py08q03",
-    "title": "Append an item",
-    "level": "Medium",
-    "description": "Use a list operation to produce the expected result.",
+    "title": "Add an item to a list",
+    "level": "Beginner",
+    "description": "Create a list, add one more item with append(), and print the updated list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[1, 2, 3]",
     "solution": "items = [1, 2]\nitems.append(3)\nprint(items)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Call .append(...) on a list and show the updated list.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices List Manipulation.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add an item to a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_append",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Call .append(...) on a list and show the updated list.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py08q04",
-    "title": "Remove an item",
-    "level": "Medium",
-    "description": "Use a list operation to produce the expected result.",
+    "title": "Remove an item from a list",
+    "level": "Beginner",
+    "description": "Create a list, remove one item using remove() or pop(), and print the updated list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "['a', 'c']",
     "solution": "items = [\"a\", \"b\", \"c\"]\nitems.remove(\"b\")\nprint(items)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use .remove(...) or .pop(...) to remove a list item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices List Manipulation.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with remove an item from a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use .remove(...) or .pop(...) to remove a list item.",
+      "oneOf": [
+        [
+          "has_remove",
+          "has_pop"
+        ],
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py08q05",
-    "title": "Sort numbers",
-    "level": "Hard",
-    "description": "Use a list operation to produce the expected result.",
+    "title": "Sort a list",
+    "level": "Beginner",
+    "description": "Create a list of numbers and display it in sorted order using sort() or sorted().",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[1, 2, 4, 5]",
     "solution": "numbers = [5, 1, 4, 2]\nnumbers.sort()\nprint(numbers)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use .sort() or sorted(...) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices List Manipulation.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with sort a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use .sort() or sorted(...) and display the result.",
+      "oneOf": [
+        [
+          "has_sort",
+          "sorted_call"
+        ],
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
   }
 ]

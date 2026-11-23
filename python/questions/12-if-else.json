@@ -1,87 +1,149 @@
 [
   {
     "id": "py12q01",
-    "title": "Positive or negative",
-    "level": "Easy",
-    "description": "Use if/else conditions to choose the correct output.",
+    "title": "Check positive or negative",
+    "level": "Beginner",
+    "description": "Choose a number and use if/else to print whether it is positive, negative, or zero.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Negative",
     "solution": "number = -4\nif number >= 0:\n    print(\"Non-negative\")\nelse:\n    print(\"Negative\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use an if/else decision and print the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices If Else.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with check positive or negative. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_if",
+        "has_if_else",
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use an if/else decision and print the result.",
+      "oneOf": [
+        [
+          "has_if_else",
+          "has_if"
+        ]
+      ]
+    }
   },
   {
     "id": "py12q02",
-    "title": "Check even number",
-    "level": "Easy",
-    "description": "Use if/else conditions to choose the correct output.",
+    "title": "Check an even number",
+    "level": "Beginner",
+    "description": "Choose an integer and use if/else with % to print whether it is even or odd.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Even",
     "solution": "number = 18\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use if/else and the remainder operator %.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices If Else.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with check an even number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_if",
+        "has_if_else",
+        "has_compare",
+        "print_call",
+        "has_mod"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use if/else and the remainder operator %."
+    }
   },
   {
     "id": "py12q03",
-    "title": "Find larger number",
-    "level": "Medium",
-    "description": "Use if/else conditions to choose the correct output.",
+    "title": "Find the larger number",
+    "level": "Beginner",
+    "description": "Create two numbers and use if/else to print the larger one.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "19",
     "solution": "a, b = 12, 19\nif a > b:\n    print(a)\nelse:\n    print(b)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Compare two values in an if/else statement.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices If Else.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with find the larger number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_if",
+        "has_if_else",
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Compare two values in an if/else statement."
+    }
   },
   {
     "id": "py12q04",
-    "title": "Grade check",
-    "level": "Medium",
-    "description": "Use if/else conditions to choose the correct output.",
+    "title": "Make a simple grade decision",
+    "level": "Beginner",
+    "description": "Choose a score and use if/elif/else to print a grade category you define.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "B",
     "solution": "score = 76\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use if, elif and else to choose a result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices If Else.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with make a simple grade decision. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_if",
+        "has_if_else",
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use if, elif and else to choose a result."
+    }
   },
   {
     "id": "py12q05",
-    "title": "Check password",
-    "level": "Hard",
-    "description": "Use if/else conditions to choose the correct output.",
+    "title": "Check a password",
+    "level": "Beginner",
+    "description": "Store a password of your choice, compare it with a value, and use if/else to print access granted or denied.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Access granted",
     "solution": "password = \"codebolt\"\nif password == \"codebolt\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Compare two values with if/else and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices If Else.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with check a password. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_if",
+        "has_if_else",
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Compare two values with if/else and display the result."
+    }
   }
 ]

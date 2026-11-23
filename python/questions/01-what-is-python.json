@@ -1,87 +1,132 @@
 [
   {
     "id": "py01q01",
-    "title": "First Python statement",
-    "level": "Easy",
-    "description": "Print the message Hello, Python!",
+    "title": "Your first Python program",
+    "level": "Beginner",
+    "description": "Write your first Python program. Use print() to display any message you choose, such as Hello World or your name.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Hello, Python!",
     "solution": "print(\"Hello, Python!\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use print(...) with any text or value. The exact words do not matter.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices What is Python?.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with your first python program. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use print(...) with any text or value. The exact words do not matter."
+    }
   },
   {
     "id": "py01q02",
-    "title": "Python comment",
-    "level": "Easy",
-    "description": "Add a comment, then print Ready.",
-    "starterCode": "# Write your Python code below\n",
+    "title": "Add a comment",
+    "level": "Beginner",
+    "description": "Write a comment starting with #, then print any message you like.",
+    "starterCode": "",
     "testInput": "",
     "expectedOutput": "Ready",
     "solution": "# This is a comment\nprint(\"Ready\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Add a # comment and a working print(...) statement.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices What is Python?.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add a comment. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_comment",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Add a # comment and a working print(...) statement."
+    }
   },
   {
     "id": "py01q03",
-    "title": "Two output lines",
-    "level": "Medium",
-    "description": "Print Start and then Finish on separate lines.",
+    "title": "Print two lines",
+    "level": "Beginner",
+    "description": "Use print() to display at least two lines. Choose both lines yourself.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Start\nFinish",
     "solution": "print(\"Start\")\nprint(\"Finish\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Your program should display at least two non-empty lines.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices What is Python?.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print two lines. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Your program should display at least two non-empty lines."
+    }
   },
   {
     "id": "py01q04",
-    "title": "Simple calculation",
-    "level": "Medium",
-    "description": "Evaluate 8 + 5 and print the result.",
+    "title": "Print a calculation",
+    "level": "Beginner",
+    "description": "Choose two numbers, add them, and print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "13",
     "solution": "print(8 + 5)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use + in a calculation and display the numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices What is Python?.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print a calculation. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_add"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use + in a calculation and display the numeric result."
+    }
   },
   {
     "id": "py01q05",
-    "title": "Python expression",
-    "level": "Hard",
-    "description": "Print the result of 6 multiplied by 7.",
+    "title": "Print a multiplication result",
+    "level": "Beginner",
+    "description": "Choose two numbers, multiply them, and print the answer.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "42",
     "solution": "print(6 * 7)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use * in a calculation and display the numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices What is Python?.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print a multiplication result. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_mult"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use * in a calculation and display the numeric result."
+    }
   }
 ]

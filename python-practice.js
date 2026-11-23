@@ -14,7 +14,6 @@
     nextJobId: 1
   };
 
-  const clean = (value) => String(value ?? '').replace(/[ \t]+$/gm, '').trim();
   const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[char]);
@@ -121,7 +120,7 @@
     if (state.worker) return;
 
     try {
-      const worker = new Worker('python-worker.js?v=codebolt-fast-run-v2');
+      const worker = new Worker('python-worker.js?v=codebolt-flexible-checker-v1');
       state.worker = worker;
       state.runtimeReady = false;
       $('runtime-label').textContent = 'Preparing Python 3 in background…';
@@ -146,6 +145,103 @@
     }
   }
 
+  const featureHelp = {
+    print_call: 'Use print(...) to display your result. Put text inside quotes.',
+    has_comment: 'Add a comment on a line starting with #.',
+    input_call: 'Use input() to read a value from the user.',
+    int_call: 'Convert the input/text to an integer with int(...).',
+    float_call: 'Convert the input/text to a decimal number with float(...).',
+    type_call: 'Use type(value) to inspect the data type.',
+    isinstance_call: 'Use isinstance(value, type) to check the data type.',
+    has_assignment: 'Create and store a value in a variable.',
+    has_add: 'Use the + operator for addition.',
+    has_sub: 'Use the - operator for subtraction.',
+    has_mult: 'Use the * operator for multiplication.',
+    has_mod: 'Use the % operator to find a remainder.',
+    has_pow: 'Use ** to calculate a power.',
+    has_for: 'Use a for loop for this task.',
+    has_while: 'Use a while loop for this task.',
+    has_if: 'Use an if decision in your code.',
+    has_function: 'Define a function using def.',
+    has_lambda: 'Create a function using the lambda keyword.',
+    has_try: 'Put the code inside a try block.',
+    has_except: 'Add an except block to handle an error.',
+    has_with: 'Use a with block when working with the file.',
+    open_call: 'Open a file with open(...).',
+    has_read: 'Read the saved file contents.',
+    has_write: 'Write or append some text to the file.',
+    has_integer_constant: 'Create a whole number, for example 25.',
+    has_float_constant: 'Create a decimal number, for example 3.5.',
+    has_string_constant: 'Create a text value by putting words inside quotes.',
+    has_bool_value: 'Use True or False (the first letter must be capital).',
+    has_subscript: 'Use square brackets [ ] to access an item.',
+    has_slice: 'Use a colon inside square brackets to slice the text.',
+    has_negative_slice_step: 'Use a negative slice step, for example text[::-1], to reverse text.',
+    has_list: 'Create a list using square brackets [ ].',
+    has_tuple: 'Create a tuple using values inside parentheses ( ).',
+    has_set: 'Create a set using braces { } or set(...).',
+    has_dict: 'Create a dictionary using key: value pairs inside braces { }.',
+    has_append: 'Use list.append(value) to add an item.',
+    has_remove: 'Use list.remove(value) to remove an item.',
+    has_pop: 'Use list.pop() to remove an item.',
+    has_set_add: 'Use set.add(value) to add an item to the set.',
+    has_sort_or_sorted: 'Use list.sort() or sorted(list) to sort the values.',
+    has_if_else: 'Add an else block so both paths are handled.',
+    has_function_parameter: 'Give your function a parameter inside its parentheses.',
+    has_default_argument: 'Give a function parameter a default value, such as name="Friend".',
+    has_return: 'Use return to send a value back from the function.',
+    has_lambda: 'Use the lambda keyword to create a small function.',
+    import_math: 'Add import math before using math functions.',
+    import_random: 'Add import random before using random functions.',
+    import_datetime: 'Import the datetime module and use a date/time feature.',
+    has_datetime_use: 'Call something from datetime, such as date(...), datetime.now(), or date.today().',
+    has_file_append_mode: 'Open the file in append mode using "a".',
+    has_tuple_unpack: 'Unpack the tuple into separate variables, for example first, second = point.'
+  };
+
+  function validateQuestion(question, data) {
+    const rule = question.validation || {};
+    const features = data.features || {};
+    const output = String(data.output || '');
+    const nonEmptyLines = output.split(/\r?\n/).filter((line) => line.trim().length > 0);
+    const missing = (rule.required || []).filter((name) => !features[name]);
+    if (missing.length) {
+      return { passed: false, message: (rule.feedback || 'Your code runs, but it has not used every Python feature requested yet.') + '\n' + (featureHelp[missing[0]] || `Add the required feature: ${missing[0]}.`) };
+    }
+
+    for (const group of (rule.oneOf || [])) {
+      if (!group.some((name) => Boolean(features[name]))) {
+        return { passed: false, message: rule.feedback || 'Use one of the accepted Python approaches mentioned in the question.' };
+      }
+    }
+
+    for (const [name, minimum] of Object.entries(rule.minimums || {})) {
+      const actual = Number(features[name] || 0);
+      if (actual < Number(minimum)) {
+        const readable = name === 'output_lines' ? `Display at least ${minimum} lines.`
+          : name === 'print_arguments' ? `Pass at least ${minimum} values to one print(...) call.`
+          : `Use this feature at least ${minimum} times.`;
+        return { passed: false, message: `${rule.feedback || 'Almost there.'}\n${readable}` };
+      }
+    }
+
+    const outputMode = rule.output || 'nonempty';
+    if (!output.trim()) return { passed: false, message: 'Your code ran, but nothing was printed. Use print(...) to show your result.' };
+    if (outputMode === 'numeric' && !nonEmptyLines.every((line) => Number.isFinite(Number(line.trim())))) {
+      return { passed: false, message: 'Print a number as the result of this task. You may choose your own values.' };
+    }
+    if (outputMode === 'boolean' && !nonEmptyLines.every((line) => ['true', 'false'].includes(line.trim().toLowerCase()))) {
+      return { passed: false, message: 'Print a Boolean result: True or False.' };
+    }
+    if (outputMode === 'one_line' && nonEmptyLines.length !== 1) {
+      return { passed: false, message: 'Keep the result on one line. You can choose any words.' };
+    }
+    if (outputMode === 'two_lines' && nonEmptyLines.length < 2) {
+      return { passed: false, message: rule.feedback || 'Print at least two non-empty lines.' };
+    }
+    return { passed: true, message: '' };
+  }
+
   function finishRun(job, data) {
     clearRunTimer();
     setRunnerBusy(false);
@@ -160,21 +256,23 @@
     $('runtime-label').textContent = 'Python 3 ready · warm runner';
 
     if (data.error) {
-      $('run-result').textContent = 'Runtime error';
+      $('run-result').textContent = 'Python error';
       $('error-help').hidden = false;
       $('error-help').textContent = `${data.error}\n${explainError(data.error)}`;
       return;
     }
 
-    if (clean(output) === clean(job.question.expectedOutput)) {
-      $('run-result').textContent = '✓ Correct';
+    const check = validateQuestion(job.question, data);
+    if (check.passed) {
+      $('run-result').textContent = '✓ Solved — your approach works';
+      $('error-help').hidden = true;
       state.solved.add(job.question.id);
       updateProgress();
       renderQuestionBank();
     } else {
-      $('run-result').textContent = 'Not quite — try again';
+      $('run-result').textContent = 'Not solved yet — check the hint';
       $('error-help').hidden = false;
-      $('error-help').textContent = 'Output does not match the expected result. Check spaces, spelling and line breaks.';
+      $('error-help').textContent = check.message;
     }
   }
 
@@ -258,7 +356,8 @@
       type: 'run',
       jobId: job.id,
       code: job.code,
-      input: job.input
+      input: job.input,
+      validation: job.question.validation || {}
     });
   }
 

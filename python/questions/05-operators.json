@@ -1,87 +1,139 @@
 [
   {
     "id": "py05q01",
-    "title": "Addition and subtraction",
-    "level": "Easy",
-    "description": "Use the requested operator and print its result.",
+    "title": "Add and subtract",
+    "level": "Beginner",
+    "description": "Choose two numbers. Use both + and - and print both results.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "22\n12",
     "solution": "a, b = 17, 5\nprint(a + b)\nprint(a - b)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use both addition and subtraction and show both answers.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Operators.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add and subtract. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_add",
+        "has_sub"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Use both addition and subtraction and show both answers."
+    }
   },
   {
     "id": "py05q02",
     "title": "Division and floor division",
-    "level": "Easy",
-    "description": "Use the requested operator and print its result.",
+    "level": "Beginner",
+    "description": "Choose two positive numbers. Print the result of / and the result of //.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "3.4\n3",
     "solution": "print(17 / 5)\nprint(17 // 5)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Show both normal division and floor division.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Operators.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with division and floor division. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_div",
+        "has_floordiv"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Show both normal division and floor division."
+    }
   },
   {
     "id": "py05q03",
-    "title": "Remainder",
-    "level": "Medium",
-    "description": "Use the requested operator and print its result.",
+    "title": "Find a remainder",
+    "level": "Beginner",
+    "description": "Use % with any two suitable numbers and print the remainder.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "5",
     "solution": "print(29 % 6)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the modulo operator % and display its numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Operators.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with find a remainder. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_mod"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use the modulo operator % and display its numeric result."
+    }
   },
   {
     "id": "py05q04",
-    "title": "Power operator",
-    "level": "Medium",
-    "description": "Use the requested operator and print its result.",
+    "title": "Use the power operator",
+    "level": "Beginner",
+    "description": "Choose a base and exponent, calculate base ** exponent, and print the answer.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "32",
     "solution": "print(2 ** 5)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use ** to calculate a power.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Operators.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with use the power operator. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_pow"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use ** to calculate a power."
+    }
   },
   {
     "id": "py05q05",
-    "title": "Comparison and logic",
-    "level": "Hard",
-    "description": "Use the requested operator and print its result.",
+    "title": "Compare two values",
+    "level": "Beginner",
+    "description": "Use a comparison and and/or/not to create a condition. Print the True or False result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "True",
     "solution": "age = 20\nprint(age >= 18 and age < 60)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Your code should use a comparison and a logical operator.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Operators.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with compare two values. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_compare",
+        "has_and_or"
+      ],
+      "minimums": {},
+      "output": "boolean",
+      "feedback": "Your code should use a comparison and a logical operator."
+    }
   }
 ]

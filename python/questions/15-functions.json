@@ -1,87 +1,142 @@
 [
   {
     "id": "py15q01",
-    "title": "Define a greeting function",
-    "level": "Easy",
-    "description": "Define and call a function to get the expected output.",
+    "title": "Create a greeting function",
+    "level": "Beginner",
+    "description": "Define a function that prints any greeting you choose. Call the function.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Hello!",
     "solution": "def greet():\n    print(\"Hello!\")\ngreet()",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Define a function and call it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with create a greeting function. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Define a function and call it."
+    }
   },
   {
     "id": "py15q02",
-    "title": "Function with parameter",
-    "level": "Easy",
-    "description": "Define and call a function to get the expected output.",
+    "title": "Function with a parameter",
+    "level": "Beginner",
+    "description": "Define a function that accepts a name (or another value) as a parameter and prints it. Call the function with your own value.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Hi Sara",
     "solution": "def greet(name):\n    print(\"Hi\", name)\ngreet(\"Sara\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a function parameter and pass an argument when calling it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with function with a parameter. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_function_parameter",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create a function parameter and pass an argument when calling it."
+    }
   },
   {
     "id": "py15q03",
     "title": "Return a sum",
-    "level": "Medium",
-    "description": "Define and call a function to get the expected output.",
+    "level": "Beginner",
+    "description": "Define a function that accepts two numbers and returns their sum. Call it and print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "15",
     "solution": "def add(a, b):\n    return a + b\nprint(add(7, 8))",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use return inside a function and print the function call result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with return a sum. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_return",
+        "has_function_call",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use return inside a function and print the function call result."
+    }
   },
   {
     "id": "py15q04",
-    "title": "Return square",
-    "level": "Medium",
-    "description": "Define and call a function to get the expected output.",
+    "title": "Return a square",
+    "level": "Beginner",
+    "description": "Define a function that accepts a number and returns its square. Call it and print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "36",
     "solution": "def square(number):\n    return number ** 2\nprint(square(6))",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a function that returns number multiplied by itself.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with return a square. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_return",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Create a function that returns number multiplied by itself."
+    }
   },
   {
     "id": "py15q05",
-    "title": "Default argument",
-    "level": "Hard",
-    "description": "Define and call a function to get the expected output.",
+    "title": "Use a default argument",
+    "level": "Beginner",
+    "description": "Define a function with a default parameter value. Call it without passing that argument and print something.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Welcome Friend",
     "solution": "def welcome(name=\"Friend\"):\n    print(\"Welcome\", name)\nwelcome()",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Give a parameter a default value and call the function.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with use a default argument. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_default_argument",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Give a parameter a default value and call the function."
+    }
   }
 ]

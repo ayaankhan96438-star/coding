@@ -1,87 +1,138 @@
 [
   {
     "id": "py16q01",
-    "title": "Lambda addition",
-    "level": "Easy",
-    "description": "Use a lambda expression with the requested operation.",
+    "title": "Create a lambda function",
+    "level": "Beginner",
+    "description": "Create a lambda that performs an operation of your choice. Call it and print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "9",
     "solution": "add = lambda a, b: a + b\nprint(add(4, 5))",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the lambda keyword and call the function it creates.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Lambda Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with create a lambda function. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_lambda_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use the lambda keyword and call the function it creates."
+    }
   },
   {
     "id": "py16q02",
     "title": "Lambda square",
-    "level": "Easy",
-    "description": "Use a lambda expression with the requested operation.",
+    "level": "Beginner",
+    "description": "Create a lambda that returns the square of a number. Call it with a number you choose and print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "49",
     "solution": "square = lambda n: n * n\nprint(square(7))",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use lambda and multiplication to return a square.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Lambda Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with lambda square. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_lambda_call",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use lambda and multiplication to return a square."
+    }
   },
   {
     "id": "py16q03",
     "title": "Sort with lambda",
-    "level": "Medium",
-    "description": "Use a lambda expression with the requested operation.",
+    "level": "Beginner",
+    "description": "Create a small list of pairs or records and use a lambda as the sort key. Print the sorted result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[('c', 1), ('b', 2), ('a', 3)]",
     "solution": "pairs = [(\"b\", 2), (\"a\", 3), (\"c\", 1)]\npairs.sort(key=lambda item: item[1])\nprint(pairs)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use lambda inside sort(key=...) or sorted(key=...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Lambda Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with sort with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_sort_or_sorted",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use lambda inside sort(key=...) or sorted(key=...)."
+    }
   },
   {
     "id": "py16q04",
-    "title": "Filter even values",
-    "level": "Medium",
-    "description": "Use a lambda expression with the requested operation.",
+    "title": "Filter values with lambda",
+    "level": "Beginner",
+    "description": "Create a list and use filter() with a lambda to keep values that match a condition you choose. Print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[2, 4, 6]",
     "solution": "numbers = [1, 2, 3, 4, 5, 6]\nevens = list(filter(lambda n: n % 2 == 0, numbers))\nprint(evens)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use filter(lambda ..., values) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Lambda Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with filter values with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "filter_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use filter(lambda ..., values) and display the result."
+    }
   },
   {
     "id": "py16q05",
-    "title": "Map to squares",
-    "level": "Hard",
-    "description": "Use a lambda expression with the requested operation.",
+    "title": "Transform values with lambda",
+    "level": "Beginner",
+    "description": "Create a list and use map() with a lambda to transform each value. Print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[4, 9, 16]",
     "solution": "numbers = [2, 3, 4]\nsquares = list(map(lambda n: n ** 2, numbers))\nprint(squares)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use map(lambda ..., values) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Lambda Functions.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with transform values with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "map_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use map(lambda ..., values) and display the result."
+    }
   }
 ]

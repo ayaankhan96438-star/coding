@@ -1,87 +1,142 @@
 [
   {
     "id": "py13q01",
-    "title": "Print 1 to 5",
-    "level": "Easy",
-    "description": "Use a for loop to repeat the required operation.",
+    "title": "Count with a for loop",
+    "level": "Beginner",
+    "description": "Use a for loop to print a sequence of at least five numbers. You may choose the starting number and range.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "1\n2\n3\n4\n5",
     "solution": "for number in range(1, 6):\n    print(number)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a for loop and display at least five output lines.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices For Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with count with a for loop. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_for",
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 5
+      },
+      "output": "two_lines",
+      "feedback": "Use a for loop and display at least five output lines."
+    }
   },
   {
     "id": "py13q02",
-    "title": "Sum first five numbers",
-    "level": "Easy",
-    "description": "Use a for loop to repeat the required operation.",
+    "title": "Add numbers with a for loop",
+    "level": "Beginner",
+    "description": "Use a for loop to add a sequence of numbers, then print the total. Choose the sequence.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "15",
     "solution": "total = 0\nfor number in range(1, 6):\n    total += number\nprint(total)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a for loop to build a total and print it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices For Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add numbers with a for loop. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_for",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use a for loop to build a total and print it."
+    }
   },
   {
     "id": "py13q03",
     "title": "Loop through a word",
-    "level": "Medium",
-    "description": "Use a for loop to repeat the required operation.",
+    "level": "Beginner",
+    "description": "Choose a word and use a for loop to print its characters, one per line.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "C\nA\nT",
     "solution": "for letter in \"CAT\":\n    print(letter)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Loop through a string and print each character.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices For Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with loop through a word. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_for",
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Loop through a string and print each character."
+    }
   },
   {
     "id": "py13q04",
-    "title": "Multiplication table",
-    "level": "Medium",
-    "description": "Use a for loop to repeat the required operation.",
+    "title": "Make a multiplication table",
+    "level": "Beginner",
+    "description": "Choose a number and use a for loop to print at least three multiples of it.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "7\n14\n21",
     "solution": "for number in range(1, 4):\n    print(7 * number)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a for loop to print multiples of one number.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices For Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with make a multiplication table. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_for",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 3
+      },
+      "output": "two_lines",
+      "feedback": "Use a for loop to print multiples of one number."
+    }
   },
   {
     "id": "py13q05",
     "title": "Count even numbers",
-    "level": "Hard",
-    "description": "Use a for loop to repeat the required operation.",
+    "level": "Beginner",
+    "description": "Use a for loop and an if statement to count even numbers in a range you choose. Print the count.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "5",
     "solution": "count = 0\nfor number in range(1, 11):\n    if number % 2 == 0:\n        count += 1\nprint(count)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Combine for, if and % to count even numbers.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices For Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with count even numbers. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_for",
+        "has_if",
+        "has_mod",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Combine for, if and % to count even numbers."
+    }
   }
 ]

@@ -1,87 +1,138 @@
 [
   {
     "id": "py14q01",
-    "title": "Count from 1 to 5",
-    "level": "Easy",
-    "description": "Build a while loop with a condition that eventually becomes false.",
+    "title": "Count with while",
+    "level": "Beginner",
+    "description": "Use a while loop to print at least five numbers. Choose your starting value and stopping condition.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "1\n2\n3\n4\n5",
     "solution": "number = 1\nwhile number <= 5:\n    print(number)\n    number += 1",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use while and make sure the condition eventually becomes false.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices While Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with count with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_while",
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 5
+      },
+      "output": "two_lines",
+      "feedback": "Use while and make sure the condition eventually becomes false."
+    }
   },
   {
     "id": "py14q02",
-    "title": "Countdown",
-    "level": "Easy",
-    "description": "Build a while loop with a condition that eventually becomes false.",
+    "title": "Make a countdown",
+    "level": "Beginner",
+    "description": "Use a while loop to count down from a number you choose, then print a final message.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "3\n2\n1\nGo!",
     "solution": "number = 3\nwhile number > 0:\n    print(number)\n    number -= 1\nprint(\"Go!\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use while to decrease a number until the loop ends.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices While Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with make a countdown. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_while",
+        "has_sub",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use while to decrease a number until the loop ends."
+    }
   },
   {
     "id": "py14q03",
-    "title": "Sum until ten",
-    "level": "Medium",
-    "description": "Build a while loop with a condition that eventually becomes false.",
+    "title": "Add numbers with while",
+    "level": "Beginner",
+    "description": "Use a while loop to add a sequence of numbers and print the total. Choose the range.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "10",
     "solution": "total = 0\nnumber = 1\nwhile number <= 4:\n    total += number\n    number += 1\nprint(total)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Build a total inside a while loop.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices While Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add numbers with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_while",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Build a total inside a while loop."
+    }
   },
   {
     "id": "py14q04",
-    "title": "Double until 16",
-    "level": "Medium",
-    "description": "Build a while loop with a condition that eventually becomes false.",
+    "title": "Double a value with while",
+    "level": "Beginner",
+    "description": "Start with a number and keep doubling it in a while loop until it reaches or passes a limit you choose. Print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "16",
     "solution": "value = 1\nwhile value < 16:\n    value *= 2\nprint(value)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use while and multiplication to update a value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices While Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with double a value with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_while",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use while and multiplication to update a value."
+    }
   },
   {
     "id": "py14q05",
-    "title": "Count digits",
-    "level": "Hard",
-    "description": "Build a while loop with a condition that eventually becomes false.",
+    "title": "Count digits with while",
+    "level": "Beginner",
+    "description": "Choose a positive whole number and use a while loop to count its digits. Print the count.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "4",
     "solution": "number = 5821\ncount = 0\nwhile number > 0:\n    count += 1\n    number //= 10\nprint(count)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use while and // 10 to process digits.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices While Loop.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with count digits with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_while",
+        "has_floordiv",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use while and // 10 to process digits."
+    }
   }
 ]

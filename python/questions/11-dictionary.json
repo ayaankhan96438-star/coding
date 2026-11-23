@@ -2,86 +2,145 @@
   {
     "id": "py11q01",
     "title": "Create a dictionary",
-    "level": "Easy",
-    "description": "Create, access or update dictionary data.",
+    "level": "Beginner",
+    "description": "Create a dictionary with at least one key and value, then print it.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Ira",
     "solution": "student = {\"name\": \"Ira\", \"age\": 20}\nprint(student[\"name\"])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a dictionary.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Dictionary.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with create a dictionary. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a dictionary.",
+      "oneOf": [
+        [
+          "has_dict",
+          "dict_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py11q02",
-    "title": "Read a value",
-    "level": "Easy",
-    "description": "Create, access or update dictionary data.",
+    "title": "Read a dictionary value",
+    "level": "Beginner",
+    "description": "Create a dictionary and access one value using its key. Print that value.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "50",
     "solution": "prices = {\"pen\": 10, \"book\": 50}\nprint(prices[\"book\"])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use dictionary[key] to read a value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Dictionary.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with read a dictionary value. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use dictionary[key] to read a value.",
+      "oneOf": [
+        [
+          "has_dict",
+          "dict_call"
+        ]
+      ]
+    }
   },
   {
     "id": "py11q03",
-    "title": "Add a key",
-    "level": "Medium",
-    "description": "Create, access or update dictionary data.",
+    "title": "Add a dictionary key",
+    "level": "Beginner",
+    "description": "Create a dictionary, add a new key-value pair, and print the updated dictionary or new value.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Delhi",
     "solution": "profile = {\"name\": \"Dev\"}\nprofile[\"city\"] = \"Delhi\"\nprint(profile[\"city\"])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign a value using dictionary[new_key] = value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Dictionary.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add a dictionary key. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_dict_subscript_store",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Assign a value using dictionary[new_key] = value."
+    }
   },
   {
     "id": "py11q04",
-    "title": "Update a value",
-    "level": "Medium",
-    "description": "Create, access or update dictionary data.",
+    "title": "Update a dictionary value",
+    "level": "Beginner",
+    "description": "Create a dictionary, change the value of an existing key, and print the updated value.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "8",
     "solution": "stock = {\"apples\": 5}\nstock[\"apples\"] = 8\nprint(stock[\"apples\"])",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign a new value to an existing dictionary key.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Dictionary.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with update a dictionary value. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_dict_subscript_store",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Assign a new value to an existing dictionary key."
+    }
   },
   {
     "id": "py11q05",
-    "title": "Loop through keys",
-    "level": "Hard",
-    "description": "Create, access or update dictionary data.",
+    "title": "Loop through dictionary keys",
+    "level": "Beginner",
+    "description": "Create a dictionary and use a for loop to print its keys.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "a\nb",
     "solution": "data = {\"a\": 1, \"b\": 2}\nfor key in data:\n    print(key)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use for key in dictionary: and print each key.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Dictionary.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with loop through dictionary keys. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_for",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use for key in dictionary: and print each key."
+    }
   }
 ]

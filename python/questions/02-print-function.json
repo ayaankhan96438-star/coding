@@ -1,87 +1,134 @@
 [
   {
     "id": "py02q01",
-    "title": "Print a greeting",
-    "level": "Easy",
-    "description": "Write a program that produces the requested output.",
+    "title": "Print any greeting",
+    "level": "Beginner",
+    "description": "Use print() to display any greeting, name, or sentence you want. Capital letters and punctuation are your choice.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Good morning",
     "solution": "print(\"Good morning\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Anything you print is accepted. Use valid Python print(...) syntax.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Print Function.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print any greeting. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Anything you print is accepted. Use valid Python print(...) syntax."
+    }
   },
   {
     "id": "py02q02",
-    "title": "Print a number",
-    "level": "Easy",
-    "description": "Write a program that produces the requested output.",
+    "title": "Print any number",
+    "level": "Beginner",
+    "description": "Use print() to display any number you choose. 100, 125, or another number is correct.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "125",
     "solution": "print(125)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Print a number of your choice. It does not have to be 125.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Print Function.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print any number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Print a number of your choice. It does not have to be 125."
+    }
   },
   {
     "id": "py02q03",
     "title": "Print two values",
-    "level": "Medium",
-    "description": "Write a program that produces the requested output.",
+    "level": "Beginner",
+    "description": "Use print() to show a label and another value on one line. You can use commas, +, or an f-string.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Age: 18",
     "solution": "print(\"Age:\", 18)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Try print(\"Name:\", name), print(\"Name: \" + name), or an f-string. These are all valid approaches.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Print Function.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print two values. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "output": "nonempty",
+      "feedback": "Display two pieces of information in one print() call. Multiple arguments, +, and f-strings are accepted.",
+      "oneOf": [
+        [
+          "has_multiarg_print",
+          "has_joined_string",
+          "has_add"
+        ]
+      ]
+    }
   },
   {
     "id": "py02q04",
     "title": "Print on one line",
-    "level": "Medium",
-    "description": "Write a program that produces the requested output.",
+    "level": "Beginner",
+    "description": "Use print() to display two or more words on one line. Choose any words.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Code Bolt",
     "solution": "print(\"Code\", end=\" \")\nprint(\"Bolt\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Keep your printed result on one line. Any words are fine.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Print Function.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print on one line. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "one_line",
+      "feedback": "Keep your printed result on one line. Any words are fine."
+    }
   },
   {
     "id": "py02q05",
-    "title": "Formatted print",
-    "level": "Hard",
-    "description": "Write a program that produces the requested output.",
+    "title": "Print a variable",
+    "level": "Beginner",
+    "description": "Store any message in a variable, then use print() to display that variable.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Welcome, Asha!",
     "solution": "name = \"Asha\"\nprint(f\"Welcome, {name}!\")",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a variable first, then print its value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Print Function.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with print a variable. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create a variable first, then print its value."
+    }
   }
 ]

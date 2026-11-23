@@ -1,87 +1,138 @@
 [
   {
     "id": "py03q01",
-    "title": "Store a name",
-    "level": "Easy",
-    "description": "Use variables to store the values and display the result.",
+    "title": "Store and print a name",
+    "level": "Beginner",
+    "description": "Create a variable and store any name or word in it. Print the variable.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Riya",
     "solution": "name = \"Riya\"\nprint(name)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "The variable name and stored text can be your choice.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Variable.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with store and print a name. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "The variable name and stored text can be your choice."
+    }
   },
   {
     "id": "py03q02",
-    "title": "Update a score",
-    "level": "Easy",
-    "description": "Use variables to store the values and display the result.",
+    "title": "Update a number",
+    "level": "Beginner",
+    "description": "Store a number in a variable, increase it by any amount, and print the updated value.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "15",
     "solution": "score = 10\nscore = score + 5\nprint(score)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a variable and an addition operation before printing.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Variable.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with update a number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use a variable and an addition operation before printing."
+    }
   },
   {
     "id": "py03q03",
-    "title": "Two variables",
-    "level": "Medium",
-    "description": "Use variables to store the values and display the result.",
+    "title": "Add two variables",
+    "level": "Beginner",
+    "description": "Store two numbers in two variables and print their sum. Choose any numbers.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "20",
     "solution": "first = 12\nsecond = 8\nprint(first + second)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create two variables and add their values.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Variable.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with add two variables. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_add"
+      ],
+      "minimums": {
+        "assignment_count": 2
+      },
+      "output": "numeric",
+      "feedback": "Create two variables and add their values."
+    }
   },
   {
     "id": "py03q04",
-    "title": "Swap values",
-    "level": "Medium",
-    "description": "Use variables to store the values and display the result.",
+    "title": "Swap two variables",
+    "level": "Beginner",
+    "description": "Create two variables, swap their values, and print both values. You may use a temporary variable or Python tuple swapping.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "9 3",
     "solution": "a = 3\nb = 9\na, b = b, a\nprint(a, b)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign values to two variables, swap them, and display both.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Variable.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with swap two variables. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "print_call"
+      ],
+      "minimums": {
+        "assignment_count": 2
+      },
+      "output": "nonempty",
+      "feedback": "Assign values to two variables, swap them, and display both."
+    }
   },
   {
     "id": "py03q05",
-    "title": "Calculate total",
-    "level": "Hard",
-    "description": "Use variables to store the values and display the result.",
+    "title": "Calculate a total",
+    "level": "Beginner",
+    "description": "Store a price and quantity in variables, multiply them to get a total, and print it. Choose your own values.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "100",
     "solution": "price = 25\nquantity = 4\ntotal = price * quantity\nprint(total)",
     "hints": [
-      "Break the task into small steps.",
-      "Use the Python feature named in this topic.",
-      "Run the code and compare spacing and values with the expected output."
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use variables and multiplication to calculate a total.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This exercise practices Variable.",
-    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+    "explanation": "This task gives you practice with calculate a total. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use variables and multiplication to calculate a total."
+    }
   }
 ]
