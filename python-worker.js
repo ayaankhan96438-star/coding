@@ -156,6 +156,42 @@ _try_nodes = [node for node in _nodes if isinstance(node, ast.Try)]
 _if_nodes = [node for node in _nodes if isinstance(node, ast.If)]
 _print_calls = [node for node in _calls if isinstance(node.func, ast.Name) and node.func.id == 'print']
 
+# Detect a genuinely new variable that is calculated from a variable assigned
+# earlier, and make sure that new variable is used by a print() call. This is
+# different from reassigning the original variable (score = score + 5).
+def _assignment_target_names(target):
+    if isinstance(target, ast.Name):
+        return {target.id}
+    if isinstance(target, (ast.Tuple, ast.List)):
+        names = set()
+        for element in target.elts:
+            names.update(_assignment_target_names(element))
+        return names
+    return set()
+
+_previous_assigned_names = set()
+_new_variables_from_existing = set()
+for _assignment in sorted(_assignments, key=lambda item: item.lineno):
+    _value = getattr(_assignment, 'value', None)
+    _right_names = {
+        item.id for item in ast.walk(_value)
+        if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Load)
+    } if _value is not None else set()
+    if isinstance(_assignment, ast.Assign):
+        _targets = set().union(*(_assignment_target_names(target) for target in _assignment.targets))
+    else:
+        _targets = _assignment_target_names(_assignment.target)
+    for _target_name in _targets:
+        if _target_name not in _previous_assigned_names and (_right_names & _previous_assigned_names):
+            _new_variables_from_existing.add(_target_name)
+    _previous_assigned_names.update(_targets)
+
+_printed_names = {
+    item.id for call in _print_calls for item in ast.walk(call)
+    if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Load)
+}
+_has_new_variable_from_existing = bool(_new_variables_from_existing & _printed_names)
+
 _features = {
     "print_call": bool(_print_calls),
     "print_calls": len(_print_calls),
@@ -182,6 +218,7 @@ _features = {
     "randint_call": "randint" in _attrs,
     "has_math_constant": any(isinstance(node, ast.Attribute) and node.attr in ("pi", "e", "tau") for node in _nodes),
     "has_assignment": bool(_assignments),
+    "has_new_variable_from_existing": _has_new_variable_from_existing,
     "assignment_count": len(_assignments),
     "has_add": "Add" in _ops,
     "has_sub": "Sub" in _ops,

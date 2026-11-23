@@ -27,29 +27,30 @@
   },
   {
     "id": "py03q02",
-    "title": "Add 5 to a variable",
+    "title": "Create a second score variable",
     "level": "Beginner",
-    "description": "Set score to 10. Add 5 to score by updating the same variable, then print the updated value. The answer should be 15.",
+    "description": "Save 10 in a variable named score. Create a different variable named score1 and store score + 5 in it. Print score1. The answer should be 15, and score should stay 10.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "15",
-    "solution": "score = 10\nscore = score + 5\nprint(score)",
+    "solution": "score = 10\nscore1 = score + 5\nprint(score1)",
     "hints": [
-      "Read the task once and identify the Python feature it asks you to practise.",
-      "Use a variable and an addition operation before printing.",
-      "Write your own code, press Run, and fix any syntax or runtime error shown."
+      "First create score = 10.",
+      "Create another variable: score1 = score + 5.",
+      "Print score1, not score."
     ],
-    "explanation": "First score stores 10. The next line calculates 10 + 5 and stores 15 back in the same variable. print(score) runs after that update, so it displays 15.",
-    "commonMistakes": "Do not print score before adding 5. The second assignment replaces the old value with the new value, so print(score) must come after score = score + 5.",
+    "explanation": "score stores 10. score1 is a new variable, so score1 = score + 5 stores 15 without changing score. print(score1) displays 15.",
+    "commonMistakes": "Use two different variable names: score and score1. Writing score = score + 5 updates the original score variable; this task asks you to create score1 and print score1.",
     "validation": {
       "required": [
         "has_assignment",
         "has_add",
-        "print_call"
+        "print_call",
+        "has_new_variable_from_existing"
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use a variable and an addition operation before printing.",
+      "feedback": "Create a second variable from the first one, then print the new variable.",
       "matchExpected": true
     }
   },

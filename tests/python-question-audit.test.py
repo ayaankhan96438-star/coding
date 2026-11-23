@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import contextlib
 import io
 import json
@@ -50,15 +51,45 @@ for path in files:
 assert run_solution("print('CodeBolt')") == "CodeBolt"
 assert run_solution('print("CodeBolt")') == "CodeBolt"
 
-# Updating the same variable must print the new value, not the old value.
-correct_update = "score = 10\nscore = score + 5\nprint(score)"
-wrong_order = "score = 10\nprint(score)\nscore = score + 5"
-assert run_solution(correct_update) == "15"
-assert run_solution(wrong_order) == "10"
+# The score exercise specifically teaches creating and printing a second variable.
+score_question = json.loads((QUESTION_DIR / "03-variables.json").read_text(encoding="utf-8"))[1]
+correct_score = score_question["solution"]
+assert correct_score == "score = 10\nscore1 = score + 5\nprint(score1)"
+assert run_solution(correct_score) == "15"
+
+def has_printed_new_variable_from_existing(source: str) -> bool:
+    tree = ast.parse(source)
+    assignments = [node for node in ast.walk(tree) if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign))]
+    def targets(target):
+        if isinstance(target, ast.Name):
+            return {target.id}
+        if isinstance(target, (ast.Tuple, ast.List)):
+            return set().union(*(targets(item) for item in target.elts)) if target.elts else set()
+        return set()
+    previous = set()
+    derived = set()
+    for node in sorted(assignments, key=lambda item: item.lineno):
+        value = getattr(node, "value", None)
+        reads = {item.id for item in ast.walk(value) if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Load)} if value is not None else set()
+        names = set().union(*(targets(item) for item in node.targets)) if isinstance(node, ast.Assign) else targets(node.target)
+        derived.update(name for name in names if name not in previous and bool(reads & previous))
+        previous.update(names)
+    printed = {item.id for call in ast.walk(tree) if isinstance(call, ast.Call) and isinstance(call.func, ast.Name) and call.func.id == "print" for item in ast.walk(call) if isinstance(item, ast.Name) and isinstance(item.ctx, ast.Load)}
+    return bool(derived & printed)
+
+assert has_printed_new_variable_from_existing("score = 10\nscore1 = score + 5\nprint(score1)")
+assert not has_printed_new_variable_from_existing("score = 10\nscore = score + 5\nprint(score)")
+assert not has_printed_new_variable_from_existing("score = 10\nscore1 = score + 5\nprint(score)")
+
+# A solution and its displayed output must exactly match the written question.
+hello_function = json.loads((QUESTION_DIR / "15-functions.json").read_text(encoding="utf-8"))[0]
+assert run_solution(hello_function["solution"]) == hello_function["expectedOutput"] == "Hello"
 
 # The browser checker must enforce exact results for flagged questions.
 checker = (ROOT / "python-practice.js").read_text(encoding="utf-8")
 assert "rule.matchExpected" in checker
 assert "normalizeOutput(question.expectedOutput)" in checker
+assert 'has_new_variable_from_existing' in checker
+assert 'has_new_variable_from_existing' in (ROOT / "python-worker.js").read_text(encoding="utf-8")
 
-print(f"Passed: {count} reference solutions, both quote styles, and variable-update order.")
+print(f"Passed: {count} reference solutions, both quote styles, separate-variable logic, and solution/question alignment.")

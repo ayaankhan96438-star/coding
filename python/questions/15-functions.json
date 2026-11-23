@@ -6,14 +6,14 @@
     "description": "Use def to make a function. Put print(\"Hello\") inside it, then call the function.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "Hello!",
-    "solution": "def greet():\n    print(\"Hello!\")\ngreet()",
+    "expectedOutput": "Hello",
+    "solution": "def greet():\n    print(\"Hello\")\ngreet()",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Define a function and call it.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with create a greeting function. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "explanation": "def creates the greet function. Calling greet() runs the print statement inside it and displays Hello.",
     "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
     "validation": {
       "required": [

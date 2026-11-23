@@ -1,34 +1,42 @@
-# CodeBolt Python Question Audit
+# CodeBolt Python Answer Audit — Recheck 2
 
-All 95 reference solutions were executed in isolated temporary folders, with the configured input supplied to each question. Every reference solution now runs and produces its displayed expected output. The Python AST feature requirements were also checked against all 95 solutions.
+All 95 reference solutions in the 19 topic JSON files were rechecked against their question text and expected output. Each reference solution was executed in an isolated temporary folder. This pass also reviewed whether the example teaches the concept requested, rather than checking output alone.
 
-## Question and answer corrections
-- Topic 01 Q5: multiplication now uses 4 * 3 and shows 12.
-- Topic 02 Q3-Q4: sample output now includes both a name and age, and a complete sentence.
-- Topic 03 Q2: the prompt explicitly sets score to 10, updates the same variable by adding 5, then prints 15. The checker rejects output printed before the update.
-- Topic 04 Q5 and Topic 05 Q3: conversions and remainder calculations now use the exact values stated in the questions.
-- Topic 06 Q5: the sample doubles the decimal input using * 2, not * 1.5.
-- Topic 07 Q4-Q5: slicing returns exactly three letters; the reverse example uses a word that looks different backwards.
-- Topic 08 Q1-Q3: list examples now use fruits, the first list item is accessed with index 0, and append adds a fruit.
-- Topic 09 Q1-Q2: the tuple example contains colours and the second item uses index 1.
-- Topic 10 Q1-Q2 and Q4-Q5: set tasks describe sorted output accurately, because sorted() returns a list for stable display.
-- Topic 11 Q1 and Q3: tasks asking to print the whole dictionary now print the whole updated dictionary.
-- Topic 12 Q1: positive, negative and zero are handled by separate if/elif/else branches.
-- Topic 13 Q3: the loop now prints the letters in Python, not CAT.
-- Topic 14 Q2-Q5: countdown, sum, doubling limit and digit-count examples now match their prompts.
-- Topic 16 Q1, Q3 and Q5: lambda examples now add 5, sort the named strings by length, and double values rather than squaring them.
-- Topic 17 Q4: date.today() prints the actual current date rather than a hard-coded old date.
-- Topic 18 Q1: the invalid text is hello, matching the prompt.
-- Topic 19 Q1-Q2: the write/read/append tasks use the same filename throughout.
+## Important correction: Topic 03, Question 02
 
-## Checker improvements
-- Both single-quoted ('text') and double-quoted ("text") Python strings are accepted. Python already treats these as equivalent syntax; the editor now tells learners this explicitly.
-- Selected tasks with exact, fixed results now compare the actual output with the expected answer. Open-ended tasks remain flexible.
-- The variable update task specifically checks for 15, so printing the old value 10 before updating it does not pass.
+The earlier version taught updating the same variable:
+
+```python
+score = 10
+score = score + 5
+print(score)
+```
+
+That is valid Python when the task is to update `score`, but it was not the separate-variable example requested. The exercise now explicitly asks for a second variable and uses:
+
+```python
+score = 10
+score1 = score + 5
+print(score1)
+```
+
+The checker now verifies that a newly named variable is calculated from an earlier variable and that the new variable is what gets printed. Merely reassigning `score`, or printing the old `score`, does not satisfy this exercise.
+
+## Other content correction found
+
+- Topic 15, Question 01 asked for `print("Hello")`, but the reference answer printed `Hello!`. The solution and expected output now match the exact wording: `Hello`.
+
+## Review of all topics
+
+- All five questions in each of the 19 topics were checked: question wording, reference code, expected output, and required feature rules.
+- The earlier fixes for arithmetic, strings, list/tuple indexing, sets, dictionaries, conditionals, loops, lambdas, modules, exceptions, and file handling were retained.
+- Same-variable updates remain in exercises where updating a counter or accumulator is the actual concept, such as loops and running totals. They were not changed indiscriminately.
+- Single-quoted and double-quoted strings remain supported by Python and tested as equivalent.
 
 ## Verification
-- 19 question JSON files parsed successfully.
-- 95/95 reference solutions executed and matched their expected outputs (the current-date task was checked for YYYY-MM-DD format).
-- All 95 AST feature rules were checked; no sample solution is missing a required feature.
-- Both quote styles and variable-update order passed regression tests.
-- Existing progress-state tests passed.
+
+- All 19 question JSON files parse successfully; 95 questions total.
+- All 95 reference solutions execute and match their configured expected output (the date task is checked against the `YYYY-MM-DD` format).
+- The score exercise is tested with the requested `score1` solution. Regression tests confirm that reassigning `score`, or printing `score` instead of the new variable, does not satisfy the new-variable requirement.
+- The Hello function solution matches its wording and expected output.
+- JavaScript syntax checks and the question-audit regression test pass.

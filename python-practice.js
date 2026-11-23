@@ -120,7 +120,7 @@
     if (state.worker) return;
 
     try {
-      const worker = new Worker('python-worker.js?v=codebolt-quote-and-answer-audit-v3');
+      const worker = new Worker('python-worker.js?v=codebolt-second-variable-audit-v4');
       state.worker = worker;
       state.runtimeReady = false;
       $('runtime-label').textContent = 'Preparing Python 3 in background…';
@@ -154,6 +154,7 @@
     type_call: 'Use type(value) to inspect the data type.',
     isinstance_call: 'Use isinstance(value, type) to check the data type.',
     has_assignment: 'Create and store a value in a variable.',
+    has_new_variable_from_existing: 'Create a different new variable from the earlier variable, then print the new variable. For example: score1 = score + 5; print(score1).',
     has_add: 'Use the + operator for addition.',
     has_sub: 'Use the - operator for subtraction.',
     has_mult: 'Use the * operator for multiplication.',
