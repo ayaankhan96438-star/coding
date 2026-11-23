@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py19q01",
+    "title": "Write and read text",
+    "level": "Easy",
+    "description": "Use a with-open block to read or write the requested text file.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hello file",
+    "solution": "with open(\"note.txt\", \"w\") as file:\n    file.write(\"Hello file\")\nwith open(\"note.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices File Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py19q02",
+    "title": "Append to a file",
+    "level": "Easy",
+    "description": "Use a with-open block to read or write the requested text file.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "AB",
+    "solution": "with open(\"log.txt\", \"w\") as file:\n    file.write(\"A\")\nwith open(\"log.txt\", \"a\") as file:\n    file.write(\"B\")\nwith open(\"log.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices File Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py19q03",
+    "title": "Read file lines",
+    "level": "Medium",
+    "description": "Use a with-open block to read or write the requested text file.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "pen\nbook",
+    "solution": "with open(\"items.txt\", \"w\") as file:\n    file.write(\"pen\\nbook\")\nwith open(\"items.txt\", \"r\") as file:\n    for line in file:\n        print(line.strip())",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices File Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py19q04",
+    "title": "Count characters in file",
+    "level": "Medium",
+    "description": "Use a with-open block to read or write the requested text file.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "solution": "with open(\"data.txt\", \"w\") as file:\n    file.write(\"CodeBolt\")\nwith open(\"data.txt\", \"r\") as file:\n    text = file.read()\nprint(len(text))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices File Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py19q05",
+    "title": "Write multiple lines",
+    "level": "Hard",
+    "description": "Use a with-open block to read or write the requested text file.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "one\ntwo\nthree",
+    "solution": "lines = [\"one\", \"two\", \"three\"]\nwith open(\"list.txt\", \"w\") as file:\n    file.write(\"\\n\".join(lines))\nwith open(\"list.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices File Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

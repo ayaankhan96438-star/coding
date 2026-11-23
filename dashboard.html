@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-task-reset-lessons-02">
   <meta name="theme-color" content="#fbfcfe">
-  <meta name="description" content="Codeora — learn, code and build.">
-  <title>Your Dashboard · Codeora</title>
+  <meta name="description" content="CodeBolt — learn, code and build.">
+  <title>Your Dashboard · CodeBolt</title>
   <link rel="stylesheet" href="style.css?v=20261122-task-reset-lessons-02">
 <link rel="stylesheet" href="site-header.css?v=20261123-unified-header-02">
 </head>
@@ -22,7 +22,7 @@
     <div class="level-progress-card"><div class="level-progress-top"><span><b id="level-progress-title">Level 1 · SQL Rookie</b><small id="level-progress-caption">0 XP to next level</small></span><strong id="level-progress-value">0%</strong></div><div class="level-progress-track"><span id="level-progress-fill"></span></div></div>
   </section>
   <section class="page-section dashboard-actions"><div class="section-heading"><p class="eyebrow">KEEP GOING</p><h2>Your next step</h2></div><div class="portal-grid three-cards"><a class="portal-card" href="lessons.html"><b>Browse lessons</b><small>Choose a topic to continue.</small><span class="portal-arrow">View lessons →</span></a><a class="portal-card" href="practice.html"><b>Open SQL practice</b><small>Continue with the interactive editor.</small><span class="portal-arrow">Practice SQL →</span></a><a class="portal-card" href="rewards.html"><b>View your rewards</b><small>Check your XP and achievements.</small><span class="portal-arrow">See rewards →</span></a></div></section>
-  <footer>Codeora · Dashboard</footer>
+  <footer>CodeBolt · Dashboard</footer>
 </main>
   <script>
     (() => {
@@ -31,15 +31,15 @@
         if (target) { target.hidden = false; target.textContent = message; }
       };
       if (window.location.protocol === 'file:') {
-        showBootError('Open Codeora through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+        showBootError('Open CodeBolt through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
       } else {
         window.addEventListener('error', (event) => {
           if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
-            showBootError('Codeora could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+            showBootError('CodeBolt could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
           }
         }, true);
         window.setTimeout(() => {
-          if (!window.CodeoraStarted && !window.CodeoraFailed) showBootError('Codeora did not start. Check that app.js and lessons.json are beside this page.');
+          if (!window.CodeBoltStarted && !window.CodeBoltFailed) showBootError('CodeBolt did not start. Check that app.js and lessons.json are beside this page.');
         }, 8000);
       }
     })();

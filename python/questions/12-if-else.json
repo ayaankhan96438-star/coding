@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py12q01",
+    "title": "Positive or negative",
+    "level": "Easy",
+    "description": "Use if/else conditions to choose the correct output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Negative",
+    "solution": "number = -4\nif number >= 0:\n    print(\"Non-negative\")\nelse:\n    print(\"Negative\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices If Else.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py12q02",
+    "title": "Check even number",
+    "level": "Easy",
+    "description": "Use if/else conditions to choose the correct output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "solution": "number = 18\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices If Else.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py12q03",
+    "title": "Find larger number",
+    "level": "Medium",
+    "description": "Use if/else conditions to choose the correct output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "19",
+    "solution": "a, b = 12, 19\nif a > b:\n    print(a)\nelse:\n    print(b)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices If Else.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py12q04",
+    "title": "Grade check",
+    "level": "Medium",
+    "description": "Use if/else conditions to choose the correct output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "B",
+    "solution": "score = 76\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices If Else.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py12q05",
+    "title": "Check password",
+    "level": "Hard",
+    "description": "Use if/else conditions to choose the correct output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Access granted",
+    "solution": "password = \"codebolt\"\nif password == \"codebolt\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices If Else.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

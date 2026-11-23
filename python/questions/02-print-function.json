@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py02q01",
+    "title": "Print a greeting",
+    "level": "Easy",
+    "description": "Write a program that produces the requested output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Good morning",
+    "solution": "print(\"Good morning\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Print Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py02q02",
+    "title": "Print a number",
+    "level": "Easy",
+    "description": "Write a program that produces the requested output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "125",
+    "solution": "print(125)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Print Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py02q03",
+    "title": "Print two values",
+    "level": "Medium",
+    "description": "Write a program that produces the requested output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Age: 18",
+    "solution": "print(\"Age:\", 18)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Print Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py02q04",
+    "title": "Print on one line",
+    "level": "Medium",
+    "description": "Write a program that produces the requested output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Code Bolt",
+    "solution": "print(\"Code\", end=\" \")\nprint(\"Bolt\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Print Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py02q05",
+    "title": "Formatted print",
+    "level": "Hard",
+    "description": "Write a program that produces the requested output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Welcome, Asha!",
+    "solution": "name = \"Asha\"\nprint(f\"Welcome, {name}!\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Print Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

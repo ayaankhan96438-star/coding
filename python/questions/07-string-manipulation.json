@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py07q01",
+    "title": "Join strings",
+    "level": "Easy",
+    "description": "Manipulate the string and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "CodeBolt",
+    "solution": "first = \"Code\"\nsecond = \"Bolt\"\nprint(first + second)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices String Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py07q02",
+    "title": "String length",
+    "level": "Easy",
+    "description": "Manipulate the string and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "solution": "word = \"developer\"\nprint(len(word))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices String Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py07q03",
+    "title": "Uppercase text",
+    "level": "Medium",
+    "description": "Manipulate the string and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "PYTHON",
+    "solution": "text = \"python\"\nprint(text.upper())",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices String Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py07q04",
+    "title": "Slice a string",
+    "level": "Medium",
+    "description": "Manipulate the string and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "PROG",
+    "solution": "word = \"PROGRAM\"\nprint(word[0:4])",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices String Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py07q05",
+    "title": "Reverse a string",
+    "level": "Hard",
+    "description": "Manipulate the string and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "level",
+    "solution": "word = \"level\"\nprint(word[::-1])",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices String Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

@@ -1,380 +1,154 @@
 [
   {
-    "id": "print",
+    "id": "topic-01",
     "order": 1,
-    "slug": "print",
-    "name": "Print / Hello World",
-    "description": "Display text and values with print().",
+    "name": "What is Python?",
+    "description": "Understand Python statements, comments and basic program structure.",
     "difficulty": "beginner",
-    "questionFile": "questions/01-print.json"
+    "questionFile": "questions/01-what-is-python.json"
   },
   {
-    "id": "variables",
+    "id": "topic-02",
     "order": 2,
-    "slug": "variables",
-    "name": "Variables",
-    "description": "Store, update, and use named values.",
+    "name": "Print Function",
+    "description": "Display text and values using print().",
     "difficulty": "beginner",
-    "questionFile": "questions/02-variables.json"
+    "questionFile": "questions/02-print-function.json"
   },
   {
-    "id": "data-types",
+    "id": "topic-03",
     "order": 3,
-    "slug": "data-types",
-    "name": "Data types",
-    "description": "Work with strings, integers, floats, and booleans.",
+    "name": "Variable",
+    "description": "Create variables and update stored values.",
     "difficulty": "beginner",
-    "questionFile": "questions/03-data-types.json"
+    "questionFile": "questions/03-variables.json"
   },
   {
-    "id": "input",
+    "id": "topic-04",
     "order": 4,
-    "slug": "input",
-    "name": "Input (input())",
-    "description": "Read user input and display a response.",
+    "name": "Data Types",
+    "description": "Work with strings, integers, floats and booleans.",
     "difficulty": "beginner",
-    "questionFile": "questions/04-input.json"
+    "questionFile": "questions/04-data-types.json"
   },
   {
-    "id": "arithmetic",
+    "id": "topic-05",
     "order": 5,
-    "slug": "arithmetic",
-    "name": "Arithmetic operators",
-    "description": "Calculate with +, -, *, /, //, %, and **.",
+    "name": "Operators",
+    "description": "Use arithmetic, comparison and logical operators.",
     "difficulty": "beginner",
-    "questionFile": "questions/05-arithmetic.json"
+    "questionFile": "questions/05-operators.json"
   },
   {
-    "id": "type-casting",
+    "id": "topic-06",
     "order": 6,
-    "slug": "type-casting",
-    "name": "Type casting",
-    "description": "Convert values between common Python types.",
+    "name": "Input Function",
+    "description": "Read user input and convert it when needed.",
     "difficulty": "beginner",
-    "questionFile": "questions/06-type-casting.json"
+    "questionFile": "questions/06-input-function.json"
   },
   {
-    "id": "comments-escapes",
+    "id": "topic-07",
     "order": 7,
-    "slug": "comments-escapes",
-    "name": "Comments & escape characters",
-    "description": "Use comments and special characters in strings.",
+    "name": "String Manipulation",
+    "description": "Join, slice and transform strings.",
     "difficulty": "beginner",
-    "questionFile": "questions/07-comments-escapes.json"
+    "questionFile": "questions/07-string-manipulation.json"
   },
   {
-    "id": "string-basics",
+    "id": "topic-08",
     "order": 8,
-    "slug": "string-basics",
-    "name": "String basics",
-    "description": "Join, repeat, index, and inspect strings.",
+    "name": "List Manipulation",
+    "description": "Create, access, update and process lists.",
     "difficulty": "beginner",
-    "questionFile": "questions/08-string-basics.json"
+    "questionFile": "questions/08-list-manipulation.json"
   },
   {
-    "id": "if",
+    "id": "topic-09",
     "order": 9,
-    "slug": "if",
-    "name": "if",
-    "description": "Run code only when a condition is true.",
+    "name": "Tuple",
+    "description": "Store ordered immutable collections.",
     "difficulty": "beginner",
-    "questionFile": "questions/09-if.json"
+    "questionFile": "questions/09-tuple.json"
   },
   {
-    "id": "if-else",
+    "id": "topic-10",
     "order": 10,
-    "slug": "if-else",
-    "name": "if-else",
-    "description": "Choose between two paths with conditions.",
+    "name": "Set",
+    "description": "Work with unique unordered values.",
     "difficulty": "beginner",
-    "questionFile": "questions/10-if-else.json"
+    "questionFile": "questions/10-set.json"
   },
   {
-    "id": "elif-nested-if",
+    "id": "topic-11",
     "order": 11,
-    "slug": "elif-nested-if",
-    "name": "elif / nested if",
-    "description": "Handle multiple and nested conditions.",
+    "name": "Dictionary",
+    "description": "Store and retrieve values using key-value pairs.",
     "difficulty": "beginner",
-    "questionFile": "questions/11-elif-nested-if.json"
+    "questionFile": "questions/11-dictionary.json"
   },
   {
-    "id": "comparison-logical",
+    "id": "topic-12",
     "order": 12,
-    "slug": "comparison-logical",
-    "name": "Comparison & logical operators",
-    "description": "Combine comparisons with and, or, and not.",
-    "difficulty": "beginner",
-    "questionFile": "questions/12-comparison-logical.json"
+    "name": "If Else",
+    "description": "Make decisions using if, elif and else.",
+    "difficulty": "intermediate",
+    "questionFile": "questions/12-if-else.json"
   },
   {
-    "id": "for-loop",
+    "id": "topic-13",
     "order": 13,
-    "slug": "for-loop",
-    "name": "for loop",
-    "description": "Repeat actions over sequences and ranges.",
-    "difficulty": "beginner",
+    "name": "For Loop",
+    "description": "Repeat actions with for loops and range().",
+    "difficulty": "intermediate",
     "questionFile": "questions/13-for-loop.json"
   },
   {
-    "id": "while-loop",
+    "id": "topic-14",
     "order": 14,
-    "slug": "while-loop",
-    "name": "while loop",
-    "description": "Repeat while a condition remains true.",
-    "difficulty": "beginner",
+    "name": "While Loop",
+    "description": "Repeat actions while a condition is true.",
+    "difficulty": "intermediate",
     "questionFile": "questions/14-while-loop.json"
   },
   {
-    "id": "loop-control",
+    "id": "topic-15",
     "order": 15,
-    "slug": "loop-control",
-    "name": "break / continue / pass",
-    "description": "Control loop flow and empty code blocks.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/15-loop-control.json"
-  },
-  {
-    "id": "patterns",
-    "order": 16,
-    "slug": "patterns",
-    "name": "Pattern printing",
-    "description": "Build number, star, and character patterns.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/16-patterns.json"
-  },
-  {
-    "id": "strings-methods",
-    "order": 17,
-    "slug": "strings-methods",
-    "name": "Strings: methods & slicing",
-    "description": "Transform, search, split, and slice strings.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/17-strings-methods.json"
-  },
-  {
-    "id": "lists",
-    "order": 18,
-    "slug": "lists",
-    "name": "Lists",
-    "description": "Create, update, sort, and traverse lists.",
-    "difficulty": "beginner",
-    "questionFile": "questions/18-lists.json"
-  },
-  {
-    "id": "tuples",
-    "order": 19,
-    "slug": "tuples",
-    "name": "Tuples",
-    "description": "Use immutable ordered collections.",
-    "difficulty": "beginner",
-    "questionFile": "questions/19-tuples.json"
-  },
-  {
-    "id": "sets",
-    "order": 20,
-    "slug": "sets",
-    "name": "Sets",
-    "description": "Store unique values and perform set operations.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/20-sets.json"
-  },
-  {
-    "id": "dictionaries",
-    "order": 21,
-    "slug": "dictionaries",
-    "name": "Dictionaries",
-    "description": "Store and retrieve key-value pairs.",
-    "difficulty": "beginner",
-    "questionFile": "questions/21-dictionaries.json"
-  },
-  {
-    "id": "list-comprehension",
-    "order": 22,
-    "slug": "list-comprehension",
-    "name": "List comprehension",
-    "description": "Create lists with concise expressions.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/22-list-comprehension.json"
-  },
-  {
-    "id": "nested-data",
-    "order": 23,
-    "slug": "nested-data",
-    "name": "Nested data structures",
-    "description": "Access and update nested lists and dictionaries.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/23-nested-data.json"
-  },
-  {
-    "id": "functions",
-    "order": 24,
-    "slug": "functions",
     "name": "Functions",
-    "description": "Define reusable functions and return values.",
-    "difficulty": "beginner",
-    "questionFile": "questions/24-functions.json"
-  },
-  {
-    "id": "arguments",
-    "order": 25,
-    "slug": "arguments",
-    "name": "Function arguments",
-    "description": "Use defaults, *args, and **kwargs.",
+    "description": "Define and call reusable functions.",
     "difficulty": "intermediate",
-    "questionFile": "questions/25-arguments.json"
+    "questionFile": "questions/15-functions.json"
   },
   {
-    "id": "lambda-map-filter",
-    "order": 26,
-    "slug": "lambda-map-filter",
-    "name": "Lambda, map, filter",
-    "description": "Transform and filter data with functional tools.",
+    "id": "topic-16",
+    "order": 16,
+    "name": "Lambda Functions",
+    "description": "Create short functions with lambda expressions.",
     "difficulty": "intermediate",
-    "questionFile": "questions/26-lambda-map-filter.json"
+    "questionFile": "questions/16-lambda-functions.json"
   },
   {
-    "id": "recursion",
-    "order": 27,
-    "slug": "recursion",
-    "name": "Recursion",
-    "description": "Solve problems by calling a function again.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/27-recursion.json"
+    "id": "topic-17",
+    "order": 17,
+    "name": "Modules",
+    "description": "Import and use Python standard-library modules.",
+    "difficulty": "advanced",
+    "questionFile": "questions/17-modules.json"
   },
   {
-    "id": "exceptions",
-    "order": 28,
-    "slug": "exceptions",
-    "name": "Exception handling",
+    "id": "topic-18",
+    "order": 18,
+    "name": "Error Handling",
     "description": "Handle runtime errors with try and except.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/28-exceptions.json"
+    "difficulty": "advanced",
+    "questionFile": "questions/18-error-handling.json"
   },
   {
-    "id": "file-handling",
-    "order": 29,
-    "slug": "file-handling",
-    "name": "File handling",
+    "id": "topic-19",
+    "order": 19,
+    "name": "File Handling",
     "description": "Read and write text files safely.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/29-file-handling.json"
-  },
-  {
-    "id": "oop-basics",
-    "order": 30,
-    "slug": "oop-basics",
-    "name": "OOP basics",
-    "description": "Create classes, objects, and constructors.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/30-oop-basics.json"
-  },
-  {
-    "id": "f-strings",
-    "order": 31,
-    "slug": "f-strings",
-    "name": "f-strings & formatting",
-    "description": "Format values clearly inside strings.",
-    "difficulty": "beginner",
-    "questionFile": "questions/31-f-strings.json"
-  },
-  {
-    "id": "number-programs",
-    "order": 32,
-    "slug": "number-programs",
-    "name": "Number programs",
-    "description": "Solve prime, factorial, Fibonacci, and digit problems.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/32-number-programs.json"
-  },
-  {
-    "id": "builtins",
-    "order": 33,
-    "slug": "builtins",
-    "name": "Built-in functions",
-    "description": "Use len, sum, min, max, sorted, enumerate, zip, range.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/33-builtins.json"
-  },
-  {
-    "id": "modules",
-    "order": 34,
-    "slug": "modules",
-    "name": "Modules & imports",
-    "description": "Use standard-library modules and imports.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/34-modules.json"
-  },
-  {
-    "id": "inheritance",
-    "order": 35,
-    "slug": "inheritance",
-    "name": "Inheritance & polymorphism",
-    "description": "Reuse parent behavior and override methods.",
     "difficulty": "advanced",
-    "questionFile": "questions/35-inheritance.json"
-  },
-  {
-    "id": "search-sort",
-    "order": 36,
-    "slug": "search-sort",
-    "name": "Searching & sorting",
-    "description": "Search collections and understand sorting basics.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/36-search-sort.json"
-  },
-  {
-    "id": "iterators-generators",
-    "order": 37,
-    "slug": "iterators-generators",
-    "name": "Iterators & generators",
-    "description": "Create lazy sequences with iterators and yield.",
-    "difficulty": "advanced",
-    "questionFile": "questions/37-iterators-generators.json"
-  },
-  {
-    "id": "decorators",
-    "order": 38,
-    "slug": "decorators",
-    "name": "Decorators",
-    "description": "Wrap functions to add reusable behavior.",
-    "difficulty": "advanced",
-    "questionFile": "questions/38-decorators.json"
-  },
-  {
-    "id": "json-data",
-    "order": 39,
-    "slug": "json-data",
-    "name": "JSON & working with data",
-    "description": "Encode, decode, and inspect JSON data.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/39-json-data.json"
-  },
-  {
-    "id": "regex",
-    "order": 40,
-    "slug": "regex",
-    "name": "Regex basics",
-    "description": "Find and validate text patterns.",
-    "difficulty": "advanced",
-    "questionFile": "questions/40-regex.json"
-  },
-  {
-    "id": "debugging",
-    "order": 41,
-    "slug": "debugging",
-    "name": "Output prediction / Find the bug",
-    "description": "Trace code and repair common mistakes.",
-    "difficulty": "intermediate",
-    "questionFile": "questions/41-debugging.json"
-  },
-  {
-    "id": "mini-projects",
-    "order": 42,
-    "slug": "mini-projects",
-    "name": "Mini projects",
-    "description": "Combine Python fundamentals in small programs.",
-    "difficulty": "advanced",
-    "questionFile": "questions/42-mini-projects.json"
+    "questionFile": "questions/19-file-handling.json"
   }
 ]

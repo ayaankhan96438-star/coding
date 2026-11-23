@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py17q01",
+    "title": "Use math module",
+    "level": "Easy",
+    "description": "Import the required standard-library module and use its function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9.0",
+    "solution": "import math\nprint(math.sqrt(81))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Modules.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py17q02",
+    "title": "Round with math ceil",
+    "level": "Easy",
+    "description": "Import the required standard-library module and use its function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "solution": "import math\nprint(math.ceil(4.2))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Modules.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py17q03",
+    "title": "Use random seed",
+    "level": "Medium",
+    "description": "Import the required standard-library module and use its function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "solution": "import random\nrandom.seed(4)\nprint(random.randint(1, 10))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Modules.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py17q04",
+    "title": "Use datetime",
+    "level": "Medium",
+    "description": "Import the required standard-library module and use its function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "2026",
+    "solution": "from datetime import date\nprint(date(2026, 1, 2).year)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Modules.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py17q05",
+    "title": "Use constants",
+    "level": "Hard",
+    "description": "Import the required standard-library module and use its function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "3.14",
+    "solution": "import math\nprint(round(math.pi, 2))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Modules.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

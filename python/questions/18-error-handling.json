@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py18q01",
+    "title": "Handle invalid integer",
+    "level": "Easy",
+    "description": "Use try/except to handle the specified error safely.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Invalid number",
+    "solution": "try:\n    value = int(\"abc\")\nexcept ValueError:\n    print(\"Invalid number\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Error Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py18q02",
+    "title": "Handle division by zero",
+    "level": "Easy",
+    "description": "Use try/except to handle the specified error safely.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Cannot divide by zero",
+    "solution": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Error Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py18q03",
+    "title": "Use else block",
+    "level": "Medium",
+    "description": "Use try/except to handle the specified error safely.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "25",
+    "solution": "try:\n    value = int(\"25\")\nexcept ValueError:\n    print(\"Error\")\nelse:\n    print(value)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Error Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py18q04",
+    "title": "Handle missing key",
+    "level": "Medium",
+    "description": "Use try/except to handle the specified error safely.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Key not found",
+    "solution": "data = {\"name\": \"Ari\"}\ntry:\n    print(data[\"age\"])\nexcept KeyError:\n    print(\"Key not found\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Error Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py18q05",
+    "title": "Finally block",
+    "level": "Hard",
+    "description": "Use try/except to handle the specified error safely.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Working\nFinished",
+    "solution": "try:\n    print(\"Working\")\nfinally:\n    print(\"Finished\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Error Handling.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

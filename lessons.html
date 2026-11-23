@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-task-reset-lessons-02">
   <meta name="theme-color" content="#fbfcfe">
-  <meta name="description" content="Codeora — learn, code and build.">
-  <title>SQL Lessons · Codeora</title>
+  <meta name="description" content="CodeBolt — learn, code and build.">
+  <title>SQL Lessons · CodeBolt</title>
   <link rel="stylesheet" href="style.css?v=20261122-task-reset-lessons-02">
 <link rel="stylesheet" href="site-header.css?v=20261123-unified-header-02">
 </head>
@@ -17,7 +17,7 @@
 <main class="page-shell">
   <section class="page-hero compact-hero"><p class="eyebrow">THE LEARNING PATH</p><h1>Learn in <em>small steps.</em></h1><p class="lead">Ten guided lessons take you from your first SELECT query to working with related tables. Choose a lesson to open its separate practice workspace.</p><div class="pills"><span>10 lessons</span><span>5 free questions per lesson</span><span>Progress saved locally</span></div></section>
   <section class="page-section"><div class="section-heading"><p class="eyebrow">COURSE CONTENT</p><h2>All SQL lessons</h2><p>Open any lesson to see its questions, explanation link and SQL editor.</p></div><div id="lesson-catalog" class="catalog-grid"><p class="dashboard-loading">Loading your lessons…</p></div></section>
-  <footer>Codeora · Lessons</footer>
+  <footer>CodeBolt · Lessons</footer>
 </main>
   <script>
     (() => {
@@ -26,15 +26,15 @@
         if (target) { target.hidden = false; target.textContent = message; }
       };
       if (window.location.protocol === 'file:') {
-        showBootError('Open Codeora through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+        showBootError('Open CodeBolt through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
       } else {
         window.addEventListener('error', (event) => {
           if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
-            showBootError('Codeora could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+            showBootError('CodeBolt could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
           }
         }, true);
         window.setTimeout(() => {
-          if (!window.CodeoraStarted && !window.CodeoraFailed) showBootError('Codeora did not start. Check that app.js and lessons.json are beside this page.');
+          if (!window.CodeBoltStarted && !window.CodeBoltFailed) showBootError('CodeBolt did not start. Check that app.js and lessons.json are beside this page.');
         }, 8000);
       }
     })();

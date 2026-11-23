@@ -1,4 +1,4 @@
-// Starts Firebase account hydration early on every Codeora page.
+// Starts Firebase account hydration early on every CodeBolt page.
 window.QueryPathAccountReady = import('./account-core.js')
   .then(async (account) => {
     window.QueryPathAccount = account;
@@ -14,14 +14,14 @@ window.QueryPathAccountReady = import('./account-core.js')
       link.href = state.user ? 'profile.html' : 'login.html';
       link.textContent = state.user ? 'My account' : 'Sign up';
       link.classList.toggle('is-signed-in', Boolean(state.user));
-      link.title = state.user ? `Signed in as ${state.user.displayName || state.user.email || state.user.phoneNumber || 'Codeora learner'}` : 'Sign up or sign in to save progress across devices';
+      link.title = state.user ? `Signed in as ${state.user.displayName || state.user.email || state.user.phoneNumber || 'CodeBolt learner'}` : 'Sign up or sign in to save progress across devices';
     });
     const accountDescription = document.getElementById('account-profile-description');
     const accountStatus = document.getElementById('account-profile-status');
-    if (accountDescription && state.user) accountDescription.textContent = `Signed in as ${state.user.displayName || state.user.email || state.user.phoneNumber || 'Codeora learner'}. Your learning progress syncs to this account.`;
+    if (accountDescription && state.user) accountDescription.textContent = `Signed in as ${state.user.displayName || state.user.email || state.user.phoneNumber || 'CodeBolt learner'}. Your learning progress syncs to this account.`;
     if (accountStatus && state.user) accountStatus.textContent = state.error
       ? `Signed in, but cloud progress is not reachable yet: ${state.error.message || 'Check Firestore setup and rules.'}`
-      : `Connected account: ${state.user.email || state.user.phoneNumber || state.user.displayName || 'Codeora learner'}. Your course progress is synced to your account.`;
+      : `Connected account: ${state.user.email || state.user.phoneNumber || state.user.displayName || 'CodeBolt learner'}. Your course progress is synced to your account.`;
     const authLabel = document.querySelector('[data-auth-user-label]');
     if (authLabel && state.user) authLabel.textContent = state.user.displayName || state.user.email || state.user.phoneNumber || 'Signed in';
     const signOutButton = document.querySelector('[data-account-signout]');
@@ -36,7 +36,7 @@ window.QueryPathAccountReady = import('./account-core.js')
     return state;
   })
   .catch((error) => {
-    console.error('Codeora account setup could not start:', error);
+    console.error('CodeBolt account setup could not start:', error);
     window.QueryPathAccountState = { configured: false, user: null, error };
     return window.QueryPathAccountState;
   });

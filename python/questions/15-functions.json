@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py15q01",
+    "title": "Define a greeting function",
+    "level": "Easy",
+    "description": "Define and call a function to get the expected output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hello!",
+    "solution": "def greet():\n    print(\"Hello!\")\ngreet()",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Functions.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py15q02",
+    "title": "Function with parameter",
+    "level": "Easy",
+    "description": "Define and call a function to get the expected output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hi Sara",
+    "solution": "def greet(name):\n    print(\"Hi\", name)\ngreet(\"Sara\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Functions.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py15q03",
+    "title": "Return a sum",
+    "level": "Medium",
+    "description": "Define and call a function to get the expected output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "solution": "def add(a, b):\n    return a + b\nprint(add(7, 8))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Functions.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py15q04",
+    "title": "Return square",
+    "level": "Medium",
+    "description": "Define and call a function to get the expected output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "36",
+    "solution": "def square(number):\n    return number ** 2\nprint(square(6))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Functions.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py15q05",
+    "title": "Default argument",
+    "level": "Hard",
+    "description": "Define and call a function to get the expected output.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Welcome Friend",
+    "solution": "def welcome(name=\"Friend\"):\n    print(\"Welcome\", name)\nwelcome()",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Functions.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

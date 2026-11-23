@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py06q01",
+    "title": "Read a name",
+    "level": "Easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "Mina",
+    "expectedOutput": "Hello Mina",
+    "solution": "name = input()\nprint(\"Hello\", name)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Input Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py06q02",
+    "title": "Read an integer",
+    "level": "Easy",
+    "description": "Read one integer and print its double.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "14",
+    "expectedOutput": "28",
+    "solution": "number = int(input())\nprint(number * 2)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Input Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py06q03",
+    "title": "Add two inputs",
+    "level": "Medium",
+    "description": "Read two integers and print their sum.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "12\n9",
+    "expectedOutput": "21",
+    "solution": "a = int(input())\nb = int(input())\nprint(a + b)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Input Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py06q04",
+    "title": "Calculate age next year",
+    "level": "Medium",
+    "description": "Read the current age and print next year\u2019s age.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "19",
+    "expectedOutput": "20",
+    "solution": "age = int(input())\nprint(age + 1)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Input Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py06q05",
+    "title": "Convert input to float",
+    "level": "Hard",
+    "description": "Read a decimal number and print it multiplied by 1.5.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "4",
+    "expectedOutput": "6.0",
+    "solution": "value = float(input())\nprint(value * 1.5)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Input Function.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

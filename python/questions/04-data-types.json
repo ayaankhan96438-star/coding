@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py04q01",
+    "title": "Integer type",
+    "level": "Easy",
+    "description": "Create or inspect the requested Python data type.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "int",
+    "solution": "value = 24\nprint(type(value).__name__)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Data Types.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py04q02",
+    "title": "Float type",
+    "level": "Easy",
+    "description": "Create or inspect the requested Python data type.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "float",
+    "solution": "value = 3.5\nprint(type(value).__name__)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Data Types.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py04q03",
+    "title": "String type",
+    "level": "Medium",
+    "description": "Create or inspect the requested Python data type.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "str",
+    "solution": "value = \"Python\"\nprint(type(value).__name__)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Data Types.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py04q04",
+    "title": "Boolean value",
+    "level": "Medium",
+    "description": "Create or inspect the requested Python data type.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "is_ready = True\nprint(is_ready)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Data Types.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py04q05",
+    "title": "Convert text to integer",
+    "level": "Hard",
+    "description": "Create or inspect the requested Python data type.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "50",
+    "solution": "value = int(\"42\")\nprint(value + 8)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Data Types.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

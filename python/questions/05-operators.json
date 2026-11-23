@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py05q01",
+    "title": "Addition and subtraction",
+    "level": "Easy",
+    "description": "Use the requested operator and print its result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "22\n12",
+    "solution": "a, b = 17, 5\nprint(a + b)\nprint(a - b)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Operators.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py05q02",
+    "title": "Division and floor division",
+    "level": "Easy",
+    "description": "Use the requested operator and print its result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "3.4\n3",
+    "solution": "print(17 / 5)\nprint(17 // 5)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Operators.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py05q03",
+    "title": "Remainder",
+    "level": "Medium",
+    "description": "Use the requested operator and print its result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "solution": "print(29 % 6)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Operators.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py05q04",
+    "title": "Power operator",
+    "level": "Medium",
+    "description": "Use the requested operator and print its result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "32",
+    "solution": "print(2 ** 5)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Operators.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py05q05",
+    "title": "Comparison and logic",
+    "level": "Hard",
+    "description": "Use the requested operator and print its result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "age = 20\nprint(age >= 18 and age < 60)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Operators.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

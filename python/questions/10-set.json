@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py10q01",
+    "title": "Create a set",
+    "level": "Easy",
+    "description": "Use set operations; sort the result when order is displayed.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "values = {1, 2, 2, 3}\nprint(sorted(values))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Set.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py10q02",
+    "title": "Add to a set",
+    "level": "Easy",
+    "description": "Use set operations; sort the result when order is displayed.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['a', 'b', 'c']",
+    "solution": "items = {\"a\", \"b\"}\nitems.add(\"c\")\nprint(sorted(items))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Set.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py10q03",
+    "title": "Remove duplicates",
+    "level": "Medium",
+    "description": "Use set operations; sort the result when order is displayed.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "numbers = [1, 1, 2, 3, 3]\nprint(sorted(set(numbers)))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Set.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py10q04",
+    "title": "Set intersection",
+    "level": "Medium",
+    "description": "Use set operations; sort the result when order is displayed.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 3]",
+    "solution": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(sorted(a & b))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Set.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py10q05",
+    "title": "Set union",
+    "level": "Hard",
+    "description": "Use set operations; sort the result when order is displayed.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "a = {1, 2}\nb = {2, 3}\nprint(sorted(a | b))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Set.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

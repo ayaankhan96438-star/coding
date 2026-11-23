@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-task-reset-lessons-02">
   <meta name="theme-color" content="#fbfcfe">
-  <meta name="description" content="Codeora — learn, code and build.">
-  <title>XP and Achievements · Codeora</title>
+  <meta name="description" content="CodeBolt — learn, code and build.">
+  <title>XP and Achievements · CodeBolt</title>
   <link rel="stylesheet" href="style.css?v=20261122-task-reset-lessons-02">
 <link rel="stylesheet" href="site-header.css?v=20261123-unified-header-02">
 </head>
@@ -22,7 +22,7 @@
     <article><small>BEST STREAK</small><strong id="rewards-best-streak">0 days</strong></article>
   </section>
   <section class="page-section"><div class="section-heading"><p class="eyebrow">UNLOCK YOUR MILESTONES</p><h2>Achievements</h2><p id="achievement-count">0 / 8 unlocked</p></div><div id="achievement-grid" class="achievement-grid rewards-achievements"><p class="dashboard-loading">Loading achievements…</p></div></section>
-  <footer>Codeora · Rewards</footer>
+  <footer>CodeBolt · Rewards</footer>
 </main>
   <script>
     (() => {
@@ -31,15 +31,15 @@
         if (target) { target.hidden = false; target.textContent = message; }
       };
       if (window.location.protocol === 'file:') {
-        showBootError('Open Codeora through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+        showBootError('Open CodeBolt through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
       } else {
         window.addEventListener('error', (event) => {
           if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
-            showBootError('Codeora could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+            showBootError('CodeBolt could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
           }
         }, true);
         window.setTimeout(() => {
-          if (!window.CodeoraStarted && !window.CodeoraFailed) showBootError('Codeora did not start. Check that app.js and lessons.json are beside this page.');
+          if (!window.CodeBoltStarted && !window.CodeBoltFailed) showBootError('CodeBolt did not start. Check that app.js and lessons.json are beside this page.');
         }, 8000);
       }
     })();

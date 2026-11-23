@@ -1,4 +1,4 @@
-/* Codeora shared site header. Plain script; injects before account bootstrap runs. */
+/* CodeBolt shared site header. Plain script; injects before account bootstrap runs. */
 (() => {
   'use strict';
 
@@ -36,7 +36,7 @@
     },
     {
       title: 'My Learning',
-      pages: ['bookmarks.html', 'mistakes.html', 'rewards.html', 'profile.html', 'certificate.html', 'premium.html', 'shortcuts.html', 'python-bookmarks.html'],
+      pages: ['bookmarks.html', 'mistakes.html', 'rewards.html', 'profile.html', 'certificate.html', 'premium.html', 'shortcuts.html'],
       links: [
         ['bookmarks.html', 'Bookmarks'],
         ['mistakes.html', 'Mistake Notebook'],
@@ -44,8 +44,7 @@
         ['profile.html', 'Profile'],
         ['certificate.html', 'Certificate'],
         ['premium.html', 'Premium'],
-        ['shortcuts.html', 'Keyboard Shortcuts'],
-        ['python-bookmarks.html', 'Python Bookmarks']
+        ['shortcuts.html', 'Keyboard Shortcuts']
       ]
     }
   ];
@@ -69,9 +68,9 @@
   mount.innerHTML = `
     <header class="site-unified-header course-header">
       <div class="site-header-brand">
-        <a class="site-header-logo" href="index.html" aria-label="Codeora home">
+        <a class="site-header-logo" href="index.html" aria-label="CodeBolt home">
           <img src="codeora-logo.svg" alt="" width="36" height="36">
-          <span class="site-brand-copy"><strong>codeora</strong><small>Learn. Code. Build.</small></span>
+          <span class="site-brand-copy"><strong>codebolt</strong><small>Learn. Code. Build.</small></span>
         </a>
         ${trackLinks}
       </div>

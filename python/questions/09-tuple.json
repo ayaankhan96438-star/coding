@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py09q01",
+    "title": "Create a tuple",
+    "level": "Easy",
+    "description": "Create or use a tuple as requested.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "(4, 7)",
+    "solution": "point = (4, 7)\nprint(point)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Tuple.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py09q02",
+    "title": "Access tuple item",
+    "level": "Easy",
+    "description": "Create or use a tuple as requested.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Wed",
+    "solution": "days = (\"Mon\", \"Tue\", \"Wed\")\nprint(days[2])",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Tuple.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py09q03",
+    "title": "Tuple length",
+    "level": "Medium",
+    "description": "Create or use a tuple as requested.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "solution": "values = (3, 6, 9, 12)\nprint(len(values))",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Tuple.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py09q04",
+    "title": "Unpack a tuple",
+    "level": "Medium",
+    "description": "Create or use a tuple as requested.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Aman\n21",
+    "solution": "person = (\"Aman\", 21)\nname, age = person\nprint(name)\nprint(age)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Tuple.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py09q05",
+    "title": "Tuple membership",
+    "level": "Hard",
+    "description": "Create or use a tuple as requested.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "colors = (\"red\", \"blue\")\nprint(\"blue\" in colors)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Tuple.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

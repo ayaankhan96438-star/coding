@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py01q01",
+    "title": "First Python statement",
+    "level": "Easy",
+    "description": "Print the message Hello, Python!",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hello, Python!",
+    "solution": "print(\"Hello, Python!\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices What is Python?.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py01q02",
+    "title": "Python comment",
+    "level": "Easy",
+    "description": "Add a comment, then print Ready.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Ready",
+    "solution": "# This is a comment\nprint(\"Ready\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices What is Python?.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py01q03",
+    "title": "Two output lines",
+    "level": "Medium",
+    "description": "Print Start and then Finish on separate lines.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Start\nFinish",
+    "solution": "print(\"Start\")\nprint(\"Finish\")",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices What is Python?.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py01q04",
+    "title": "Simple calculation",
+    "level": "Medium",
+    "description": "Evaluate 8 + 5 and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "13",
+    "solution": "print(8 + 5)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices What is Python?.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py01q05",
+    "title": "Python expression",
+    "level": "Hard",
+    "description": "Print the result of 6 multiplied by 7.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "42",
+    "solution": "print(6 * 7)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices What is Python?.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

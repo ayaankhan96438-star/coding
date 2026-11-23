@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py03q01",
+    "title": "Store a name",
+    "level": "Easy",
+    "description": "Use variables to store the values and display the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Riya",
+    "solution": "name = \"Riya\"\nprint(name)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Variable.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py03q02",
+    "title": "Update a score",
+    "level": "Easy",
+    "description": "Use variables to store the values and display the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "solution": "score = 10\nscore = score + 5\nprint(score)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Variable.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py03q03",
+    "title": "Two variables",
+    "level": "Medium",
+    "description": "Use variables to store the values and display the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "20",
+    "solution": "first = 12\nsecond = 8\nprint(first + second)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Variable.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py03q04",
+    "title": "Swap values",
+    "level": "Medium",
+    "description": "Use variables to store the values and display the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9 3",
+    "solution": "a = 3\nb = 9\na, b = b, a\nprint(a, b)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Variable.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py03q05",
+    "title": "Calculate total",
+    "level": "Hard",
+    "description": "Use variables to store the values and display the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "100",
+    "solution": "price = 25\nquantity = 4\ntotal = price * quantity\nprint(total)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices Variable.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]

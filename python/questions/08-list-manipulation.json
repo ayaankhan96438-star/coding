@@ -1,0 +1,87 @@
+[
+  {
+    "id": "py08q01",
+    "title": "Create a list",
+    "level": "Easy",
+    "description": "Use a list operation to produce the expected result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6]",
+    "solution": "numbers = [2, 4, 6]\nprint(numbers)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices List Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py08q02",
+    "title": "Access an item",
+    "level": "Easy",
+    "description": "Use a list operation to produce the expected result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "green",
+    "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[1])",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices List Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py08q03",
+    "title": "Append an item",
+    "level": "Medium",
+    "description": "Use a list operation to produce the expected result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "items = [1, 2]\nitems.append(3)\nprint(items)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices List Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py08q04",
+    "title": "Remove an item",
+    "level": "Medium",
+    "description": "Use a list operation to produce the expected result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['a', 'c']",
+    "solution": "items = [\"a\", \"b\", \"c\"]\nitems.remove(\"b\")\nprint(items)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices List Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  },
+  {
+    "id": "py08q05",
+    "title": "Sort numbers",
+    "level": "Hard",
+    "description": "Use a list operation to produce the expected result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 4, 5]",
+    "solution": "numbers = [5, 1, 4, 2]\nnumbers.sort()\nprint(numbers)",
+    "hints": [
+      "Break the task into small steps.",
+      "Use the Python feature named in this topic.",
+      "Run the code and compare spacing and values with the expected output."
+    ],
+    "explanation": "This exercise practices List Manipulation.",
+    "commonMistakes": "Check spelling, indentation, data types and exact output formatting."
+  }
+]
