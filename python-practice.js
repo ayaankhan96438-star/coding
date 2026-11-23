@@ -226,7 +226,11 @@
     }
 
     const outputMode = rule.output || 'nonempty';
+    if (outputMode === 'none') return { passed: true, message: '' };
     if (!output.trim()) return { passed: false, message: 'Your code ran, but nothing was printed. Use print(...) to show your result.' };
+    if (outputMode === 'character' && [...output.trim()].length !== 1) {
+      return { passed: false, message: 'Print just one character, such as A, 7, or #.' };
+    }
     if (outputMode === 'numeric' && !nonEmptyLines.every((line) => Number.isFinite(Number(line.trim())))) {
       return { passed: false, message: 'Print a number as the result of this task. You may choose your own values.' };
     }

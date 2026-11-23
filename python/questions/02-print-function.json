@@ -26,27 +26,27 @@
   },
   {
     "id": "py02q02",
-    "title": "Print a number",
+    "title": "Comment a line of code",
     "level": "Beginner",
-    "description": "Use print() to show any number you choose, such as 100, 25, or 7.",
+    "description": "Write a comment on a line by starting it with #. For example: # This is my first comment. A comment does not need to print anything.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "125",
-    "solution": "print(125)",
+    "expectedOutput": "",
+    "solution": "# This is my first comment",
     "hints": [
-      "Read the task once and identify the Python feature it asks you to practise.",
-      "Print a number of your choice. It does not have to be 125.",
-      "Write your own code, press Run, and fix any syntax or runtime error shown."
+      "Start the line with #.",
+      "Write any short note after #.",
+      "Comments are ignored by Python, so no output is needed."
     ],
-    "explanation": "This task gives you practice with print any number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "A comment starts with #. It is used to write a note in your code. Python does not run a comment, so it does not print anything.",
+    "commonMistakes": "Do not forget # at the start of the comment. You do not need print() for this question.",
     "validation": {
       "required": [
-        "print_call"
+        "has_comment"
       ],
       "minimums": {},
-      "output": "numeric",
-      "feedback": "Print a number of your choice. It does not have to be 125."
+      "output": "none",
+      "feedback": "Start a line with # and write any comment."
     }
   },
   {
