@@ -1,0 +1,202 @@
+[
+  {
+    "id": "modules-01",
+    "title": "Import math and print the square root of 9. (Challenge 1)",
+    "level": "easy",
+    "description": "Import math and print the square root of 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(9))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-02",
+    "title": "Import math and print the square root of 16. (Challenge 2)",
+    "level": "easy",
+    "description": "Import math and print the square root of 16.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(16))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-03",
+    "title": "Import math and print the square root of 25. (Challenge 3)",
+    "level": "easy",
+    "description": "Import math and print the square root of 25.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(25))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-04",
+    "title": "Import math and print the square root of 36. (Challenge 4)",
+    "level": "easy",
+    "description": "Import math and print the square root of 36.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(36))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-05",
+    "title": "Import math and print the square root of 49. (Challenge 5)",
+    "level": "easy",
+    "description": "Import math and print the square root of 49.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "7",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(49))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-06",
+    "title": "Import math and print the square root of 64. (Challenge 6)",
+    "level": "medium",
+    "description": "Import math and print the square root of 64.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(64))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-07",
+    "title": "Import math and print the square root of 81. (Challenge 7)",
+    "level": "medium",
+    "description": "Import math and print the square root of 81.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(81))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-08",
+    "title": "Import math and print the square root of 100. (Challenge 8)",
+    "level": "medium",
+    "description": "Import math and print the square root of 100.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(100))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-09",
+    "title": "Import math and print the square root of 121. (Challenge 9)",
+    "level": "hard",
+    "description": "Import math and print the square root of 121.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "11",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(121))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "modules-10",
+    "title": "Import math and print the square root of 144. (Challenge 10)",
+    "level": "hard",
+    "description": "Import math and print the square root of 144.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "hints": [
+      "Identify the main Python concept: modules & imports.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import math\nprint(math.isqrt(144))",
+    "explanation": "This exercise practices modules & imports. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

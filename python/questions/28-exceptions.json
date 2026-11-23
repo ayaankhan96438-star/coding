@@ -1,0 +1,202 @@
+[
+  {
+    "id": "exceptions-01",
+    "title": "Use try/except to safely convert \"3\" to an integer and print it. (Challenge 1)",
+    "level": "easy",
+    "description": "Use try/except to safely convert \"3\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"3\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-02",
+    "title": "Use try/except to safely convert \"4\" to an integer and print it. (Challenge 2)",
+    "level": "easy",
+    "description": "Use try/except to safely convert \"4\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"4\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-03",
+    "title": "Use try/except to safely convert \"5\" to an integer and print it. (Challenge 3)",
+    "level": "easy",
+    "description": "Use try/except to safely convert \"5\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"5\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-04",
+    "title": "Use try/except to safely convert \"6\" to an integer and print it. (Challenge 4)",
+    "level": "easy",
+    "description": "Use try/except to safely convert \"6\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"6\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-05",
+    "title": "Use try/except to safely convert \"7\" to an integer and print it. (Challenge 5)",
+    "level": "easy",
+    "description": "Use try/except to safely convert \"7\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "7",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"7\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-06",
+    "title": "Use try/except to safely convert \"8\" to an integer and print it. (Challenge 6)",
+    "level": "medium",
+    "description": "Use try/except to safely convert \"8\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"8\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-07",
+    "title": "Use try/except to safely convert \"9\" to an integer and print it. (Challenge 7)",
+    "level": "medium",
+    "description": "Use try/except to safely convert \"9\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"9\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-08",
+    "title": "Use try/except to safely convert \"10\" to an integer and print it. (Challenge 8)",
+    "level": "medium",
+    "description": "Use try/except to safely convert \"10\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"10\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-09",
+    "title": "Use try/except to safely convert \"11\" to an integer and print it. (Challenge 9)",
+    "level": "hard",
+    "description": "Use try/except to safely convert \"11\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "11",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"11\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "exceptions-10",
+    "title": "Use try/except to safely convert \"12\" to an integer and print it. (Challenge 10)",
+    "level": "hard",
+    "description": "Use try/except to safely convert \"12\" to an integer and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "hints": [
+      "Identify the main Python concept: exception handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "try:\n    value = int(\"12\")\n    print(value)\nexcept ValueError:\n    print(\"Invalid number\")",
+    "explanation": "This exercise practices exception handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

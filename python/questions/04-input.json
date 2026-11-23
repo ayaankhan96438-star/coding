@@ -1,0 +1,202 @@
+[
+  {
+    "id": "input-01",
+    "title": "Read a name and greet the user. (Challenge 1)",
+    "level": "easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner1",
+    "expectedOutput": "Hello, Learner1!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-02",
+    "title": "Read a name and greet the user. (Challenge 2)",
+    "level": "easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner2",
+    "expectedOutput": "Hello, Learner2!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-03",
+    "title": "Read a name and greet the user. (Challenge 3)",
+    "level": "easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner3",
+    "expectedOutput": "Hello, Learner3!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-04",
+    "title": "Read a name and greet the user. (Challenge 4)",
+    "level": "easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner4",
+    "expectedOutput": "Hello, Learner4!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-05",
+    "title": "Read a name and greet the user. (Challenge 5)",
+    "level": "easy",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner5",
+    "expectedOutput": "Hello, Learner5!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-06",
+    "title": "Read a name and greet the user. (Challenge 6)",
+    "level": "medium",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner6",
+    "expectedOutput": "Hello, Learner6!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-07",
+    "title": "Read a name and greet the user. (Challenge 7)",
+    "level": "medium",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner7",
+    "expectedOutput": "Hello, Learner7!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-08",
+    "title": "Read a name and greet the user. (Challenge 8)",
+    "level": "medium",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner8",
+    "expectedOutput": "Hello, Learner8!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-09",
+    "title": "Read a name and greet the user. (Challenge 9)",
+    "level": "hard",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner9",
+    "expectedOutput": "Hello, Learner9!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "input-10",
+    "title": "Read a name and greet the user. (Challenge 10)",
+    "level": "hard",
+    "description": "Read a name and greet the user.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "Learner10",
+    "expectedOutput": "Hello, Learner10!",
+    "hints": [
+      "Identify the main Python concept: input (input()).",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")",
+    "explanation": "This exercise practices input (input()). The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

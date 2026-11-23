@@ -1,0 +1,202 @@
+[
+  {
+    "id": "string-basics-01",
+    "title": "Create the word Python and print its first and last character. (Challenge 1)",
+    "level": "easy",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-02",
+    "title": "Create the word Python and print its first and last character. (Challenge 2)",
+    "level": "easy",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-03",
+    "title": "Create the word Python and print its first and last character. (Challenge 3)",
+    "level": "easy",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-04",
+    "title": "Create the word Python and print its first and last character. (Challenge 4)",
+    "level": "easy",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-05",
+    "title": "Create the word Python and print its first and last character. (Challenge 5)",
+    "level": "easy",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-06",
+    "title": "Create the word Python and print its first and last character. (Challenge 6)",
+    "level": "medium",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-07",
+    "title": "Create the word Python and print its first and last character. (Challenge 7)",
+    "level": "medium",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-08",
+    "title": "Create the word Python and print its first and last character. (Challenge 8)",
+    "level": "medium",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-09",
+    "title": "Create the word Python and print its first and last character. (Challenge 9)",
+    "level": "hard",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "string-basics-10",
+    "title": "Create the word Python and print its first and last character. (Challenge 10)",
+    "level": "hard",
+    "description": "Create the word Python and print its first and last character.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "P\nn",
+    "hints": [
+      "Identify the main Python concept: string basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "word = \"Python\"\nprint(word[0])\nprint(word[-1])",
+    "explanation": "This exercise practices string basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

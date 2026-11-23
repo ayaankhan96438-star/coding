@@ -1,0 +1,202 @@
+[
+  {
+    "id": "comparison-logical-01",
+    "title": "Print whether 3 is between 1 and 20 inclusive. (Challenge 1)",
+    "level": "easy",
+    "description": "Print whether 3 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 3\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-02",
+    "title": "Print whether 4 is between 1 and 20 inclusive. (Challenge 2)",
+    "level": "easy",
+    "description": "Print whether 4 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 4\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-03",
+    "title": "Print whether 5 is between 1 and 20 inclusive. (Challenge 3)",
+    "level": "easy",
+    "description": "Print whether 5 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 5\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-04",
+    "title": "Print whether 6 is between 1 and 20 inclusive. (Challenge 4)",
+    "level": "easy",
+    "description": "Print whether 6 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 6\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-05",
+    "title": "Print whether 7 is between 1 and 20 inclusive. (Challenge 5)",
+    "level": "easy",
+    "description": "Print whether 7 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 7\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-06",
+    "title": "Print whether 8 is between 1 and 20 inclusive. (Challenge 6)",
+    "level": "medium",
+    "description": "Print whether 8 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 8\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-07",
+    "title": "Print whether 9 is between 1 and 20 inclusive. (Challenge 7)",
+    "level": "medium",
+    "description": "Print whether 9 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 9\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-08",
+    "title": "Print whether 10 is between 1 and 20 inclusive. (Challenge 8)",
+    "level": "medium",
+    "description": "Print whether 10 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-09",
+    "title": "Print whether 11 is between 1 and 20 inclusive. (Challenge 9)",
+    "level": "hard",
+    "description": "Print whether 11 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 11\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comparison-logical-10",
+    "title": "Print whether 12 is between 1 and 20 inclusive. (Challenge 10)",
+    "level": "hard",
+    "description": "Print whether 12 is between 1 and 20 inclusive.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "hints": [
+      "Identify the main Python concept: comparison & logical operators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 12\nprint(1 <= number <= 20)",
+    "explanation": "This exercise practices comparison & logical operators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "f-strings-01",
+    "title": "Use an f-string to print Level 1 of Python. (Challenge 1)",
+    "level": "easy",
+    "description": "Use an f-string to print Level 1 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 1 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 1\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-02",
+    "title": "Use an f-string to print Level 2 of Python. (Challenge 2)",
+    "level": "easy",
+    "description": "Use an f-string to print Level 2 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 2 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 2\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-03",
+    "title": "Use an f-string to print Level 3 of Python. (Challenge 3)",
+    "level": "easy",
+    "description": "Use an f-string to print Level 3 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 3 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 3\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-04",
+    "title": "Use an f-string to print Level 4 of Python. (Challenge 4)",
+    "level": "easy",
+    "description": "Use an f-string to print Level 4 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 4 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 4\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-05",
+    "title": "Use an f-string to print Level 5 of Python. (Challenge 5)",
+    "level": "easy",
+    "description": "Use an f-string to print Level 5 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 5 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 5\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-06",
+    "title": "Use an f-string to print Level 6 of Python. (Challenge 6)",
+    "level": "medium",
+    "description": "Use an f-string to print Level 6 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 6 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 6\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-07",
+    "title": "Use an f-string to print Level 7 of Python. (Challenge 7)",
+    "level": "medium",
+    "description": "Use an f-string to print Level 7 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 7 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 7\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-08",
+    "title": "Use an f-string to print Level 8 of Python. (Challenge 8)",
+    "level": "medium",
+    "description": "Use an f-string to print Level 8 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 8 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 8\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-09",
+    "title": "Use an f-string to print Level 9 of Python. (Challenge 9)",
+    "level": "hard",
+    "description": "Use an f-string to print Level 9 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 9 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 9\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "f-strings-10",
+    "title": "Use an f-string to print Level 10 of Python. (Challenge 10)",
+    "level": "hard",
+    "description": "Use an f-string to print Level 10 of Python.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Level 10 of Python",
+    "hints": [
+      "Identify the main Python concept: f-strings & formatting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "level = 10\nprint(f\"Level {level} of Python\")",
+    "explanation": "This exercise practices f-strings & formatting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "type-casting-01",
+    "title": "Convert the text \"3\" to an integer and add 10. (Challenge 1)",
+    "level": "easy",
+    "description": "Convert the text \"3\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "13",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"3\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-02",
+    "title": "Convert the text \"4\" to an integer and add 10. (Challenge 2)",
+    "level": "easy",
+    "description": "Convert the text \"4\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "14",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"4\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-03",
+    "title": "Convert the text \"5\" to an integer and add 10. (Challenge 3)",
+    "level": "easy",
+    "description": "Convert the text \"5\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"5\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-04",
+    "title": "Convert the text \"6\" to an integer and add 10. (Challenge 4)",
+    "level": "easy",
+    "description": "Convert the text \"6\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "16",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"6\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-05",
+    "title": "Convert the text \"7\" to an integer and add 10. (Challenge 5)",
+    "level": "easy",
+    "description": "Convert the text \"7\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "17",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"7\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-06",
+    "title": "Convert the text \"8\" to an integer and add 10. (Challenge 6)",
+    "level": "medium",
+    "description": "Convert the text \"8\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "18",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"8\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-07",
+    "title": "Convert the text \"9\" to an integer and add 10. (Challenge 7)",
+    "level": "medium",
+    "description": "Convert the text \"9\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "19",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"9\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-08",
+    "title": "Convert the text \"10\" to an integer and add 10. (Challenge 8)",
+    "level": "medium",
+    "description": "Convert the text \"10\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "20",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"10\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-09",
+    "title": "Convert the text \"11\" to an integer and add 10. (Challenge 9)",
+    "level": "hard",
+    "description": "Convert the text \"11\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "21",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"11\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "type-casting-10",
+    "title": "Convert the text \"12\" to an integer and add 10. (Challenge 10)",
+    "level": "hard",
+    "description": "Convert the text \"12\" to an integer and add 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "22",
+    "hints": [
+      "Identify the main Python concept: type casting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "value = int(\"12\")\nprint(value + 10)",
+    "explanation": "This exercise practices type casting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

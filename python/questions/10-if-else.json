@@ -1,0 +1,202 @@
+[
+  {
+    "id": "if-else-01",
+    "title": "Check whether 3 is even or odd. (Challenge 1)",
+    "level": "easy",
+    "description": "Check whether 3 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Odd",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 3\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-02",
+    "title": "Check whether 4 is even or odd. (Challenge 2)",
+    "level": "easy",
+    "description": "Check whether 4 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 4\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-03",
+    "title": "Check whether 5 is even or odd. (Challenge 3)",
+    "level": "easy",
+    "description": "Check whether 5 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Odd",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 5\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-04",
+    "title": "Check whether 6 is even or odd. (Challenge 4)",
+    "level": "easy",
+    "description": "Check whether 6 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 6\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-05",
+    "title": "Check whether 7 is even or odd. (Challenge 5)",
+    "level": "easy",
+    "description": "Check whether 7 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Odd",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 7\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-06",
+    "title": "Check whether 8 is even or odd. (Challenge 6)",
+    "level": "medium",
+    "description": "Check whether 8 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 8\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-07",
+    "title": "Check whether 9 is even or odd. (Challenge 7)",
+    "level": "medium",
+    "description": "Check whether 9 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Odd",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 9\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-08",
+    "title": "Check whether 10 is even or odd. (Challenge 8)",
+    "level": "medium",
+    "description": "Check whether 10 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-09",
+    "title": "Check whether 11 is even or odd. (Challenge 9)",
+    "level": "hard",
+    "description": "Check whether 11 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Odd",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 11\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-else-10",
+    "title": "Check whether 12 is even or odd. (Challenge 10)",
+    "level": "hard",
+    "description": "Check whether 12 is even or odd.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Even",
+    "hints": [
+      "Identify the main Python concept: if-else.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 12\nif number % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")",
+    "explanation": "This exercise practices if-else. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

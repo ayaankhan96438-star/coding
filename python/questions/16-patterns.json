@@ -1,0 +1,202 @@
+[
+  {
+    "id": "patterns-01",
+    "title": "Print a left-aligned star triangle with 1 rows. (Challenge 1)",
+    "level": "easy",
+    "description": "Print a left-aligned star triangle with 1 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 2):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-02",
+    "title": "Print a left-aligned star triangle with 2 rows. (Challenge 2)",
+    "level": "easy",
+    "description": "Print a left-aligned star triangle with 2 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 3):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-03",
+    "title": "Print a left-aligned star triangle with 3 rows. (Challenge 3)",
+    "level": "easy",
+    "description": "Print a left-aligned star triangle with 3 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 4):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-04",
+    "title": "Print a left-aligned star triangle with 4 rows. (Challenge 4)",
+    "level": "easy",
+    "description": "Print a left-aligned star triangle with 4 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 5):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-05",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 5)",
+    "level": "easy",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-06",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 6)",
+    "level": "medium",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-07",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 7)",
+    "level": "medium",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-08",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 8)",
+    "level": "medium",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-09",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 9)",
+    "level": "hard",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "patterns-10",
+    "title": "Print a left-aligned star triangle with 5 rows. (Challenge 10)",
+    "level": "hard",
+    "description": "Print a left-aligned star triangle with 5 rows.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "*\n**\n***\n****\n*****",
+    "hints": [
+      "Identify the main Python concept: pattern printing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "for row in range(1, 6):\n    print(\"*\" * row)",
+    "explanation": "This exercise practices pattern printing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

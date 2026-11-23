@@ -1,0 +1,202 @@
+[
+  {
+    "id": "iterators-generators-01",
+    "title": "Write a generator yielding 1 through 1; print its values as a list. (Challenge 1)",
+    "level": "easy",
+    "description": "Write a generator yielding 1 through 1; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(1)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-02",
+    "title": "Write a generator yielding 1 through 2; print its values as a list. (Challenge 2)",
+    "level": "easy",
+    "description": "Write a generator yielding 1 through 2; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(2)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-03",
+    "title": "Write a generator yielding 1 through 3; print its values as a list. (Challenge 3)",
+    "level": "easy",
+    "description": "Write a generator yielding 1 through 3; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(3)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-04",
+    "title": "Write a generator yielding 1 through 4; print its values as a list. (Challenge 4)",
+    "level": "easy",
+    "description": "Write a generator yielding 1 through 4; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(4)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-05",
+    "title": "Write a generator yielding 1 through 5; print its values as a list. (Challenge 5)",
+    "level": "easy",
+    "description": "Write a generator yielding 1 through 5; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(5)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-06",
+    "title": "Write a generator yielding 1 through 6; print its values as a list. (Challenge 6)",
+    "level": "medium",
+    "description": "Write a generator yielding 1 through 6; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5, 6]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(6)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-07",
+    "title": "Write a generator yielding 1 through 7; print its values as a list. (Challenge 7)",
+    "level": "medium",
+    "description": "Write a generator yielding 1 through 7; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5, 6, 7]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(7)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-08",
+    "title": "Write a generator yielding 1 through 8; print its values as a list. (Challenge 8)",
+    "level": "medium",
+    "description": "Write a generator yielding 1 through 8; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5, 6, 7, 8]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(8)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-09",
+    "title": "Write a generator yielding 1 through 9; print its values as a list. (Challenge 9)",
+    "level": "hard",
+    "description": "Write a generator yielding 1 through 9; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5, 6, 7, 8, 9]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(9)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "iterators-generators-10",
+    "title": "Write a generator yielding 1 through 10; print its values as a list. (Challenge 10)",
+    "level": "hard",
+    "description": "Write a generator yielding 1 through 10; print its values as a list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+    "hints": [
+      "Identify the main Python concept: iterators & generators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def count_up(limit):\n    for value in range(1, limit + 1):\n        yield value\nprint(list(count_up(10)))",
+    "explanation": "This exercise practices iterators & generators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

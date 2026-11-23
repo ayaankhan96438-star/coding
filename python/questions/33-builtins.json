@@ -1,0 +1,202 @@
+[
+  {
+    "id": "builtins-01",
+    "title": "Use len, min, max, and sum on the list [3, 6, 9]. (Challenge 1)",
+    "level": "easy",
+    "description": "Use len, min, max, and sum on the list [3, 6, 9].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n3\n9\n18",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [3, 6, 9]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-02",
+    "title": "Use len, min, max, and sum on the list [4, 7, 11]. (Challenge 2)",
+    "level": "easy",
+    "description": "Use len, min, max, and sum on the list [4, 7, 11].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n4\n11\n22",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [4, 7, 11]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-03",
+    "title": "Use len, min, max, and sum on the list [5, 8, 13]. (Challenge 3)",
+    "level": "easy",
+    "description": "Use len, min, max, and sum on the list [5, 8, 13].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n5\n13\n26",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [5, 8, 13]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-04",
+    "title": "Use len, min, max, and sum on the list [6, 9, 15]. (Challenge 4)",
+    "level": "easy",
+    "description": "Use len, min, max, and sum on the list [6, 9, 15].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n6\n15\n30",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [6, 9, 15]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-05",
+    "title": "Use len, min, max, and sum on the list [7, 10, 17]. (Challenge 5)",
+    "level": "easy",
+    "description": "Use len, min, max, and sum on the list [7, 10, 17].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n7\n17\n34",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [7, 10, 17]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-06",
+    "title": "Use len, min, max, and sum on the list [8, 11, 19]. (Challenge 6)",
+    "level": "medium",
+    "description": "Use len, min, max, and sum on the list [8, 11, 19].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n8\n19\n38",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [8, 11, 19]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-07",
+    "title": "Use len, min, max, and sum on the list [9, 12, 21]. (Challenge 7)",
+    "level": "medium",
+    "description": "Use len, min, max, and sum on the list [9, 12, 21].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n9\n21\n42",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [9, 12, 21]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-08",
+    "title": "Use len, min, max, and sum on the list [10, 13, 23]. (Challenge 8)",
+    "level": "medium",
+    "description": "Use len, min, max, and sum on the list [10, 13, 23].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n10\n23\n46",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [10, 13, 23]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-09",
+    "title": "Use len, min, max, and sum on the list [11, 14, 25]. (Challenge 9)",
+    "level": "hard",
+    "description": "Use len, min, max, and sum on the list [11, 14, 25].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n11\n25\n50",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [11, 14, 25]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "builtins-10",
+    "title": "Use len, min, max, and sum on the list [12, 15, 27]. (Challenge 10)",
+    "level": "hard",
+    "description": "Use len, min, max, and sum on the list [12, 15, 27].",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n12\n27\n54",
+    "hints": [
+      "Identify the main Python concept: built-in functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [12, 15, 27]\nprint(len(values))\nprint(min(values))\nprint(max(values))\nprint(sum(values))",
+    "explanation": "This exercise practices built-in functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

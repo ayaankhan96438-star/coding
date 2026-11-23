@@ -1,0 +1,202 @@
+[
+  {
+    "id": "decorators-01",
+    "title": "Write a decorator that prints START before a function prints Task 1. (Challenge 1)",
+    "level": "easy",
+    "description": "Write a decorator that prints START before a function prints Task 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 1",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 1\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-02",
+    "title": "Write a decorator that prints START before a function prints Task 2. (Challenge 2)",
+    "level": "easy",
+    "description": "Write a decorator that prints START before a function prints Task 2.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 2",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 2\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-03",
+    "title": "Write a decorator that prints START before a function prints Task 3. (Challenge 3)",
+    "level": "easy",
+    "description": "Write a decorator that prints START before a function prints Task 3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 3",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 3\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-04",
+    "title": "Write a decorator that prints START before a function prints Task 4. (Challenge 4)",
+    "level": "easy",
+    "description": "Write a decorator that prints START before a function prints Task 4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 4",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 4\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-05",
+    "title": "Write a decorator that prints START before a function prints Task 5. (Challenge 5)",
+    "level": "easy",
+    "description": "Write a decorator that prints START before a function prints Task 5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 5",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 5\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-06",
+    "title": "Write a decorator that prints START before a function prints Task 6. (Challenge 6)",
+    "level": "medium",
+    "description": "Write a decorator that prints START before a function prints Task 6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 6",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 6\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-07",
+    "title": "Write a decorator that prints START before a function prints Task 7. (Challenge 7)",
+    "level": "medium",
+    "description": "Write a decorator that prints START before a function prints Task 7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 7",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 7\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-08",
+    "title": "Write a decorator that prints START before a function prints Task 8. (Challenge 8)",
+    "level": "medium",
+    "description": "Write a decorator that prints START before a function prints Task 8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 8",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 8\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-09",
+    "title": "Write a decorator that prints START before a function prints Task 9. (Challenge 9)",
+    "level": "hard",
+    "description": "Write a decorator that prints START before a function prints Task 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 9",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 9\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "decorators-10",
+    "title": "Write a decorator that prints START before a function prints Task 10. (Challenge 10)",
+    "level": "hard",
+    "description": "Write a decorator that prints START before a function prints Task 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "START\nTask 10",
+    "hints": [
+      "Identify the main Python concept: decorators.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def announce(function):\n    def wrapper():\n        print(\"START\")\n        function()\n    return wrapper\n@announce\ndef task():\n    print(\"Task 10\")\ntask()",
+    "explanation": "This exercise practices decorators. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

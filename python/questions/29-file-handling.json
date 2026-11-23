@@ -1,0 +1,202 @@
+[
+  {
+    "id": "file-handling-01",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python1. (Challenge 1)",
+    "level": "easy",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python1",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python1\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-02",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python2. (Challenge 2)",
+    "level": "easy",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python2.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python2",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python2\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-03",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python3. (Challenge 3)",
+    "level": "easy",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python3",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python3\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-04",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python4. (Challenge 4)",
+    "level": "easy",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python4",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python4\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-05",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python5. (Challenge 5)",
+    "level": "easy",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python5",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python5\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-06",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python6. (Challenge 6)",
+    "level": "medium",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python6",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python6\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-07",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python7. (Challenge 7)",
+    "level": "medium",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python7",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python7\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-08",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python8. (Challenge 8)",
+    "level": "medium",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python8",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python8\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-09",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python9. (Challenge 9)",
+    "level": "hard",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python9",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python9\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "file-handling-10",
+    "title": "Use io.StringIO as a safe in-memory file, write and read the word Python10. (Challenge 10)",
+    "level": "hard",
+    "description": "Use io.StringIO as a safe in-memory file, write and read the word Python10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python10",
+    "hints": [
+      "Identify the main Python concept: file handling.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "from io import StringIO\nfile = StringIO()\nfile.write(\"Python10\")\nfile.seek(0)\nprint(file.read())",
+    "explanation": "This exercise practices file handling. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

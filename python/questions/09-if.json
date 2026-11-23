@@ -1,0 +1,202 @@
+[
+  {
+    "id": "if-01",
+    "title": "If 3 is greater than 5, print Eligible. (Challenge 1)",
+    "level": "easy",
+    "description": "If 3 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 3\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-02",
+    "title": "If 4 is greater than 5, print Eligible. (Challenge 2)",
+    "level": "easy",
+    "description": "If 4 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 4\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-03",
+    "title": "If 5 is greater than 5, print Eligible. (Challenge 3)",
+    "level": "easy",
+    "description": "If 5 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 5\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-04",
+    "title": "If 6 is greater than 5, print Eligible. (Challenge 4)",
+    "level": "easy",
+    "description": "If 6 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 6\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-05",
+    "title": "If 7 is greater than 5, print Eligible. (Challenge 5)",
+    "level": "easy",
+    "description": "If 7 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 7\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-06",
+    "title": "If 8 is greater than 5, print Eligible. (Challenge 6)",
+    "level": "medium",
+    "description": "If 8 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 8\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-07",
+    "title": "If 9 is greater than 5, print Eligible. (Challenge 7)",
+    "level": "medium",
+    "description": "If 9 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 9\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-08",
+    "title": "If 10 is greater than 5, print Eligible. (Challenge 8)",
+    "level": "medium",
+    "description": "If 10 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-09",
+    "title": "If 11 is greater than 5, print Eligible. (Challenge 9)",
+    "level": "hard",
+    "description": "If 11 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 11\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "if-10",
+    "title": "If 12 is greater than 5, print Eligible. (Challenge 10)",
+    "level": "hard",
+    "description": "If 12 is greater than 5, print Eligible.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Eligible",
+    "hints": [
+      "Identify the main Python concept: if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 12\nif number > 5:\n    print(\"Eligible\")",
+    "explanation": "This exercise practices if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "elif-nested-if-01",
+    "title": "Classify score 30: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 1)",
+    "level": "easy",
+    "description": "Classify score 30: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Fail",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 30\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-02",
+    "title": "Classify score 40: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 2)",
+    "level": "easy",
+    "description": "Classify score 40: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Pass",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 40\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-03",
+    "title": "Classify score 50: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 3)",
+    "level": "easy",
+    "description": "Classify score 50: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Pass",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 50\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-04",
+    "title": "Classify score 60: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 4)",
+    "level": "easy",
+    "description": "Classify score 60: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Pass",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 60\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-05",
+    "title": "Classify score 70: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 5)",
+    "level": "easy",
+    "description": "Classify score 70: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Pass",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 70\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-06",
+    "title": "Classify score 80: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 6)",
+    "level": "medium",
+    "description": "Classify score 80: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Excellent",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 80\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-07",
+    "title": "Classify score 90: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 7)",
+    "level": "medium",
+    "description": "Classify score 90: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Excellent",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 90\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-08",
+    "title": "Classify score 100: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 8)",
+    "level": "medium",
+    "description": "Classify score 100: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Excellent",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 100\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-09",
+    "title": "Classify score 110: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 9)",
+    "level": "hard",
+    "description": "Classify score 110: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Excellent",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 110\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "elif-nested-if-10",
+    "title": "Classify score 120: below 40 Fail, below 75 Pass, otherwise Excellent. (Challenge 10)",
+    "level": "hard",
+    "description": "Classify score 120: below 40 Fail, below 75 Pass, otherwise Excellent.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Excellent",
+    "hints": [
+      "Identify the main Python concept: elif / nested if.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 120\nif score < 40:\n    print(\"Fail\")\nelif score < 75:\n    print(\"Pass\")\nelse:\n    print(\"Excellent\")",
+    "explanation": "This exercise practices elif / nested if. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

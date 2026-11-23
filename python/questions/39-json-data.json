@@ -1,0 +1,202 @@
+[
+  {
+    "id": "json-data-01",
+    "title": "Encode a dictionary with topic Python and level 1 as JSON. (Challenge 1)",
+    "level": "easy",
+    "description": "Encode a dictionary with topic Python and level 1 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 1, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 1}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-02",
+    "title": "Encode a dictionary with topic Python and level 2 as JSON. (Challenge 2)",
+    "level": "easy",
+    "description": "Encode a dictionary with topic Python and level 2 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 2, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 2}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-03",
+    "title": "Encode a dictionary with topic Python and level 3 as JSON. (Challenge 3)",
+    "level": "easy",
+    "description": "Encode a dictionary with topic Python and level 3 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 3, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 3}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-04",
+    "title": "Encode a dictionary with topic Python and level 4 as JSON. (Challenge 4)",
+    "level": "easy",
+    "description": "Encode a dictionary with topic Python and level 4 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 4, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 4}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-05",
+    "title": "Encode a dictionary with topic Python and level 5 as JSON. (Challenge 5)",
+    "level": "easy",
+    "description": "Encode a dictionary with topic Python and level 5 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 5, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 5}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-06",
+    "title": "Encode a dictionary with topic Python and level 6 as JSON. (Challenge 6)",
+    "level": "medium",
+    "description": "Encode a dictionary with topic Python and level 6 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 6, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 6}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-07",
+    "title": "Encode a dictionary with topic Python and level 7 as JSON. (Challenge 7)",
+    "level": "medium",
+    "description": "Encode a dictionary with topic Python and level 7 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 7, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 7}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-08",
+    "title": "Encode a dictionary with topic Python and level 8 as JSON. (Challenge 8)",
+    "level": "medium",
+    "description": "Encode a dictionary with topic Python and level 8 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 8, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 8}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-09",
+    "title": "Encode a dictionary with topic Python and level 9 as JSON. (Challenge 9)",
+    "level": "hard",
+    "description": "Encode a dictionary with topic Python and level 9 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 9, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 9}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "json-data-10",
+    "title": "Encode a dictionary with topic Python and level 10 as JSON. (Challenge 10)",
+    "level": "hard",
+    "description": "Encode a dictionary with topic Python and level 10 as JSON.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "{\"level\": 10, \"topic\": \"Python\"}",
+    "hints": [
+      "Identify the main Python concept: json & working with data.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import json\ndata = {\"topic\": \"Python\", \"level\": 10}\nprint(json.dumps(data, sort_keys=True))",
+    "explanation": "This exercise practices json & working with data. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

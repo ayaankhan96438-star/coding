@@ -1,0 +1,202 @@
+[
+  {
+    "id": "comments-escapes-01",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 1)",
+    "level": "easy",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 1\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 1\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-02",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 2)",
+    "level": "easy",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 2\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 2\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-03",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 3)",
+    "level": "easy",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 3\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 3\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-04",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 4)",
+    "level": "easy",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 4\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 4\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-05",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 5)",
+    "level": "easy",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 5\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 5\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-06",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 6)",
+    "level": "medium",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 6\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 6\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-07",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 7)",
+    "level": "medium",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 7\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 7\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-08",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 8)",
+    "level": "medium",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 8\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 8\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-09",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 9)",
+    "level": "hard",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 9\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 9\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "comments-escapes-10",
+    "title": "Print two words on separate lines and a quoted word. (Challenge 10)",
+    "level": "hard",
+    "description": "Print two words on separate lines and a quoted word.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Python\nLevel 10\n\"Codeora\"",
+    "hints": [
+      "Identify the main Python concept: comments & escape characters.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "# Print a simple formatted message\nprint(\"Python\\nLevel 10\")\nprint(\"\\\"Codeora\\\"\")",
+    "explanation": "This exercise practices comments & escape characters. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

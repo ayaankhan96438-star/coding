@@ -1,0 +1,202 @@
+[
+  {
+    "id": "functions-01",
+    "title": "Define add_numbers that returns 3 + 6; print the result. (Challenge 1)",
+    "level": "easy",
+    "description": "Define add_numbers that returns 3 + 6; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(3, 6))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-02",
+    "title": "Define add_numbers that returns 4 + 7; print the result. (Challenge 2)",
+    "level": "easy",
+    "description": "Define add_numbers that returns 4 + 7; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "11",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(4, 7))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-03",
+    "title": "Define add_numbers that returns 5 + 8; print the result. (Challenge 3)",
+    "level": "easy",
+    "description": "Define add_numbers that returns 5 + 8; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "13",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(5, 8))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-04",
+    "title": "Define add_numbers that returns 6 + 9; print the result. (Challenge 4)",
+    "level": "easy",
+    "description": "Define add_numbers that returns 6 + 9; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(6, 9))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-05",
+    "title": "Define add_numbers that returns 7 + 10; print the result. (Challenge 5)",
+    "level": "easy",
+    "description": "Define add_numbers that returns 7 + 10; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "17",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(7, 10))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-06",
+    "title": "Define add_numbers that returns 8 + 11; print the result. (Challenge 6)",
+    "level": "medium",
+    "description": "Define add_numbers that returns 8 + 11; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "19",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(8, 11))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-07",
+    "title": "Define add_numbers that returns 9 + 12; print the result. (Challenge 7)",
+    "level": "medium",
+    "description": "Define add_numbers that returns 9 + 12; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "21",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(9, 12))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-08",
+    "title": "Define add_numbers that returns 10 + 13; print the result. (Challenge 8)",
+    "level": "medium",
+    "description": "Define add_numbers that returns 10 + 13; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "23",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(10, 13))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-09",
+    "title": "Define add_numbers that returns 11 + 14; print the result. (Challenge 9)",
+    "level": "hard",
+    "description": "Define add_numbers that returns 11 + 14; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "25",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(11, 14))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "functions-10",
+    "title": "Define add_numbers that returns 12 + 15; print the result. (Challenge 10)",
+    "level": "hard",
+    "description": "Define add_numbers that returns 12 + 15; print the result.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "27",
+    "hints": [
+      "Identify the main Python concept: functions.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def add_numbers(x, y):\n    return x + y\nprint(add_numbers(12, 15))",
+    "explanation": "This exercise practices functions. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

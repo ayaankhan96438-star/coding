@@ -1,0 +1,202 @@
+[
+  {
+    "id": "arguments-01",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 3. (Challenge 1)",
+    "level": "easy",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(3))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-02",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 4. (Challenge 2)",
+    "level": "easy",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(4))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-03",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 5. (Challenge 3)",
+    "level": "easy",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(5))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-04",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 6. (Challenge 4)",
+    "level": "easy",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(6))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-05",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 7. (Challenge 5)",
+    "level": "easy",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "14",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(7))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-06",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 8. (Challenge 6)",
+    "level": "medium",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "16",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(8))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-07",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 9. (Challenge 7)",
+    "level": "medium",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "18",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(9))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-08",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 10. (Challenge 8)",
+    "level": "medium",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "20",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(10))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-09",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 11. (Challenge 9)",
+    "level": "hard",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 11.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "22",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(11))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "arguments-10",
+    "title": "Define a function that accepts a default multiplier of 2 and applies it to 12. (Challenge 10)",
+    "level": "hard",
+    "description": "Define a function that accepts a default multiplier of 2 and applies it to 12.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "24",
+    "hints": [
+      "Identify the main Python concept: function arguments.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def multiply(value, factor=2):\n    return value * factor\nprint(multiply(12))",
+    "explanation": "This exercise practices function arguments. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

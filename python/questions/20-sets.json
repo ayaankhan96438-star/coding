@@ -1,0 +1,202 @@
+[
+  {
+    "id": "sets-01",
+    "title": "Find unique values in [3, 6, 3] and print them sorted. (Challenge 1)",
+    "level": "easy",
+    "description": "Find unique values in [3, 6, 3] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[3, 6]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {3, 6, 3}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-02",
+    "title": "Find unique values in [4, 7, 4] and print them sorted. (Challenge 2)",
+    "level": "easy",
+    "description": "Find unique values in [4, 7, 4] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[4, 7]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {4, 7, 4}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-03",
+    "title": "Find unique values in [5, 8, 5] and print them sorted. (Challenge 3)",
+    "level": "easy",
+    "description": "Find unique values in [5, 8, 5] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[5, 8]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {5, 8, 5}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-04",
+    "title": "Find unique values in [6, 9, 6] and print them sorted. (Challenge 4)",
+    "level": "easy",
+    "description": "Find unique values in [6, 9, 6] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[6, 9]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {6, 9, 6}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-05",
+    "title": "Find unique values in [7, 10, 7] and print them sorted. (Challenge 5)",
+    "level": "easy",
+    "description": "Find unique values in [7, 10, 7] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[7, 10]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {7, 10, 7}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-06",
+    "title": "Find unique values in [8, 11, 8] and print them sorted. (Challenge 6)",
+    "level": "medium",
+    "description": "Find unique values in [8, 11, 8] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[8, 11]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {8, 11, 8}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-07",
+    "title": "Find unique values in [9, 12, 9] and print them sorted. (Challenge 7)",
+    "level": "medium",
+    "description": "Find unique values in [9, 12, 9] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[9, 12]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {9, 12, 9}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-08",
+    "title": "Find unique values in [10, 13, 10] and print them sorted. (Challenge 8)",
+    "level": "medium",
+    "description": "Find unique values in [10, 13, 10] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[10, 13]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {10, 13, 10}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-09",
+    "title": "Find unique values in [11, 14, 11] and print them sorted. (Challenge 9)",
+    "level": "hard",
+    "description": "Find unique values in [11, 14, 11] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[11, 14]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {11, 14, 11}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "sets-10",
+    "title": "Find unique values in [12, 15, 12] and print them sorted. (Challenge 10)",
+    "level": "hard",
+    "description": "Find unique values in [12, 15, 12] and print them sorted.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[12, 15]",
+    "hints": [
+      "Identify the main Python concept: sets.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = {12, 15, 12}\nprint(sorted(values))",
+    "explanation": "This exercise practices sets. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

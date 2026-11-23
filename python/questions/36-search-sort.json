@@ -1,0 +1,202 @@
+[
+  {
+    "id": "search-sort-01",
+    "title": "Sort [6, 3, 9] and print the sorted list. (Challenge 1)",
+    "level": "easy",
+    "description": "Sort [6, 3, 9] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[3, 6, 9]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [6, 3, 9]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-02",
+    "title": "Sort [7, 4, 11] and print the sorted list. (Challenge 2)",
+    "level": "easy",
+    "description": "Sort [7, 4, 11] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[4, 7, 11]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [7, 4, 11]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-03",
+    "title": "Sort [8, 5, 13] and print the sorted list. (Challenge 3)",
+    "level": "easy",
+    "description": "Sort [8, 5, 13] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[5, 8, 13]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [8, 5, 13]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-04",
+    "title": "Sort [9, 6, 15] and print the sorted list. (Challenge 4)",
+    "level": "easy",
+    "description": "Sort [9, 6, 15] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[6, 9, 15]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [9, 6, 15]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-05",
+    "title": "Sort [10, 7, 17] and print the sorted list. (Challenge 5)",
+    "level": "easy",
+    "description": "Sort [10, 7, 17] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[7, 10, 17]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [10, 7, 17]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-06",
+    "title": "Sort [11, 8, 19] and print the sorted list. (Challenge 6)",
+    "level": "medium",
+    "description": "Sort [11, 8, 19] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[8, 11, 19]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [11, 8, 19]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-07",
+    "title": "Sort [12, 9, 21] and print the sorted list. (Challenge 7)",
+    "level": "medium",
+    "description": "Sort [12, 9, 21] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[9, 12, 21]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [12, 9, 21]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-08",
+    "title": "Sort [13, 10, 23] and print the sorted list. (Challenge 8)",
+    "level": "medium",
+    "description": "Sort [13, 10, 23] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[10, 13, 23]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [13, 10, 23]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-09",
+    "title": "Sort [14, 11, 25] and print the sorted list. (Challenge 9)",
+    "level": "hard",
+    "description": "Sort [14, 11, 25] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[11, 14, 25]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [14, 11, 25]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "search-sort-10",
+    "title": "Sort [15, 12, 27] and print the sorted list. (Challenge 10)",
+    "level": "hard",
+    "description": "Sort [15, 12, 27] and print the sorted list.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[12, 15, 27]",
+    "hints": [
+      "Identify the main Python concept: searching & sorting.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [15, 12, 27]\nvalues.sort()\nprint(values)",
+    "explanation": "This exercise practices searching & sorting. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

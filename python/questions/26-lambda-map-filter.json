@@ -1,0 +1,202 @@
+[
+  {
+    "id": "lambda-map-filter-01",
+    "title": "Use map and lambda to double numbers 1 through 1. (Challenge 1)",
+    "level": "easy",
+    "description": "Use map and lambda to double numbers 1 through 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 2)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-02",
+    "title": "Use map and lambda to double numbers 1 through 2. (Challenge 2)",
+    "level": "easy",
+    "description": "Use map and lambda to double numbers 1 through 2.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 3)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-03",
+    "title": "Use map and lambda to double numbers 1 through 3. (Challenge 3)",
+    "level": "easy",
+    "description": "Use map and lambda to double numbers 1 through 3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 4)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-04",
+    "title": "Use map and lambda to double numbers 1 through 4. (Challenge 4)",
+    "level": "easy",
+    "description": "Use map and lambda to double numbers 1 through 4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 5)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-05",
+    "title": "Use map and lambda to double numbers 1 through 5. (Challenge 5)",
+    "level": "easy",
+    "description": "Use map and lambda to double numbers 1 through 5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 6)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-06",
+    "title": "Use map and lambda to double numbers 1 through 6. (Challenge 6)",
+    "level": "medium",
+    "description": "Use map and lambda to double numbers 1 through 6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10, 12]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 7)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-07",
+    "title": "Use map and lambda to double numbers 1 through 7. (Challenge 7)",
+    "level": "medium",
+    "description": "Use map and lambda to double numbers 1 through 7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10, 12, 14]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 8)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-08",
+    "title": "Use map and lambda to double numbers 1 through 8. (Challenge 8)",
+    "level": "medium",
+    "description": "Use map and lambda to double numbers 1 through 8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10, 12, 14, 16]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 9)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-09",
+    "title": "Use map and lambda to double numbers 1 through 9. (Challenge 9)",
+    "level": "hard",
+    "description": "Use map and lambda to double numbers 1 through 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10, 12, 14, 16, 18]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 10)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lambda-map-filter-10",
+    "title": "Use map and lambda to double numbers 1 through 10. (Challenge 10)",
+    "level": "hard",
+    "description": "Use map and lambda to double numbers 1 through 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]",
+    "hints": [
+      "Identify the main Python concept: lambda, map, filter.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "result = list(map(lambda x: x * 2, range(1, 11)))\nprint(result)",
+    "explanation": "This exercise practices lambda, map, filter. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

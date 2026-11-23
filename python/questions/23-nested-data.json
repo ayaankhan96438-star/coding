@@ -1,0 +1,202 @@
+[
+  {
+    "id": "nested-data-01",
+    "title": "Access the city from a nested dictionary. (Challenge 1)",
+    "level": "easy",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 1}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-02",
+    "title": "Access the city from a nested dictionary. (Challenge 2)",
+    "level": "easy",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 2}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-03",
+    "title": "Access the city from a nested dictionary. (Challenge 3)",
+    "level": "easy",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 3}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-04",
+    "title": "Access the city from a nested dictionary. (Challenge 4)",
+    "level": "easy",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 4}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-05",
+    "title": "Access the city from a nested dictionary. (Challenge 5)",
+    "level": "easy",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 5}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-06",
+    "title": "Access the city from a nested dictionary. (Challenge 6)",
+    "level": "medium",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 6}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-07",
+    "title": "Access the city from a nested dictionary. (Challenge 7)",
+    "level": "medium",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 7}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-08",
+    "title": "Access the city from a nested dictionary. (Challenge 8)",
+    "level": "medium",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 8}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-09",
+    "title": "Access the city from a nested dictionary. (Challenge 9)",
+    "level": "hard",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 9}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "nested-data-10",
+    "title": "Access the city from a nested dictionary. (Challenge 10)",
+    "level": "hard",
+    "description": "Access the city from a nested dictionary.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Delhi",
+    "hints": [
+      "Identify the main Python concept: nested data structures.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "student = {\"profile\": {\"city\": \"Delhi\", \"level\": 10}}\nprint(student[\"profile\"][\"city\"])",
+    "explanation": "This exercise practices nested data structures. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "number-programs-01",
+    "title": "Calculate the factorial of 3 using a loop. (Challenge 1)",
+    "level": "easy",
+    "description": "Calculate the factorial of 3 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 3\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-02",
+    "title": "Calculate the factorial of 4 using a loop. (Challenge 2)",
+    "level": "easy",
+    "description": "Calculate the factorial of 4 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "24",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 4\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-03",
+    "title": "Calculate the factorial of 5 using a loop. (Challenge 3)",
+    "level": "easy",
+    "description": "Calculate the factorial of 5 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "120",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 5\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-04",
+    "title": "Calculate the factorial of 6 using a loop. (Challenge 4)",
+    "level": "easy",
+    "description": "Calculate the factorial of 6 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "720",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 6\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-05",
+    "title": "Calculate the factorial of 7 using a loop. (Challenge 5)",
+    "level": "easy",
+    "description": "Calculate the factorial of 7 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5040",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 7\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-06",
+    "title": "Calculate the factorial of 8 using a loop. (Challenge 6)",
+    "level": "medium",
+    "description": "Calculate the factorial of 8 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "40320",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 8\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-07",
+    "title": "Calculate the factorial of 9 using a loop. (Challenge 7)",
+    "level": "medium",
+    "description": "Calculate the factorial of 9 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "362880",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 9\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-08",
+    "title": "Calculate the factorial of 10 using a loop. (Challenge 8)",
+    "level": "medium",
+    "description": "Calculate the factorial of 10 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3628800",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-09",
+    "title": "Calculate the factorial of 10 using a loop. (Challenge 9)",
+    "level": "hard",
+    "description": "Calculate the factorial of 10 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3628800",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "number-programs-10",
+    "title": "Calculate the factorial of 10 using a loop. (Challenge 10)",
+    "level": "hard",
+    "description": "Calculate the factorial of 10 using a loop.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3628800",
+    "hints": [
+      "Identify the main Python concept: number programs.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "number = 10\nresult = 1\nfor value in range(1, number + 1):\n    result *= value\nprint(result)",
+    "explanation": "This exercise practices number programs. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

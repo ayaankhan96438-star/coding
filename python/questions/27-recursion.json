@@ -1,0 +1,202 @@
+[
+  {
+    "id": "recursion-01",
+    "title": "Write a recursive countdown that prints 1 down to 1. (Challenge 1)",
+    "level": "easy",
+    "description": "Write a recursive countdown that prints 1 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(1)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-02",
+    "title": "Write a recursive countdown that prints 2 down to 1. (Challenge 2)",
+    "level": "easy",
+    "description": "Write a recursive countdown that prints 2 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(2)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-03",
+    "title": "Write a recursive countdown that prints 3 down to 1. (Challenge 3)",
+    "level": "easy",
+    "description": "Write a recursive countdown that prints 3 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(3)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-04",
+    "title": "Write a recursive countdown that prints 4 down to 1. (Challenge 4)",
+    "level": "easy",
+    "description": "Write a recursive countdown that prints 4 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(4)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-05",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 5)",
+    "level": "easy",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-06",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 6)",
+    "level": "medium",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-07",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 7)",
+    "level": "medium",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-08",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 8)",
+    "level": "medium",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-09",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 9)",
+    "level": "hard",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "recursion-10",
+    "title": "Write a recursive countdown that prints 5 down to 1. (Challenge 10)",
+    "level": "hard",
+    "description": "Write a recursive countdown that prints 5 down to 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5\n4\n3\n2\n1",
+    "hints": [
+      "Identify the main Python concept: recursion.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "def countdown(value):\n    if value == 0:\n        return\n    print(value)\n    countdown(value - 1)\ncountdown(5)",
+    "explanation": "This exercise practices recursion. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

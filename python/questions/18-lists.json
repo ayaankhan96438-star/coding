@@ -1,0 +1,202 @@
+[
+  {
+    "id": "lists-01",
+    "title": "Create a list of 3, 6, and 9; print its sum and length. (Challenge 1)",
+    "level": "easy",
+    "description": "Create a list of 3, 6, and 9; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "18\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [3, 6, 9]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-02",
+    "title": "Create a list of 4, 7, and 11; print its sum and length. (Challenge 2)",
+    "level": "easy",
+    "description": "Create a list of 4, 7, and 11; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "22\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [4, 7, 11]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-03",
+    "title": "Create a list of 5, 8, and 13; print its sum and length. (Challenge 3)",
+    "level": "easy",
+    "description": "Create a list of 5, 8, and 13; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "26\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [5, 8, 13]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-04",
+    "title": "Create a list of 6, 9, and 15; print its sum and length. (Challenge 4)",
+    "level": "easy",
+    "description": "Create a list of 6, 9, and 15; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "30\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [6, 9, 15]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-05",
+    "title": "Create a list of 7, 10, and 17; print its sum and length. (Challenge 5)",
+    "level": "easy",
+    "description": "Create a list of 7, 10, and 17; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "34\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [7, 10, 17]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-06",
+    "title": "Create a list of 8, 11, and 19; print its sum and length. (Challenge 6)",
+    "level": "medium",
+    "description": "Create a list of 8, 11, and 19; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "38\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [8, 11, 19]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-07",
+    "title": "Create a list of 9, 12, and 21; print its sum and length. (Challenge 7)",
+    "level": "medium",
+    "description": "Create a list of 9, 12, and 21; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "42\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [9, 12, 21]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-08",
+    "title": "Create a list of 10, 13, and 23; print its sum and length. (Challenge 8)",
+    "level": "medium",
+    "description": "Create a list of 10, 13, and 23; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "46\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [10, 13, 23]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-09",
+    "title": "Create a list of 11, 14, and 25; print its sum and length. (Challenge 9)",
+    "level": "hard",
+    "description": "Create a list of 11, 14, and 25; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "50\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [11, 14, 25]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "lists-10",
+    "title": "Create a list of 12, 15, and 27; print its sum and length. (Challenge 10)",
+    "level": "hard",
+    "description": "Create a list of 12, 15, and 27; print its sum and length.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "54\n3",
+    "hints": [
+      "Identify the main Python concept: lists.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "numbers = [12, 15, 27]\nprint(sum(numbers))\nprint(len(numbers))",
+    "explanation": "This exercise practices lists. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

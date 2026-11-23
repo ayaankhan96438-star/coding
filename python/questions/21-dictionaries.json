@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dictionaries-01",
+    "title": "Create a dictionary with name Python and level 1; print level. (Challenge 1)",
+    "level": "easy",
+    "description": "Create a dictionary with name Python and level 1; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "1",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 1}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-02",
+    "title": "Create a dictionary with name Python and level 2; print level. (Challenge 2)",
+    "level": "easy",
+    "description": "Create a dictionary with name Python and level 2; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "2",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 2}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-03",
+    "title": "Create a dictionary with name Python and level 3; print level. (Challenge 3)",
+    "level": "easy",
+    "description": "Create a dictionary with name Python and level 3; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 3}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-04",
+    "title": "Create a dictionary with name Python and level 4; print level. (Challenge 4)",
+    "level": "easy",
+    "description": "Create a dictionary with name Python and level 4; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 4}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-05",
+    "title": "Create a dictionary with name Python and level 5; print level. (Challenge 5)",
+    "level": "easy",
+    "description": "Create a dictionary with name Python and level 5; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 5}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-06",
+    "title": "Create a dictionary with name Python and level 6; print level. (Challenge 6)",
+    "level": "medium",
+    "description": "Create a dictionary with name Python and level 6; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 6}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-07",
+    "title": "Create a dictionary with name Python and level 7; print level. (Challenge 7)",
+    "level": "medium",
+    "description": "Create a dictionary with name Python and level 7; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "7",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 7}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-08",
+    "title": "Create a dictionary with name Python and level 8; print level. (Challenge 8)",
+    "level": "medium",
+    "description": "Create a dictionary with name Python and level 8; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 8}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-09",
+    "title": "Create a dictionary with name Python and level 9; print level. (Challenge 9)",
+    "level": "hard",
+    "description": "Create a dictionary with name Python and level 9; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 9}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "dictionaries-10",
+    "title": "Create a dictionary with name Python and level 10; print level. (Challenge 10)",
+    "level": "hard",
+    "description": "Create a dictionary with name Python and level 10; print level.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: dictionaries.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "course = {\"name\": \"Python\", \"level\": 10}\nprint(course[\"level\"])",
+    "explanation": "This exercise practices dictionaries. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

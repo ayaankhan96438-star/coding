@@ -1,0 +1,202 @@
+[
+  {
+    "id": "strings-methods-01",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 1)",
+    "level": "easy",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-02",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 2)",
+    "level": "easy",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-03",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 3)",
+    "level": "easy",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-04",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 4)",
+    "level": "easy",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-05",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 5)",
+    "level": "easy",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-06",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 6)",
+    "level": "medium",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-07",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 7)",
+    "level": "medium",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-08",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 8)",
+    "level": "medium",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-09",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 9)",
+    "level": "hard",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "strings-methods-10",
+    "title": "Convert \"codeora python\" to uppercase and replace the space with a hyphen. (Challenge 10)",
+    "level": "hard",
+    "description": "Convert \"codeora python\" to uppercase and replace the space with a hyphen.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "CODEORA PYTHON\ncodeora-python",
+    "hints": [
+      "Identify the main Python concept: strings: methods & slicing.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "text = \"codeora python\"\nprint(text.upper())\nprint(text.replace(\" \", \"-\"))",
+    "explanation": "This exercise practices strings: methods & slicing. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

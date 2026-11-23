@@ -1,0 +1,202 @@
+[
+  {
+    "id": "variables-01",
+    "title": "Create a variable score with value 3 and print it. (Challenge 1)",
+    "level": "easy",
+    "description": "Create a variable score with value 3 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 3\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-02",
+    "title": "Create a variable score with value 4 and print it. (Challenge 2)",
+    "level": "easy",
+    "description": "Create a variable score with value 4 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 4\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-03",
+    "title": "Create a variable score with value 5 and print it. (Challenge 3)",
+    "level": "easy",
+    "description": "Create a variable score with value 5 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 5\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-04",
+    "title": "Create a variable score with value 6 and print it. (Challenge 4)",
+    "level": "easy",
+    "description": "Create a variable score with value 6 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 6\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-05",
+    "title": "Create a variable score with value 7 and print it. (Challenge 5)",
+    "level": "easy",
+    "description": "Create a variable score with value 7 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "7",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 7\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-06",
+    "title": "Create a variable score with value 8 and print it. (Challenge 6)",
+    "level": "medium",
+    "description": "Create a variable score with value 8 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 8\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-07",
+    "title": "Create a variable score with value 9 and print it. (Challenge 7)",
+    "level": "medium",
+    "description": "Create a variable score with value 9 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 9\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-08",
+    "title": "Create a variable score with value 10 and print it. (Challenge 8)",
+    "level": "medium",
+    "description": "Create a variable score with value 10 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 10\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-09",
+    "title": "Create a variable score with value 11 and print it. (Challenge 9)",
+    "level": "hard",
+    "description": "Create a variable score with value 11 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "11",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 11\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "variables-10",
+    "title": "Create a variable score with value 12 and print it. (Challenge 10)",
+    "level": "hard",
+    "description": "Create a variable score with value 12 and print it.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "hints": [
+      "Identify the main Python concept: variables.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "score = 12\nprint(score)",
+    "explanation": "This exercise practices variables. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

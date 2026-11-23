@@ -1,0 +1,202 @@
+[
+  {
+    "id": "inheritance-01",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 1. (Challenge 1)",
+    "level": "easy",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 1",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 1\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-02",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 2. (Challenge 2)",
+    "level": "easy",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 2.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 2",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 2\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-03",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 3. (Challenge 3)",
+    "level": "easy",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 3",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 3\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-04",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 4. (Challenge 4)",
+    "level": "easy",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 4",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 4\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-05",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 5. (Challenge 5)",
+    "level": "easy",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 5",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 5\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-06",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 6. (Challenge 6)",
+    "level": "medium",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 6",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 6\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-07",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 7. (Challenge 7)",
+    "level": "medium",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 7",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 7\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-08",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 8. (Challenge 8)",
+    "level": "medium",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 8",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 8\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-09",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 9. (Challenge 9)",
+    "level": "hard",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 9",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 9\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "inheritance-10",
+    "title": "Create Animal and Dog classes; override speak() to print Woof 10. (Challenge 10)",
+    "level": "hard",
+    "description": "Create Animal and Dog classes; override speak() to print Woof 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Woof 10",
+    "hints": [
+      "Identify the main Python concept: inheritance & polymorphism.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "class Animal:\n    def speak(self):\n        return \"Sound\"\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof 10\"\nprint(Dog().speak())",
+    "explanation": "This exercise practices inheritance & polymorphism. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

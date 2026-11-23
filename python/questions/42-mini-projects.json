@@ -1,0 +1,202 @@
+[
+  {
+    "id": "mini-projects-01",
+    "title": "Build a tiny bill calculator: 1 items at price 3; print total. (Challenge 1)",
+    "level": "easy",
+    "description": "Build a tiny bill calculator: 1 items at price 3; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "3",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 1\nprice = 3\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-02",
+    "title": "Build a tiny bill calculator: 2 items at price 4; print total. (Challenge 2)",
+    "level": "easy",
+    "description": "Build a tiny bill calculator: 2 items at price 4; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 2\nprice = 4\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-03",
+    "title": "Build a tiny bill calculator: 3 items at price 5; print total. (Challenge 3)",
+    "level": "easy",
+    "description": "Build a tiny bill calculator: 3 items at price 5; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 3\nprice = 5\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-04",
+    "title": "Build a tiny bill calculator: 4 items at price 6; print total. (Challenge 4)",
+    "level": "easy",
+    "description": "Build a tiny bill calculator: 4 items at price 6; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "24",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 4\nprice = 6\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-05",
+    "title": "Build a tiny bill calculator: 5 items at price 7; print total. (Challenge 5)",
+    "level": "easy",
+    "description": "Build a tiny bill calculator: 5 items at price 7; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "35",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 5\nprice = 7\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-06",
+    "title": "Build a tiny bill calculator: 6 items at price 8; print total. (Challenge 6)",
+    "level": "medium",
+    "description": "Build a tiny bill calculator: 6 items at price 8; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "48",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 6\nprice = 8\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-07",
+    "title": "Build a tiny bill calculator: 7 items at price 9; print total. (Challenge 7)",
+    "level": "medium",
+    "description": "Build a tiny bill calculator: 7 items at price 9; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "63",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 7\nprice = 9\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-08",
+    "title": "Build a tiny bill calculator: 8 items at price 10; print total. (Challenge 8)",
+    "level": "medium",
+    "description": "Build a tiny bill calculator: 8 items at price 10; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "80",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 8\nprice = 10\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-09",
+    "title": "Build a tiny bill calculator: 9 items at price 11; print total. (Challenge 9)",
+    "level": "hard",
+    "description": "Build a tiny bill calculator: 9 items at price 11; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "99",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 9\nprice = 11\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "mini-projects-10",
+    "title": "Build a tiny bill calculator: 10 items at price 12; print total. (Challenge 10)",
+    "level": "hard",
+    "description": "Build a tiny bill calculator: 10 items at price 12; print total.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "120",
+    "hints": [
+      "Identify the main Python concept: mini projects.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = 10\nprice = 12\ntotal = items * price\nprint(total)",
+    "explanation": "This exercise practices mini projects. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

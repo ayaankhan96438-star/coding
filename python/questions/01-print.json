@@ -1,0 +1,202 @@
+[
+  {
+    "id": "print-01",
+    "title": "Print the message Codeora level 1. (Challenge 1)",
+    "level": "easy",
+    "description": "Print the message Codeora level 1.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 1",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 1\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-02",
+    "title": "Print the message Codeora level 2. (Challenge 2)",
+    "level": "easy",
+    "description": "Print the message Codeora level 2.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 2",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 2\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-03",
+    "title": "Print the message Codeora level 3. (Challenge 3)",
+    "level": "easy",
+    "description": "Print the message Codeora level 3.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 3",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 3\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-04",
+    "title": "Print the message Codeora level 4. (Challenge 4)",
+    "level": "easy",
+    "description": "Print the message Codeora level 4.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 4",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 4\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-05",
+    "title": "Print the message Codeora level 5. (Challenge 5)",
+    "level": "easy",
+    "description": "Print the message Codeora level 5.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 5",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 5\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-06",
+    "title": "Print the message Codeora level 6. (Challenge 6)",
+    "level": "medium",
+    "description": "Print the message Codeora level 6.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 6",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 6\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-07",
+    "title": "Print the message Codeora level 7. (Challenge 7)",
+    "level": "medium",
+    "description": "Print the message Codeora level 7.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 7",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 7\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-08",
+    "title": "Print the message Codeora level 8. (Challenge 8)",
+    "level": "medium",
+    "description": "Print the message Codeora level 8.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 8",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 8\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-09",
+    "title": "Print the message Codeora level 9. (Challenge 9)",
+    "level": "hard",
+    "description": "Print the message Codeora level 9.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 9",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 9\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "print-10",
+    "title": "Print the message Codeora level 10. (Challenge 10)",
+    "level": "hard",
+    "description": "Print the message Codeora level 10.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "Codeora level 10",
+    "hints": [
+      "Identify the main Python concept: print / hello world.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "print(\"Codeora level 10\")",
+    "explanation": "This exercise practices print / hello world. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

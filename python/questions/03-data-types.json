@@ -1,0 +1,202 @@
+[
+  {
+    "id": "data-types-01",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 1)",
+    "level": "easy",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [3, 3.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-02",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 2)",
+    "level": "easy",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [4, 4.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-03",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 3)",
+    "level": "easy",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [5, 5.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-04",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 4)",
+    "level": "easy",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [6, 6.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-05",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 5)",
+    "level": "easy",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [7, 7.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-06",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 6)",
+    "level": "medium",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [8, 8.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-07",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 7)",
+    "level": "medium",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [9, 9.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-08",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 8)",
+    "level": "medium",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [10, 10.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-09",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 9)",
+    "level": "hard",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [11, 11.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "data-types-10",
+    "title": "Create an integer, float, string, and boolean, then print their type names. (Challenge 10)",
+    "level": "hard",
+    "description": "Create an integer, float, string, and boolean, then print their type names.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "int\nfloat\nstr\nbool",
+    "hints": [
+      "Identify the main Python concept: data types.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "values = [12, 12.5, \"python\", True]\nfor value in values:\n    print(type(value).__name__)",
+    "explanation": "This exercise practices data types. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

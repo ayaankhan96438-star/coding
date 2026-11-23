@@ -1,0 +1,202 @@
+[
+  {
+    "id": "tuples-01",
+    "title": "Create a tuple containing 3 and 6; print the second item. (Challenge 1)",
+    "level": "easy",
+    "description": "Create a tuple containing 3 and 6; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "6",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (3, 6)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-02",
+    "title": "Create a tuple containing 4 and 7; print the second item. (Challenge 2)",
+    "level": "easy",
+    "description": "Create a tuple containing 4 and 7; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "7",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (4, 7)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-03",
+    "title": "Create a tuple containing 5 and 8; print the second item. (Challenge 3)",
+    "level": "easy",
+    "description": "Create a tuple containing 5 and 8; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (5, 8)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-04",
+    "title": "Create a tuple containing 6 and 9; print the second item. (Challenge 4)",
+    "level": "easy",
+    "description": "Create a tuple containing 6 and 9; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (6, 9)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-05",
+    "title": "Create a tuple containing 7 and 10; print the second item. (Challenge 5)",
+    "level": "easy",
+    "description": "Create a tuple containing 7 and 10; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "10",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (7, 10)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-06",
+    "title": "Create a tuple containing 8 and 11; print the second item. (Challenge 6)",
+    "level": "medium",
+    "description": "Create a tuple containing 8 and 11; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "11",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (8, 11)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-07",
+    "title": "Create a tuple containing 9 and 12; print the second item. (Challenge 7)",
+    "level": "medium",
+    "description": "Create a tuple containing 9 and 12; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (9, 12)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-08",
+    "title": "Create a tuple containing 10 and 13; print the second item. (Challenge 8)",
+    "level": "medium",
+    "description": "Create a tuple containing 10 and 13; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "13",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (10, 13)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-09",
+    "title": "Create a tuple containing 11 and 14; print the second item. (Challenge 9)",
+    "level": "hard",
+    "description": "Create a tuple containing 11 and 14; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "14",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (11, 14)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "tuples-10",
+    "title": "Create a tuple containing 12 and 15; print the second item. (Challenge 10)",
+    "level": "hard",
+    "description": "Create a tuple containing 12 and 15; print the second item.",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "hints": [
+      "Identify the main Python concept: tuples.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "items = (12, 15)\nprint(items[1])",
+    "explanation": "This exercise practices tuples. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]

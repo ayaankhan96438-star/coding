@@ -1,0 +1,202 @@
+[
+  {
+    "id": "regex-01",
+    "title": "Use re.findall to extract all digits from \"py1code3\". (Challenge 1)",
+    "level": "easy",
+    "description": "Use re.findall to extract all digits from \"py1code3\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['1', '3']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py1code3\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-02",
+    "title": "Use re.findall to extract all digits from \"py2code4\". (Challenge 2)",
+    "level": "easy",
+    "description": "Use re.findall to extract all digits from \"py2code4\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['2', '4']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py2code4\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-03",
+    "title": "Use re.findall to extract all digits from \"py3code5\". (Challenge 3)",
+    "level": "easy",
+    "description": "Use re.findall to extract all digits from \"py3code5\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['3', '5']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py3code5\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-04",
+    "title": "Use re.findall to extract all digits from \"py4code6\". (Challenge 4)",
+    "level": "easy",
+    "description": "Use re.findall to extract all digits from \"py4code6\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['4', '6']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py4code6\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-05",
+    "title": "Use re.findall to extract all digits from \"py5code7\". (Challenge 5)",
+    "level": "easy",
+    "description": "Use re.findall to extract all digits from \"py5code7\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['5', '7']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py5code7\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-06",
+    "title": "Use re.findall to extract all digits from \"py6code8\". (Challenge 6)",
+    "level": "medium",
+    "description": "Use re.findall to extract all digits from \"py6code8\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['6', '8']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py6code8\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-07",
+    "title": "Use re.findall to extract all digits from \"py7code9\". (Challenge 7)",
+    "level": "medium",
+    "description": "Use re.findall to extract all digits from \"py7code9\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['7', '9']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py7code9\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-08",
+    "title": "Use re.findall to extract all digits from \"py8code10\". (Challenge 8)",
+    "level": "medium",
+    "description": "Use re.findall to extract all digits from \"py8code10\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['8', '10']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py8code10\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-09",
+    "title": "Use re.findall to extract all digits from \"py9code11\". (Challenge 9)",
+    "level": "hard",
+    "description": "Use re.findall to extract all digits from \"py9code11\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['9', '11']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py9code11\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  },
+  {
+    "id": "regex-10",
+    "title": "Use re.findall to extract all digits from \"py10code12\". (Challenge 10)",
+    "level": "hard",
+    "description": "Use re.findall to extract all digits from \"py10code12\".",
+    "starterCode": "# Write your solution below\n",
+    "testInput": "",
+    "expectedOutput": "['10', '12']",
+    "hints": [
+      "Identify the main Python concept: regex basics.",
+      "Write a small, direct solution and check indentation.",
+      "Compare each printed line with the expected output."
+    ],
+    "solution": "import re\ntext = \"py10code12\"\nprint(re.findall(r\"\\d+\", text))",
+    "explanation": "This exercise practices regex basics. The solution uses the relevant Python feature and prints the required result.",
+    "commonMistakes": [
+      "Forgetting correct indentation or punctuation.",
+      "Printing extra text that changes the expected output."
+    ]
+  }
+]
