@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Codeora is a hands-on coding learning space with interactive SQL lessons, practice and a growing path into programming.">
-  <title>Codeora · Learn. Code. Build.</title>
+  <title>SQL Practice · Codeora</title>
   <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-workspace-startup-03">
-  <link rel="stylesheet" href="course.css?v=20261123-fast-sql-start-05">
+  <link rel="stylesheet" href="course.css?v=20261123-sql-first-nav-06">
 </head>
 <body data-page="practice">
   <div class="site-shell">
@@ -31,10 +31,63 @@
     <main class="lesson-page">
       <div id="load-error" class="load-error page-error" role="alert" hidden></div>
       <div id="lesson-access-message" class="access-message" role="status" aria-live="polite" hidden></div>
-      <section id="lesson" aria-label="SQL lesson"><div class="sql-startup-skeleton" role="status" aria-live="polite"><span class="sql-startup-dot" aria-hidden="true"></span><div><strong>Opening SQL workspace</strong><p>Preparing your lessons and practice editor…</p></div></div></section>
+      <section id="lesson" aria-label="SQL lesson">
+  <section class="exercise-board" aria-label="SQL lesson exercise">
+    <div class="exercise-left">
+      <div class="course-panel-heading table-heading-row"><h2 id="table-heading">Table: school</h2><small>Look at the table</small></div>
+      <div id="schema-viewer" class="table-preview">
+        <section class="table-preview-unit"><p class="table-caption">Table: school</p><table><thead><tr><th>id</th><th>student</th><th>teacher</th><th>marks</th><th>class</th></tr></thead><tbody>
+          <tr><td>1</td><td>Aarav</td><td>Neha</td><td>85</td><td>5</td></tr>
+          <tr><td>2</td><td>Diya</td><td>Ravi</td><td>92</td><td>5</td></tr>
+          <tr><td>3</td><td>Kabir</td><td>Neha</td><td>68</td><td>5</td></tr>
+          <tr><td>4</td><td>Meera</td><td>Imran</td><td>74</td><td>6</td></tr>
+          <tr><td>5</td><td>Rohan</td><td>Ravi</td><td>88</td><td>6</td></tr>
+          <tr><td>6</td><td>Sara</td><td>Neha</td><td>95</td><td>6</td></tr>
+          <tr><td>7</td><td>Arjun</td><td>Imran</td><td>57</td><td>5</td></tr>
+          <tr><td>8</td><td>Isha</td><td>Ravi</td><td>79</td><td>6</td></tr>
+        </tbody></table></section>
+      </div>
+      <section class="practice-area" aria-label="SQL query editor">
+        <label class="editor-label" for="query">SQL query</label>
+        <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Write your SQL query here…" disabled></textarea>
+        <div class="editor-footer">
+          <p id="answer-message" class="answer-message" role="status" aria-live="polite" hidden></p>
+          <button type="button" class="course-button secondary reset-button" id="reset-current-task-button" disabled>Reset progress</button>
+        </div>
+      </section>
+    </div>
+    <aside class="exercise-right" aria-label="Lesson tasks">
+      <div class="task-panel">
+        <div class="course-panel-heading task-panel-heading"><h2>SELECT Statement</h2><small id="task-progress-count">0 / 5 complete</small></div>
+        <div class="task-groups">
+          <section class="task-group"><h3>Free <span>· 5</span></h3><div id="free-task-list" class="task-list">
+            <button type="button" class="task-choice active" disabled><span class="task-number">01</span><span class="task-text">Show the name of every student.</span><span class="task-state"></span></button>
+            <button type="button" class="task-choice" disabled><span class="task-number">02</span><span class="task-text">Show the teacher's name for every student.</span><span class="task-state"></span></button>
+            <button type="button" class="task-choice" disabled><span class="task-number">03</span><span class="task-text">Show the marks scored by every student.</span><span class="task-state"></span></button>
+            <button type="button" class="task-choice" disabled><span class="task-number">04</span><span class="task-text">Show each student name with their marks.</span><span class="task-state"></span></button>
+            <button type="button" class="task-choice" disabled><span class="task-number">05</span><span class="task-text">Show all the information stored for every student.</span><span class="task-state"></span></button>
+          </div></section>
+          <section class="task-group premium-task-group"><h3>Premium <span>· 5</span></h3><div id="premium-task-list" class="task-list">
+            <button type="button" class="task-choice locked" disabled><span class="task-number">06</span><span class="task-text">Show every student with their class number.</span><span class="task-state">🔒</span></button>
+            <button type="button" class="task-choice locked" disabled><span class="task-number">07</span><span class="task-text">Show each teacher together with the marks of their students.</span><span class="task-state">🔒</span></button>
+            <button type="button" class="task-choice locked" disabled><span class="task-number">08</span><span class="task-text">Show each student with their teacher.</span><span class="task-state">🔒</span></button>
+            <button type="button" class="task-choice locked" disabled><span class="task-number">09</span><span class="task-text">Show the student name, class and marks.</span><span class="task-state">🔒</span></button>
+            <button type="button" class="task-choice locked" disabled><span class="task-number">10</span><span class="task-text">Show the ID and name of every student.</span><span class="task-state">🔒</span></button>
+          </div></section>
+        </div>
+      </div>
+      <div class="task-footer">
+        <div class="stuck-copy task-stuck-copy"><p>Stuck? Read this task's <a href="solutions.html">Solution</a>.</p><p class="continue-note">Solve all tasks to continue to the next lesson.</p></div>
+        <div id="solution-panel" class="solution-panel" hidden></div>
+        <button type="button" id="finish-lesson-button" class="finish-lesson" disabled>Solve all tasks to continue</button>
+      </div>
+    </aside>
+  </section>
+  <section class="lesson-reading"><article class="reading-column"><header class="lesson-heading"><p class="lesson-kicker">LESSON 01 / 10</p><h1>SELECT Statement</h1></header><p>SELECT reads the columns you choose from a table. FROM tells SQL which table contains the information.</p></article></section>
+</section>
     </main>
     <footer class="site-footer">Codeora · Interactive SQL lessons</footer>
   </div>
-  <script src="account-bootstrap.js?v=20261122-workspace-startup-03"></script><script type="module" src="app.js?v=20261123-fast-sql-start-05"></script>
+  <script src="account-bootstrap.js?v=20261122-workspace-startup-03"></script><script type="module" src="app.js?v=20261123-sql-first-nav-06"></script>
 </body>
 </html>
