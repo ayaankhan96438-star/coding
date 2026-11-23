@@ -1,19 +1,19 @@
 [
   {
     "id": "py01q01",
-    "title": "Display your first message with Python",
+    "title": "Print any greeting or sentence you like",
     "level": "Beginner",
-    "description": "Use the print() command to show a message on the screen. For example, you can write print(\"Hello, World!\") or print(\"My name is Ayaan\"). You may choose your own words.",
+    "description": "Write print(\"...\") and put any greeting, name, or sentence inside the quotes. For example, print(\"Hello Python\") or print(\"Good morning\"). You can write any words you like.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Hello, Python!",
     "solution": "print(\"Hello, Python!\")",
     "hints": [
-      "Read the task once and identify the Python feature it asks you to practise.",
-      "Use print(...) with any text or value. The exact words do not matter.",
-      "Write your own code, press Run, and fix any syntax or runtime error shown."
+      "Write print() in the code area.",
+      "Put any message inside the brackets and quotes, for example print(\"Hello Python\").",
+      "Click Run. Any message printed with valid print() code is accepted."
     ],
-    "explanation": "This task gives you practice with your first python program. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "explanation": "print() displays text or a value on the screen. Put text inside quotation marks. You can print your own name, a greeting, or any sentence. The example solution is only one possible answer.",
     "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
     "validation": {
       "required": [
