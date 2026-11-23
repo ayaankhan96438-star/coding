@@ -1448,7 +1448,10 @@ function showLoadError(message) {
 }
 
 async function start() {
+  // Keep the legacy QueryPath flags for existing integrations and expose
+  // CodeBolt flags used by the page-level startup guards after the rebrand.
   window.QueryPathStarted = true;
+  window.CodeBoltStarted = true;
   // Start downloading/initializing SQL.js immediately, without making the page wait for it.
   // openLesson renders the lesson first and enables the editor as soon as the engine is ready.
   void loadSqlModule().catch((error) => { console.warn('SQL engine warm-up failed; it will retry when needed.', error); });
@@ -1567,8 +1570,10 @@ async function start() {
       }
     }
     window.QueryPathReady = true;
+    window.CodeBoltReady = true;
   } catch (error) {
     window.QueryPathFailed = true;
+    window.CodeBoltFailed = true;
     console.error('Codeora startup failed:', error);
     showLoadError(`Codeora could not start: ${error.message}`);
     const lessonRoot = $('#lesson');
