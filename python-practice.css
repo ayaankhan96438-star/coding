@@ -36,3 +36,107 @@ body[data-page="python-practice"]{color:#101612}
 .cb-solution-notes strong{display:block;margin-bottom:5px;color:#111a14;font-size:12px}
 .cb-solution-notes p{margin:0;color:#202a23;font-size:12px;line-height:1.6}
 @media(max-width:700px){.cb-solution-panel{padding:13px}}
+
+/* Readability pass: larger type, stronger contrast, and more breathing room. */
+body[data-page="python-practice"] {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  color: #101812;
+}
+
+.cb-workspace {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 430px);
+  gap: 24px;
+  padding-top: 28px;
+}
+
+.cb-eyebrow {
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: .13em;
+  color: #14532d;
+}
+.cb-topline h1 { font-size: clamp(34px, 3.2vw, 42px); }
+.cb-muted { font-size: 16px; line-height: 1.55; color: #27342c; }
+.cb-session { min-width: 130px; padding: 14px 16px; }
+.cb-session strong { font-size: 23px; }
+.cb-session span { font-size: 13px; color: #27342c; }
+
+.cb-question-card { padding: clamp(20px, 2.2vw, 30px); }
+.cb-question-meta { font-size: 13px; letter-spacing: .08em; }
+.cb-question-meta span + span { padding: 6px 10px; }
+.cb-question-card h2 { font-size: clamp(25px, 2.2vw, 30px); margin-top: 16px; }
+.cb-question-card > p { font-size: 17px; line-height: 1.7; margin-bottom: 22px; color: #202a23; }
+
+.cb-editor-heading strong,
+.cb-output-head strong,
+.cb-expected strong { font-size: 15px; color: #101812; }
+.cb-editor-heading span,
+.cb-output-head span { font-size: 13px; color: #303b33; }
+#python-code {
+  min-height: 360px;
+  padding: 19px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.cb-actions { gap: 11px; margin: 14px 0 20px; }
+.cb-actions button { min-height: 44px; padding: 0 19px; font-size: 15px; }
+.cb-actions #run-result { font-size: 14px; }
+.cb-output, .cb-expected { padding: 16px; }
+.cb-output pre, .cb-expected pre {
+  min-height: 48px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.cb-error { font-size: 14px; line-height: 1.65; }
+
+.cb-right-head { padding: 18px 17px 14px; }
+.cb-right-head h2 { font-size: 22px; }
+.cb-right-head > span { font-size: 13px; }
+.cb-search { height: 46px; margin: 13px 14px; padding: 0 13px; font-size: 16px; }
+.cb-search input { font-size: 15px; color: #111a14; }
+.cb-search input::placeholder { color: #46534a; opacity: 1; }
+.cb-question-bank { padding: 0 12px 14px; }
+.cb-topic-title { padding: 14px 9px; }
+.cb-topic-title small { font-size: 12px; letter-spacing: .08em; color: #303b34; }
+.cb-topic-title b { font-size: 15px; line-height: 1.4; color: #111b14; }
+.cb-topic-count { font-size: 13px; color: #29372e; }
+.cb-question-link { min-height: 43px; gap: 11px; padding: 8px 10px; }
+.cb-q-number { flex-basis: 26px; font-size: 12px; color: #27342c; }
+.cb-q-name { font-size: 14px; line-height: 1.45; color: #111a14; }
+.cb-q-state { font-size: 17px; }
+.cb-no-match { padding: 8px 10px; font-size: 14px; color: #29372e; }
+
+.cb-solution-panel { padding: 19px; }
+.cb-solution-heading strong { font-size: 17px; }
+.cb-solution-heading span:not(.cb-solution-tag) { font-size: 14px; color: #26342b; }
+.cb-solution-tag { font-size: 11px; }
+.cb-solution-code { padding: 16px; font-size: 15px; line-height: 1.75; }
+.cb-solution-notes strong { font-size: 15px; }
+.cb-solution-notes p { font-size: 15px; line-height: 1.7; color: #202a23; }
+.site-footer { font-size: 13px; color: #27342c; }
+
+@media (max-width: 900px) {
+  .cb-workspace { grid-template-columns: minmax(0, 1fr) minmax(300px, 350px); }
+}
+@media (max-width: 700px) {
+  .cb-workspace { display: flex; flex-direction: column; padding: 16px 12px 32px; }
+  .cb-left, .cb-right { width: 100%; }
+  .cb-right { max-height: 560px; }
+  .cb-topline h1 { font-size: 34px; }
+  .cb-muted { font-size: 15px; }
+  .cb-question-card > p { font-size: 16px; }
+  #python-code { min-height: 280px; font-size: 15px; }
+}
+
+/* Bookmark page readability */
+.py-page {
+  width: min(980px, calc(100% - 32px));
+  margin: 34px auto;
+  color: #111a14;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.py-page h1 { color: #101812; font-size: clamp(30px, 4vw, 40px); }
+.py-page a { color: #14532d; font-size: 15px; font-weight: 700; }
+.py-page p { padding: 12px 14px; border: 1px solid #dce5df; border-radius: 8px; background: #fff; }
