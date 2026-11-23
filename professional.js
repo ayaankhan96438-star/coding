@@ -75,7 +75,7 @@
     }
     const header = $('header');
     const topNav = $('.top-nav', header || document);
-    if (topNav && !topNav.querySelector('[data-account-link]')) {
+    if (topNav && !document.querySelector('[data-account-link]')) {
       const accountLink = document.createElement('a');
       accountLink.href = 'login.html';
       accountLink.textContent = 'Sign in';

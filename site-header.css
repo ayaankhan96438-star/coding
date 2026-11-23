@@ -1,7 +1,11 @@
 /* Shared Codeora header used by every learning page. */
-#site-header { display: block; width: 100%; position: relative; z-index: 100; }
+/* SQL pages already reset the body margin; Python pages must use the same canvas origin. */
+body[data-page="python-practice"],
+body[data-page="python-bookmarks"] { margin: 0; }
+#site-header { display: block; width: 100%; position: relative; z-index: 100; margin: 0; padding: 0; }
 .site-unified-header,
 .site-unified-header.course-header {
+  position: relative; top: auto; left: auto; right: auto; transform: none; box-sizing: border-box;
   width: 100%; min-height: 78px; margin: 0; padding: 10px clamp(14px, 2.4vw, 38px);
   display: flex; align-items: center; flex-wrap: wrap; gap: 10px clamp(14px, 1.7vw, 26px);
   background: #fff; color: #26352d; border: 0; border-bottom: 1px solid #e2e9e4;
@@ -46,10 +50,10 @@
 }
 .site-main-nav .nav-dropdown a { display: flex; align-items: center; min-height: 37px; padding: 8px 10px; border-radius: 7px; color: #52645a; font-size: 12px; font-weight: 550; line-height: 1.35; text-decoration: none; white-space: normal; }
 .site-main-nav .nav-dropdown a:hover { color: #285d3e; background: #f0f5f1; }
-.site-main-nav.top-nav > .site-account-link { margin-left: auto; border: 1px solid #dbe4e9; color: #315d50; font-weight: 750; }
-.site-main-nav.top-nav > .site-account-link:hover { border-color: #9ebaaa; background: #f0f6f2; }
-.site-main-nav.top-nav > .site-account-link.is-signed-in { color: #246c48; }
-.site-header-actions { display: flex; flex: 0 0 auto; align-items: center; justify-content: flex-end; }
+.site-header-actions > .site-account-link { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 6px 11px; border: 1px solid #dbe4e9; border-radius: 7px; color: #315d50; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.site-header-actions > .site-account-link:hover { border-color: #9ebaaa; background: #f0f6f2; }
+.site-header-actions > .site-account-link.is-signed-in { color: #246c48; }
+.site-header-actions { display: flex; flex: 0 0 auto; align-items: center; justify-content: flex-end; gap: 10px; margin-left: auto; }
 .site-topic-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 6px 10px; border: 1px solid #d9e2ee; border-radius: 7px; background: #f7faff; color: #344252; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; white-space: nowrap; }
 .site-topic-toggle:hover, .site-topic-toggle[aria-expanded="true"] { border-color: #1769dc; background: #edf4ff; color: #124f9e; }
 .site-unified-header > .theme-toggle { flex: 0 0 auto; min-height: 34px; padding: 6px 10px; border: 1px solid #dbe4e9; border-radius: 7px; background: #fff; color: #52645a; font-size: 11.5px; font-weight: 650; cursor: pointer; }
@@ -65,7 +69,7 @@ body.dark-mode .site-main-nav .nav-dropdown a { color: #c5d4c7; }
 body.dark-mode .site-main-nav .nav-dropdown a:hover,
 body.dark-mode .site-main-nav .nav-dropdown a[aria-current="page"] { background: #26392b; color: #e0eee1; }
 body.dark-mode .site-main-nav .nav-menu[data-active="true"] > summary { background: #26392b; color: #e0eee1; }
-body.dark-mode .site-main-nav.top-nav > .site-account-link { color: #dcebdd; border-color: #47624c; }
+body.dark-mode .site-header-actions > .site-account-link { color: #dcebdd; border-color: #47624c; }
 body.dark-mode .site-topic-toggle, body.dark-mode .site-unified-header > .theme-toggle { background: #1d2b22; border-color: #47624c; color: #dcebdd; }
 @media (max-width: 1100px) {
   .site-unified-header, .site-unified-header.course-header { align-items: center; }
@@ -82,7 +86,7 @@ body.dark-mode .site-topic-toggle, body.dark-mode .site-unified-header > .theme-
   .site-main-nav.top-nav > a, .site-main-nav .nav-menu > summary { min-height: 34px; padding: 6px 8px; font-size: 11.5px; }
   .site-main-nav .nav-dropdown { grid-template-columns: minmax(0, 1fr); min-width: 220px; }
   .site-header-actions { margin-left: auto; }
-  .site-main-nav.top-nav > .site-account-link { margin-left: 0; }
+  .site-header-actions > .site-account-link { margin-left: 0; }
 }
 @media (max-width: 440px) {
   .site-main-nav.top-nav { gap: 2px; }

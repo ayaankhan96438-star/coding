@@ -81,13 +81,13 @@
         ${pageLink('lessons.html', 'Lessons')}
         ${pageLink('practice.html', 'Practice')}
         ${groups.map(renderGroup).join('')}
-        <a class="site-account-link" data-account-link href="login.html">Sign up</a>
       </nav>
-      ${showSqlTopicButton ? `<div class="site-header-actions">
-        <button type="button" id="tutorial-toggle" class="site-topic-toggle" data-action="toggle-tutorial" aria-controls="interactive-topics" aria-expanded="false">
+      <div class="site-header-actions">
+        ${showSqlTopicButton ? `<button type="button" id="tutorial-toggle" class="site-topic-toggle" data-action="toggle-tutorial" aria-controls="interactive-topics" aria-expanded="false">
           <span aria-hidden="true">▤</span> All topics
-        </button>
-      </div>` : ''}
+        </button>` : ''}
+        <a class="site-account-link" data-account-link href="login.html">Sign up</a>
+      </div>
     </header>`;
 
   mount.dataset.ready = 'true';

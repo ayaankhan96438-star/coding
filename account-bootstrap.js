@@ -5,7 +5,7 @@ window.QueryPathAccountReady = import('./account-core.js')
     const state = await account.initializeAccount();
     window.QueryPathAccountState = state;
     const topNav = document.querySelector('.top-nav');
-    if (topNav && !topNav.querySelector('[data-account-link]')) {
+    if (topNav && !document.querySelector('[data-account-link]')) {
       const navLink = document.createElement('a');
       navLink.href = 'login.html'; navLink.textContent = 'Sign up'; navLink.setAttribute('data-account-link', '');
       topNav.append(navLink);
