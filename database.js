@@ -81,6 +81,7 @@ function loadSqlJsScript() {
     const script = document.createElement('script');
     script.src = SQL_JS_URL;
     script.async = true;
+    script.crossOrigin = 'anonymous';
     script.dataset.querypathSql = 'true';
 
     const timeout = window.setTimeout(() => {

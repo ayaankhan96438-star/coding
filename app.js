@@ -1,5 +1,5 @@
 import { isUnlocked } from './access.js?v=20261122-platform-tracks-sequence-02';
-import { createFreshDatabase } from './database.js?v=20261122-platform-tracks-sequence-02';
+import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql-preload-04';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
 
@@ -1449,6 +1449,9 @@ function showLoadError(message) {
 
 async function start() {
   window.QueryPathStarted = true;
+  // Warm the SQL.js script + WebAssembly in parallel with account and lesson loading.
+  // This removes the engine download from the first lesson-open interaction.
+  const sqlWarmup = loadSqlModule().catch((error) => { console.warn('SQL engine warm-up failed; it will retry when needed.', error); });
   try {
     // Wait until the signed-in learner's cloud progress has been restored before rendering the course.
     if (window.QueryPathAccountReady) await window.QueryPathAccountReady;
@@ -1503,6 +1506,7 @@ async function start() {
     renderAchievements();
     const page = document.body.dataset.page || 'home';
     if (page === 'practice') {
+      await sqlWarmup;
       const params = new URLSearchParams(window.location.search);
       let preferredQuestionId = params.get('question');
       let rawLesson = params.has('lesson') ? Number(params.get('lesson')) : 0;
