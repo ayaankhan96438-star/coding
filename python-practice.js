@@ -120,7 +120,7 @@
     if (state.worker) return;
 
     try {
-      const worker = new Worker('python-worker.js?v=codebolt-flexible-checker-v1');
+      const worker = new Worker('python-worker.js?v=codebolt-case-insensitive-v2');
       state.worker = worker;
       state.runtimeReady = false;
       $('runtime-label').textContent = 'Preparing Python 3 in background…';
@@ -173,7 +173,7 @@
     has_integer_constant: 'Create a whole number, for example 25.',
     has_float_constant: 'Create a decimal number, for example 3.5.',
     has_string_constant: 'Create a text value by putting words inside quotes.',
-    has_bool_value: 'Use True or False (the first letter must be capital).',
+    has_bool_value: 'Use True or False in any letter case, for example True, TRUE, true, False or false.' ,
     has_subscript: 'Use square brackets [ ] to access an item.',
     has_slice: 'Use a colon inside square brackets to slice the text.',
     has_negative_slice_step: 'Use a negative slice step, for example text[::-1], to reverse text.',

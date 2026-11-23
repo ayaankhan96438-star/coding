@@ -32,9 +32,94 @@ import json
 import contextlib
 import traceback
 import tokenize
+import builtins
+
+_builtin_names = {name.casefold(): name for name in dir(builtins)}
 
 _source = __codebolt_code or ""
 _tree = ast.parse(_source, filename="<codebolt>", mode="exec")
+
+# Beginner-friendly identifier handling: variable/function names and attribute
+# names are treated without case sensitivity (A/a, total/TOTAL, upper/UPPER).
+# The text inside quotes is never changed. Python boolean words also accept any
+# letter case: True, TRUE, true, False, FALSE, false.
+class _CaseInsensitiveNames(ast.NodeTransformer):
+    def visit_Name(self, node):
+        lowered = node.id.casefold()
+        if isinstance(node.ctx, ast.Load) and lowered == "true":
+            return ast.copy_location(ast.Constant(value=True), node)
+        if isinstance(node.ctx, ast.Load) and lowered == "false":
+            return ast.copy_location(ast.Constant(value=False), node)
+        node.id = _builtin_names.get(lowered, lowered)
+        return node
+
+    def visit_arg(self, node):
+        node.arg = node.arg.casefold()
+        return self.generic_visit(node)
+
+    def visit_FunctionDef(self, node):
+        node.name = node.name.casefold()
+        return self.generic_visit(node)
+
+    def visit_AsyncFunctionDef(self, node):
+        node.name = node.name.casefold()
+        return self.generic_visit(node)
+
+    def visit_ClassDef(self, node):
+        node.name = node.name.casefold()
+        return self.generic_visit(node)
+
+    def visit_Attribute(self, node):
+        self.generic_visit(node)
+        node.attr = node.attr.casefold()
+        return node
+
+    def visit_alias(self, node):
+        node.name = node.name.casefold()
+        if node.asname:
+            node.asname = node.asname.casefold()
+        return node
+
+    def visit_keyword(self, node):
+        self.generic_visit(node)
+        if node.arg is not None:
+            node.arg = node.arg.casefold()
+        return node
+
+    def visit_Global(self, node):
+        node.names = [name.casefold() for name in node.names]
+        return node
+
+    def visit_Nonlocal(self, node):
+        node.names = [name.casefold() for name in node.names]
+        return node
+
+    def visit_ExceptHandler(self, node):
+        self.generic_visit(node)
+        if node.name:
+            node.name = node.name.casefold()
+        return node
+
+    def visit_MatchAs(self, node):
+        self.generic_visit(node)
+        if node.name:
+            node.name = node.name.casefold()
+        return node
+
+    def visit_MatchStar(self, node):
+        self.generic_visit(node)
+        if node.name:
+            node.name = node.name.casefold()
+        return node
+
+    def visit_MatchMapping(self, node):
+        self.generic_visit(node)
+        if node.rest:
+            node.rest = node.rest.casefold()
+        return node
+
+_tree = _CaseInsensitiveNames().visit(_tree)
+_tree = ast.fix_missing_locations(_tree)
 _nodes = list(ast.walk(_tree))
 _calls = [node for node in _nodes if isinstance(node, ast.Call)]
 _names = [node.func.id for node in _calls if isinstance(node.func, ast.Name)]
