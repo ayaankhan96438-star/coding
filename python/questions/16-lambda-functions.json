@@ -3,18 +3,18 @@
     "id": "py16q01",
     "title": "Make a lambda that adds 5",
     "level": "Beginner",
-    "description": "Make a one-line lambda that adds 5 to a number. Call it and print the answer.",
+    "description": "Make a one-line lambda that adds 5 to the number 4. Call it and print the answer.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "9",
-    "solution": "add = lambda a, b: a + b\nprint(add(4, 5))",
+    "solution": "add_five = lambda number: number + 5\nprint(add_five(4))",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use the lambda keyword and call the function it creates.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with create a lambda function. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "This lambda takes one number and returns that number plus 5.",
+    "commonMistakes": "Use one parameter and add 5 inside the lambda expression.",
     "validation": {
       "required": [
         "has_lambda",
@@ -23,7 +23,8 @@
       ],
       "minimums": {},
       "output": "nonempty",
-      "feedback": "Use the lambda keyword and call the function it creates."
+      "feedback": "Use the lambda keyword and call the function it creates.",
+      "matchExpected": true
     }
   },
   {
@@ -58,18 +59,18 @@
     "id": "py16q03",
     "title": "Sort names by length with lambda",
     "level": "Beginner",
-    "description": "Make a list of names. Use sorted() with lambda to put the shortest name first. Print the list.",
+    "description": "Use this list of names: Christopher, Ayesha, and Ali. Use sorted() with lambda to put the shortest name first, then print the list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "[('c', 1), ('b', 2), ('a', 3)]",
-    "solution": "pairs = [(\"b\", 2), (\"a\", 3), (\"c\", 1)]\npairs.sort(key=lambda item: item[1])\nprint(pairs)",
+    "expectedOutput": "['Ali', 'Ayesha', 'Christopher']",
+    "solution": "names = [\"Christopher\", \"Ayesha\", \"Ali\"]\nsorted_names = sorted(names, key=lambda name: len(name))\nprint(sorted_names)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use lambda inside sort(key=...) or sorted(key=...).",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with sort with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "sorted() uses the lambda as its key. len(name) tells Python to sort names from shortest to longest.",
+    "commonMistakes": "Pass a list of names and use key=lambda name: len(name). Do not sort unrelated number pairs.",
     "validation": {
       "required": [
         "has_lambda",
@@ -78,7 +79,8 @@
       ],
       "minimums": {},
       "output": "nonempty",
-      "feedback": "Use lambda inside sort(key=...) or sorted(key=...)."
+      "feedback": "Use lambda inside sort(key=...) or sorted(key=...).",
+      "matchExpected": true
     }
   },
   {
@@ -112,27 +114,29 @@
     "id": "py16q05",
     "title": "Double numbers with map",
     "level": "Beginner",
-    "description": "Make a list of numbers. Use map() and lambda to double each number. Print the result.",
+    "description": "Use the numbers [2, 3, 4]. Use map() with lambda to double each number, then print the result.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "[4, 9, 16]",
-    "solution": "numbers = [2, 3, 4]\nsquares = list(map(lambda n: n ** 2, numbers))\nprint(squares)",
+    "expectedOutput": "[4, 6, 8]",
+    "solution": "numbers = [2, 3, 4]\ndoubled = list(map(lambda number: number * 2, numbers))\nprint(doubled)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use map(lambda ..., values) and display the result.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with transform values with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "map() applies the lambda to every item. The lambda multiplies each number by 2.",
+    "commonMistakes": "Use * 2 to double each number. ** 2 makes a square instead.",
     "validation": {
       "required": [
         "has_lambda",
         "map_call",
+        "has_mult",
         "print_call"
       ],
       "minimums": {},
       "output": "nonempty",
-      "feedback": "Use map(lambda ..., values) and display the result."
+      "feedback": "Use map() with lambda and multiply each number by 2.",
+      "matchExpected": true
     }
   }
 ]

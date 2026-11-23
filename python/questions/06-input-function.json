@@ -115,18 +115,18 @@
     "id": "py06q05",
     "title": "Ask for a decimal and multiply it",
     "level": "Beginner",
-    "description": "Use input() to get a decimal number. Convert it with float(), multiply it by 2, and print the answer.",
+    "description": "Use input() to get the given decimal number 4. Convert it with float(), multiply it by 2, and print the answer.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "4",
-    "expectedOutput": "6.0",
-    "solution": "value = float(input())\nprint(value * 1.5)",
+    "expectedOutput": "8.0",
+    "solution": "value = float(input())\nprint(value * 2)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use input(), float(), multiplication, and print.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with multiply a decimal input. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "float(input()) reads the decimal number 4 as 4.0. Multiplying by 2 gives 8.0.",
+    "commonMistakes": "Convert the input with float(), then multiply by 2 as the question asks.",
     "validation": {
       "required": [
         "input_call",
@@ -136,7 +136,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use input(), float(), multiplication, and print."
+      "feedback": "Use input(), float(), multiplication, and print.",
+      "matchExpected": true
     }
   }
 ]

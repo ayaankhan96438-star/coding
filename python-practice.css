@@ -145,3 +145,5 @@ body[data-page="python-practice"] {
 /* Beginner-friendly example-output note */
 .cb-example-note{margin:8px 0 0;color:#26342b;font-size:14px;line-height:1.6}
 .cb-expected strong{font-size:15px;color:#101812}
+
+.cb-quote-note{margin:8px 0 0;color:#4a5a50;font-size:11px;line-height:1.45}

@@ -24,7 +24,8 @@
         "output_lines": 5
       },
       "output": "two_lines",
-      "feedback": "Use a for loop and display at least five output lines."
+      "feedback": "Use a for loop and display at least five output lines.",
+      "matchExpected": true
     }
   },
   {
@@ -51,7 +52,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use a for loop to build a total and print it."
+      "feedback": "Use a for loop to build a total and print it.",
+      "matchExpected": true
     }
   },
   {
@@ -61,15 +63,15 @@
     "description": "Use a for loop to go through the word Python. Print each letter on its own line.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "C\nA\nT",
-    "solution": "for letter in \"CAT\":\n    print(letter)",
+    "expectedOutput": "P\ny\nt\nh\no\nn",
+    "solution": "for letter in \"Python\":\n    print(letter)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Loop through a string and print each character.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with loop through a word. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "A for loop takes one character from the word each time and prints it on a new line.",
+    "commonMistakes": "Use the exact word Python and keep print(letter) indented inside the loop.",
     "validation": {
       "required": [
         "has_for",
@@ -79,7 +81,8 @@
         "output_lines": 2
       },
       "output": "two_lines",
-      "feedback": "Loop through a string and print each character."
+      "feedback": "Loop through a string and print each character.",
+      "matchExpected": true
     }
   },
   {
@@ -136,7 +139,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Combine for, if and % to count even numbers."
+      "feedback": "Combine for, if and % to count even numbers.",
+      "matchExpected": true
     }
   }
 ]

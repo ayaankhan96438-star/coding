@@ -24,7 +24,8 @@
         "output_lines": 5
       },
       "output": "two_lines",
-      "feedback": "Use while and make sure the condition eventually becomes false."
+      "feedback": "Use while and make sure the condition eventually becomes false.",
+      "matchExpected": true
     }
   },
   {
@@ -34,15 +35,15 @@
     "description": "Use a while loop to print 5, 4, 3, 2, 1. Then print Go!",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "3\n2\n1\nGo!",
-    "solution": "number = 3\nwhile number > 0:\n    print(number)\n    number -= 1\nprint(\"Go!\")",
+    "expectedOutput": "5\n4\n3\n2\n1\nGo!",
+    "solution": "number = 5\nwhile number > 0:\n    print(number)\n    number -= 1\nprint(\"Go!\")",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use while to decrease a number until the loop ends.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with make a countdown. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "Start at 5. The loop prints the current number, subtracts 1, and stops after printing 1.",
+    "commonMistakes": "Start with 5 and use number > 0 so the loop prints all numbers down to 1.",
     "validation": {
       "required": [
         "has_while",
@@ -51,7 +52,8 @@
       ],
       "minimums": {},
       "output": "nonempty",
-      "feedback": "Use while to decrease a number until the loop ends."
+      "feedback": "Use while to decrease a number until the loop ends.",
+      "matchExpected": true
     }
   },
   {
@@ -61,15 +63,15 @@
     "description": "Use a while loop to add the numbers from 1 to 5. Print the total.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "10",
-    "solution": "total = 0\nnumber = 1\nwhile number <= 4:\n    total += number\n    number += 1\nprint(total)",
+    "expectedOutput": "15",
+    "solution": "total = 0\nnumber = 1\nwhile number <= 5:\n    total += number\n    number += 1\nprint(total)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Build a total inside a while loop.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with add numbers with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "The loop adds 1, 2, 3, 4 and 5 to total. The final sum is 15.",
+    "commonMistakes": "Use number <= 5 so the loop includes 5. Increase number inside the loop to avoid an endless loop.",
     "validation": {
       "required": [
         "has_while",
@@ -78,7 +80,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Build a total inside a while loop."
+      "feedback": "Build a total inside a while loop.",
+      "matchExpected": true
     }
   },
   {
@@ -88,15 +91,15 @@
     "description": "Start with 1. Use a while loop to double it until it reaches 32 or more. Print the final number.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "16",
-    "solution": "value = 1\nwhile value < 16:\n    value *= 2\nprint(value)",
+    "expectedOutput": "32",
+    "solution": "value = 1\nwhile value < 32:\n    value *= 2\nprint(value)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use while and multiplication to update a value.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with double a value with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "The value doubles each time: 1, 2, 4, 8, 16, then 32. The loop stops at 32.",
+    "commonMistakes": "Keep the condition value < 32 so the loop stops after reaching 32.",
     "validation": {
       "required": [
         "has_while",
@@ -105,7 +108,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use while and multiplication to update a value."
+      "feedback": "Use while and multiplication to update a value.",
+      "matchExpected": true
     }
   },
   {
@@ -115,15 +119,15 @@
     "description": "Use a while loop to count the digits in 12345. Print how many digits it has.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "4",
-    "solution": "number = 5821\ncount = 0\nwhile number > 0:\n    count += 1\n    number //= 10\nprint(count)",
+    "expectedOutput": "5",
+    "solution": "number = 12345\ncount = 0\nwhile number > 0:\n    count += 1\n    number //= 10\nprint(count)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use while and // 10 to process digits.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with count digits with while. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "The loop removes the last digit with // 10 and adds 1 to count each time. 12345 has five digits.",
+    "commonMistakes": "Start with 12345, increase count inside the loop, and remove one digit using //= 10.",
     "validation": {
       "required": [
         "has_while",
@@ -132,7 +136,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use while and // 10 to process digits."
+      "feedback": "Use while and // 10 to process digits.",
+      "matchExpected": true
     }
   }
 ]

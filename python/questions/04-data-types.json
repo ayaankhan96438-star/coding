@@ -129,14 +129,14 @@
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "50",
-    "solution": "value = int(\"42\")\nprint(value + 8)",
+    "solution": "value = int(\"50\")\nprint(value)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use int(...) on text containing digits, then print the result.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with convert text to an integer. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "int(\"50\") changes the text 50 into the whole number 50. print() then displays that number.",
+    "commonMistakes": "Use int() around the text value. Keep the digits inside matching single or double quotes.",
     "validation": {
       "required": [
         "int_call",
@@ -144,7 +144,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use int(...) on text containing digits, then print the result."
+      "feedback": "Use int(...) on text containing digits, then print the result.",
+      "matchExpected": true
     }
   }
 ]

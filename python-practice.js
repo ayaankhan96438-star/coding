@@ -120,7 +120,7 @@
     if (state.worker) return;
 
     try {
-      const worker = new Worker('python-worker.js?v=codebolt-case-insensitive-v2');
+      const worker = new Worker('python-worker.js?v=codebolt-quote-and-answer-audit-v3');
       state.worker = worker;
       state.runtimeReady = false;
       $('runtime-label').textContent = 'Preparing Python 3 in background…';
@@ -146,7 +146,7 @@
   }
 
   const featureHelp = {
-    print_call: 'Use print(...) to display your result. Put text inside quotes.',
+    print_call: `Use print(...) to display your result. Text can be inside single quotes ('...') or double quotes ("..."); both work.`,
     has_comment: 'Add a comment on a line starting with #.',
     input_call: 'Use input() to read a value from the user.',
     int_call: 'Convert the input/text to an integer with int(...).',
@@ -172,7 +172,7 @@
     has_write: 'Write or append some text to the file.',
     has_integer_constant: 'Create a whole number, for example 25.',
     has_float_constant: 'Create a decimal number, for example 3.5.',
-    has_string_constant: 'Create a text value by putting words inside quotes.',
+    has_string_constant: `Create a text value using either single quotes ('...') or double quotes ("..."). Both are valid.`,
     has_bool_value: 'Use True or False in any letter case, for example True, TRUE, true, False or false.' ,
     has_subscript: 'Use square brackets [ ] to access an item.',
     has_slice: 'Use a colon inside square brackets to slice the text.',
@@ -242,6 +242,14 @@
     }
     if (outputMode === 'two_lines' && nonEmptyLines.length < 2) {
       return { passed: false, message: rule.feedback || 'Print at least two non-empty lines.' };
+    }
+    if (rule.matchExpected) {
+      const normalizeOutput = (value) => String(value ?? '').replace(/\r\n/g, '\n').replace(/\n+$/, '');
+      const actual = normalizeOutput(output);
+      const expected = normalizeOutput(question.expectedOutput);
+      if (actual !== expected) {
+        return { passed: false, message: 'The code ran, but the printed answer is not correct yet. Check the values and make sure you print the updated/final value after all calculations.' };
+      }
     }
     return { passed: true, message: '' };
   }

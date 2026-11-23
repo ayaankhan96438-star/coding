@@ -61,18 +61,18 @@
     "id": "py05q03",
     "title": "Find the remainder",
     "level": "Beginner",
-    "description": "Use % to find the remainder of 17 divided by 5. Print the answer. You can try other numbers too.",
+    "description": "Use % to find the remainder of 17 divided by 5. Print the answer.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "5",
-    "solution": "print(29 % 6)",
+    "expectedOutput": "2",
+    "solution": "print(17 % 5)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use the modulo operator % and display its numeric result.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with find a remainder. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "17 divided by 5 leaves a remainder of 2. The % operator gives that remainder.",
+    "commonMistakes": "Use % for the remainder and use the same two numbers shown in the question.",
     "validation": {
       "required": [
         "print_call",
@@ -80,7 +80,8 @@
       ],
       "minimums": {},
       "output": "numeric",
-      "feedback": "Use the modulo operator % and display its numeric result."
+      "feedback": "Use the modulo operator % and display its numeric result.",
+      "matchExpected": true
     }
   },
   {

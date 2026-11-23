@@ -95,15 +95,15 @@
     "description": "Save a word in a variable. Use a slice with [ ] and : to print its first three letters.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "PROG",
-    "solution": "word = \"PROGRAM\"\nprint(word[0:4])",
+    "expectedOutput": "PRO",
+    "solution": "word = \"PROGRAM\"\nprint(word[0:3])",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use a slice with square brackets and a colon.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with slice a string. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "A slice [0:3] starts at index 0 and stops before index 3, so it returns the first three letters.",
+    "commonMistakes": "The ending index is not included. Use [0:3], not [0:4], to get exactly three letters.",
     "validation": {
       "required": [
         "has_slice",
@@ -121,15 +121,15 @@
     "description": "Choose a word and use [::-1] to reverse it. Print the reversed word.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "level",
-    "solution": "word = \"level\"\nprint(word[::-1])",
+    "expectedOutput": "nohtyP",
+    "solution": "word = \"Python\"\nprint(word[::-1])",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use a slice such as text[::-1] and print the reversed text.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with reverse a string. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "[::-1] reads the characters from the end to the beginning. Python becomes nohtyP.",
+    "commonMistakes": "Use a word that is not the same forwards and backwards, then use [::-1].",
     "validation": {
       "required": [
         "has_negative_slice_step",

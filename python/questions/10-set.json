@@ -3,7 +3,7 @@
     "id": "py10q01",
     "title": "Make a set of three items",
     "level": "Beginner",
-    "description": "Create a set with at least three values using { }. Print the set. Repeated values are kept only once.",
+    "description": "Create a set with at least three values using { }. Print its values in sorted order. Repeated values are kept only once.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[1, 2, 3]",
@@ -13,7 +13,7 @@
       "Create and display a set using braces or set(...).",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with create a set. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "explanation": "A set keeps only unique values. sorted() displays those values in a predictable order.",
     "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
     "validation": {
       "required": [
@@ -34,7 +34,7 @@
     "id": "py10q02",
     "title": "Add an item to a set",
     "level": "Beginner",
-    "description": "Create a set and use .add() to put one more item in it. Print the updated set.",
+    "description": "Create a set and use .add() to put one more item in it. Print the updated values in sorted order.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "['a', 'b', 'c']",
@@ -44,7 +44,7 @@
       "Use .add(...) on a set.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with add an item to a set. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "explanation": "The add() method puts a new value into the set. sorted() makes the displayed order predictable.",
     "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
     "validation": {
       "required": [
@@ -93,7 +93,7 @@
     "id": "py10q04",
     "title": "Find items in both sets",
     "level": "Beginner",
-    "description": "Create two sets with at least one value in common. Use & or .intersection() and print the common values.",
+    "description": "Create two sets with at least one value in common. Use & or .intersection() and print the common values in sorted order.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[2, 3]",
@@ -128,7 +128,7 @@
     "id": "py10q05",
     "title": "Join two sets",
     "level": "Beginner",
-    "description": "Create two sets. Use | or .union() to join them and print the result without repeated values.",
+    "description": "Create two sets. Use | or .union() to join them and print the combined values in sorted order without repeats.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "[1, 2, 3]",

@@ -6,15 +6,15 @@
     "description": "Create a dictionary with a name and an age. Use print() to show the dictionary.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "Ira",
-    "solution": "student = {\"name\": \"Ira\", \"age\": 20}\nprint(student[\"name\"])",
+    "expectedOutput": "{'name': 'Ira', 'age': 20}",
+    "solution": "student = {\"name\": \"Ira\", \"age\": 20}\nprint(student)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Create and display a dictionary.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with create a dictionary. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "A dictionary stores key-value pairs. print(student) displays the complete dictionary.",
+    "commonMistakes": "Use curly braces { } with a colon between each key and its value. Print the dictionary variable itself.",
     "validation": {
       "required": [
         "print_call"
@@ -69,15 +69,15 @@
     "description": "Create a dictionary and add one new key with a value. Print the updated dictionary.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "Delhi",
-    "solution": "profile = {\"name\": \"Dev\"}\nprofile[\"city\"] = \"Delhi\"\nprint(profile[\"city\"])",
+    "expectedOutput": "{'name': 'Dev', 'city': 'Delhi'}",
+    "solution": "profile = {\"name\": \"Dev\"}\nprofile[\"city\"] = \"Delhi\"\nprint(profile)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Assign a value using dictionary[new_key] = value.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with add a dictionary key. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "Assigning profile[\"city\"] adds a new key and value. print(profile) shows the updated dictionary.",
+    "commonMistakes": "Use dictionary[new_key] = value to add the item, then print the dictionary variable.",
     "validation": {
       "required": [
         "has_dict",

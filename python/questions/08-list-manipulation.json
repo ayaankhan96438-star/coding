@@ -6,15 +6,15 @@
     "description": "Create a list with at least three fruits, such as apple, mango, and banana. Print the list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "[2, 4, 6]",
-    "solution": "numbers = [2, 4, 6]\nprint(numbers)",
+    "expectedOutput": "['apple', 'mango', 'banana']",
+    "solution": "fruits = [\"apple\", \"mango\", \"banana\"]\nprint(fruits)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Create and display a Python list.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with create a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "A list stores several values inside square brackets. This example stores three fruit names.",
+    "commonMistakes": "Use square brackets [ ] and separate each fruit with a comma.",
     "validation": {
       "required": [
         "print_call"
@@ -37,15 +37,15 @@
     "description": "Create a list with a few items. Use [0] to get the first item and print it.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "green",
-    "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[1])",
+    "expectedOutput": "red",
+    "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[0])",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use square brackets with an index to access one list item.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with access a list item. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "List positions start at 0. That means colors[0] is the first item, red.",
+    "commonMistakes": "Use index 0 for the first item. Index 1 is the second item.",
     "validation": {
       "required": [
         "has_subscript",
@@ -69,15 +69,15 @@
     "description": "Create a list, use .append() to add one more fruit, and print the updated list.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
-    "expectedOutput": "[1, 2, 3]",
-    "solution": "items = [1, 2]\nitems.append(3)\nprint(items)",
+    "expectedOutput": "['apple', 'banana', 'mango']",
+    "solution": "fruits = [\"apple\", \"banana\"]\nfruits.append(\"mango\")\nprint(fruits)",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Call .append(...) on a list and show the updated list.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with add an item to a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "append() adds one new item to the end of a list.",
+    "commonMistakes": "Call append() on the list and put the new fruit inside its parentheses.",
     "validation": {
       "required": [
         "has_append",

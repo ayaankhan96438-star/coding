@@ -3,18 +3,18 @@
     "id": "py19q01",
     "title": "Write a message to a file and read it",
     "level": "Beginner",
-    "description": "Open notes.txt in write mode and save a short message. Open it in read mode and print the message.",
+    "description": "Open notes.txt in write mode and save a short message. Open the same file in read mode and print the message.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "Hello file",
-    "solution": "with open(\"note.txt\", \"w\") as file:\n    file.write(\"Hello file\")\nwith open(\"note.txt\", \"r\") as file:\n    print(file.read())",
+    "solution": "with open(\"notes.txt\", \"w\") as file:\n    file.write(\"Hello file\")\nwith open(\"notes.txt\", \"r\") as file:\n    print(file.read())",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use a with-open block to write text, read it back and print it.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with write and read a text file. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "The first with block writes the message to notes.txt. The second opens that same file and prints its contents.",
+    "commonMistakes": "Use the same filename in both open() calls. Use w to write and r to read.",
     "validation": {
       "required": [
         "has_with",
@@ -32,18 +32,18 @@
     "id": "py19q02",
     "title": "Add another message to a file",
     "level": "Beginner",
-    "description": "Write one message to notes.txt. Open the file in append mode to add a second message. Read and print both messages.",
+    "description": "Write one message to notes.txt. Open the same file in append mode to add a second message. Read and print both messages.",
     "starterCode": "# Write your Python code below\n",
     "testInput": "",
     "expectedOutput": "AB",
-    "solution": "with open(\"log.txt\", \"w\") as file:\n    file.write(\"A\")\nwith open(\"log.txt\", \"a\") as file:\n    file.write(\"B\")\nwith open(\"log.txt\", \"r\") as file:\n    print(file.read())",
+    "solution": "with open(\"notes.txt\", \"w\") as file:\n    file.write(\"A\")\nwith open(\"notes.txt\", \"a\") as file:\n    file.write(\"B\")\nwith open(\"notes.txt\", \"r\") as file:\n    print(file.read())",
     "hints": [
       "Read the task once and identify the Python feature it asks you to practise.",
       "Use file mode a to append text, then read it.",
       "Write your own code, press Run, and fix any syntax or runtime error shown."
     ],
-    "explanation": "This task gives you practice with append to a file. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
-    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "explanation": "Mode w creates the first content. Mode a adds more content without deleting it. Mode r reads both messages.",
+    "commonMistakes": "Use the same filename for writing, appending and reading. Use a for append mode.",
     "validation": {
       "required": [
         "has_with",
