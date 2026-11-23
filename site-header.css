@@ -1,0 +1,91 @@
+/* Shared Codeora header used by every learning page. */
+#site-header { display: block; width: 100%; position: relative; z-index: 100; }
+.site-unified-header,
+.site-unified-header.course-header {
+  width: 100%; min-height: 78px; margin: 0; padding: 10px clamp(14px, 2.4vw, 38px);
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px clamp(14px, 1.7vw, 26px);
+  background: #fff; color: #26352d; border: 0; border-bottom: 1px solid #e2e9e4;
+  box-shadow: 0 3px 16px rgba(24, 49, 34, .045); backdrop-filter: blur(14px);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.site-header-brand { display: flex; flex: 0 0 170px; min-width: 160px; flex-direction: column; align-items: flex-start; gap: 4px; }
+.site-header-logo { display: inline-flex; align-items: center; gap: 9px; color: #18392d; text-decoration: none; line-height: 1.1; }
+.site-header-logo img { display: block; width: 36px; height: 36px; flex: 0 0 36px; object-fit: contain; }
+.site-brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
+.site-brand-copy strong { color: #17382d; font-size: 18px; font-weight: 750; letter-spacing: -.04em; }
+.site-brand-copy small { margin-top: 3px; color: #718077; font-size: 10.5px; font-weight: 450; white-space: nowrap; }
+.site-track-links { display: flex; align-items: center; gap: 4px; margin-left: 44px; }
+.site-track-links .track-link { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 7px; border-radius: 6px; color: #5a6c60; text-decoration: none; font-size: 11.5px; font-weight: 650; transition: color .15s, background .15s; }
+.site-track-links .track-link:hover { background: #f0f5f1; color: #275d40; }
+.site-track-links .track-link.is-active { color: #1769dc; }
+.site-main-nav.top-nav { display: flex; flex: 1 1 680px; min-width: 0; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 3px; }
+.site-main-nav.top-nav > a,
+.site-main-nav .nav-menu > summary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 36px; padding: 7px 9px; border: 0; border-radius: 8px;
+  background: transparent; color: #52645a; font: inherit; font-size: 12.5px;
+  font-weight: 620; line-height: 1.2; text-decoration: none; white-space: nowrap; cursor: pointer; list-style: none;
+}
+.site-main-nav .nav-menu { position: relative; flex: 0 0 auto; }
+.site-main-nav .nav-menu > summary::-webkit-details-marker { display: none; }
+.site-main-nav .nav-menu > summary::marker { content: ""; }
+.site-main-nav.top-nav > a:hover,
+.site-main-nav .nav-menu > summary:hover,
+.site-main-nav .nav-menu[open] > summary { color: #285d3e; background: #f0f5f1; }
+.site-main-nav.top-nav > a[aria-current="page"],
+.site-main-nav .nav-dropdown a[aria-current="page"] { color: #285d3e; background: #eaf3ec; }
+.site-main-nav .nav-menu[data-active="true"] > summary { color: #285d3e; background: #f0f5f1; }
+.site-main-nav .nav-chevron { color: #829188; font-size: 13px; transition: transform .15s ease; }
+.site-main-nav .nav-menu[open] .nav-chevron { transform: rotate(180deg); }
+.site-main-nav .nav-dropdown {
+  position: absolute; z-index: 1200; top: calc(100% + 7px); left: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(135px, 1fr)); gap: 4px;
+  width: max-content; min-width: 282px; max-width: min(420px, calc(100vw - 24px));
+  padding: 9px; border: 1px solid #e0e8e1; border-radius: 11px; background: #fff;
+  box-shadow: 0 18px 42px rgba(24, 49, 34, .14);
+}
+.site-main-nav .nav-dropdown a { display: flex; align-items: center; min-height: 37px; padding: 8px 10px; border-radius: 7px; color: #52645a; font-size: 12px; font-weight: 550; line-height: 1.35; text-decoration: none; white-space: normal; }
+.site-main-nav .nav-dropdown a:hover { color: #285d3e; background: #f0f5f1; }
+.site-main-nav.top-nav > .site-account-link { margin-left: auto; border: 1px solid #dbe4e9; color: #315d50; font-weight: 750; }
+.site-main-nav.top-nav > .site-account-link:hover { border-color: #9ebaaa; background: #f0f6f2; }
+.site-main-nav.top-nav > .site-account-link.is-signed-in { color: #246c48; }
+.site-header-actions { display: flex; flex: 0 0 auto; align-items: center; justify-content: flex-end; }
+.site-topic-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 6px 10px; border: 1px solid #d9e2ee; border-radius: 7px; background: #f7faff; color: #344252; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; white-space: nowrap; }
+.site-topic-toggle:hover, .site-topic-toggle[aria-expanded="true"] { border-color: #1769dc; background: #edf4ff; color: #124f9e; }
+.site-unified-header > .theme-toggle { flex: 0 0 auto; min-height: 34px; padding: 6px 10px; border: 1px solid #dbe4e9; border-radius: 7px; background: #fff; color: #52645a; font-size: 11.5px; font-weight: 650; cursor: pointer; }
+body.dark-mode .site-unified-header { background: rgba(25,37,30,.98); border-bottom-color: #2b3b30; color: #dbe6dc; }
+body.dark-mode .site-brand-copy strong { color: #e2eee3; }
+body.dark-mode .site-brand-copy small { color: #a7b8aa; }
+body.dark-mode .site-track-links .track-link { color: #c5d4c7; }
+body.dark-mode .site-track-links .track-link.is-active { color: #8bb8ff; }
+body.dark-mode .site-main-nav.top-nav > a,
+body.dark-mode .site-main-nav .nav-menu > summary { color: #c5d4c7; }
+body.dark-mode .site-main-nav .nav-dropdown { background: #19251e; border-color: #2b3b30; }
+body.dark-mode .site-main-nav .nav-dropdown a { color: #c5d4c7; }
+body.dark-mode .site-main-nav .nav-dropdown a:hover,
+body.dark-mode .site-main-nav .nav-dropdown a[aria-current="page"] { background: #26392b; color: #e0eee1; }
+body.dark-mode .site-main-nav .nav-menu[data-active="true"] > summary { background: #26392b; color: #e0eee1; }
+body.dark-mode .site-main-nav.top-nav > .site-account-link { color: #dcebdd; border-color: #47624c; }
+body.dark-mode .site-topic-toggle, body.dark-mode .site-unified-header > .theme-toggle { background: #1d2b22; border-color: #47624c; color: #dcebdd; }
+@media (max-width: 1100px) {
+  .site-unified-header, .site-unified-header.course-header { align-items: center; }
+  .site-main-nav.top-nav { flex-basis: calc(100% - 190px); order: 3; }
+  .site-header-actions { margin-left: auto; }
+}
+@media (max-width: 760px) {
+  .site-unified-header, .site-unified-header.course-header { padding: 10px 14px; gap: 8px 12px; }
+  .site-header-brand { flex-basis: 150px; min-width: 145px; }
+  .site-brand-copy strong { font-size: 17px; }
+  .site-brand-copy small { font-size: 9.5px; }
+  .site-track-links { margin-left: 40px; }
+  .site-main-nav.top-nav { order: 3; flex: 0 0 100%; width: 100%; gap: 3px; }
+  .site-main-nav.top-nav > a, .site-main-nav .nav-menu > summary { min-height: 34px; padding: 6px 8px; font-size: 11.5px; }
+  .site-main-nav .nav-dropdown { grid-template-columns: minmax(0, 1fr); min-width: 220px; }
+  .site-header-actions { margin-left: auto; }
+  .site-main-nav.top-nav > .site-account-link { margin-left: 0; }
+}
+@media (max-width: 440px) {
+  .site-main-nav.top-nav { gap: 2px; }
+  .site-main-nav.top-nav > a, .site-main-nav .nav-menu > summary { padding: 6px; font-size: 10.5px; }
+  .site-main-nav .nav-dropdown { left: auto; right: 0; max-width: calc(100vw - 24px); }
+}
