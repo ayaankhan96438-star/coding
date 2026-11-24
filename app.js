@@ -3,10 +3,12 @@ import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
+import { getNextUnsolvedQuestion, getQuestionDraft as readQuestionDraft, hasRequiredSemicolon, withQuestionDraft } from './sql-practice-flow.mjs?v=20261124-semicolon-drafts-flow-01';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
 const SELECTED_QUESTION_KEY = 'querypath-selected-question-v1';
+const QUERY_DRAFTS_KEY = 'codebolt-sql-question-drafts-v1';
 const XP_PER_QUESTION = 25;
 const DAILY_PRACTICE_BONUS = 10;
 const LEVELS = [
@@ -27,6 +29,7 @@ let activeCreatedTable = null;
 let activeTutorialGroupIndex = 0;
 let openRequest = 0;
 let progressData = {};
+let questionDrafts = {};
 let gamificationData = createDefaultGamification();
 let hintVisible = false;
 let solutionVisible = false;
@@ -357,6 +360,39 @@ function getQuestionProgress(id) {
     attempts: Number.isInteger(entry?.attempts) && entry.attempts > 0 ? entry.attempts : 0,
     wrongAttempts: Number.isInteger(entry?.wrongAttempts) && entry.wrongAttempts > 0 ? entry.wrongAttempts : 0
   };
+}
+
+function loadQuestionDrafts() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(QUERY_DRAFTS_KEY) || '{}');
+    questionDrafts = saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
+  } catch (error) {
+    questionDrafts = {};
+    console.warn('Saved SQL answers could not be read from localStorage.', error);
+  }
+}
+
+function saveQuestionDraft(questionId, sql) {
+  if (!questionId) return;
+  questionDrafts = withQuestionDraft(questionDrafts, questionId, sql);
+  try {
+    localStorage.setItem(QUERY_DRAFTS_KEY, JSON.stringify(questionDrafts));
+  } catch (error) {
+    console.warn('SQL answer draft could not be saved.', error);
+  }
+}
+
+function saveCurrentQuestionDraft() {
+  const textarea = $('#query');
+  if (currentQuestionId && textarea) saveQuestionDraft(currentQuestionId, textarea.value);
+}
+
+function getSavedQuestionDraft(questionId) {
+  const question = getQuestionById(questionId)?.question;
+  const legacyFallback = question && getQuestionProgress(questionId).status === 'solved'
+    ? question.solution
+    : '';
+  return readQuestionDraft(questionDrafts, questionId, legacyFallback);
 }
 
 function loadProgress() {
@@ -950,7 +986,7 @@ function render() {
               <button type="button" class="course-button secondary reset-button" id="reset-current-task-button">Reset progress</button>
             </div>
           </div>
-          <p class="auto-check-note">Auto-check is on · correct answers are checked automatically · Enter makes a new line.</p>
+          <p class="auto-check-note">End every SQL query with a semicolon (;) to solve it · Auto-check is on · Enter makes a new line.</p>
         </section>
       </div>
 
@@ -975,6 +1011,8 @@ function render() {
 
     ${renderLessonReading(item, currentLessonIndex)}
   `;
+  const queryEditor = $('#query');
+  if (queryEditor) queryEditor.value = getSavedQuestionDraft(currentQuestionId);
   renderInteractiveTutorial();
   renderQuestionList();
   renderSchemaViewer();
@@ -1084,6 +1122,7 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
   }
   const message = $('#lesson-access-message');
   if (message) message.hidden = true;
+  saveCurrentQuestionDraft();
   cancelAutoAdvance();
   cancelAutoCheck();
   navigationVersion += 1;
@@ -1312,15 +1351,14 @@ function completeCorrectAnswer(question, sql) {
   if (!alreadySolved) recordAttempt(question, true);
   saveQueryHistory(sql, 'Lesson submission', true, 'Passed 3/3 validation cases');
 
-  const textarea = $('#query');
-  if (textarea) textarea.value = '';
+  saveQuestionDraft(question.id, sql);
   const message = $('#answer-message');
   if (message) {
     message.hidden = false;
     message.className = 'answer-message good';
     message.textContent = alreadySolved
-      ? '✓ This question is already completed. You can practise it again whenever you like.'
-      : '✓ Correct answer! Your query has been cleared. Opening the next question…';
+      ? '✓ This question is already completed. Your answer is saved here, and you can practise it again whenever you like.'
+      : '✓ Correct answer! Your SQL is saved for this question. Opening the next unanswered question…';
   }
 
   if (alreadySolved) return;
@@ -1339,7 +1377,7 @@ function scheduleAutoCheck() {
   const sql = textarea?.value.trim();
   const question = getQuestionById(questionId)?.question;
   if (!question || getQuestionProgress(questionId).status !== 'solved') cancelAutoAdvance();
-  if (!textarea || textarea.disabled || !question || !sql) return;
+  if (!textarea || textarea.disabled || !question || !sql || !hasRequiredSemicolon(sql)) return;
 
   const checkVersion = autoCheckVersion;
   autoCheckTimer = window.setTimeout(async () => {
@@ -1370,9 +1408,11 @@ function scheduleAutoAdvance(questionId) {
   cancelAutoAdvance();
   const selection = getQuestionById(questionId);
   if (!selection) return;
-  const nextQuestion = lessons[selection.lessonIndex].questions
-    .slice(selection.questionIndex + 1)
-    .find((question) => isUnlocked(question) && getQuestionProgress(question.id).status !== 'solved');
+  const nextQuestion = getNextUnsolvedQuestion(
+    lessons[selection.lessonIndex].questions,
+    isUnlocked,
+    (id) => getQuestionProgress(id).status
+  );
   if (!nextQuestion) {
     const status = $('#answer-message');
     if (status) {
@@ -1407,6 +1447,7 @@ async function submitAnswer() {
   const question = selection?.question;
   const questionId = currentQuestionId;
   const sql = $('#query')?.value.trim();
+  if (questionId && sql !== undefined) saveQuestionDraft(questionId, sql);
   const message = $('#answer-message');
   const checkButton = $('#check-answer-button');
   if (!question || !isUnlocked(question) || !message) return;
@@ -1416,6 +1457,11 @@ async function submitAnswer() {
   if (!sql) {
     message.className = 'answer-message bad';
     message.textContent = 'Write a SQL query first. CodeBolt will also check automatically as you type.';
+    return;
+  }
+  if (!hasRequiredSemicolon(sql)) {
+    message.className = 'answer-message bad';
+    message.textContent = 'Add a semicolon (;) at the end of your SQL query before it can be marked correct.';
     return;
   }
 
@@ -1595,6 +1641,7 @@ async function start() {
 
     loadProgress();
     loadGamification();
+    loadQuestionDrafts();
     let response;
     try {
       const result = await lessonsRequest;
@@ -1701,7 +1748,10 @@ async function start() {
 }
 
 document.addEventListener('input', (event) => {
-  if (event.target?.id === 'query') scheduleAutoCheck();
+  if (event.target?.id === 'query') {
+    saveQuestionDraft(currentQuestionId, event.target.value);
+    scheduleAutoCheck();
+  }
 });
 
 document.addEventListener('click', (event) => {
