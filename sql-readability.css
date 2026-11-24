@@ -243,3 +243,64 @@ body[data-page="practice"] {
   .lesson-reading p,
   .reading-column p { font-size: 16px; }
 }
+
+
+/* Text constraints reference table and learning note */
+.operator-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 18px 0 24px;
+  border: 1px solid #d9e2dc;
+  border-radius: 12px;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+.operator-reference-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.operator-reference-table th,
+.operator-reference-table td {
+  padding: 13px 15px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e3e9e5;
+}
+.operator-reference-table th {
+  background: #f1f6f2;
+  color: #14251a;
+  font-weight: 800;
+}
+.operator-reference-table tr:last-child td { border-bottom: 0; }
+.operator-reference-table code,
+.reading-section code,
+.did-you-know code {
+  color: #123f78;
+  font-size: .95em;
+  font-weight: 700;
+}
+.did-you-know {
+  margin: 24px 0 8px;
+  padding: 18px 20px;
+  border: 1px solid #cbd9ce;
+  border-left: 4px solid #276749;
+  border-radius: 12px;
+  background: #f4f8f4;
+}
+.did-you-know h2 {
+  margin: 0 0 8px;
+  color: #153d32;
+  font-size: 19px;
+  font-weight: 800;
+}
+.did-you-know p { margin: 0; }
+@media (max-width: 760px) {
+  .operator-reference-table { min-width: 700px; font-size: 13px; }
+  .operator-reference-table th,
+  .operator-reference-table td { padding: 10px 12px; }
+  .did-you-know { padding: 15px; }
+}

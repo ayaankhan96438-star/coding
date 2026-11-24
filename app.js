@@ -554,7 +554,8 @@ const SQL_TOPIC_GROUPS = [
   ]},
   { title: 'Foundation · Filtering & Conditions', topics: [
     { slug: 'logical-operators', title: 'AND, OR, NOT Operators', lessonIndex: 4, description: 'AND requires every condition to be true, OR accepts either condition, and NOT reverses a condition.', example: 'SELECT student, marks FROM school\nWHERE marks > 80 AND class = 5;' },
-    { slug: 'between-in-like', title: 'BETWEEN, IN, LIKE', lessonIndex: 4, description: 'BETWEEN checks a range of marks, IN matches one of several teachers, and LIKE searches for a text pattern.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" }
+    { slug: 'between-in-like', title: 'BETWEEN, IN, LIKE', lessonIndex: 4, description: 'BETWEEN checks a range of marks, IN matches one of several teachers, and LIKE searches for a text pattern.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" },
+    { slug: 'text-constraints', title: 'Text Comparisons & Pattern Matching', lessonIndex: 4, description: 'Learn exact text comparisons (=, !=, <>), LIKE and NOT LIKE, the % and _ wildcards, and text lists with IN and NOT IN.', example: "SELECT student, teacher FROM school\nWHERE teacher LIKE 'NEHA';" }
   ]},
   { title: 'Intermediate & Advanced · Aggregate Functions', topics: [
     { slug: 'count-sum-avg', title: 'COUNT(), SUM(), AVG()', lessonIndex: 6, description: 'COUNT counts rows or values, SUM adds numeric values, and AVG calculates their average.', example: 'SELECT COUNT(*) AS students,\n       SUM(age) AS total_age,\n       AVG(age) AS average_age\nFROM students;' },
@@ -832,6 +833,59 @@ function getLessonDisplayTitle(index, item) {
 
 function renderLessonReading(item, index) {
   const topic = TOPIC_BY_SLUG[currentTopicSlug] || getDefaultTopicForLesson(index);
+  if (topic.slug === 'text-constraints') {
+    return `
+      <section class="lesson-reading">
+        <article class="reading-column">
+          <header class="lesson-heading">
+            <p class="lesson-kicker">FILTERING &amp; CONDITIONS · TEXT DATA</p>
+            <h1>SQL Lesson 3: Queries with constraints (Pt. 2)</h1>
+          </header>
+          <p>Use these operators inside a <b>WHERE</b> clause when a column stores text. They help you compare exact words, exclude values, search for patterns and check whether a value belongs to a list.</p>
+          <section class="reading-section">
+            <h2>Text comparison and pattern operators</h2>
+            <div class="operator-table-scroll" role="region" aria-label="SQL text comparison operators" tabindex="0">
+              <table class="operator-reference-table">
+                <thead><tr><th>Operator</th><th>What it does</th><th>Example</th></tr></thead>
+                <tbody>
+                  <tr><td><code>=</code></td><td>Exact text comparison. With the default SQLite collation used here, it is case-sensitive.</td><td><code>teacher = 'Neha'</code></td></tr>
+                  <tr><td><code>!=</code> or <code>&lt;&gt;</code></td><td>Text is not equal to the given value. Both symbols mean the same thing.</td><td><code>teacher != 'Neha'</code><br><code>teacher &lt;&gt; 'Neha'</code></td></tr>
+                  <tr><td><code>LIKE</code></td><td>Matches a text pattern. In this SQLite practice database, ordinary ASCII text matching is case-insensitive by default.</td><td><code>teacher LIKE 'NEHA'</code></td></tr>
+                  <tr><td><code>NOT LIKE</code></td><td>Finds values that do not match the text pattern.</td><td><code>teacher NOT LIKE 'NEHA'</code></td></tr>
+                  <tr><td><code>%</code></td><td>With LIKE or NOT LIKE, matches zero or more characters.</td><td><code>student LIKE '%ar%'</code></td></tr>
+                  <tr><td><code>_</code></td><td>With LIKE or NOT LIKE, matches exactly one character.</td><td><code>student LIKE 'A____'</code></td></tr>
+                  <tr><td><code>IN (...)</code></td><td>Matches any value in the list.</td><td><code>teacher IN ('Neha', 'Ravi')</code></td></tr>
+                  <tr><td><code>NOT IN (...)</code></td><td>Matches values that are not in the list.</td><td><code>teacher NOT IN ('Neha', 'Ravi')</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="reading-section">
+            <h2>Understand the two wildcards</h2>
+            <p><b>Percent (%):</b> it can stand for no characters, one character or many characters. For example, <code>LIKE '%AT%'</code> can match <code>AT</code>, <code>ATTIC</code>, <code>CAT</code> or <code>BATS</code>.</p>
+            <p><b>Underscore (_):</b> it stands for exactly one character. For example, <code>LIKE 'AN_'</code> matches <code>AND</code>, but not <code>AN</code>.</p>
+            <div class="syntax-card"><small>Names that begin with A and have five characters</small><pre><code>SELECT student
+FROM school
+WHERE student LIKE 'A____';</code></pre></div>
+          </section>
+          <section class="reading-section">
+            <h2>IN is a shortcut for OR</h2>
+            <p><code>IN ('Neha', 'Ravi')</code> checks for either value in the list. It gives the same filtering result as writing <code>teacher = 'Neha' OR teacher = 'Ravi'</code>.</p>
+            <div class="syntax-card"><small>Find students taught by Neha or Ravi</small><pre><code>SELECT student, teacher
+FROM school
+WHERE teacher IN ('Neha', 'Ravi');</code></pre></div>
+            <div class="syntax-card"><small>Exclude both teachers</small><pre><code>SELECT student, teacher
+FROM school
+WHERE teacher NOT IN ('Neha', 'Ravi');</code></pre></div>
+          </section>
+          <aside class="did-you-know" aria-label="Did you know">
+            <h2>Did you know?</h2>
+            <p>Text values (string literals) must be quoted. Prefer <code>single quotes</code> in SQL, such as <code>teacher = 'Neha'</code>. In standard SQL, double quotes are normally used for column or table identifiers, not text values. The exact case-sensitivity of <code>LIKE</code> can vary by database; this lesson uses SQLite, where LIKE is case-insensitive for ordinary ASCII letters by default.</p>
+          </aside>
+        </article>
+      </section>
+    `;
+  }
   return `
     <section class="lesson-reading">
       <article class="reading-column">
@@ -1459,7 +1513,7 @@ async function start() {
   // Fetch lesson data while Firebase restores the learner's account in parallel.
   const lessonsController = new AbortController();
   const lessonsTimeoutId = window.setTimeout(() => lessonsController.abort(), 15000);
-  const lessonsRequest = fetch(new URL('./lessons.json?v=20261123-fast-sql-start-05', document.baseURI), {
+  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-text-constraints-v1', document.baseURI), {
     cache: 'default',
     signal: lessonsController.signal
   }).catch((error) => ({ requestError: error }));
