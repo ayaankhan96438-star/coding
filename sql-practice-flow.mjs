@@ -10,16 +10,19 @@ export function getNextUnsolvedQuestion(questions, isUnlocked, getStatus) {
   ) || null;
 }
 
-/** Save one question's editor text without changing drafts for other questions. */
-export function withQuestionDraft(drafts, questionId, sql) {
-  if (!questionId) return { ...(drafts || {}) };
-  return { ...(drafts && typeof drafts === 'object' ? drafts : {}), [questionId]: String(sql ?? '') };
-}
-
-/** Read the saved editor text. The fallback supports solved tasks from older builds. */
-export function getQuestionDraft(drafts, questionId, fallback = '') {
-  if (drafts && Object.prototype.hasOwnProperty.call(drafts, questionId)) {
-    return String(drafts[questionId] ?? '');
+/**
+ * There is one shared SQL editor for the whole practice flow. Prefer its saved
+ * content; only migrate an older per-question draft when no shared value exists.
+ */
+export function getSharedEditorDraft(sharedDraft, legacyDrafts, initialQuestionId, fallback = '') {
+  if (sharedDraft !== null && sharedDraft !== undefined) return String(sharedDraft);
+  if (legacyDrafts && Object.prototype.hasOwnProperty.call(legacyDrafts, initialQuestionId)) {
+    return String(legacyDrafts[initialQuestionId] ?? '');
   }
   return String(fallback ?? '');
+}
+
+/** Normalize the shared editor value without tying it to any question ID. */
+export function normalizeSharedEditorDraft(sql) {
+  return String(sql ?? '');
 }

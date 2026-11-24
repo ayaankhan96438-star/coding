@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import {
   getNextUnsolvedQuestion,
-  getQuestionDraft,
+  getSharedEditorDraft,
   hasRequiredSemicolon,
-  withQuestionDraft
+  normalizeSharedEditorDraft
 } from '../sql-practice-flow.mjs';
 
 assert.equal(hasRequiredSemicolon('SELECT * FROM school'), false, 'a query without a semicolon cannot be submitted');
@@ -30,12 +30,20 @@ assert.equal(nextAfterQ2.id, 'q4', 'after solving q2, the app skips already-solv
 solved.add('q4');
 assert.equal(getNextUnsolvedQuestion(questions, () => true, (id) => solved.has(id) ? 'solved' : 'not started'), null);
 
-const afterQ1 = withQuestionDraft({}, 'q1', 'SELECT student FROM school;');
-const afterQ2 = withQuestionDraft(afterQ1, 'q2', 'SELECT teacher FROM school;');
-assert.equal(getQuestionDraft(afterQ2, 'q1'), 'SELECT student FROM school;', 'q1 draft remains saved after typing q2');
-assert.equal(getQuestionDraft(afterQ2, 'q2'), 'SELECT teacher FROM school;');
-assert.equal(getQuestionDraft(afterQ2, 'q3', 'SELECT * FROM school;'), 'SELECT * FROM school;', 'legacy solved tasks can display a fallback solution');
-const clearedQ1 = withQuestionDraft(afterQ2, 'q1', '');
-assert.equal(getQuestionDraft(clearedQ1, 'q1'), '', 'an intentionally cleared draft remains empty');
+// One shared editor: navigating from Q1 to Q2 must not swap/clear its text.
+const q1Answer = 'SELECT student FROM school;';
+const afterQuestionNavigation = normalizeSharedEditorDraft(q1Answer);
+assert.equal(afterQuestionNavigation, q1Answer, 'the shared textarea keeps Q1 text after auto-advance to Q2');
+assert.equal(getSharedEditorDraft(afterQuestionNavigation, {}, 'q2'), q1Answer, 'Q2 opens with the exact same shared editor content');
+// Only the learner's explicit edit/deletion changes the shared editor.
+const manuallyCleared = normalizeSharedEditorDraft('');
+assert.equal(getSharedEditorDraft(manuallyCleared, {}, 'q2'), '', 'manual deletion remains blank for Q2');
+const q2Answer = normalizeSharedEditorDraft('SELECT teacher FROM school;');
+assert.equal(getSharedEditorDraft(q2Answer, {}, 'q3'), q2Answer, 'typed Q2 text remains as the same shared editor when Q3 opens');
 
-console.log('SQL practice flow tests passed: semicolon gate, out-of-order progression and independent saved answers per question.');
+// Existing users migrate their currently selected task draft only once.
+assert.equal(getSharedEditorDraft(null, { q1: q1Answer, q2: 'SELECT teacher FROM school;' }, 'q1'), q1Answer);
+assert.equal(getSharedEditorDraft(null, {}, 'q1', 'SELECT * FROM school;'), 'SELECT * FROM school;');
+assert.equal(getSharedEditorDraft('', { q1: q1Answer }, 'q1'), '', 'an explicitly saved empty shared editor wins over legacy drafts');
+
+console.log('SQL practice flow tests passed: semicolon gate, ordered auto-advance and one shared editor that never auto-clears/swaps answers.');

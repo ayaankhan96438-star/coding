@@ -3,12 +3,13 @@ import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
-import { getNextUnsolvedQuestion, getQuestionDraft as readQuestionDraft, hasRequiredSemicolon, withQuestionDraft } from './sql-practice-flow.mjs?v=20261124-semicolon-drafts-flow-01';
+import { getNextUnsolvedQuestion, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261124-shared-sql-editor-01';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
 const SELECTED_QUESTION_KEY = 'querypath-selected-question-v1';
-const QUERY_DRAFTS_KEY = 'codebolt-sql-question-drafts-v1';
+const QUERY_DRAFTS_KEY = 'codebolt-sql-question-drafts-v1'; // Legacy per-question drafts; used only for migration.
+const SHARED_QUERY_KEY = 'codebolt-sql-shared-editor-v1';
 const XP_PER_QUESTION = 25;
 const DAILY_PRACTICE_BONUS = 10;
 const LEVELS = [
@@ -30,6 +31,8 @@ let activeTutorialGroupIndex = 0;
 let openRequest = 0;
 let progressData = {};
 let questionDrafts = {};
+let sharedEditorDraft = '';
+let sharedEditorDraftLoaded = false;
 let gamificationData = createDefaultGamification();
 let hintVisible = false;
 let solutionVisible = false;
@@ -363,36 +366,57 @@ function getQuestionProgress(id) {
 }
 
 function loadQuestionDrafts() {
+  // New behaviour: one shared SQL editor value for every question. Keep the old
+  // per-question map only so existing learners can migrate their current draft.
   try {
-    const saved = JSON.parse(localStorage.getItem(QUERY_DRAFTS_KEY) || '{}');
-    questionDrafts = saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
+    const sharedSaved = localStorage.getItem(SHARED_QUERY_KEY);
+    if (sharedSaved !== null) {
+      sharedEditorDraft = normalizeSharedEditorDraft(sharedSaved);
+      sharedEditorDraftLoaded = true;
+    } else {
+      const saved = JSON.parse(localStorage.getItem(QUERY_DRAFTS_KEY) || '{}');
+      questionDrafts = saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
+      sharedEditorDraft = '';
+      sharedEditorDraftLoaded = false;
+    }
   } catch (error) {
     questionDrafts = {};
-    console.warn('Saved SQL answers could not be read from localStorage.', error);
+    sharedEditorDraft = '';
+    sharedEditorDraftLoaded = false;
+    console.warn('Saved SQL editor text could not be read from localStorage.', error);
   }
 }
 
-function saveQuestionDraft(questionId, sql) {
-  if (!questionId) return;
-  questionDrafts = withQuestionDraft(questionDrafts, questionId, sql);
+function saveSharedEditorDraft(sql) {
+  sharedEditorDraft = normalizeSharedEditorDraft(sql);
+  sharedEditorDraftLoaded = true;
   try {
-    localStorage.setItem(QUERY_DRAFTS_KEY, JSON.stringify(questionDrafts));
+    localStorage.setItem(SHARED_QUERY_KEY, sharedEditorDraft);
   } catch (error) {
-    console.warn('SQL answer draft could not be saved.', error);
+    console.warn('Shared SQL editor text could not be saved.', error);
   }
 }
 
 function saveCurrentQuestionDraft() {
   const textarea = $('#query');
-  if (currentQuestionId && textarea) saveQuestionDraft(currentQuestionId, textarea.value);
+  if (textarea) saveSharedEditorDraft(textarea.value);
 }
 
 function getSavedQuestionDraft(questionId) {
-  const question = getQuestionById(questionId)?.question;
-  const legacyFallback = question && getQuestionProgress(questionId).status === 'solved'
-    ? question.solution
-    : '';
-  return readQuestionDraft(questionDrafts, questionId, legacyFallback);
+  if (!sharedEditorDraftLoaded) {
+    const question = getQuestionById(questionId)?.question;
+    const legacyFallback = question && getQuestionProgress(questionId).status === 'solved'
+      ? question.solution
+      : '';
+    sharedEditorDraft = getSharedEditorDraft(null, questionDrafts, questionId, legacyFallback);
+    sharedEditorDraftLoaded = true;
+    try {
+      localStorage.setItem(SHARED_QUERY_KEY, sharedEditorDraft);
+    } catch (error) {
+      console.warn('Legacy SQL answer could not be migrated to the shared editor.', error);
+    }
+  }
+  return sharedEditorDraft;
 }
 
 function loadProgress() {
@@ -1184,6 +1208,10 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
         answerMessage.hidden = false;
         answerMessage.className = 'answer-message good';
         answerMessage.textContent = '✓ This lesson is already complete. Your progress is saved. Continue to the next lesson when you are ready.';
+      } else if ($('#query')?.value.trim()) {
+        answerMessage.hidden = false;
+        answerMessage.className = 'answer-message';
+        answerMessage.textContent = 'Your previous SQL is still in the shared editor. Select the query and delete it yourself before writing this answer.';
       } else answerMessage.hidden = true;
     }
   } catch (error) {
@@ -1351,14 +1379,14 @@ function completeCorrectAnswer(question, sql) {
   if (!alreadySolved) recordAttempt(question, true);
   saveQueryHistory(sql, 'Lesson submission', true, 'Passed 3/3 validation cases');
 
-  saveQuestionDraft(question.id, sql);
+  saveSharedEditorDraft(sql);
   const message = $('#answer-message');
   if (message) {
     message.hidden = false;
     message.className = 'answer-message good';
     message.textContent = alreadySolved
-      ? '✓ This question is already completed. Your answer is saved here, and you can practise it again whenever you like.'
-      : '✓ Correct answer! Your SQL is saved for this question. Opening the next unanswered question…';
+      ? '✓ This question is already completed. Your query stays in the shared SQL editor.'
+      : '✓ Correct answer! Opening the next unanswered question. Your previous SQL will stay in the shared editor—delete it yourself before typing the next answer.';
   }
 
   if (alreadySolved) return;
@@ -1447,7 +1475,7 @@ async function submitAnswer() {
   const question = selection?.question;
   const questionId = currentQuestionId;
   const sql = $('#query')?.value.trim();
-  if (questionId && sql !== undefined) saveQuestionDraft(questionId, sql);
+  if (questionId && sql !== undefined) saveSharedEditorDraft(sql);
   const message = $('#answer-message');
   const checkButton = $('#check-answer-button');
   if (!question || !isUnlocked(question) || !message) return;
@@ -1749,7 +1777,7 @@ async function start() {
 
 document.addEventListener('input', (event) => {
   if (event.target?.id === 'query') {
-    saveQuestionDraft(currentQuestionId, event.target.value);
+    saveSharedEditorDraft(event.target.value);
     scheduleAutoCheck();
   }
 });
