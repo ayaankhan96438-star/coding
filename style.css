@@ -1120,3 +1120,6 @@ body.dark-mode footer { color: #91a295; border-color: #2b3b30; }
 /* Sign-in link added to the existing main navigation. */
 .top-nav [data-account-link]{font-weight:700;color:#315d50}
 .top-nav [data-account-link].is-signed-in{color:#246c48}
+
+/* Hide the wording of locked Premium SQL questions in the separate solutions library. */
+.solution-card-locked .solution-card-heading p { filter: blur(3px); opacity: .58; user-select: none; }

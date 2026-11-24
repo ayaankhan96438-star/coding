@@ -2,6 +2,7 @@ import { isUnlocked } from './access.js?v=20261122-platform-tracks-sequence-02';
 import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql-preload-04';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
+import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
@@ -30,6 +31,9 @@ let gamificationData = createDefaultGamification();
 let hintVisible = false;
 let solutionVisible = false;
 let autoAdvanceTimer = null;
+let autoCheckTimer = null;
+let autoCheckVersion = 0;
+const AUTO_CHECK_DELAY_MS = 750;
 let navigationVersion = 0;
 let currentTopicSlug = 'select-statement';
 
@@ -323,7 +327,7 @@ async function renderExpectedOutput(questionId) {
     let results;
     if (selection.question.type === 'state') {
       sampleDb.run(selection.question.solution);
-      results = sampleDb.exec(selection.question.verify);
+      results = sampleDb.exec(selection.question.displayVerify || selection.question.verify);
     } else {
       results = sampleDb.exec(selection.question.solution);
     }
@@ -396,6 +400,7 @@ function saveProgress() {
 
 function recordAttempt(question, correct) {
   const previous = getQuestionProgress(question.id);
+  if (previous.status === 'solved') return 0;
   const earnedXP = correct ? awardCorrectAnswer(question) : 0;
   progressData[question.id] = {
     status: correct || previous.status === 'solved' ? 'solved' : 'attempted',
@@ -435,8 +440,9 @@ function nav() {
   if (!navRoot || !lessons.length) return;
   navRoot.innerHTML = lessons.map((item, index) => {
     const solved = item.questions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
+    const unlocked = isLessonUnlocked(index);
     return `
-      <button type="button" class="lesson-link ${index === currentLessonIndex ? 'active' : ''}"
+      <button type="button" class="lesson-link ${index === currentLessonIndex ? 'active' : ''} ${unlocked ? '' : 'locked'}" ${unlocked ? '' : 'disabled aria-disabled="true"'}
         aria-current="${index === currentLessonIndex ? 'page' : 'false'}"
         data-action="open-lesson" data-lesson-index="${index}">
         <span class="lesson-link-title">${String(index + 1).padStart(2, '0')}　${escapeHtml(item.title)}</span>
@@ -520,8 +526,9 @@ function renderQuestionList() {
   const renderTask = (question, index, locked = false) => {
     const state = getQuestionProgress(question.id);
     const selected = question.id === currentQuestionId;
-    const marker = locked ? '🔒' : state.status === 'solved' ? '✓' : '';
-    return `<button type="button" class="task-choice ${selected ? 'active' : ''} ${state.status === 'solved' ? 'done' : ''} ${locked ? 'locked' : ''}" data-action="${locked ? '' : 'select-question'}" data-question-id="${escapeHtml(question.id)}" ${locked ? 'disabled aria-disabled="true"' : ''} aria-current="${selected ? 'true' : 'false'}">
+    const marker = locked ? '🔒' : state.status === 'solved' ? '<span class="task-check-mark" aria-hidden="true">✓</span>' : '';
+    const lockedLabel = `Premium question ${index + 1}. Locked.`;
+    return `<button type="button" class="task-choice ${selected ? 'active' : ''} ${state.status === 'solved' ? 'done' : ''} ${locked ? 'locked' : ''}" data-action="${locked ? '' : 'select-question'}" data-question-id="${escapeHtml(question.id)}" ${locked ? `disabled aria-disabled="true" aria-label="${lockedLabel}" title="Premium question"` : ''} aria-current="${selected ? 'true' : 'false'}">
       <span class="task-number">${String(index + 1).padStart(2, '0')}</span>
       <span class="task-text">${escapeHtml(question.text)}</span>
       <span class="task-state" aria-label="${locked ? 'Premium task' : state.status === 'solved' ? 'Completed' : ''}">${marker}</span>
@@ -665,9 +672,8 @@ tutorialMenuRoot?.addEventListener('click', (event) => {
     event.stopPropagation();
     const topic = TOPIC_BY_SLUG[topicButton.dataset.topicSlug];
     if (topic) {
-      currentTopicSlug = topic.slug;
       setTutorialMenuOpen(false);
-      openLesson(topic.lessonIndex);
+      openLesson(topic.lessonIndex, true, null, topic.slug);
     }
     return;
   }
@@ -928,7 +934,7 @@ function render() {
   const freeSolved = getFreeTaskSolvedCount(item);
   const topic = TOPIC_BY_SLUG[currentTopicSlug] || getDefaultTopicForLesson(currentLessonIndex);
 
-  document.title = `${topic.title} · Codeora`;
+  document.title = `${topic.title} · CodeBolt`;
   $('#lesson').innerHTML = `
     <section class="exercise-board" aria-label="SQL lesson exercise">
       <div class="exercise-left">
@@ -939,8 +945,12 @@ function render() {
           <textarea id="query" class="editor" spellcheck="false" aria-label="Write your SQL query" placeholder="Write your SQL query here…" disabled></textarea>
           <div class="editor-footer">
             <p id="answer-message" class="answer-message" role="status" aria-live="polite" hidden></p>
-            <button type="button" class="course-button secondary reset-button" id="reset-current-task-button">Reset progress</button>
+            <div class="editor-footer-actions">
+              <button type="button" class="course-button primary check-answer-button" id="check-answer-button" data-action="submit-answer">Check answer</button>
+              <button type="button" class="course-button secondary reset-button" id="reset-current-task-button">Reset progress</button>
+            </div>
           </div>
+          <p class="auto-check-note">Auto-check is on · correct answers are checked automatically · Enter makes a new line.</p>
         </section>
       </div>
 
@@ -1062,10 +1072,9 @@ async function init() {
 }
 
 
-async function openLesson(index, shouldScroll = true, preferredQuestionId = null) {
+async function openLesson(index, shouldScroll = true, preferredQuestionId = null, preferredTopicSlug = null) {
   const requestedIndex = Math.max(0, Math.min(lessons.length - 1, Number(index) || 0));
-  const directTopicNavigation = Boolean(TOPIC_BY_SLUG[currentTopicSlug] && TOPIC_BY_SLUG[currentTopicSlug].lessonIndex === requestedIndex);
-  if (!directTopicNavigation && !isLessonUnlocked(requestedIndex)) {
+  if (!isLessonUnlocked(requestedIndex)) {
     const message = $('#lesson-access-message');
     if (message) {
       message.hidden = false;
@@ -1076,22 +1085,22 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
   const message = $('#lesson-access-message');
   if (message) message.hidden = true;
   cancelAutoAdvance();
+  cancelAutoCheck();
   navigationVersion += 1;
   currentLessonIndex = requestedIndex;
-  if (!TOPIC_BY_SLUG[currentTopicSlug] || TOPIC_BY_SLUG[currentTopicSlug].lessonIndex !== requestedIndex) {
+  const requestedTopic = preferredTopicSlug ? TOPIC_BY_SLUG[preferredTopicSlug] : null;
+  if (requestedTopic && requestedTopic.lessonIndex === requestedIndex) currentTopicSlug = requestedTopic.slug;
+  else if (!TOPIC_BY_SLUG[currentTopicSlug] || TOPIC_BY_SLUG[currentTopicSlug].lessonIndex !== requestedIndex) {
     currentTopicSlug = getDefaultTopicForLesson(requestedIndex).slug;
   }
   renderDashboard();
   const requestedLesson = lessons[currentLessonIndex];
   const availableQuestions = requestedLesson.questions.filter((question) => isUnlocked(question));
   const preferredQuestion = availableQuestions.find((question) => question.id === preferredQuestionId) || null;
-  const preferredNextUnsolved = preferredQuestion
-    ? requestedLesson.questions.slice(requestedLesson.questions.indexOf(preferredQuestion) + 1).find((question) => isUnlocked(question) && getQuestionProgress(question.id).status !== 'solved')
-    : null;
   const firstUnsolvedQuestion = availableQuestions.find((question) => getQuestionProgress(question.id).status !== 'solved');
-  currentQuestionId = preferredQuestion && getQuestionProgress(preferredQuestion.id).status !== 'solved'
-    ? preferredQuestion.id
-    : preferredNextUnsolved?.id || firstUnsolvedQuestion?.id || preferredQuestion?.id || availableQuestions.at(-1)?.id || null;
+  // A learner may reopen any completed question. Only the default lesson entry
+  // chooses the next unfinished question.
+  currentQuestionId = preferredQuestion?.id || firstUnsolvedQuestion?.id || availableQuestions[0]?.id || null;
   const selectedQuestion = getQuestionById(currentQuestionId)?.question;
   activeTableNames = inferRelevantTables(selectedQuestion);
   activeTableName = activeTableNames[0] || activeCreatedTable?.name || null;
@@ -1128,14 +1137,14 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
     if (answerMessage) {
       const selectedProgress = currentQuestionId ? getQuestionProgress(currentQuestionId) : null;
       const lessonComplete = getFreeTaskSolvedCount(requestedLesson) === getFreeTaskCount(requestedLesson);
-      if (lessonComplete) {
+      if (selectedProgress?.status === 'solved') {
+        answerMessage.hidden = false;
+        answerMessage.className = 'answer-message good';
+        answerMessage.textContent = '✓ This question is already completed. You can practise it again; your saved progress will stay intact.';
+      } else if (lessonComplete) {
         answerMessage.hidden = false;
         answerMessage.className = 'answer-message good';
         answerMessage.textContent = '✓ This lesson is already complete. Your progress is saved. Continue to the next lesson when you are ready.';
-      } else if (selectedProgress?.status === 'solved') {
-        answerMessage.hidden = false;
-        answerMessage.className = 'answer-message good';
-        answerMessage.textContent = '✓ This question is already completed. Your progress is saved. Continue with the next unfinished question.';
       } else answerMessage.hidden = true;
     }
   } catch (error) {
@@ -1153,7 +1162,11 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
 
 function setPracticeEnabled(enabled) {
   const textarea = $('#query');
+  const checkButton = $('#check-answer-button');
+  const resetButton = $('#reset-current-task-button');
   if (textarea) textarea.disabled = !enabled;
+  if (checkButton) checkButton.disabled = !enabled;
+  if (resetButton) resetButton.disabled = !enabled;
 }
 
 function selectQuestion(id) {
@@ -1212,41 +1225,6 @@ function renderResultSets(resultSets) {
   `).join('');
 }
 
-function normalizeResults(resultSets) {
-  return (resultSets || []).map((resultSet) => ({
-    columnCount: resultSet.columns.length,
-    rows: resultSet.values.map((row) => row.map((value) => {
-      if (value === null) return null;
-      if (value instanceof Uint8Array) return `blob:${Array.from(value).join(',')}`;
-      return String(value);
-    }))
-  }));
-}
-
-function sortedRows(rows) {
-  return [...rows].sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right)));
-}
-
-function compareResults(actualRaw, expectedRaw, orderMatters) {
-  const actual = normalizeResults(actualRaw);
-  const expected = normalizeResults(expectedRaw);
-  if (actual.length !== expected.length) return { equal: false, reason: 'wrong number of result sets' };
-  for (let index = 0; index < expected.length; index += 1) {
-    const a = actual[index];
-    const e = expected[index];
-    if (a.columnCount !== e.columnCount) return { equal: false, reason: 'wrong number of columns' };
-    if (a.rows.length !== e.rows.length) return { equal: false, reason: 'wrong number of rows' };
-    const orderedEqual = JSON.stringify(a.rows) === JSON.stringify(e.rows);
-    if (!orderedEqual && orderMatters && JSON.stringify(sortedRows(a.rows)) === JSON.stringify(sortedRows(e.rows))) {
-      return { equal: false, reason: 'the rows are correct but in the wrong order' };
-    }
-    if (orderMatters ? !orderedEqual : JSON.stringify(sortedRows(a.rows)) !== JSON.stringify(sortedRows(e.rows))) {
-      return { equal: false, reason: 'some result values do not match the expected answer' };
-    }
-  }
-  return { equal: true, reason: '' };
-}
-
 function renderComparison(actual, expected) {
   const root = $('#comparison');
   if (!root) return;
@@ -1265,6 +1243,128 @@ function cancelAutoAdvance() {
   }
 }
 
+function cancelAutoCheck() {
+  autoCheckVersion += 1;
+  if (autoCheckTimer !== null) {
+    window.clearTimeout(autoCheckTimer);
+    autoCheckTimer = null;
+  }
+}
+
+async function evaluateQuestionAnswer(sql, question) {
+  const fixtures = [
+    '',
+    "UPDATE students SET age = age + 2 WHERE id = 1; UPDATE students SET city = 'Jaipur' WHERE id = 2;",
+    "UPDATE courses SET lesson_count = lesson_count + 3 WHERE id = 3; UPDATE enrollments SET status = 'review' WHERE id = 5;"
+  ];
+  let userError = null;
+  let comparison = { equal: true, reason: '' };
+  let passedCases = 0;
+
+  for (const fixture of fixtures) {
+    let actualDb;
+    let expectedDb;
+    try {
+      actualDb = await createFreshDatabase();
+      expectedDb = await createFreshDatabase();
+      if (fixture) {
+        actualDb.run(fixture);
+        expectedDb.run(fixture);
+      }
+      let actualResults;
+      let expectedResults;
+      if (question.type === 'state') {
+        actualDb.run(sql);
+        actualResults = actualDb.exec(question.verify);
+        expectedDb.run(question.solution);
+        expectedResults = expectedDb.exec(question.verify);
+      } else {
+        actualResults = actualDb.exec(sql);
+        expectedResults = expectedDb.exec(question.solution);
+      }
+      const check = compareResults(actualResults, expectedResults, question);
+      if (!check.equal) {
+        comparison = check;
+        break;
+      }
+      passedCases += 1;
+    } catch (error) {
+      userError = error;
+      comparison = { equal: false, reason: error.message };
+      break;
+    } finally {
+      actualDb?.close();
+      expectedDb?.close();
+    }
+  }
+
+  return {
+    correct: !userError && comparison.equal && passedCases === fixtures.length,
+    userError,
+    comparison,
+    passedCases,
+    totalCases: fixtures.length
+  };
+}
+
+function completeCorrectAnswer(question, sql) {
+  const alreadySolved = getQuestionProgress(question.id).status === 'solved';
+  if (!alreadySolved) recordAttempt(question, true);
+  saveQueryHistory(sql, 'Lesson submission', true, 'Passed 3/3 validation cases');
+
+  const textarea = $('#query');
+  if (textarea) textarea.value = '';
+  const message = $('#answer-message');
+  if (message) {
+    message.hidden = false;
+    message.className = 'answer-message good';
+    message.textContent = alreadySolved
+      ? '✓ This question is already completed. You can practise it again whenever you like.'
+      : '✓ Correct answer! Your query has been cleared. Opening the next question…';
+  }
+
+  if (alreadySolved) return;
+  const lesson = lessons[currentLessonIndex];
+  if (getFreeTaskSolvedCount(lesson) === getFreeTaskCount(lesson)) {
+    feedbackMessageForCompletion();
+    return;
+  }
+  scheduleAutoAdvance(question.id);
+}
+
+function scheduleAutoCheck() {
+  cancelAutoCheck();
+  const textarea = $('#query');
+  const questionId = currentQuestionId;
+  const sql = textarea?.value.trim();
+  const question = getQuestionById(questionId)?.question;
+  if (!question || getQuestionProgress(questionId).status !== 'solved') cancelAutoAdvance();
+  if (!textarea || textarea.disabled || !question || !sql) return;
+
+  const checkVersion = autoCheckVersion;
+  autoCheckTimer = window.setTimeout(async () => {
+    autoCheckTimer = null;
+    if (checkVersion !== autoCheckVersion || currentQuestionId !== questionId || $('#query')?.value.trim() !== sql) return;
+    try {
+      const result = await evaluateQuestionAnswer(sql, question);
+      if (checkVersion !== autoCheckVersion || currentQuestionId !== questionId || $('#query')?.value.trim() !== sql) return;
+      if (result.correct) {
+        completeCorrectAnswer(question, sql);
+      } else if (!result.userError) {
+        const message = $('#answer-message');
+        if (message) {
+          message.hidden = false;
+          message.className = 'answer-message';
+          message.textContent = 'Your SQL runs, but the result is not quite right yet. Keep editing — CodeBolt checks it automatically.';
+        }
+      }
+      // Syntax errors are normal while a learner is typing. Do not count them
+      // as attempts or interrupt the editor with an error message.
+    } catch (error) {
+      console.warn('Automatic SQL answer check could not finish:', error);
+    }
+  }, AUTO_CHECK_DELAY_MS);
+}
 
 function scheduleAutoAdvance(questionId) {
   cancelAutoAdvance();
@@ -1305,83 +1405,40 @@ function feedbackMessageForCompletion() {
 async function submitAnswer() {
   const selection = getQuestionById(currentQuestionId);
   const question = selection?.question;
+  const questionId = currentQuestionId;
   const sql = $('#query')?.value.trim();
   const message = $('#answer-message');
+  const checkButton = $('#check-answer-button');
   if (!question || !isUnlocked(question) || !message) return;
   cancelAutoAdvance();
+  cancelAutoCheck();
   message.hidden = false;
   if (!sql) {
     message.className = 'answer-message bad';
-    message.textContent = 'Type your SQL query, then press Enter.';
+    message.textContent = 'Write a SQL query first. CodeBolt will also check automatically as you type.';
     return;
   }
 
   message.className = 'answer-message';
   message.textContent = 'Checking your query…';
-  const fixtures = [
-    '',
-    "UPDATE students SET age = age + 2 WHERE id = 1; UPDATE students SET city = 'Jaipur' WHERE id = 2;",
-    "UPDATE courses SET lesson_count = lesson_count + 3 WHERE id = 3; UPDATE enrollments SET status = 'review' WHERE id = 5;"
-  ];
-  let userError = null;
-  let comparison = { equal: true, reason: '' };
-  let passedCases = 0;
-
-  for (let caseIndex = 0; caseIndex < fixtures.length; caseIndex += 1) {
-    let actualDb;
-    let expectedDb;
-    try {
-      actualDb = await createFreshDatabase();
-      expectedDb = await createFreshDatabase();
-      if (fixtures[caseIndex]) {
-        actualDb.run(fixtures[caseIndex]);
-        expectedDb.run(fixtures[caseIndex]);
-      }
-      let actualResults;
-      let expectedResults;
-      if (question.type === 'state') {
-        actualDb.run(sql);
-        actualResults = actualDb.exec(question.verify);
-        expectedDb.run(question.solution);
-        expectedResults = expectedDb.exec(question.verify);
-      } else {
-        actualResults = actualDb.exec(sql);
-        expectedResults = expectedDb.exec(question.solution);
-      }
-      const check = compareResults(actualResults, expectedResults, question.orderMatters);
-      if (!check.equal) {
-        comparison = check;
-        break;
-      }
-      passedCases += 1;
-    } catch (error) {
-      userError = error;
-      comparison = { equal: false, reason: error.message };
-      break;
-    } finally {
-      if (actualDb) actualDb.close();
-      if (expectedDb) expectedDb.close();
-    }
+  if (checkButton) checkButton.disabled = true;
+  const result = await evaluateQuestionAnswer(sql, question);
+  if (currentQuestionId !== questionId || $('#query')?.value.trim() !== sql) {
+    if (checkButton) checkButton.disabled = false;
+    return;
   }
-
-  saveQueryHistory(sql, 'Lesson submission', !userError && comparison.equal, userError ? userError.message : comparison.equal ? `Passed ${passedCases}/3 validation cases` : comparison.reason);
-  const correct = !userError && comparison.equal && passedCases === fixtures.length;
-  recordAttempt(question, correct);
-
+  if (checkButton) checkButton.disabled = false;
+  const correct = result.correct;
   if (correct) {
-    message.className = 'answer-message good';
-    message.textContent = '✓ Correct answer.';
-    const lesson = lessons[currentLessonIndex];
-    if (getFreeTaskSolvedCount(lesson) === getFreeTaskCount(lesson)) {
-      feedbackMessageForCompletion();
-      return;
-    }
-    scheduleAutoAdvance(question.id);
-  } else {
-    message.className = 'answer-message bad';
-    const reason = userError ? `SQL error: ${userError.message}` : comparison.reason;
-    message.textContent = `Not quite. ${reason}. ${question.hint || 'Check the selected columns, table and condition.'}`;
+    completeCorrectAnswer(question, sql);
+    return;
   }
+
+  saveQueryHistory(sql, 'Lesson submission', false, result.userError ? result.userError.message : result.comparison.reason);
+  if (getQuestionProgress(question.id).status !== 'solved') recordAttempt(question, false);
+  message.className = 'answer-message bad';
+  const reason = result.userError ? `SQL error: ${result.userError.message}` : result.comparison.reason;
+  message.textContent = `Not quite. ${reason}. ${question.hint || 'Check the selected columns, table and condition.'}`;
 }
 
 function toggleHint() {
@@ -1513,7 +1570,7 @@ async function start() {
   // Fetch lesson data while Firebase restores the learner's account in parallel.
   const lessonsController = new AbortController();
   const lessonsTimeoutId = window.setTimeout(() => lessonsController.abort(), 15000);
-  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-text-constraints-v1', document.baseURI), {
+  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-sql-practice-bugfix-v3', document.baseURI), {
     cache: 'default',
     signal: lessonsController.signal
   }).catch((error) => ({ requestError: error }));
@@ -1589,9 +1646,9 @@ async function start() {
         } catch {}
       }
       const requestedTopic = TOPIC_BY_SLUG[params.get('topic') || ''];
-      if (requestedTopic) { rawLesson = requestedTopic.lessonIndex; currentTopicSlug = requestedTopic.slug; }
+      if (requestedTopic) rawLesson = requestedTopic.lessonIndex;
       const lessonIndex = Number.isInteger(rawLesson) ? Math.max(0, Math.min(lessons.length - 1, rawLesson)) : 0;
-      if (!requestedTopic && !isLessonUnlocked(lessonIndex)) {
+      if (!isLessonUnlocked(lessonIndex)) {
         await openLesson(0, false, null);
         const message = $('#lesson-access-message');
         if (message) {
@@ -1599,7 +1656,7 @@ async function start() {
           message.textContent = `Lesson ${lessonIndex + 1} is locked. Complete the five free tasks in each previous lesson, starting from Lesson 1. You are viewing Lesson 1.`;
         }
       } else {
-        await openLesson(lessonIndex, false, preferredQuestionId);
+        await openLesson(lessonIndex, false, preferredQuestionId, requestedTopic?.slug || null);
       }
     } else if (page === 'lessons') {
       renderLessonsCatalog();
@@ -1644,7 +1701,7 @@ async function start() {
 }
 
 document.addEventListener('input', (event) => {
-  if (event.target?.id === 'query') cancelAutoAdvance();
+  if (event.target?.id === 'query') scheduleAutoCheck();
 });
 
 document.addEventListener('click', (event) => {
@@ -1658,8 +1715,8 @@ document.addEventListener('click', (event) => {
   else if (action === 'select-tutorial-section') { event.preventDefault(); activeTutorialGroupIndex = Number(control.dataset.groupIndex) || 0; renderInteractiveTutorial(); $('.tutorial-section-option.active')?.focus({ preventScroll: true }); }
   else if (action === 'show-task-solution') { event.preventDefault(); toggleSolution(); }
   else if (action === 'finish-lesson') finishCurrentLesson();
-  else if (action === 'open-lesson') { event.preventDefault(); currentTopicSlug = getDefaultTopicForLesson(Number(control.dataset.lessonIndex))?.slug || 'select-statement'; openLesson(Number(control.dataset.lessonIndex)); }
-  else if (action === 'open-topic') { event.preventDefault(); const topic = TOPIC_BY_SLUG[control.dataset.topicSlug]; if (topic) { currentTopicSlug = topic.slug; setTutorialMenuOpen(false); openLesson(topic.lessonIndex); } }
+  else if (action === 'open-lesson') { event.preventDefault(); openLesson(Number(control.dataset.lessonIndex)); }
+  else if (action === 'open-topic') { event.preventDefault(); const topic = TOPIC_BY_SLUG[control.dataset.topicSlug]; if (topic) { setTutorialMenuOpen(false); openLesson(topic.lessonIndex, true, null, topic.slug); } }
   else if (action === 'select-question') selectQuestion(control.dataset.questionId);
   else if (action === 'submit-answer') submitAnswer();
   else if (action === 'retry-database') openLesson(currentLessonIndex, false, currentQuestionId);
@@ -1679,10 +1736,12 @@ document.addEventListener('keydown', (event) => {
     $('#tutorial-toggle')?.focus();
     return;
   }
-  if (event.target?.id === 'query' && event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+  if (event.target?.id === 'query' && event.key === 'Enter' && (event.ctrlKey || event.metaKey) && event.shiftKey && !event.isComposing) {
     event.preventDefault();
     submitAnswer();
   }
+  // Plain Enter is deliberately left alone so learners can add a new line.
+  // The answer checker runs automatically after a short pause in typing.
 });
 
 // Retain the familiar function hooks for browser-console debugging and older snippets.

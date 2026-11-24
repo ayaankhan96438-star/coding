@@ -775,3 +775,79 @@ body[data-page="home"], body[data-page="practice"] {
 @media (prefers-reduced-motion: reduce) {
   .sql-startup-skeleton { animation: none; }
 }
+
+/* CodeBolt SQL practice UX fixes: visible auto-check, clear completion markers and premium blur. */
+.editor-footer {
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 46px;
+}
+.editor-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+.course-button.check-answer-button {
+  border-color: #176b4a;
+  background: #176b4a;
+  color: #fff;
+  min-height: 36px;
+  padding: 7px 13px;
+  font-weight: 700;
+}
+.course-button.check-answer-button:hover:not(:disabled) {
+  border-color: #11583b;
+  background: #11583b;
+  color: #fff;
+}
+.auto-check-note {
+  margin: 1px 0 0;
+  color: #4a5b50;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.task-choice:disabled { opacity: .76; }
+.task-choice .task-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 19px;
+}
+.task-check-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #16804b;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(12, 75, 42, .22);
+}
+.task-choice.done .task-text { color: #22563b; }
+.task-choice.locked .task-text {
+  filter: blur(3px);
+  opacity: .55;
+  user-select: none;
+}
+.task-choice.locked .task-state {
+  color: #344054;
+  font-size: 15px;
+}
+.solution-card-locked .solution-card-heading p {
+  filter: blur(3px);
+  opacity: .58;
+  user-select: none;
+}
+@media (max-width: 600px) {
+  .editor-footer-actions { width: 100%; margin-left: 0; }
+  .editor-footer-actions .course-button { flex: 1 1 auto; }
+  .auto-check-note { font-size: 11px; }
+}

@@ -250,7 +250,13 @@
         "orderMatters": false,
         "hint": "Sort the marks column using DESC.",
         "explanation": "DESC puts the highest score first.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC"
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
       },
       {
         "id": "l5-q2",
@@ -261,7 +267,13 @@
         "orderMatters": false,
         "hint": "Sort marks using ASC.",
         "explanation": "ASC puts the smallest score first.",
-        "example": "SELECT student, marks FROM school ORDER BY marks ASC"
+        "example": "SELECT student, marks FROM school ORDER BY marks ASC",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l5-q3",
@@ -272,7 +284,13 @@
         "orderMatters": false,
         "hint": "Sort the student column in ascending order.",
         "explanation": "ASC sorts text from A to Z.",
-        "example": "SELECT student FROM school ORDER BY student ASC"
+        "example": "SELECT student FROM school ORDER BY student ASC",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l5-q4",
@@ -283,18 +301,30 @@
         "orderMatters": false,
         "hint": "Sort by class using ASC.",
         "explanation": "Ascending order places class 5 before class 6.",
-        "example": "SELECT student, class FROM school ORDER BY class ASC"
+        "example": "SELECT student, class FROM school ORDER BY class ASC",
+        "orderBy": [
+          {
+            "column": "class",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l5-q5",
-        "text": "Show the three students with the highest marks.",
+        "text": "Show the three students with the highest marks, highest first.",
         "free": true,
         "type": "query",
         "solution": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3;",
         "orderMatters": false,
         "hint": "Sort marks from highest to lowest, then use LIMIT 3.",
         "explanation": "ORDER BY sorts the marks and LIMIT keeps the first three rows.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3"
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
       },
       {
         "id": "l5-q6",
@@ -305,7 +335,13 @@
         "orderMatters": false,
         "hint": "Sort the teacher column using ASC.",
         "explanation": "Teacher names appear in alphabetical order.",
-        "example": "SELECT teacher FROM school ORDER BY teacher ASC"
+        "example": "SELECT teacher FROM school ORDER BY teacher ASC",
+        "orderBy": [
+          {
+            "column": "teacher",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l5-q7",
@@ -316,7 +352,13 @@
         "orderMatters": false,
         "hint": "Use DESC to reverse the alphabetical order.",
         "explanation": "DESC sorts names from Z to A.",
-        "example": "SELECT student FROM school ORDER BY student DESC"
+        "example": "SELECT student FROM school ORDER BY student DESC",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "DESC"
+          }
+        ]
       },
       {
         "id": "l5-q8",
@@ -338,18 +380,34 @@
         "orderMatters": false,
         "hint": "Use two sort columns: class first, then student.",
         "explanation": "SQL sorts by class first and uses student name to order rows within each class.",
-        "example": "SELECT student, class FROM school ORDER BY class ASC, student ASC"
+        "example": "SELECT student, class FROM school ORDER BY class ASC, student ASC",
+        "orderBy": [
+          {
+            "column": "class",
+            "direction": "ASC"
+          },
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l5-q10",
-        "text": "Show the top four marks.",
+        "text": "Show the top four marks, highest first.",
         "free": false,
         "type": "query",
         "solution": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4;",
         "orderMatters": false,
         "hint": "Sort marks in descending order and limit to four rows.",
         "explanation": "The result contains the four highest marks.",
-        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4"
+        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
       }
     ]
   },
@@ -383,11 +441,11 @@
       },
       {
         "id": "l2-distinct-q3",
-        "text": "Show the first five student names.",
+        "text": "Show the first five student names in ID order.",
         "free": true,
         "type": "query",
         "solution": "SELECT student FROM school ORDER BY id LIMIT 5;",
-        "orderMatters": false,
+        "orderMatters": true,
         "hint": "Sort by id, then use LIMIT 5.",
         "explanation": "ORDER BY id gives a clear row order. LIMIT 5 returns only the first five names.",
         "example": "SELECT student FROM school ORDER BY id LIMIT 5"
@@ -401,7 +459,13 @@
         "orderMatters": false,
         "hint": "Sort student in ascending order, then limit to three rows.",
         "explanation": "ASC sorts names alphabetically. LIMIT 3 keeps only the first three names.",
-        "example": "SELECT student FROM school ORDER BY student ASC LIMIT 3"
+        "example": "SELECT student FROM school ORDER BY student ASC LIMIT 3",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l2-distinct-q5",
@@ -431,21 +495,27 @@
         "free": false,
         "type": "query",
         "solution": "SELECT student FROM school ORDER BY id LIMIT 4;",
-        "orderMatters": false,
+        "orderMatters": true,
         "hint": "Order by id and limit the result to four rows.",
         "explanation": "LIMIT 4 keeps the first four records in ID order.",
         "example": "SELECT student FROM school ORDER BY id LIMIT 4"
       },
       {
         "id": "l2-distinct-q8",
-        "text": "Show the top five students and their marks.",
+        "text": "Show the top five students and their marks, highest marks first.",
         "free": false,
         "type": "query",
         "solution": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5;",
         "orderMatters": false,
         "hint": "Select student and marks, sort by marks DESC, and add LIMIT 5.",
         "explanation": "This returns the five highest scores with each student name.",
-        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5"
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
       },
       {
         "id": "l2-distinct-q9",
@@ -456,7 +526,13 @@
         "orderMatters": false,
         "hint": "Use DISTINCT teacher and then ORDER BY teacher ASC.",
         "explanation": "DISTINCT removes duplicates and ORDER BY sorts the remaining names.",
-        "example": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC"
+        "example": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC",
+        "orderBy": [
+          {
+            "column": "teacher",
+            "direction": "ASC"
+          }
+        ]
       },
       {
         "id": "l2-distinct-q10",
@@ -957,21 +1033,23 @@
         "solution": "INSERT INTO students (name, age, city) VALUES ('Asha', 21, 'Delhi');",
         "orderMatters": false,
         "hint": "Insert a row into students and provide the name, age and city values.",
-        "verify": "SELECT name, age, city FROM students WHERE name = 'Asha' AND age = 21 AND city = 'Delhi';",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT id, name, age, city, email FROM students WHERE NOT (name = 'Asha' AND age = 21 AND city = 'Delhi'); SELECT name, age, city FROM students WHERE name = 'Asha' AND age = 21 AND city = 'Delhi'; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "INSERT INTO adds a new row to students. The column list (name, age, city) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT name, age, city FROM students WHERE name = 'Asha' AND age = 21 AND city = 'Delhi';"
       },
       {
         "id": "l9-q2",
-        "text": "Insert a course titled SQL Basics with 8 lessons, created_year 2025, difficulty Beginner and category Databases.",
+        "text": "Insert a course titled SQL Basics with 8 lessons, teacher_id 1, created_year 2025, difficulty Beginner and category Databases.",
         "free": true,
         "type": "state",
         "solution": "INSERT INTO courses (title, lesson_count, teacher_id, created_year, difficulty, category) VALUES ('SQL Basics', 8, 1, 2025, 'Beginner', 'Databases');",
         "orderMatters": false,
-        "hint": "Insert into courses and include all six listed fields; teacher_id 1 is a valid sample teacher.",
-        "verify": "SELECT title, lesson_count, created_year, difficulty, category FROM courses WHERE title = 'SQL Basics' AND lesson_count = 8 AND created_year = 2025 AND difficulty = 'Beginner' AND category = 'Databases';",
+        "hint": "Insert into courses and include the title, lesson count, teacher_id 1, year, difficulty and category.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT id, title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE NOT (title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025 AND difficulty = 'Beginner' AND category = 'Databases'); SELECT title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025 AND difficulty = 'Beginner' AND category = 'Databases'; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "INSERT INTO adds a new row to courses. The column list (title, lesson_count, teacher_id, created_year, difficulty, category) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025;"
       },
       {
         "id": "l9-q3",
@@ -981,9 +1059,10 @@
         "solution": "UPDATE students SET city = 'Jaipur' WHERE name = 'Asha' AND city = 'Pune';",
         "orderMatters": false,
         "hint": "Use UPDATE students, set city to Jaipur, and match Asha's current Pune city in WHERE.",
-        "verify": "SELECT id, city FROM students WHERE id = 4;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "UPDATE changes existing rows in students. SET applies the new value(s) (city = 'Jaipur'); WHERE limits the change to rows matching name = 'Asha' AND city = 'Pune'. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, city FROM students WHERE id = 4;"
       },
       {
         "id": "l9-q4",
@@ -993,9 +1072,10 @@
         "solution": "UPDATE courses SET lesson_count = 12 WHERE id = 1;",
         "orderMatters": false,
         "hint": "Update the lesson_count column and target course id 1.",
-        "verify": "SELECT id, lesson_count FROM courses WHERE id = 1;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "UPDATE changes existing rows in courses. SET applies the new value(s) (lesson_count = 12); WHERE limits the change to rows matching id = 1. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, lesson_count FROM courses WHERE id = 1;"
       },
       {
         "id": "l9-q5",
@@ -1005,9 +1085,10 @@
         "solution": "UPDATE students SET age = 22 WHERE id = 2;",
         "orderMatters": false,
         "hint": "Use UPDATE with SET age = 22 and WHERE id = 2.",
-        "verify": "SELECT id, age FROM students WHERE id = 2;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "UPDATE changes existing rows in students. SET applies the new value(s) (age = 22); WHERE limits the change to rows matching id = 2. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, age FROM students WHERE id = 2;"
       },
       {
         "id": "l9-q6",
@@ -1017,9 +1098,10 @@
         "solution": "DELETE FROM students WHERE id = 6;",
         "orderMatters": false,
         "hint": "DELETE FROM names the table; WHERE id = 6 limits which row is removed.",
-        "verify": "SELECT COUNT(*) AS remaining FROM students WHERE id = 6;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "DELETE FROM removes rows from students. The WHERE condition (id = 6) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM students WHERE id = 6;"
       },
       {
         "id": "l9-q7",
@@ -1029,9 +1111,10 @@
         "solution": "DELETE FROM courses WHERE id = 4;",
         "orderMatters": false,
         "hint": "Use DELETE FROM courses with a WHERE clause for id 4.",
-        "verify": "SELECT COUNT(*) AS remaining FROM courses WHERE id = 4;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "DELETE FROM removes rows from courses. The WHERE condition (id = 4) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM courses WHERE id = 4;"
       },
       {
         "id": "l9-q8",
@@ -1041,9 +1124,10 @@
         "solution": "INSERT INTO teachers (id, name, department) VALUES (5, 'Ravi', 'Science');",
         "orderMatters": false,
         "hint": "Insert a row in teachers and supply the specified id, name and department.",
-        "verify": "SELECT id, name, department FROM teachers WHERE id = 5;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "INSERT INTO adds a new row to teachers. The column list (id, name, department) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, name, department FROM teachers WHERE id = 5;"
       },
       {
         "id": "l9-q9",
@@ -1053,9 +1137,10 @@
         "solution": "UPDATE teachers SET department = 'Maths' WHERE id = 1;",
         "orderMatters": false,
         "hint": "Set department to the text value Maths for teacher id 1.",
-        "verify": "SELECT id, department FROM teachers WHERE id = 1;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "UPDATE changes existing rows in teachers. SET applies the new value(s) (department = 'Maths'); WHERE limits the change to rows matching id = 1. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, department FROM teachers WHERE id = 1;"
       },
       {
         "id": "l9-q10",
@@ -1065,9 +1150,10 @@
         "solution": "DELETE FROM enrollments WHERE id = 5;",
         "orderMatters": false,
         "hint": "Delete from enrollments and target id 5 in the WHERE clause.",
-        "verify": "SELECT COUNT(*) AS remaining FROM enrollments WHERE id = 5;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
         "explanation": "DELETE FROM removes rows from enrollments. The WHERE condition (id = 5) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
-        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;"
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM enrollments WHERE id = 5;"
       }
     ]
   },
@@ -1085,9 +1171,10 @@
         "solution": "CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE books (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('books')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('books') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('books') WHERE name = 'title' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('books');",
         "explanation": "CREATE TABLE defines a new table named books. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'books'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('books');"
       },
       {
         "id": "l10-q2",
@@ -1097,9 +1184,10 @@
         "solution": "CREATE TABLE pets (id INTEGER PRIMARY KEY, name TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE pets (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('pets')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('pets') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('pets') WHERE name = 'name' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('pets');",
         "explanation": "CREATE TABLE defines a new table named pets. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'pets'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('pets');"
       },
       {
         "id": "l10-q3",
@@ -1109,9 +1197,10 @@
         "solution": "CREATE TABLE teams (id INTEGER PRIMARY KEY, name TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE teams (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('teams')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('teams') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('teams') WHERE name = 'name' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teams');",
         "explanation": "CREATE TABLE defines a new table named teams. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'teams'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('teams');"
       },
       {
         "id": "l10-q4",
@@ -1121,21 +1210,23 @@
         "solution": "CREATE TABLE notes (id INTEGER PRIMARY KEY, body TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE notes (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('notes')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('notes') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('notes') WHERE name = 'body' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('notes');",
         "explanation": "CREATE TABLE defines a new table named notes. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'notes'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('notes');"
       },
       {
         "id": "l10-q5",
-        "text": "Create a events table with id INTEGER PRIMARY KEY, title TEXT, event_date TEXT.",
+        "text": "Create an events table with id INTEGER PRIMARY KEY, title TEXT, event_date TEXT.",
         "free": true,
         "type": "state",
         "solution": "CREATE TABLE events (id INTEGER PRIMARY KEY, title TEXT, event_date TEXT);",
         "orderMatters": false,
-        "hint": "Use CREATE TABLE events (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('events')) = 3 AND (SELECT COUNT(*) FROM pragma_table_info('events') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('events') WHERE name = 'title' AND upper(type) = 'TEXT' AND pk = 0) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('events') WHERE name = 'event_date' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "hint": "Use CREATE TABLE events (...). Separate the three column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('events');",
         "explanation": "CREATE TABLE defines a new table named events. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'events'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('events');"
       },
       {
         "id": "l10-q6",
@@ -1145,9 +1236,10 @@
         "solution": "CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, price REAL);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE products (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('products')) = 3 AND (SELECT COUNT(*) FROM pragma_table_info('products') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('products') WHERE name = 'name' AND upper(type) = 'TEXT' AND pk = 0) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('products') WHERE name = 'price' AND upper(type) = 'REAL' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('products');",
         "explanation": "CREATE TABLE defines a new table named products. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'products'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('products');"
       },
       {
         "id": "l10-q7",
@@ -1157,9 +1249,10 @@
         "solution": "CREATE TABLE rooms (id INTEGER PRIMARY KEY, room_name TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE rooms (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('rooms')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('rooms') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('rooms') WHERE name = 'room_name' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('rooms');",
         "explanation": "CREATE TABLE defines a new table named rooms. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'rooms'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('rooms');"
       },
       {
         "id": "l10-q8",
@@ -1169,9 +1262,10 @@
         "solution": "CREATE TABLE tasks (id INTEGER PRIMARY KEY, done INTEGER);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE tasks (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('tasks')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('tasks') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('tasks') WHERE name = 'done' AND upper(type) = 'INTEGER' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('tasks');",
         "explanation": "CREATE TABLE defines a new table named tasks. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'tasks'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('tasks');"
       },
       {
         "id": "l10-q9",
@@ -1181,9 +1275,10 @@
         "solution": "CREATE TABLE members (id INTEGER PRIMARY KEY, email TEXT);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE members (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('members')) = 2 AND (SELECT COUNT(*) FROM pragma_table_info('members') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('members') WHERE name = 'email' AND upper(type) = 'TEXT' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('members');",
         "explanation": "CREATE TABLE defines a new table named members. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'members'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('members');"
       },
       {
         "id": "l10-q10",
@@ -1193,9 +1288,10 @@
         "solution": "CREATE TABLE trips (id INTEGER PRIMARY KEY, destination TEXT, days INTEGER);",
         "orderMatters": false,
         "hint": "Use CREATE TABLE trips (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
-        "verify": "SELECT CASE WHEN (SELECT COUNT(*) FROM pragma_table_info('trips')) = 3 AND (SELECT COUNT(*) FROM pragma_table_info('trips') WHERE name = 'id' AND upper(type) = 'INTEGER' AND pk = 1) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('trips') WHERE name = 'destination' AND upper(type) = 'TEXT' AND pk = 0) = 1 AND (SELECT COUNT(*) FROM pragma_table_info('trips') WHERE name = 'days' AND upper(type) = 'INTEGER' AND pk = 0) = 1 THEN 1 ELSE 0 END AS schema_ok;",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('trips');",
         "explanation": "CREATE TABLE defines a new table named trips. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
-        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);"
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'trips'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('trips');"
       }
     ]
   }
