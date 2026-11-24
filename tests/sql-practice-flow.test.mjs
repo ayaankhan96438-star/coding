@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import {
+  getFirstAvailableQuestion,
+  getNextCourseTopic,
   getNextUnsolvedQuestion,
   getSharedEditorDraft,
   hasRequiredSemicolon,
@@ -13,6 +15,8 @@ assert.equal(hasRequiredSemicolon('SELECT * FROM school; -- trailing comment'), 
 assert.equal(hasRequiredSemicolon(''), false);
 
 const questions = [1, 2, 3, 4, 5].map((number) => ({ id: `q${number}` }));
+assert.equal(getFirstAvailableQuestion(questions, () => true).id, 'q1', 'refresh starts at the first accessible question even when already solved');
+assert.equal(getFirstAvailableQuestion(questions, (question) => question.id !== 'q1').id, 'q2', 'refresh skips inaccessible premium questions');
 const solved = new Set(['q1', 'q3', 'q5']);
 const nextAfterSolvingOutOfOrder = getNextUnsolvedQuestion(
   questions,
@@ -29,6 +33,11 @@ const nextAfterQ2 = getNextUnsolvedQuestion(
 assert.equal(nextAfterQ2.id, 'q4', 'after solving q2, the app skips already-solved q3 and opens q4');
 solved.add('q4');
 assert.equal(getNextUnsolvedQuestion(questions, () => true, (id) => solved.has(id) ? 'solved' : 'not started'), null);
+
+const courseTopics = [{ slug: 'select' }, { slug: 'where' }, { slug: 'like' }, { slug: 'order' }];
+assert.equal(getNextCourseTopic(courseTopics, 'where').slug, 'like', 'Continue works even when the current topic is not complete');
+assert.equal(getNextCourseTopic(courseTopics, 'order'), null, 'the final topic has no next topic');
+assert.equal(getNextCourseTopic(courseTopics, 'unknown'), null, 'unknown topic does not produce an invalid destination');
 
 // One shared editor: navigating from Q1 to Q2 must not swap/clear its text.
 const q1Answer = 'SELECT student FROM school;';

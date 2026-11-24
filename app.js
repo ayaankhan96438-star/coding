@@ -1,9 +1,9 @@
-import { isUnlocked } from './access.js?v=20261122-platform-tracks-sequence-02';
+import { isLessonAccessible, isUnlocked } from './access.js?v=20261124-course-navigation-any-order-02';
 import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql-preload-04';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
-import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261122-refresh-task-reset-03';
+import { resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261124-refresh-preserve-progress-01';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
-import { getNextUnsolvedQuestion, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261124-shared-sql-editor-01';
+import { getFirstAvailableQuestion, getNextCourseTopic, getNextUnsolvedQuestion, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261124-next-topic-navigation-02';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
@@ -154,14 +154,9 @@ function getFreeTaskSolvedCount(lesson) {
 }
 
 function isLessonUnlocked(index) {
-  if (index <= 0) return true;
-  for (let lessonIndex = 0; lessonIndex < index; lessonIndex += 1) {
-    const previousLesson = lessons[lessonIndex];
-    if (!previousLesson) return false;
-    const requiredQuestions = previousLesson.questions.filter((question) => question.free === true);
-    if (!requiredQuestions.length || !requiredQuestions.every((question) => getQuestionProgress(question.id).status === 'solved')) return false;
-  }
-  return true;
+  // Every lesson is directly accessible. Premium restrictions apply to individual
+  // questions through isUnlocked(question), never to the lesson sequence.
+  return isLessonAccessible(index, lessons.length);
 }
 
 function getAchievementState(stats) {
@@ -576,11 +571,14 @@ function renderQuestionList() {
   const freeRoot = $('#free-task-list');
   const premiumRoot = $('#premium-task-list');
   if (!freeRoot || !premiumRoot || !lessons.length) return;
-  const item = lessons[currentLessonIndex];
+  const topicQuestions = getActiveTopicQuestions();
+  const freeQuestions = topicQuestions.filter((question) => isUnlocked(question));
+  const premiumQuestions = topicQuestions.filter((question) => !isUnlocked(question));
+  const freeSolved = freeQuestions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
   const summary = $('#task-progress-count');
   if (summary) {
-    const complete = getFreeTaskSolvedCount(item) === getFreeTaskCount(item);
-    summary.textContent = `${getFreeTaskSolvedCount(item)} / ${getFreeTaskCount(item)} complete`;
+    const complete = freeQuestions.length > 0 && freeSolved === freeQuestions.length;
+    summary.textContent = freeQuestions.length ? `${freeSolved} / ${freeQuestions.length} complete` : 'Premium questions only';
     summary.classList.toggle('complete', complete);
   }
   const renderTask = (question, index, locked = false) => {
@@ -594,16 +592,15 @@ function renderQuestionList() {
       <span class="task-state" aria-label="${locked ? 'Premium task' : state.status === 'solved' ? 'Completed' : ''}">${marker}</span>
     </button>`;
   };
-  const freeQuestions = item.questions.filter((question) => question.free === true);
-  const premiumQuestions = item.questions.filter((question) => question.free !== true);
-  freeRoot.innerHTML = freeQuestions.map((question) => renderTask(question, item.questions.indexOf(question))).join('') || '<p class="task-empty">No free tasks in this lesson.</p>';
-  premiumRoot.innerHTML = premiumQuestions.map((question) => renderTask(question, item.questions.indexOf(question), true)).join('') || '<p class="task-empty">No premium tasks in this lesson.</p>';
+  freeRoot.innerHTML = freeQuestions.map((question, index) => renderTask(question, index)).join('') || '<p class="task-empty">No free tasks in this topic.</p>';
+  premiumRoot.innerHTML = premiumQuestions.map((question, index) => renderTask(question, freeQuestions.length + index, true)).join('') || '<p class="task-empty">No premium tasks in this topic.</p>';
 }
 
 const SQL_TOPIC_GROUPS = [
   { title: 'Foundation · Basic SQL Queries', topics: [
     { slug: 'select-statement', title: 'SELECT Statement', lessonIndex: 0, description: 'SELECT reads information from a table. Choose the columns you need after SELECT and identify the source table with FROM. The first lesson uses a simple school table with student names, teachers, marks and classes.', example: 'SELECT student, teacher\nFROM school;' },
     { slug: 'where-clause', title: 'WHERE Clause', lessonIndex: 1, description: 'WHERE keeps only the students whose marks, teacher or class match the condition you choose.', example: 'SELECT student, marks\nFROM school\nWHERE marks > 80;' },
+    { slug: 'like-operator', title: 'LIKE Operator', lessonIndex: 4, questionIds: ['l4-text-q4', 'l4-text-q5', 'l4-text-q6', 'l4-text-q7'], description: 'Use LIKE and NOT LIKE inside WHERE to find text that matches a pattern. The % wildcard matches any number of characters and _ matches exactly one character.', example: "SELECT student\nFROM school\nWHERE student LIKE 'A%';" },
     { slug: 'order-by', title: 'ORDER BY', lessonIndex: 2, description: 'ORDER BY puts student results in a clear order. Use ASC for lowest-to-highest marks or A to Z, and DESC for highest-to-lowest.', example: 'SELECT student, marks\nFROM school\nORDER BY marks DESC;' },
     { slug: 'distinct-limit', title: 'DISTINCT & LIMIT', lessonIndex: 3, description: 'DISTINCT shows each teacher or class only once. LIMIT controls how many result rows are displayed.', example: 'SELECT DISTINCT teacher\nFROM school\nLIMIT 5;' }
   ]},
@@ -620,9 +617,9 @@ const SQL_TOPIC_GROUPS = [
     { slug: 'truncate-delete', title: 'TRUNCATE vs DELETE', lessonIndex: 8, description: 'DELETE can remove selected rows and supports WHERE. TRUNCATE removes all rows in systems that implement it; SQLite does not support TRUNCATE TABLE.', example: 'DELETE FROM students;' }
   ]},
   { title: 'Foundation · Filtering & Conditions', topics: [
-    { slug: 'logical-operators', title: 'AND, OR, NOT Operators', lessonIndex: 4, description: 'AND requires every condition to be true, OR accepts either condition, and NOT reverses a condition.', example: 'SELECT student, marks FROM school\nWHERE marks > 80 AND class = 5;' },
-    { slug: 'between-in-like', title: 'BETWEEN, IN, LIKE', lessonIndex: 4, description: 'BETWEEN checks a range of marks, IN matches one of several teachers, and LIKE searches for a text pattern.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" },
-    { slug: 'text-constraints', title: 'Text Comparisons & Pattern Matching', lessonIndex: 4, description: 'Learn exact text comparisons (=, !=, <>), LIKE and NOT LIKE, the % and _ wildcards, and text lists with IN and NOT IN.', example: "SELECT student, teacher FROM school\nWHERE teacher LIKE 'NEHA';" }
+    { slug: 'logical-operators', title: 'AND, OR, NOT Operators', lessonIndex: 4, questionIds: ['l4-text-q10'], description: 'AND requires every condition to be true, OR accepts either condition, and NOT reverses a condition.', example: 'SELECT student, marks FROM school\nWHERE marks > 80 AND class = 5;' },
+    { slug: 'between-in-like', title: 'BETWEEN & IN', lessonIndex: 4, questionIds: ['l3-where-q7', 'l4-text-q8', 'l4-text-q9'], description: 'BETWEEN checks whether a value falls inside a range. IN and NOT IN check whether a value belongs to a list.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" },
+    { slug: 'text-constraints', title: 'Text Comparisons (=, !=, <>)', lessonIndex: 4, questionIds: ['l4-text-q1', 'l4-text-q2', 'l4-text-q3'], description: 'Compare text values exactly with =, or find values that are different with != and <>. These comparisons are case-sensitive by default in this SQLite lesson.', example: "SELECT student, teacher FROM school\nWHERE teacher = 'Neha';" }
   ]},
   { title: 'Intermediate & Advanced · Aggregate Functions', topics: [
     { slug: 'count-sum-avg', title: 'COUNT(), SUM(), AVG()', lessonIndex: 6, description: 'COUNT counts rows or values, SUM adds numeric values, and AVG calculates their average.', example: 'SELECT COUNT(*) AS students,\n       SUM(age) AS total_age,\n       AVG(age) AS average_age\nFROM students;' },
@@ -647,7 +644,31 @@ const SQL_TOPIC_GROUPS = [
 
 const SQL_TOPICS = SQL_TOPIC_GROUPS.flatMap((group) => group.topics);
 const TOPIC_BY_SLUG = Object.fromEntries(SQL_TOPICS.map((topic) => [topic.slug, topic]));
+
+function getQuestionsForTopic(topic = TOPIC_BY_SLUG[currentTopicSlug], fallbackLessonIndex = currentLessonIndex) {
+  if (Array.isArray(topic?.questionIds)) {
+    return topic.questionIds.map((id) => getQuestionById(id)?.question).filter(Boolean);
+  }
+  return lessons[fallbackLessonIndex]?.questions || [];
+}
+
+function getActiveTopicQuestions() {
+  return getQuestionsForTopic(TOPIC_BY_SLUG[currentTopicSlug], currentLessonIndex);
+}
+
+function getActiveFreeQuestions() {
+  return getActiveTopicQuestions().filter((question) => isUnlocked(question));
+}
+
+function getActiveFreeTaskCount() {
+  return getActiveFreeQuestions().length;
+}
+
+function getActiveFreeTaskSolvedCount() {
+  return getActiveFreeQuestions().filter((question) => getQuestionProgress(question.id).status === 'solved').length;
+}
 function getDefaultTopicForLesson(index) {
+  if (index === 4 && TOPIC_BY_SLUG['logical-operators']) return TOPIC_BY_SLUG['logical-operators'];
   if (index === 9 && TOPIC_BY_SLUG['creating-tables']) return TOPIC_BY_SLUG['creating-tables'];
   return SQL_TOPICS.find((topic) => topic.lessonIndex === index) || SQL_TOPICS[0];
 }
@@ -899,54 +920,110 @@ function getLessonDisplayTitle(index, item) {
 
 function renderLessonReading(item, index) {
   const topic = TOPIC_BY_SLUG[currentTopicSlug] || getDefaultTopicForLesson(index);
-  if (topic.slug === 'text-constraints') {
+  const basicTopicIndex = SQL_TOPIC_GROUPS[0].topics.findIndex((entry) => entry.slug === topic.slug);
+  const displayedLessonNumber = basicTopicIndex >= 0 ? basicTopicIndex + 1 : index + 1;
+  if (topic.slug === 'like-operator') {
     return `
       <section class="lesson-reading">
         <article class="reading-column">
           <header class="lesson-heading">
-            <p class="lesson-kicker">FILTERING &amp; CONDITIONS · TEXT DATA</p>
-            <h1>SQL Lesson 3: Queries with constraints (Pt. 2)</h1>
+            <p class="lesson-kicker">FOUNDATION · BASIC SQL QUERIES</p>
+            <h1>SQL Lesson 3: Queries with text patterns</h1>
           </header>
-          <p>Use these operators inside a <b>WHERE</b> clause when a column stores text. They help you compare exact words, exclude values, search for patterns and check whether a value belongs to a list.</p>
+          <p>Use <b>LIKE</b> and <b>NOT LIKE</b> inside a <b>WHERE</b> clause to search text. Unlike an exact comparison, LIKE can match a pattern instead of one complete word.</p>
           <section class="reading-section">
-            <h2>Text comparison and pattern operators</h2>
-            <div class="operator-table-scroll" role="region" aria-label="SQL text comparison operators" tabindex="0">
+            <h2>LIKE and NOT LIKE</h2>
+            <div class="operator-table-scroll" role="region" aria-label="SQL LIKE operators" tabindex="0">
               <table class="operator-reference-table">
                 <thead><tr><th>Operator</th><th>What it does</th><th>Example</th></tr></thead>
                 <tbody>
-                  <tr><td><code>=</code></td><td>Exact text comparison. With the default SQLite collation used here, it is case-sensitive.</td><td><code>teacher = 'Neha'</code></td></tr>
-                  <tr><td><code>!=</code> or <code>&lt;&gt;</code></td><td>Text is not equal to the given value. Both symbols mean the same thing.</td><td><code>teacher != 'Neha'</code><br><code>teacher &lt;&gt; 'Neha'</code></td></tr>
-                  <tr><td><code>LIKE</code></td><td>Matches a text pattern. In this SQLite practice database, ordinary ASCII text matching is case-insensitive by default.</td><td><code>teacher LIKE 'NEHA'</code></td></tr>
-                  <tr><td><code>NOT LIKE</code></td><td>Finds values that do not match the text pattern.</td><td><code>teacher NOT LIKE 'NEHA'</code></td></tr>
-                  <tr><td><code>%</code></td><td>With LIKE or NOT LIKE, matches zero or more characters.</td><td><code>student LIKE '%ar%'</code></td></tr>
-                  <tr><td><code>_</code></td><td>With LIKE or NOT LIKE, matches exactly one character.</td><td><code>student LIKE 'A____'</code></td></tr>
-                  <tr><td><code>IN (...)</code></td><td>Matches any value in the list.</td><td><code>teacher IN ('Neha', 'Ravi')</code></td></tr>
-                  <tr><td><code>NOT IN (...)</code></td><td>Matches values that are not in the list.</td><td><code>teacher NOT IN ('Neha', 'Ravi')</code></td></tr>
+                  <tr><td><code>LIKE</code></td><td>Finds text that matches a pattern. SQLite LIKE is case-insensitive for ordinary ASCII letters by default.</td><td><code>teacher LIKE 'NEHA'</code></td></tr>
+                  <tr><td><code>NOT LIKE</code></td><td>Finds text that does not match the pattern.</td><td><code>teacher NOT LIKE 'NEHA'</code></td></tr>
+                  <tr><td><code>%</code></td><td>Matches a sequence of zero or more characters. Use it only with LIKE or NOT LIKE.</td><td><code>student LIKE '%AT%'</code></td></tr>
+                  <tr><td><code>_</code></td><td>Matches exactly one character. Use it only with LIKE or NOT LIKE.</td><td><code>student LIKE 'AN_'</code></td></tr>
                 </tbody>
               </table>
             </div>
           </section>
           <section class="reading-section">
-            <h2>Understand the two wildcards</h2>
-            <p><b>Percent (%):</b> it can stand for no characters, one character or many characters. For example, <code>LIKE '%AT%'</code> can match <code>AT</code>, <code>ATTIC</code>, <code>CAT</code> or <code>BATS</code>.</p>
-            <p><b>Underscore (_):</b> it stands for exactly one character. For example, <code>LIKE 'AN_'</code> matches <code>AND</code>, but not <code>AN</code>.</p>
+            <h2>How the wildcards work</h2>
+            <p><b>Percent (%):</b> it can represent no characters, one character or many characters. <code>LIKE '%AT%'</code> can match <code>AT</code>, <code>ATTIC</code>, <code>CAT</code> or <code>BATS</code>.</p>
+            <p><b>Underscore (_):</b> it represents exactly one character. <code>LIKE 'AN_'</code> matches <code>AND</code>, but not <code>AN</code>.</p>
             <div class="syntax-card"><small>Names that begin with A and have five characters</small><pre><code>SELECT student
 FROM school
 WHERE student LIKE 'A____';</code></pre></div>
-          </section>
-          <section class="reading-section">
-            <h2>IN is a shortcut for OR</h2>
-            <p><code>IN ('Neha', 'Ravi')</code> checks for either value in the list. It gives the same filtering result as writing <code>teacher = 'Neha' OR teacher = 'Ravi'</code>.</p>
-            <div class="syntax-card"><small>Find students taught by Neha or Ravi</small><pre><code>SELECT student, teacher
+            <div class="syntax-card"><small>Find names containing AT</small><pre><code>SELECT student
 FROM school
-WHERE teacher IN ('Neha', 'Ravi');</code></pre></div>
-            <div class="syntax-card"><small>Exclude both teachers</small><pre><code>SELECT student, teacher
-FROM school
-WHERE teacher NOT IN ('Neha', 'Ravi');</code></pre></div>
+WHERE student LIKE '%AT%';</code></pre></div>
           </section>
           <aside class="did-you-know" aria-label="Did you know">
             <h2>Did you know?</h2>
-            <p>Text values (string literals) must be quoted. Prefer <code>single quotes</code> in SQL, such as <code>teacher = 'Neha'</code>. In standard SQL, double quotes are normally used for column or table identifiers, not text values. The exact case-sensitivity of <code>LIKE</code> can vary by database; this lesson uses SQLite, where LIKE is case-insensitive for ordinary ASCII letters by default.</p>
+            <p>Text values must be quoted. Prefer single quotes for text, such as <code>teacher LIKE 'NEHA'</code>. LIKE case sensitivity can vary between database systems; this lesson uses SQLite, where LIKE is case-insensitive for ordinary ASCII letters by default.</p>
+          </aside>
+        </article>
+      </section>
+    `;
+  }
+  if (topic.slug === 'between-in-like') {
+    return `
+      <section class="lesson-reading">
+        <article class="reading-column">
+          <header class="lesson-heading">
+            <p class="lesson-kicker">FOUNDATION · FILTERING &amp; CONDITIONS</p>
+            <h1>BETWEEN and IN</h1>
+          </header>
+          <p>Keep these two filtering tools in this section. BETWEEN checks a range, while IN and NOT IN check a list of possible values.</p>
+          <section class="reading-section">
+            <h2>Range and list operators</h2>
+            <div class="operator-table-scroll" role="region" aria-label="SQL BETWEEN and IN operators" tabindex="0">
+              <table class="operator-reference-table">
+                <thead><tr><th>Operator</th><th>What it does</th><th>Example</th></tr></thead>
+                <tbody>
+                  <tr><td><code>BETWEEN</code></td><td>Matches values from the lower boundary to the upper boundary, including both ends.</td><td><code>marks BETWEEN 70 AND 90</code></td></tr>
+                  <tr><td><code>IN (...)</code></td><td>Matches a value if it appears in the list.</td><td><code>teacher IN ('Neha', 'Ravi')</code></td></tr>
+                  <tr><td><code>NOT IN (...)</code></td><td>Matches a value if it does not appear in the list.</td><td><code>teacher NOT IN ('Neha', 'Ravi')</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="reading-section">
+            <h2>Examples</h2>
+            <div class="syntax-card"><small>Find marks from 70 to 90, including both</small><pre><code>SELECT student, marks
+FROM school
+WHERE marks BETWEEN 70 AND 90;</code></pre></div>
+            <div class="syntax-card"><small>Find students taught by Neha or Ravi</small><pre><code>SELECT student, teacher
+FROM school
+WHERE teacher IN ('Neha', 'Ravi');</code></pre></div>
+          </section>
+        </article>
+      </section>
+    `;
+  }
+  if (topic.slug === 'text-constraints') {
+    return `
+      <section class="lesson-reading">
+        <article class="reading-column">
+          <header class="lesson-heading">
+            <p class="lesson-kicker">FOUNDATION · FILTERING &amp; CONDITIONS</p>
+            <h1>Text comparisons</h1>
+          </header>
+          <p>When a column contains text, use these operators in WHERE to compare a complete text value. LIKE pattern matching is taught separately in Foundation · Basic SQL Queries.</p>
+          <section class="reading-section">
+            <h2>Exact text comparison operators</h2>
+            <div class="operator-table-scroll" role="region" aria-label="SQL exact text comparison operators" tabindex="0">
+              <table class="operator-reference-table">
+                <thead><tr><th>Operator</th><th>What it does</th><th>Example</th></tr></thead>
+                <tbody>
+                  <tr><td><code>=</code></td><td>Checks for an exact, case-sensitive text match under the default SQLite collation.</td><td><code>teacher = 'Neha'</code></td></tr>
+                  <tr><td><code>!=</code></td><td>Checks that the text is not equal to the value.</td><td><code>teacher != 'Neha'</code></td></tr>
+                  <tr><td><code>&lt;&gt;</code></td><td>Another way to write not equal. It means the same as !=.</td><td><code>student &lt;&gt; 'Aarav'</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <aside class="did-you-know" aria-label="Did you know">
+            <h2>Did you know?</h2>
+            <p>Text values (string literals) must be quoted. Prefer single quotes in SQL, such as <code>teacher = 'Neha'</code>. Double quotes are normally used for table or column names in standard SQL, not for text values.</p>
           </aside>
         </article>
       </section>
@@ -956,7 +1033,7 @@ WHERE teacher NOT IN ('Neha', 'Ravi');</code></pre></div>
     <section class="lesson-reading">
       <article class="reading-column">
         <header class="lesson-heading">
-          <p class="lesson-kicker">LESSON ${String(index + 1).padStart(2, '0')} / ${lessons.length}</p>
+          <p class="lesson-kicker">LESSON ${String(displayedLessonNumber).padStart(2, '0')} / ${lessons.length}</p>
           <h1>${escapeHtml(topic.title)}</h1>
         </header>
         <p>${escapeHtml(topic.description)}</p>
@@ -990,8 +1067,9 @@ function render() {
   const selection = getQuestionById(currentQuestionId);
   const question = selection?.question;
   const unlocked = question ? isUnlocked(question) : false;
-  const freeTotal = getFreeTaskCount(item);
-  const freeSolved = getFreeTaskSolvedCount(item);
+  const activeFreeQuestions = getActiveFreeQuestions();
+  const freeTotal = activeFreeQuestions.length;
+  const freeSolved = activeFreeQuestions.filter((entry) => getQuestionProgress(entry.id).status === 'solved').length;
   const topic = TOPIC_BY_SLUG[currentTopicSlug] || getDefaultTopicForLesson(currentLessonIndex);
 
   document.title = `${topic.title} · CodeBolt`;
@@ -1025,7 +1103,7 @@ function render() {
         <div class="task-footer">
           <div class="stuck-copy task-stuck-copy">
             <p>Stuck? Read this task's <a href="#solution-panel" data-action="show-task-solution">Solution</a>.</p>
-            <p class="continue-note">Solve all tasks to continue to the next lesson.</p>
+            <p class="continue-note">You can open any lesson at any time from the Lessons menu. Premium questions stay locked.</p>
           </div>
           <div id="solution-panel" class="solution-panel" hidden></div>
           <button type="button" id="finish-lesson-button" class="finish-lesson" data-action="finish-lesson" disabled>Solve all tasks to continue</button>
@@ -1136,14 +1214,7 @@ async function init() {
 
 async function openLesson(index, shouldScroll = true, preferredQuestionId = null, preferredTopicSlug = null) {
   const requestedIndex = Math.max(0, Math.min(lessons.length - 1, Number(index) || 0));
-  if (!isLessonUnlocked(requestedIndex)) {
-    const message = $('#lesson-access-message');
-    if (message) {
-      message.hidden = false;
-      message.textContent = `Lesson ${requestedIndex + 1} is locked. Complete the five free tasks in each previous lesson, starting from Lesson 1, to unlock it.`;
-    }
-    return;
-  }
+  if (!isLessonUnlocked(requestedIndex)) return;
   const message = $('#lesson-access-message');
   if (message) message.hidden = true;
   saveCurrentQuestionDraft();
@@ -1158,7 +1229,8 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
   }
   renderDashboard();
   const requestedLesson = lessons[currentLessonIndex];
-  const availableQuestions = requestedLesson.questions.filter((question) => isUnlocked(question));
+  const topicQuestions = getActiveTopicQuestions();
+  const availableQuestions = topicQuestions.filter((question) => isUnlocked(question));
   const preferredQuestion = availableQuestions.find((question) => question.id === preferredQuestionId) || null;
   const firstUnsolvedQuestion = availableQuestions.find((question) => getQuestionProgress(question.id).status !== 'solved');
   // A learner may reopen any completed question. Only the default lesson entry
@@ -1199,7 +1271,7 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
     setPracticeEnabled(true);
     if (answerMessage) {
       const selectedProgress = currentQuestionId ? getQuestionProgress(currentQuestionId) : null;
-      const lessonComplete = getFreeTaskSolvedCount(requestedLesson) === getFreeTaskCount(requestedLesson);
+      const lessonComplete = getActiveFreeTaskCount() > 0 && getActiveFreeTaskSolvedCount() === getActiveFreeTaskCount();
       if (selectedProgress?.status === 'solved') {
         answerMessage.hidden = false;
         answerMessage.className = 'answer-message good';
@@ -1241,9 +1313,17 @@ function selectQuestion(id) {
   if (!match || !isUnlocked(match.question)) return;
   cancelAutoAdvance();
   navigationVersion += 1;
-  // Every question starts from a clean sample database, including when Auto Next
-  // selects the next question in the same lesson.
-  openLesson(match.lessonIndex, false, id);
+  const activeTopic = TOPIC_BY_SLUG[currentTopicSlug];
+  const belongsToActiveTopic = activeTopic && (
+    Array.isArray(activeTopic.questionIds)
+      ? activeTopic.questionIds.includes(id)
+      : match.lessonIndex === currentLessonIndex
+  );
+  const targetLessonIndex = belongsToActiveTopic ? currentLessonIndex : match.lessonIndex;
+  const targetTopicSlug = belongsToActiveTopic ? currentTopicSlug : getDefaultTopicForLesson(match.lessonIndex).slug;
+  // Selecting a task changes only the prompt/database context. The one shared SQL
+  // editor and its current text are intentionally retained for the learner to edit.
+  openLesson(targetLessonIndex, false, id, targetTopicSlug);
 }
 
 function runQuery() {
@@ -1390,8 +1470,7 @@ function completeCorrectAnswer(question, sql) {
   }
 
   if (alreadySolved) return;
-  const lesson = lessons[currentLessonIndex];
-  if (getFreeTaskSolvedCount(lesson) === getFreeTaskCount(lesson)) {
+  if (getActiveFreeTaskCount() > 0 && getActiveFreeTaskSolvedCount() === getActiveFreeTaskCount()) {
     feedbackMessageForCompletion();
     return;
   }
@@ -1437,7 +1516,7 @@ function scheduleAutoAdvance(questionId) {
   const selection = getQuestionById(questionId);
   if (!selection) return;
   const nextQuestion = getNextUnsolvedQuestion(
-    lessons[selection.lessonIndex].questions,
+    getActiveTopicQuestions(),
     isUnlocked,
     (id) => getQuestionProgress(id).status
   );
@@ -1446,7 +1525,7 @@ function scheduleAutoAdvance(questionId) {
     if (status) {
       status.hidden = false;
       status.className = 'answer-message good';
-      status.textContent = 'All five free tasks are complete. Continue to the next lesson when you are ready.';
+      status.textContent = 'All free questions in this topic are complete. You can choose any other lesson from the Lessons menu.';
     }
     refreshFinishLessonButton();
     return;
@@ -1465,7 +1544,7 @@ function feedbackMessageForCompletion() {
   if (message) {
     message.hidden = false;
     message.className = 'answer-message good';
-    message.textContent = 'All five free tasks are complete. Continue to the next lesson when you are ready.';
+    message.textContent = 'All free questions in this topic are complete. You can choose any other lesson from the Lessons menu.';
   }
   refreshFinishLessonButton();
 }
@@ -1581,7 +1660,9 @@ async function resetCurrentTaskProgress() {
 
   // Wait for the signed-in account's Firestore write before rebuilding the task UI.
   const cloudSaved = await window.QueryPathAccount?.saveAccountState?.();
-  await openLesson(lessonIndex, false, question.id);
+  const activeTopic = TOPIC_BY_SLUG[currentTopicSlug];
+  const remainsInActiveTopic = Array.isArray(activeTopic?.questionIds) && activeTopic.questionIds.includes(question.id);
+  await openLesson(remainsInActiveTopic ? currentLessonIndex : lessonIndex, false, question.id, remainsInActiveTopic ? currentTopicSlug : null);
 
   const message = $('#answer-message');
   if (message) {
@@ -1596,31 +1677,34 @@ async function resetCurrentTaskProgress() {
 function refreshFinishLessonButton() {
   const button = $('#finish-lesson-button');
   if (!button || !lessons[currentLessonIndex]) return;
-  const complete = getFreeTaskSolvedCount(lessons[currentLessonIndex]) === getFreeTaskCount(lessons[currentLessonIndex]);
-  button.disabled = !complete;
-  button.classList.toggle('ready', complete);
-  button.textContent = currentLessonIndex === lessons.length - 1 && complete ? '✓ Course complete' : complete ? '✓ Continue to next lesson' : 'Solve all tasks to continue';
+
+  // Completion is tracked for progress, but it never blocks access to the next
+  // topic. The Lessons menu also remains available for direct navigation.
+  const nextTopic = getNextCourseTopic(SQL_TOPICS, currentTopicSlug);
+  const hasNextLesson = currentLessonIndex < lessons.length - 1;
+  const canContinue = Boolean(nextTopic || hasNextLesson);
+  button.disabled = !canContinue;
+  button.classList.toggle('ready', canContinue);
+  button.textContent = canContinue ? 'Continue to next topic' : 'You reached the last topic';
 }
 
 function finishCurrentLesson() {
-  const lesson = lessons[currentLessonIndex];
-  if (!lesson) return;
-  const complete = getFreeTaskSolvedCount(lesson) === getFreeTaskCount(lesson);
-  const message = $('#answer-message');
-  if (!complete) {
-    if (message) {
-      message.hidden = false;
-      message.className = 'answer-message bad';
-      message.textContent = `Solve all ${getFreeTaskCount(lesson)} free tasks before moving to the next lesson.`;
-    }
+  const nextTopic = getNextCourseTopic(SQL_TOPICS, currentTopicSlug);
+  if (nextTopic) {
+    openLesson(nextTopic.lessonIndex, true, null, nextTopic.slug);
     return;
   }
+
   if (currentLessonIndex < lessons.length - 1) {
     openLesson(currentLessonIndex + 1);
-  } else if (message) {
+    return;
+  }
+
+  const message = $('#answer-message');
+  if (message) {
     message.hidden = false;
     message.className = 'answer-message good';
-    message.textContent = 'You completed the SQL learning track. Well done!';
+    message.textContent = 'You reached the last topic. Every lesson remains available from the Lessons menu.';
   }
 }
 
@@ -1644,7 +1728,7 @@ async function start() {
   // Fetch lesson data while Firebase restores the learner's account in parallel.
   const lessonsController = new AbortController();
   const lessonsTimeoutId = window.setTimeout(() => lessonsController.abort(), 15000);
-  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-sql-practice-bugfix-v3', document.baseURI), {
+  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-course-navigation-any-order-02', document.baseURI), {
     cache: 'default',
     signal: lessonsController.signal
   }).catch((error) => ({ requestError: error }));
@@ -1653,19 +1737,9 @@ async function start() {
     // Keep the account restore before loading progress, so cloud data cannot be overwritten by stale local data.
     if (window.QueryPathAccountReady) await window.QueryPathAccountReady;
 
-    // Product requirement: a browser Refresh (F5 / reload button) starts a fresh
-    // course run and clears all task completion + XP. Normal navigation between
-    // Codeora pages does not clear progress.
+    // A browser refresh returns the learner to the first question of the same
+    // lesson/topic, but solved progress, XP and streaks are preserved.
     const refreshedByBrowser = wasBrowserReload(window.performance);
-    if (refreshedByBrowser) {
-      const cleared = clearAllCourseProgress();
-      progressData = cleared.progress;
-      gamificationData = cleared.gamification;
-      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progressData));
-      localStorage.setItem(GAMIFICATION_KEY, JSON.stringify(gamificationData));
-      localStorage.removeItem(SELECTED_QUESTION_KEY);
-      await window.QueryPathAccount?.saveAccountState?.();
-    }
 
     loadProgress();
     loadGamification();
@@ -1711,28 +1785,21 @@ async function start() {
           if (savedSelection) {
             rawLesson = savedSelection.lessonIndex;
             preferredQuestionId = savedQuestionId;
-            const savedLessonComplete = getFreeTaskSolvedCount(lessons[savedSelection.lessonIndex]) === getFreeTaskCount(lessons[savedSelection.lessonIndex]);
-            const nextLessonIndex = savedSelection.lessonIndex + 1;
-            if (savedLessonComplete && nextLessonIndex < lessons.length && isLessonUnlocked(nextLessonIndex)) {
-              rawLesson = nextLessonIndex;
-              preferredQuestionId = null;
-            }
           }
         } catch {}
       }
       const requestedTopic = TOPIC_BY_SLUG[params.get('topic') || ''];
       if (requestedTopic) rawLesson = requestedTopic.lessonIndex;
       const lessonIndex = Number.isInteger(rawLesson) ? Math.max(0, Math.min(lessons.length - 1, rawLesson)) : 0;
-      if (!isLessonUnlocked(lessonIndex)) {
-        await openLesson(0, false, null);
-        const message = $('#lesson-access-message');
-        if (message) {
-          message.hidden = false;
-          message.textContent = `Lesson ${lessonIndex + 1} is locked. Complete the five free tasks in each previous lesson, starting from Lesson 1. You are viewing Lesson 1.`;
-        }
-      } else {
-        await openLesson(lessonIndex, false, preferredQuestionId, requestedTopic?.slug || null);
+      if (refreshedByBrowser) {
+        const refreshTopic = requestedTopic || getDefaultTopicForLesson(lessonIndex);
+        const firstOnTopic = getFirstAvailableQuestion(
+          getQuestionsForTopic(refreshTopic, lessonIndex),
+          (question) => isUnlocked(question)
+        );
+        preferredQuestionId = firstOnTopic?.id || null;
       }
+      await openLesson(lessonIndex, false, preferredQuestionId, requestedTopic?.slug || null);
     } else if (page === 'lessons') {
       renderLessonsCatalog();
     } else if (page === 'solutions') {
@@ -1752,7 +1819,7 @@ async function start() {
       if (refreshMessage) {
         refreshMessage.hidden = false;
         refreshMessage.className = 'answer-message good';
-        refreshMessage.textContent = 'Browser refresh detected: all task progress has been reset. Start again from any unlocked task.';
+        refreshMessage.textContent = 'You are back at the first question in this lesson. Your solved questions and XP are still saved.';
       }
     }
     window.QueryPathReady = true;

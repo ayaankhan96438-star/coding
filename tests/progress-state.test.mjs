@@ -20,10 +20,10 @@ assert.deepEqual(single.gamification.awardedQuestionIds, ['q3']);
 assert.equal(single.gamification.streak, 4, 'streak must remain on single-task reset');
 
 const all = clearAllCourseProgress();
-assert.deepEqual(all.progress, {}, 'full refresh reset must clear every task record');
+assert.deepEqual(all.progress, {}, 'the explicit full-reset helper still returns an empty progress map when manually invoked');
 assert.equal(all.gamification.xp, 0);
 assert.deepEqual(all.gamification.awardedQuestionIds, []);
 assert.equal(wasBrowserReload({ getEntriesByType: () => [{ type: 'reload' }] }), true);
 assert.equal(wasBrowserReload({ getEntriesByType: () => [{ type: 'navigate' }] }), false);
 
-console.log('Progress state tests passed: single-task reset, full refresh reset, and navigation detection.');
+console.log('Progress state tests passed: explicit reset helpers and navigation detection.');

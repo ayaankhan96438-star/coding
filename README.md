@@ -15,7 +15,7 @@ Open `http://localhost:5173`.
 
 The first five lessons use the same simple `school` table with eight records and five columns: `id`, `student`, `teacher`, `marks`, and `class`. Every question, hint, example, answer and table preview in these lessons uses those exact fields.
 
-Lesson 1 introduces `SELECT`; Lesson 2 practices `DISTINCT` and `LIMIT`; Lesson 3 uses `WHERE`; Lesson 4 combines simple conditions; Lesson 5 sorts student marks and names. Each lesson has five Free and five Premium questions.
+The Foundation · Basic SQL Queries topic menu is ordered as SELECT Statement → WHERE Clause → LIKE Operator → ORDER BY → DISTINCT & LIMIT. BETWEEN and IN remain in Foundation · Filtering & Conditions. Each data lesson contains Free and Premium questions.
 
 ## Branding
 
@@ -25,9 +25,9 @@ The course shell now uses the **Codeora** name and the new custom Codeora path-m
 
 - Interactive Tutorial remains a popover with sections and topics.
 - The selected question determines which table is previewed above the SQL editor.
-- Press Enter to check a query; Shift+Enter inserts a new line.
+- The SQL editor checks automatically after a complete query ending in a semicolon. Enter adds a new line.
 - Reset restores a clean sample database for the selected question.
-- Five Free tasks must be solved to unlock the next lesson.
+- All lessons can be opened in any order. Premium questions remain locked individually; completing one lesson is not required to enter another.
 - Progress and XP remain stored in browser localStorage.
 
 ## Technical notes
@@ -64,7 +64,7 @@ The first five lessons now use one beginner-friendly `school` table with eight s
 
 ## SQL and Python track navigation
 
-The dark full-width top navigation bar has been removed. Simple, visible SQL and Python text links now sit directly below the Codeora logo and tagline on the SQL course page. SQL returns to `index.html`; Python opens the intentionally blank `python.html` placeholder. The first four Foundation lessons progress in this order: SELECT Statement → WHERE Clause → ORDER BY → DISTINCT & LIMIT. Existing question IDs and saved progress keys are preserved.
+The dark full-width top navigation bar has been removed. Simple, visible SQL and Python text links now sit directly below the Codeora logo and tagline on the SQL course page. SQL returns to `index.html`; Python opens the intentionally blank `python.html` placeholder. The Foundation · Basic SQL Queries topic order is SELECT Statement → WHERE Clause → LIKE Operator → ORDER BY → DISTINCT & LIMIT. BETWEEN & IN remains in Foundation · Filtering & Conditions. Existing question IDs and saved progress keys are preserved.
 
 
 ## Account sign-in and cloud progress (Firebase setup required)
@@ -75,7 +75,7 @@ Codeora now includes `login.html` with Google (including Gmail accounts), Facebo
 
 ## Question resume behavior
 
-Correct answers remain marked as completed after refresh or reopening. The practice page resumes at the next unfinished unlocked question. If a learner has completed every free question in a lesson, the page continues to show the lesson-complete state and the next-lesson action.
+Solved questions remain marked as completed after refresh or reopening. Refreshing the practice page returns to the first question of the same lesson/topic without deleting solved progress, XP or streaks. The shared SQL editor keeps its text until the learner edits or deletes it.
 
 ## Codeora monogram update — 22 November 2026
 
@@ -94,7 +94,7 @@ The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, 
 
 - Lesson SQL editors and the SQL Playground open blank.
 - The editor button is **Reset progress** and resets only the currently selected question, including that question's attempts and its one-time XP award. Other question progress remains intact.
-- A real browser reload/refresh (F5 or the browser refresh button) deliberately clears all question completion and gamification progress on this device and, when signed in, writes the cleared state to the learner's Firestore progress document. Normal navigation between Codeora pages does not clear progress.
+- A browser reload preserves local and cloud question progress, XP and streaks; it opens the first question of the current lesson/topic.
 - The course header action is labelled **Lessons**.
 - The reset button is bound directly after each editor render so it remains active after changing questions.
 
@@ -122,3 +122,8 @@ This is a browser IDE, not a full desktop VS Code installation. The browser can 
 - The shell selector distinguishes the browser workspace command runner from Bash on the local laptop. A browser page cannot launch a user's OS shell; save the project and open it in VS Code to use real Bash and npm.
 - The SQL landing page no longer flashes the temporary “Loading your SQL lesson…” placeholder or the tagline footer while its lesson module starts.
 - The SQL Lessons shortcut is omitted from the Languages page header.
+
+
+## Lesson navigation
+
+Lessons can be opened in any order. Only questions marked Premium are locked. Refreshing the practice page opens the first question in the current lesson/topic while preserving solved progress, XP and streaks.
