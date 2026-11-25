@@ -21,13 +21,19 @@ for (const match of app.matchAll(/questionIds:\s*\[([^\]]+)\]/g)) {
   for (const id of ids) assert.ok(allQuestionIds.has(id), `topic references existing question ${id}`);
 }
 assert.match(readFileSync(new URL('../public/account-bootstrap.js', import.meta.url), 'utf8'), /clearQuestionProgressOnReload/, 'a full browser refresh must clear all question states');
-assert.match(app, /const refreshedByBrowser = wasBrowserReload\(window\.performance\)/, 'refresh should be detected');
+assert.match(readFileSync(new URL('../public/account-bootstrap.js', import.meta.url), 'utf8'), /QueryPathProgressResetOnReload = true/, 'account bootstrap reports whether the cloud/local reset completed');
+assert.match(readFileSync(new URL('../public/account-core.js', import.meta.url), 'utf8'), /removeItem\(STORAGE_KEYS\.sharedSqlDraft\)/, 'refresh also clears the shared SQL editor draft');
+assert.match(readFileSync(new URL('../public/account-core.js', import.meta.url), 'utf8'), /cloudWriteQueue = cloudWriteQueue\.then\(write, write\)/, 'cloud reset is queued after prior saves so stale progress cannot overwrite it');
+assert.match(app, /const refreshedByBrowser = wasBrowserReload\(window\.performance\)[\s\S]{0,160}QueryPathWasBrowserRefresh/, 'refresh is detected by both app and account bootstrap');
+assert.match(app, /localStorage\.setItem\(PROGRESS_KEY, '\{\}'\)/, 'practice app has a local fallback that clears solved/attempted state on refresh');
+assert.match(app, /localStorage\.removeItem\(SHARED_QUERY_KEY\)/, 'refresh clears the saved SQL editor answer');
+assert.match(app, /async function completeCorrectAnswer[\s\S]{0,420}await applyQueryPreview\(sql, queryPreviewVersion, questionId\)/, 'correct answer preview must finish before progress/auto-advance');
 assert.match(app, /getFirstAvailableQuestion\(/, 'refresh should choose the first available question in the current topic');
 assert.match(app, /getNextCourseTopic\(SQL_TOPICS, currentTopicSlug\)/, 'next topic navigation is independent of completion');
 assert.match(app, /queryPreviewVisible = false;[\s\S]{0,180}renderSchemaViewer\(\);/, 'navigation restores the selected question source tables instead of carrying a prior query result');
 assert.match(app, /The shared editor remains untouched/, 'navigation preserves the shared SQL editor text');
 assert.doesNotMatch(app, /const retainedPreviewShown = retainedSql/, 'old SQL preview is not replayed into a newly selected topic');
-assert.match(readFileSync(new URL('../legacy-pages/practice.html', import.meta.url), 'utf8'), /app\.js\?v=20261125-topic-table-context-05/, 'topic navigation fix gets a fresh browser asset URL');
+assert.match(readFileSync(new URL('../legacy-pages/practice.html', import.meta.url), 'utf8'), /app\.js\?v=20261125-refresh-and-preview-fix-01/, 'topic navigation fix gets a fresh browser asset URL');
 assert.doesNotMatch(app, /Solve all \$\{getFreeTaskCount\(lesson\)\} free tasks before moving to the next lesson/, 'incomplete lesson does not block next-topic navigation');
 
 const basicStart = app.indexOf("{ title: 'Foundation · Basic SQL Queries'");

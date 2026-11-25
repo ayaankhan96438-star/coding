@@ -1,7 +1,7 @@
 import { isLessonAccessible, isUnlocked } from './access.js?v=20261124-course-navigation-any-order-02';
 import { cloneDatabase, createFreshDatabase, loadSqlModule } from './database.js?v=20261125-fast-query-preview-01';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
-import { resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261124-refresh-preserve-progress-01';
+import { resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261125-refresh-and-preview-fix-01';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
 import { getFirstAvailableQuestion, getNextCourseTopic, getNextUnsolvedQuestionAfter, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261125-global-auto-advance-01';
 
@@ -1614,7 +1614,15 @@ async function evaluateQuestionAnswer(sql, question) {
   };
 }
 
-function completeCorrectAnswer(question, sql) {
+async function completeCorrectAnswer(question, sql) {
+  const questionId = question.id;
+  // Finish the matching query preview before confirming the answer or moving
+  // to another question. This is especially important for UPDATE/INSERT/DELETE,
+  // whose preview is rendered from an isolated database snapshot.
+  cancelQueryPreview();
+  await applyQueryPreview(sql, queryPreviewVersion, questionId);
+  if (currentQuestionId !== questionId || String($('#query')?.value || '').trim() !== sql) return;
+
   const alreadySolved = getQuestionProgress(question.id).status === 'solved';
   if (!alreadySolved) recordAttempt(question, true);
   saveQueryHistory(sql, 'Lesson submission', true, 'Passed 3/3 validation cases');
@@ -1630,9 +1638,8 @@ function completeCorrectAnswer(question, sql) {
   }
 
   if (alreadySolved) return;
-  // Do not stop at the end of a lesson/topic. Continue to the next unanswered
-  // free question anywhere in the course, preserving the learner's one shared
-  // SQL editor text for manual deletion/editing.
+  // Do not stop at the end of a lesson/topic. Continue at the next unanswered
+  // free question anywhere in the course after the query result has rendered.
   scheduleAutoAdvance(question.id);
 }
 
@@ -1653,7 +1660,7 @@ function scheduleAutoCheck() {
       const result = await evaluateQuestionAnswer(sql, question);
       if (checkVersion !== autoCheckVersion || currentQuestionId !== questionId || $('#query')?.value.trim() !== sql) return;
       if (result.correct) {
-        completeCorrectAnswer(question, sql);
+        await completeCorrectAnswer(question, sql);
       } else if (!result.userError) {
         const message = $('#answer-message');
         if (message) {
@@ -1751,7 +1758,7 @@ async function submitAnswer() {
   if (checkButton) checkButton.disabled = false;
   const correct = result.correct;
   if (correct) {
-    completeCorrectAnswer(question, sql);
+    await completeCorrectAnswer(question, sql);
     return;
   }
 
@@ -1909,11 +1916,36 @@ async function start() {
     // Keep the account restore before loading progress, so cloud data cannot be overwritten by stale local data.
     if (window.QueryPathAccountReady) await window.QueryPathAccountReady;
 
-    // A browser refresh returns to the first question of the same lesson/topic.
-    // account-bootstrap clears all SQL question completion before this app reads progress.
-    const refreshedByBrowser = wasBrowserReload(window.performance);
+    // A browser refresh starts a clean SQL practice session. account-bootstrap
+    // performs the local/cloud reset first; this is a defensive local fallback
+    // in case that script was served from cache or account setup could not run.
+    const refreshedByBrowser = wasBrowserReload(window.performance)
+      || window.QueryPathWasBrowserRefresh === true;
+    if (refreshedByBrowser) {
+      try {
+        localStorage.setItem(PROGRESS_KEY, '{}');
+        localStorage.removeItem(SHARED_QUERY_KEY);
+        localStorage.removeItem(QUERY_DRAFTS_KEY);
+        if (!window.QueryPathProgressResetOnReload) {
+          await window.QueryPathAccount?.clearQuestionProgressOnReload?.();
+        }
+      } catch (error) {
+        console.warn('The practice session could not be fully reset on refresh.', error);
+      }
+      progressData = {};
+      questionDrafts = {};
+      sharedEditorDraft = '';
+      sharedEditorDraftLoaded = true;
+    }
 
-    loadProgress();
+    if (refreshedByBrowser) {
+      // Do not reload stale completion records even when browser storage is
+      // temporarily unavailable; the in-memory practice session still resets.
+      progressData = {};
+      updateProgress();
+    } else {
+      loadProgress();
+    }
     loadGamification();
     loadQuestionDrafts();
     let response;

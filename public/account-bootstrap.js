@@ -1,12 +1,15 @@
 // Starts Firebase account hydration early on every CodeBolt page.
-window.QueryPathAccountReady = import('./account-core.js?v=next-session-progress-reset-01')
+window.QueryPathAccountReady = import('./account-core.js?v=20261125-refresh-and-preview-fix-01')
   .then(async (account) => {
     window.QueryPathAccount = account;
     const state = await account.initializeAccount();
     const navigationEntry = window.performance?.getEntriesByType?.('navigation')?.[0];
     const isBrowserRefresh = navigationEntry?.type === 'reload';
+    window.QueryPathWasBrowserRefresh = isBrowserRefresh;
+    window.QueryPathProgressResetOnReload = false;
     if (isBrowserRefresh && typeof account.clearQuestionProgressOnReload === 'function') {
       await account.clearQuestionProgressOnReload();
+      window.QueryPathProgressResetOnReload = true;
     }
     window.QueryPathAccountState = state;
     const topNav = document.querySelector('.top-nav');

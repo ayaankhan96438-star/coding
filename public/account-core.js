@@ -1,5 +1,5 @@
 import { firebaseConfig, firebaseConfigured } from './firebase-config.js';
-import { clearQuestionProgressForReload } from './progress-state.mjs?v=next-session-progress-reset-01';
+import { clearQuestionProgressForReload } from './progress-state.mjs?v=20261125-refresh-and-preview-fix-01';
 
 const FIREBASE_VERSION = '13.4.0';
 const CDN = `https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}`;
@@ -7,6 +7,8 @@ const STORAGE_KEYS = {
   progress: 'querypath-progress-v2',
   gamification: 'querypath-gamification-v1',
   selectedQuestion: 'querypath-selected-question-v1',
+  sharedSqlDraft: 'codebolt-sql-shared-editor-v1',
+  legacySqlDrafts: 'codebolt-sql-question-drafts-v1',
   bookmarks: 'querypath-bookmarks-v1',
   profile: 'querypath-profile-v1'
 };
@@ -168,11 +170,23 @@ export function isFirebaseConfigured() { return firebaseConfigured; }
 export async function clearQuestionProgressOnReload() {
   const snapshot = clearQuestionProgressForReload(readLocalSnapshot());
   writeLocalSnapshot(snapshot);
+  // A browser refresh starts a clean SQL practice session. Keep account rewards,
+  // bookmarks and profile, but do not restore the previous shared editor answer.
+  try {
+    localStorage.removeItem(STORAGE_KEYS.sharedSqlDraft);
+    localStorage.removeItem(STORAGE_KEYS.legacySqlDrafts);
+  } catch (error) {
+    console.warn('The previous SQL editor draft could not be cleared.', error);
+  }
   if (accountUser) {
     cacheSnapshot(accountUser.uid, snapshot);
     if (services) {
+      // Queue the reset after any pending account save so an older snapshot
+      // cannot overwrite the freshly-cleared question progress.
+      const write = () => writeCloudSnapshot(accountUser.uid, snapshot);
+      cloudWriteQueue = cloudWriteQueue.then(write, write);
       try {
-        await writeCloudSnapshot(accountUser.uid, snapshot);
+        await cloudWriteQueue;
       } catch (error) {
         console.warn('Question progress was cleared locally, but cloud reset failed.', error);
       }
