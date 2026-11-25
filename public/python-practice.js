@@ -76,7 +76,7 @@
     $('question-description').textContent = question.description;
     $('python-code').value = question.starterCode || '';
     $('expected-output').textContent = question.expectedOutput || '';
-    if (!options.preserveOutput) $('your-output').textContent = 'Your output will appear here.';
+    // Keep the last program output visible when the learner changes questions.
     $('run-result').textContent = '';
     $('error-help').hidden = true;
 
@@ -90,30 +90,29 @@
     renderQuestionBank();
   }
 
-  function findNextUnsolvedQuestion() {
-    let currentTopicIndex = -1;
-    let currentQuestionIndex = -1;
+  function findNextUnsolvedQuestion(afterQuestionId) {
+    const orderedQuestions = [];
+    state.topics.forEach((topic, topicIndex) => {
+      topic.questions.forEach((question, questionIndex) => {
+        orderedQuestions.push({ question, topicIndex, questionIndex });
+      });
+    });
 
-    for (let topicIndex = 0; topicIndex < state.topics.length; topicIndex += 1) {
-      const questionIndex = state.topics[topicIndex].questions.findIndex(
-        (question) => question.id === state.current?.id
-      );
-      if (questionIndex !== -1) {
-        currentTopicIndex = topicIndex;
-        currentQuestionIndex = questionIndex;
-        break;
-      }
-    }
+    if (orderedQuestions.length === 0) return null;
 
-    if (currentTopicIndex === -1) return null;
+    const currentIndex = orderedQuestions.findIndex(
+      ({ question }) => question.id === afterQuestionId
+    );
+    const startIndex = currentIndex === -1 ? 0 : currentIndex + 1;
 
-    for (let topicIndex = currentTopicIndex; topicIndex < state.topics.length; topicIndex += 1) {
-      const firstQuestionIndex = topicIndex === currentTopicIndex ? currentQuestionIndex + 1 : 0;
-      const questions = state.topics[topicIndex].questions;
-      for (let questionIndex = firstQuestionIndex; questionIndex < questions.length; questionIndex += 1) {
-        if (!state.solved.has(questions[questionIndex].id)) {
-          return { topicIndex, questionIndex };
-        }
+    // Search forward first, then wrap to earlier questions if needed.
+    for (let offset = 0; offset < orderedQuestions.length; offset += 1) {
+      const candidate = orderedQuestions[(startIndex + offset) % orderedQuestions.length];
+      if (!state.solved.has(candidate.question.id)) {
+        return {
+          topicIndex: candidate.topicIndex,
+          questionIndex: candidate.questionIndex
+        };
       }
     }
 
@@ -294,16 +293,18 @@
     // A user may have selected another question while the worker was running.
     if (state.current?.id !== job.question.id) return;
 
-    const output = data.output || '';
-    $('your-output').textContent = output || '(no output)';
     $('runtime-label').textContent = 'Python 3 ready · warm runner';
 
     if (data.error) {
+      // A failed run must not erase the last successful/visible output.
       $('run-result').textContent = 'Python error';
       $('error-help').hidden = false;
       $('error-help').textContent = `${data.error}\n${explainError(data.error)}`;
       return;
     }
+
+    const output = data.output || '';
+    $('your-output').textContent = output || '(no output)';
 
     const check = validateQuestion(job.question, data);
     if (check.passed) {
@@ -313,9 +314,9 @@
       updateProgress();
       renderQuestionBank();
 
-      const nextQuestion = findNextUnsolvedQuestion();
+      const nextQuestion = findNextUnsolvedQuestion(job.question.id);
       if (nextQuestion) {
-        selectQuestion(nextQuestion.topicIndex, nextQuestion.questionIndex, { preserveOutput: true });
+        selectQuestion(nextQuestion.topicIndex, nextQuestion.questionIndex);
       }
     } else {
       $('run-result').textContent = 'Not solved yet — check the hint';
@@ -397,7 +398,7 @@
     state.activeJob = job;
     setRunnerBusy(true);
     $('run-result').textContent = 'Preparing run…';
-    $('your-output').textContent = 'Starting Python…';
+    // Leave the previous output visible until this run returns its new output.
     $('error-help').hidden = true;
 
     state.worker.postMessage({
