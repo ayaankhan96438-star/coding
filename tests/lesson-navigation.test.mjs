@@ -20,6 +20,8 @@ assert.match(readFileSync(new URL('../public/account-bootstrap.js', import.meta.
 assert.match(app, /const refreshedByBrowser = wasBrowserReload\(window\.performance\)/, 'refresh should be detected');
 assert.match(app, /getFirstAvailableQuestion\(/, 'refresh should choose the first available question in the current topic');
 assert.match(app, /getNextCourseTopic\(SQL_TOPICS, currentTopicSlug\)/, 'next topic navigation is independent of completion');
+assert.match(app, /if \(requestId !== openRequest\) return;\s+if \(!retainedPreviewShown\) renderSchemaViewer\(\);/, 'a stale async preview cannot overwrite a newly selected topic');
+assert.match(readFileSync(new URL('../legacy-pages/practice.html', import.meta.url), 'utf8'), /app\.js\?v=20261125-filtering-topic-navigation-03/, 'topic navigation fix gets a fresh browser asset URL');
 assert.doesNotMatch(app, /Solve all \$\{getFreeTaskCount\(lesson\)\} free tasks before moving to the next lesson/, 'incomplete lesson does not block next-topic navigation');
 
 const basicStart = app.indexOf("{ title: 'Foundation · Basic SQL Queries'");

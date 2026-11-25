@@ -621,9 +621,9 @@ const SQL_TOPIC_GROUPS = [
     { slug: 'truncate-delete', title: 'TRUNCATE vs DELETE', lessonIndex: 8, description: 'DELETE can remove selected rows and supports WHERE. TRUNCATE removes all rows in systems that implement it; SQLite does not support TRUNCATE TABLE.', example: 'DELETE FROM students;' }
   ]},
   { title: 'Foundation · Filtering & Conditions', topics: [
-    { slug: 'logical-operators', title: 'AND, OR, NOT Operators', lessonIndex: 4, questionIds: ['l4-text-q10'], description: 'AND requires every condition to be true, OR accepts either condition, and NOT reverses a condition.', example: 'SELECT student, marks FROM school\nWHERE marks > 80 AND class = 5;' },
-    { slug: 'between-in-like', title: 'BETWEEN & IN', lessonIndex: 4, questionIds: ['l3-where-q7', 'l4-text-q8', 'l4-text-q9'], description: 'BETWEEN checks whether a value falls inside a range. IN and NOT IN check whether a value belongs to a list.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" },
-    { slug: 'text-constraints', title: 'Text Comparisons (=, !=, <>)', lessonIndex: 4, questionIds: ['l4-text-q1', 'l4-text-q2', 'l4-text-q3'], description: 'Compare text values exactly with =, or find values that are different with != and <>. These comparisons are case-sensitive by default in this SQLite lesson.', example: "SELECT student, teacher FROM school\nWHERE teacher = 'Neha';" }
+    { slug: 'logical-operators', title: 'AND, OR, NOT Operators', lessonIndex: 4, questionIds: ['l4-text-q10', 'l4-logical-q2', 'l4-logical-q3', 'l4-logical-q4', 'l4-logical-q5', 'l4-logical-q6', 'l4-logical-q7', 'l4-logical-q8', 'l4-logical-q9', 'l4-logical-q10'], description: 'AND requires every condition to be true, OR accepts either condition, and NOT reverses a condition.', example: 'SELECT student, marks FROM school\nWHERE marks > 80 AND class = 5;' },
+    { slug: 'between-in-like', title: 'BETWEEN & IN', lessonIndex: 4, questionIds: ['l4-text-q8', 'l4-text-q9', 'l4-range-q3', 'l4-range-q4', 'l4-range-q5', 'l4-range-q6', 'l4-range-q7', 'l4-range-q8', 'l4-range-q9', 'l4-range-q10'], description: 'BETWEEN checks whether a value falls inside a range. IN and NOT IN check whether a value belongs to a list.', example: "SELECT student, marks FROM school\nWHERE marks BETWEEN 70 AND 90;" },
+    { slug: 'text-constraints', title: 'Text Comparisons (=, !=, <>)', lessonIndex: 4, questionIds: ['l4-text-q1', 'l4-text-q2', 'l4-text-q3', 'l4-compare-q4', 'l4-compare-q5', 'l4-compare-q6', 'l4-compare-q7', 'l4-compare-q8', 'l4-compare-q9', 'l4-compare-q10'], description: 'Compare text values exactly with =, or find values that are different with != and <>. These comparisons are case-sensitive by default in this SQLite lesson.', example: "SELECT student, teacher FROM school\nWHERE teacher = 'Neha';" }
   ]},
   { title: 'Intermediate & Advanced · Aggregate Functions', topics: [
     { slug: 'count-sum-avg', title: 'COUNT(), SUM(), AVG()', lessonIndex: 6, description: 'COUNT counts rows or values, SUM adds numeric values, and AVG calculates their average.', example: 'SELECT COUNT(*) AS students,\n       SUM(age) AS total_age,\n       AVG(age) AS average_age\nFROM students;' },
@@ -1114,7 +1114,7 @@ function render() {
           <div class="course-panel-heading task-panel-heading"><h2>${escapeHtml(topic.title)}</h2><small id="task-progress-count">${freeSolved} / ${freeTotal} complete</small></div>
           <div class="task-groups">
             <section class="task-group"><h3>Free <span>· ${freeTotal}</span></h3><div id="free-task-list" class="task-list"></div></section>
-            <section class="task-group premium-task-group"><h3>Premium <span>· ${item.questions.length - freeTotal}</span></h3><div id="premium-task-list" class="task-list"></div></section>
+            <section class="task-group premium-task-group"><h3>Premium <span>· ${Math.max(0, getActiveTopicQuestions().length - freeTotal)}</span></h3><div id="premium-task-list" class="task-list"></div></section>
           </div>
         </div>
         <div class="task-footer">
@@ -1391,6 +1391,7 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
     const retainedPreviewShown = retainedSql && hasRequiredSemicolon(retainedSql)
       ? await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)
       : false;
+    if (requestId !== openRequest) return;
     if (!retainedPreviewShown) renderSchemaViewer();
     setPracticeEnabled(true);
     if (answerMessage) {

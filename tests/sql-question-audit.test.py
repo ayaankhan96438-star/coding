@@ -24,11 +24,22 @@ def canonical_result_sets(result_sets):
 
 
 class SqlQuestionAuditTests(unittest.TestCase):
-    def test_course_has_ten_lessons_with_ten_questions_each(self):
+    def test_course_has_ten_lessons_and_filtering_topics_have_ten_questions_each(self):
         self.assertEqual(len(LESSONS), 10)
-        self.assertTrue(all(len(lesson['questions']) == 10 for lesson in LESSONS))
+        self.assertTrue(all(len(lesson['questions']) == 10 for index, lesson in enumerate(LESSONS) if index != 4))
+        self.assertEqual(len(LESSONS[4]['questions']), 34)
+        app = (ROOT / 'public' / 'app.js').read_text(encoding='utf-8')
+        for slug in ('logical-operators', 'between-in-like', 'text-constraints'):
+            match = re.search("slug: '" + slug + r"'[^}]*?questionIds: \[([^]]+)\]", app)
+            self.assertIsNotNone(match, f'{slug} topic must have a question list')
+            ids = re.findall(r"'([^']+)'", match.group(1))
+            questions = [next((q for q in LESSONS[4]['questions'] if q['id'] == question_id), None) for question_id in ids]
+            self.assertEqual(len(questions), 10, f'{slug} must have ten questions')
+            self.assertTrue(all(questions), f'{slug} must reference existing questions')
+            self.assertEqual(sum(bool(q.get('free')) for q in questions), 5, f'{slug} must have five free questions')
+            self.assertEqual(sum(not bool(q.get('free')) for q in questions), 5, f'{slug} must have five premium questions')
 
-    def test_all_100_reference_solutions_execute(self):
+    def test_all_reference_solutions_execute(self):
         seen = set()
         for lesson in LESSONS:
             for question in lesson['questions']:
@@ -61,7 +72,7 @@ class SqlQuestionAuditTests(unittest.TestCase):
                     self.fail(f"{question['id']} reference answer failed: {error}")
                 finally:
                     connection.close()
-        self.assertEqual(len(seen), 100)
+        self.assertEqual(len(seen), 124)
 
     def test_ordering_questions_have_explicit_grading_rules(self):
         questions = {q['id']: q for lesson in LESSONS for q in lesson['questions']}
