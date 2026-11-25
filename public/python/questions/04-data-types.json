@@ -1,0 +1,151 @@
+[
+  {
+    "id": "py04q01",
+    "title": "Check the type of a whole number",
+    "level": "Beginner",
+    "description": "Save a whole number, such as 20, in a variable. Use type() or isinstance() to check its type and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "int",
+    "solution": "value = 24\nprint(type(value).__name__)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use an integer value and check its type.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with work with an integer. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_integer_constant"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use an integer value and check its type.",
+      "oneOf": [
+        [
+          "type_call",
+          "isinstance_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py04q02",
+    "title": "Check the type of a decimal number",
+    "level": "Beginner",
+    "description": "Save a decimal number, such as 19.5, in a variable. Check its type with type() or isinstance() and print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "float",
+    "solution": "value = 3.5\nprint(type(value).__name__)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a float value such as 3.5, then check its type.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with work with a float. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_float_constant"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use a float value such as 3.5, then check its type.",
+      "oneOf": [
+        [
+          "type_call",
+          "isinstance_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py04q03",
+    "title": "Check the type of some text",
+    "level": "Beginner",
+    "description": "Save a word, such as Delhi, in a variable. Check that it is text using type() or isinstance(), then print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "str",
+    "solution": "value = \"Python\"\nprint(type(value).__name__)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use text inside quotes and check that it is a string.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with work with a string. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_string_constant"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use text inside quotes and check that it is a string.",
+      "oneOf": [
+        [
+          "type_call",
+          "isinstance_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py04q04",
+    "title": "Print True or False",
+    "level": "Beginner",
+    "description": "Create a variable with True or False and use print() to show it.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "is_ready = True\nprint(is_ready)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use Python True or False (capital first letter) and print the value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with work with a boolean. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_bool_value",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "boolean",
+      "feedback": "Use Python True or False (capital first letter) and print the value."
+    }
+  },
+  {
+    "id": "py04q05",
+    "title": "Change number text into a number",
+    "level": "Beginner",
+    "description": "Convert the text \"50\" into a whole number using int(). Print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "50",
+    "solution": "value = int(\"50\")\nprint(value)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use int(...) on text containing digits, then print the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "int(\"50\") changes the text 50 into the whole number 50. print() then displays that number.",
+    "commonMistakes": "Use int() around the text value. Keep the digits inside matching single or double quotes.",
+    "validation": {
+      "required": [
+        "int_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use int(...) on text containing digits, then print the result.",
+      "matchExpected": true
+    }
+  }
+]

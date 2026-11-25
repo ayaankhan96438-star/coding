@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { compareResults } from '../sql-answer-checker.mjs';
+import { compareResults } from '../public/sql-answer-checker.mjs';
 
 const expectedStudents = [{
   columns: ['student'],

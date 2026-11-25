@@ -1,0 +1,142 @@
+[
+  {
+    "id": "py16q01",
+    "title": "Make a lambda that adds 5",
+    "level": "Beginner",
+    "description": "Make a one-line lambda that adds 5 to the number 4. Call it and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "solution": "add_five = lambda number: number + 5\nprint(add_five(4))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the lambda keyword and call the function it creates.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This lambda takes one number and returns that number plus 5.",
+    "commonMistakes": "Use one parameter and add 5 inside the lambda expression.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_lambda_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use the lambda keyword and call the function it creates.",
+      "matchExpected": true
+    }
+  },
+  {
+    "id": "py16q02",
+    "title": "Find a square with lambda",
+    "level": "Beginner",
+    "description": "Use lambda to multiply a number by itself. Call it with a number and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "49",
+    "solution": "square = lambda n: n * n\nprint(square(7))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use lambda and multiplication to return a square.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with lambda square. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_lambda_call",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use lambda and multiplication to return a square."
+    }
+  },
+  {
+    "id": "py16q03",
+    "title": "Sort names by length with lambda",
+    "level": "Beginner",
+    "description": "Use this list of names: Christopher, Ayesha, and Ali. Use sorted() with lambda to put the shortest name first, then print the list.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['Ali', 'Ayesha', 'Christopher']",
+    "solution": "names = [\"Christopher\", \"Ayesha\", \"Ali\"]\nsorted_names = sorted(names, key=lambda name: len(name))\nprint(sorted_names)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use lambda inside sort(key=...) or sorted(key=...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "sorted() uses the lambda as its key. len(name) tells Python to sort names from shortest to longest.",
+    "commonMistakes": "Pass a list of names and use key=lambda name: len(name). Do not sort unrelated number pairs.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "has_sort_or_sorted",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use lambda inside sort(key=...) or sorted(key=...).",
+      "matchExpected": true
+    }
+  },
+  {
+    "id": "py16q04",
+    "title": "Keep even numbers with filter",
+    "level": "Beginner",
+    "description": "Make a list of numbers. Use filter() and lambda to keep only even numbers. Print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 4, 6]",
+    "solution": "numbers = [1, 2, 3, 4, 5, 6]\nevens = list(filter(lambda n: n % 2 == 0, numbers))\nprint(evens)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use filter(lambda ..., values) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with filter values with lambda. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "filter_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use filter(lambda ..., values) and display the result."
+    }
+  },
+  {
+    "id": "py16q05",
+    "title": "Double numbers with map",
+    "level": "Beginner",
+    "description": "Use the numbers [2, 3, 4]. Use map() with lambda to double each number, then print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[4, 6, 8]",
+    "solution": "numbers = [2, 3, 4]\ndoubled = list(map(lambda number: number * 2, numbers))\nprint(doubled)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use map(lambda ..., values) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "map() applies the lambda to every item. The lambda multiplies each number by 2.",
+    "commonMistakes": "Use * 2 to double each number. ** 2 makes a square instead.",
+    "validation": {
+      "required": [
+        "has_lambda",
+        "map_call",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use map() with lambda and multiply each number by 2.",
+      "matchExpected": true
+    }
+  }
+]

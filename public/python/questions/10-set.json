@@ -1,0 +1,162 @@
+[
+  {
+    "id": "py10q01",
+    "title": "Make a set of three items",
+    "level": "Beginner",
+    "description": "Create a set with at least three values using { }. Print its values in sorted order. Repeated values are kept only once.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "values = {1, 2, 2, 3}\nprint(sorted(values))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a set using braces or set(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "A set keeps only unique values. sorted() displays those values in a predictable order.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a set using braces or set(...).",
+      "oneOf": [
+        [
+          "has_set",
+          "set_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py10q02",
+    "title": "Add an item to a set",
+    "level": "Beginner",
+    "description": "Create a set and use .add() to put one more item in it. Print the updated values in sorted order.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['a', 'b', 'c']",
+    "solution": "items = {\"a\", \"b\"}\nitems.add(\"c\")\nprint(sorted(items))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use .add(...) on a set.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "The add() method puts a new value into the set. sorted() makes the displayed order predictable.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_set_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use .add(...) on a set.",
+      "oneOf": [
+        [
+          "has_set",
+          "set_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py10q03",
+    "title": "Remove repeated numbers",
+    "level": "Beginner",
+    "description": "Create a list with a repeated number. Use set() to keep only unique numbers, then print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "numbers = [1, 1, 2, 3, 3]\nprint(sorted(set(numbers)))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use set(...) to remove duplicate values.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with remove duplicates. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_list",
+        "set_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use set(...) to remove duplicate values."
+    }
+  },
+  {
+    "id": "py10q04",
+    "title": "Find items in both sets",
+    "level": "Beginner",
+    "description": "Create two sets with at least one value in common. Use & or .intersection() and print the common values in sorted order.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[2, 3]",
+    "solution": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(sorted(a & b))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use set intersection with & or .intersection(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with find set intersection. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use set intersection with & or .intersection(...).",
+      "oneOf": [
+        [
+          "has_bitand",
+          "has_intersection"
+        ],
+        [
+          "has_set",
+          "set_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py10q05",
+    "title": "Join two sets",
+    "level": "Beginner",
+    "description": "Create two sets. Use | or .union() to join them and print the combined values in sorted order without repeats.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 3]",
+    "solution": "a = {1, 2}\nb = {2, 3}\nprint(sorted(a | b))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use set union with | or .union(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with find set union. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use set union with | or .union(...).",
+      "oneOf": [
+        [
+          "has_bitor",
+          "has_union"
+        ],
+        [
+          "has_set",
+          "set_call"
+        ]
+      ]
+    }
+  }
+]

@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-QUESTION_DIR = ROOT / "python" / "questions"
+QUESTION_DIR = ROOT / "public" / "python" / "questions"
 
 
 def run_solution(code: str, user_input: str = "") -> str:
@@ -86,10 +86,10 @@ hello_function = json.loads((QUESTION_DIR / "15-functions.json").read_text(encod
 assert run_solution(hello_function["solution"]) == hello_function["expectedOutput"] == "Hello"
 
 # The browser checker must enforce exact results for flagged questions.
-checker = (ROOT / "python-practice.js").read_text(encoding="utf-8")
+checker = (ROOT / "public" / "python-practice.js").read_text(encoding="utf-8")
 assert "rule.matchExpected" in checker
 assert "normalizeOutput(question.expectedOutput)" in checker
 assert 'has_new_variable_from_existing' in checker
-assert 'has_new_variable_from_existing' in (ROOT / "python-worker.js").read_text(encoding="utf-8")
+assert 'has_new_variable_from_existing' in (ROOT / "public" / "python-worker.js").read_text(encoding="utf-8")
 
 print(f"Passed: {count} reference solutions, both quote styles, separate-variable logic, and solution/question alignment.")

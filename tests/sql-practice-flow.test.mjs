@@ -6,7 +6,7 @@ import {
   getSharedEditorDraft,
   hasRequiredSemicolon,
   normalizeSharedEditorDraft
-} from '../sql-practice-flow.mjs';
+} from '../public/sql-practice-flow.mjs';
 
 assert.equal(hasRequiredSemicolon('SELECT * FROM school'), false, 'a query without a semicolon cannot be submitted');
 assert.equal(hasRequiredSemicolon('SELECT * FROM school;'), true);

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "py02q01",
+    "title": "Print a greeting",
+    "level": "Beginner",
+    "description": "Use print() to show a greeting, such as Hello, Good morning, or Good afternoon. Any greeting is fine.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Good morning",
+    "solution": "print(\"Good morning\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Anything you print is accepted. Use valid Python print(...) syntax.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with print any greeting. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Anything you print is accepted. Use valid Python print(...) syntax."
+    }
+  },
+  {
+    "id": "py02q02",
+    "title": "Comment a line of code",
+    "level": "Beginner",
+    "description": "Write a comment on a line by starting it with #. For example: # This is my first comment. A comment does not need to print anything.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "",
+    "solution": "# This is my first comment",
+    "hints": [
+      "Start the line with #.",
+      "Write any short note after #.",
+      "Comments are ignored by Python, so no output is needed."
+    ],
+    "explanation": "A comment starts with #. It is used to write a note in your code. Python does not run a comment, so it does not print anything.",
+    "commonMistakes": "Do not forget # at the start of the comment. You do not need print() for this question.",
+    "validation": {
+      "required": [
+        "has_comment"
+      ],
+      "minimums": {},
+      "output": "none",
+      "feedback": "Start a line with # and write any comment."
+    }
+  },
+  {
+    "id": "py02q03",
+    "title": "Print your name and age",
+    "level": "Beginner",
+    "description": "Use one print() statement to show your name and age together. You can choose any name and age.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Asha 18",
+    "solution": "print(\"Asha\", 18)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Try print(\"Name:\", name), print(\"Name: \" + name), or an f-string. These are all valid approaches.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "print() can show more than one value. Separate the name and age with a comma.",
+    "commonMistakes": "Put both values inside the same print() call and separate them with a comma.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "output": "nonempty",
+      "feedback": "Display two pieces of information in one print() call. Multiple arguments, +, and f-strings are accepted.",
+      "oneOf": [
+        [
+          "has_multiarg_print",
+          "has_joined_string",
+          "has_add"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py02q04",
+    "title": "Print a sentence",
+    "level": "Beginner",
+    "description": "Use print() to show one sentence, such as I am learning Python. You can write your own sentence.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "I am learning Python.",
+    "solution": "print(\"I am learning Python.\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Keep your printed result on one line. Any words are fine.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "Put your sentence inside print(). You can use single quotes or double quotes around the text.",
+    "commonMistakes": "Make sure the opening and closing quotation marks match. Single and double quotes both work.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "one_line",
+      "feedback": "Keep your printed result on one line. Any words are fine."
+    }
+  },
+  {
+    "id": "py02q05",
+    "title": "Print a saved message",
+    "level": "Beginner",
+    "description": "Save a message in a variable, then use print() to show that message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Welcome, Asha!",
+    "solution": "name = \"Asha\"\nprint(f\"Welcome, {name}!\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a variable first, then print its value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with print a variable. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_assignment",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create a variable first, then print its value."
+    }
+  }
+]

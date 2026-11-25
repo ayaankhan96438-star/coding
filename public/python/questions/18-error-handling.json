@@ -1,0 +1,142 @@
+[
+  {
+    "id": "py18q01",
+    "title": "Handle text that is not a number",
+    "level": "Beginner",
+    "description": "Use try to convert the word hello with int(). Use except ValueError to catch the error and print a message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Invalid number",
+    "solution": "try:\n    value = int(\"hello\")\nexcept ValueError:\n    print(\"Invalid number\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Catch the ValueError with an except block and display a message.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "int(\"hello\") cannot be converted to a number, so Python raises ValueError. The except block handles it.",
+    "commonMistakes": "Use try before the conversion and except ValueError to handle text that is not a number.",
+    "validation": {
+      "required": [
+        "has_try",
+        "has_except",
+        "int_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Catch the ValueError with an except block and display a message."
+    }
+  },
+  {
+    "id": "py18q02",
+    "title": "Handle division by zero",
+    "level": "Beginner",
+    "description": "Use try to divide 10 by 0. Use except to catch the error and print a message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Cannot divide by zero",
+    "solution": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Catch ZeroDivisionError (or a general suitable exception) and print a message.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with handle division by zero. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_try",
+        "has_except",
+        "has_div",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Catch ZeroDivisionError (or a general suitable exception) and print a message."
+    }
+  },
+  {
+    "id": "py18q03",
+    "title": "Print a message when try works",
+    "level": "Beginner",
+    "description": "Write try, except, and else. Put print() inside else so it runs when the try code works.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "25",
+    "solution": "try:\n    value = int(\"25\")\nexcept ValueError:\n    print(\"Error\")\nelse:\n    print(value)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Include try, except and else; print from the successful path.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use an else block. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_try",
+        "has_except",
+        "has_else",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Include try, except and else; print from the successful path."
+    }
+  },
+  {
+    "id": "py18q04",
+    "title": "Handle a missing dictionary key",
+    "level": "Beginner",
+    "description": "Create a dictionary and try to read a key that is not there. Use except to print a message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Key not found",
+    "solution": "data = {\"name\": \"Ari\"}\ntry:\n    print(data[\"age\"])\nexcept KeyError:\n    print(\"Key not found\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Catch a missing-key error and display a message.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with handle a missing dictionary key. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_try",
+        "has_except",
+        "has_dict",
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Catch a missing-key error and display a message."
+    }
+  },
+  {
+    "id": "py18q05",
+    "title": "Always print a final message",
+    "level": "Beginner",
+    "description": "Write try and finally. Put a print() statement inside finally so it always runs.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Working\nFinished",
+    "solution": "try:\n    print(\"Working\")\nfinally:\n    print(\"Finished\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Include a finally block and print from it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use finally. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_try",
+        "has_finally",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Include a finally block and print from it."
+    }
+  }
+]

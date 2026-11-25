@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { clearAllCourseProgress, resetSingleTaskProgress, wasBrowserReload } from '../progress-state.mjs';
+import { clearAllCourseProgress, clearQuestionProgressForReload, resetSingleTaskProgress, wasBrowserReload } from '../public/progress-state.mjs';
 
 const beforeProgress = {
   q1: { status: 'solved', attempts: 2, wrongAttempts: 1 },
@@ -27,3 +27,18 @@ assert.equal(wasBrowserReload({ getEntriesByType: () => [{ type: 'reload' }] }),
 assert.equal(wasBrowserReload({ getEntriesByType: () => [{ type: 'navigate' }] }), false);
 
 console.log('Progress state tests passed: explicit reset helpers and navigation detection.');
+
+const reloadReset = clearQuestionProgressForReload({
+  progress: beforeProgress,
+  gamification: beforeGamification,
+  selectedQuestionId: 'q4',
+  bookmarks: ['q2'],
+  profile: { displayName: 'Learner' }
+});
+assert.deepEqual(reloadReset.progress, {}, 'a browser refresh must clear every question status');
+assert.deepEqual(reloadReset.gamification, beforeGamification, 'XP and streaks remain intact on refresh');
+assert.equal(reloadReset.selectedQuestionId, 'q4', 'current lesson/question context stays available');
+assert.deepEqual(reloadReset.bookmarks, ['q2'], 'bookmarks are not cleared on refresh');
+assert.deepEqual(reloadReset.profile, { displayName: 'Learner' }, 'profile data is not cleared on refresh');
+
+console.log('Reload reset tests passed: question states clear while rewards and learner data stay intact.');

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "py09q01",
+    "title": "Make a tuple of two colours",
+    "level": "Beginner",
+    "description": "Create a tuple with at least two colours inside ( ). Print the tuple.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "('red', 'blue')",
+    "solution": "colors = (\"red\", \"blue\")\nprint(colors)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "A tuple stores ordered values inside parentheses. This tuple contains two colours.",
+    "commonMistakes": "Use parentheses ( ) and separate the colours with a comma.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py09q02",
+    "title": "Print the second item in a tuple",
+    "level": "Beginner",
+    "description": "Create a tuple with a few items. Use [1] to get the second item and print it.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Tue",
+    "solution": "days = (\"Mon\", \"Tue\", \"Wed\")\nprint(days[1])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use an index inside square brackets to read a tuple item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "Tuple positions start at 0. Index 1 points to the second item, Tue.",
+    "commonMistakes": "Use index 1 for the second item. Index 2 is the third item.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use an index inside square brackets to read a tuple item.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py09q03",
+    "title": "Count the items in a tuple",
+    "level": "Beginner",
+    "description": "Create a tuple, use len() to count its items, and print the count.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "solution": "values = (3, 6, 9, 12)\nprint(len(values))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use len(...) on a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with find tuple length. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "len_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use len(...) on a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py09q04",
+    "title": "Save tuple items in two variables",
+    "level": "Beginner",
+    "description": "Create a tuple with two values. Put the values into two separate variables and print both.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Aman\n21",
+    "solution": "person = (\"Aman\", 21)\nname, age = person\nprint(name)\nprint(age)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign the tuple values to separate variables and display them.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with unpack a tuple. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_tuple_unpack"
+      ],
+      "minimums": {
+        "assignment_count": 2,
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Assign the tuple values to separate variables and display them.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py09q05",
+    "title": "Check if a value is in a tuple",
+    "level": "Beginner",
+    "description": "Create a tuple and use in to check whether one value is inside it. Print the True or False result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "colors = (\"red\", \"blue\")\nprint(\"blue\" in colors)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the in membership operator on a tuple.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with check tuple membership. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_compare",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "boolean",
+      "feedback": "Use the in membership operator on a tuple.",
+      "oneOf": [
+        [
+          "has_tuple",
+          "tuple_call"
+        ],
+        [
+          "has_membership"
+        ]
+      ]
+    }
+  }
+]

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { isLessonAccessible, isUnlocked } from '../access.js';
+import { isLessonAccessible, isUnlocked } from '../public/access.js';
 
 assert.equal(isLessonAccessible(0, 10), true, 'first lesson is accessible');
 assert.equal(isLessonAccessible(6, 10), true, 'a later lesson is accessible without completing earlier lessons');
@@ -9,14 +9,14 @@ assert.equal(isLessonAccessible(10, 10), false, 'out-of-range lesson indexes are
 assert.equal(isUnlocked({ free: true }), true, 'free questions remain accessible');
 assert.equal(isUnlocked({ free: false }), false, 'Premium questions remain locked');
 
-const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
-const lessons = JSON.parse(readFileSync(new URL('../lessons.json', import.meta.url), 'utf8'));
+const app = readFileSync(new URL('../public/app.js', import.meta.url), 'utf8');
+const lessons = JSON.parse(readFileSync(new URL('../public/lessons.json', import.meta.url), 'utf8'));
 const allQuestionIds = new Set(lessons.flatMap((lesson) => lesson.questions.map((question) => question.id)));
 for (const match of app.matchAll(/questionIds:\s*\[([^\]]+)\]/g)) {
   const ids = [...match[1].matchAll(/'([^']+)'/g)].map((entry) => entry[1]);
   for (const id of ids) assert.ok(allQuestionIds.has(id), `topic references existing question ${id}`);
 }
-assert.doesNotMatch(app, /clearAllCourseProgress\s*\(/, 'browser refresh must never clear solved progress');
+assert.match(readFileSync(new URL('../public/account-bootstrap.js', import.meta.url), 'utf8'), /clearQuestionProgressOnReload/, 'a full browser refresh must clear all question states');
 assert.match(app, /const refreshedByBrowser = wasBrowserReload\(window\.performance\)/, 'refresh should be detected');
 assert.match(app, /getFirstAvailableQuestion\(/, 'refresh should choose the first available question in the current topic');
 assert.match(app, /getNextCourseTopic\(SQL_TOPICS, currentTopicSlug\)/, 'next topic navigation is independent of completion');

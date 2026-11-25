@@ -1,0 +1,143 @@
+[
+  {
+    "id": "py07q01",
+    "title": "Join two words",
+    "level": "Beginner",
+    "description": "Save two words in two variables. Join them with +, join(), or an f-string, then print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "CodeBolt",
+    "solution": "first = \"Code\"\nsecond = \"Bolt\"\nprint(first + second)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Combine two text values. Different joining methods are accepted.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with join two strings. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Combine two text values. Different joining methods are accepted.",
+      "oneOf": [
+        [
+          "has_add",
+          "has_joined_string",
+          "has_string_join"
+        ],
+        [
+          "has_string_constant",
+          "input_call",
+          "str_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py07q02",
+    "title": "Count the letters in a word",
+    "level": "Beginner",
+    "description": "Choose a word, use len() to count its characters, and print the count.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9",
+    "solution": "word = \"developer\"\nprint(len(word))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use len(...) and print the length.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with find string length. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "len_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use len(...) and print the length."
+    }
+  },
+  {
+    "id": "py07q03",
+    "title": "Make a word UPPERCASE",
+    "level": "Beginner",
+    "description": "Choose a word and use .upper() to change its letters to capital letters. Print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "PYTHON",
+    "solution": "text = \"python\"\nprint(text.upper())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Call .upper() on a string and print the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with make text uppercase. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_upper",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Call .upper() on a string and print the result."
+    }
+  },
+  {
+    "id": "py07q04",
+    "title": "Print the first three letters",
+    "level": "Beginner",
+    "description": "Save a word in a variable. Use a slice with [ ] and : to print its first three letters.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "PRO",
+    "solution": "word = \"PROGRAM\"\nprint(word[0:3])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a slice with square brackets and a colon.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "A slice [0:3] starts at index 0 and stops before index 3, so it returns the first three letters.",
+    "commonMistakes": "The ending index is not included. Use [0:3], not [0:4], to get exactly three letters.",
+    "validation": {
+      "required": [
+        "has_slice",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use a slice with square brackets and a colon."
+    }
+  },
+  {
+    "id": "py07q05",
+    "title": "Print a word backwards",
+    "level": "Beginner",
+    "description": "Choose a word and use [::-1] to reverse it. Print the reversed word.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "nohtyP",
+    "solution": "word = \"Python\"\nprint(word[::-1])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a slice such as text[::-1] and print the reversed text.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "[::-1] reads the characters from the end to the beginning. Python becomes nohtyP.",
+    "commonMistakes": "Use a word that is not the same forwards and backwards, then use [::-1].",
+    "validation": {
+      "required": [
+        "has_negative_slice_step",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use a slice such as text[::-1] and print the reversed text."
+    }
+  }
+]

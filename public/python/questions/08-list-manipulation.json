@@ -1,0 +1,167 @@
+[
+  {
+    "id": "py08q01",
+    "title": "Make a list of three fruits",
+    "level": "Beginner",
+    "description": "Create a list with at least three fruits, such as apple, mango, and banana. Print the list.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['apple', 'mango', 'banana']",
+    "solution": "fruits = [\"apple\", \"mango\", \"banana\"]\nprint(fruits)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a Python list.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "A list stores several values inside square brackets. This example stores three fruit names.",
+    "commonMistakes": "Use square brackets [ ] and separate each fruit with a comma.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a Python list.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py08q02",
+    "title": "Print the first item in a list",
+    "level": "Beginner",
+    "description": "Create a list with a few items. Use [0] to get the first item and print it.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "red",
+    "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[0])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use square brackets with an index to access one list item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "List positions start at 0. That means colors[0] is the first item, red.",
+    "commonMistakes": "Use index 0 for the first item. Index 1 is the second item.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use square brackets with an index to access one list item.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py08q03",
+    "title": "Add a fruit to a list",
+    "level": "Beginner",
+    "description": "Create a list, use .append() to add one more fruit, and print the updated list.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['apple', 'banana', 'mango']",
+    "solution": "fruits = [\"apple\", \"banana\"]\nfruits.append(\"mango\")\nprint(fruits)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Call .append(...) on a list and show the updated list.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "append() adds one new item to the end of a list.",
+    "commonMistakes": "Call append() on the list and put the new fruit inside its parentheses.",
+    "validation": {
+      "required": [
+        "has_append",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Call .append(...) on a list and show the updated list.",
+      "oneOf": [
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py08q04",
+    "title": "Remove an item from a list",
+    "level": "Beginner",
+    "description": "Create a list with at least two items. Remove one item with .remove() or .pop(), then print the list.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "['a', 'c']",
+    "solution": "items = [\"a\", \"b\", \"c\"]\nitems.remove(\"b\")\nprint(items)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use .remove(...) or .pop(...) to remove a list item.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with remove an item from a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use .remove(...) or .pop(...) to remove a list item.",
+      "oneOf": [
+        [
+          "has_remove",
+          "has_pop"
+        ],
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py08q05",
+    "title": "Sort numbers from small to big",
+    "level": "Beginner",
+    "description": "Create a list of numbers. Use .sort() or sorted() to put them in order, then print the result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "[1, 2, 4, 5]",
+    "solution": "numbers = [5, 1, 4, 2]\nnumbers.sort()\nprint(numbers)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use .sort() or sorted(...) and display the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with sort a list. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use .sort() or sorted(...) and display the result.",
+      "oneOf": [
+        [
+          "has_sort",
+          "sorted_call"
+        ],
+        [
+          "has_list",
+          "list_call"
+        ]
+      ]
+    }
+  }
+]

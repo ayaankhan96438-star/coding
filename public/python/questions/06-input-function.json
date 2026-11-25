@@ -1,0 +1,143 @@
+[
+  {
+    "id": "py06q01",
+    "title": "Ask for a name and say hello",
+    "level": "Beginner",
+    "description": "Use input() to ask for a name. Save the answer and print a greeting with that name.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "Mina",
+    "expectedOutput": "Hello Mina",
+    "solution": "name = input()\nprint(\"Hello\", name)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Read the provided name with input() and display it in a greeting.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with read a name. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "input_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Read the provided name with input() and display it in a greeting."
+    }
+  },
+  {
+    "id": "py06q02",
+    "title": "Ask for a number and double it",
+    "level": "Beginner",
+    "description": "Use input() to get a number. Convert it with int(), multiply it by 2, and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "14",
+    "expectedOutput": "28",
+    "solution": "number = int(input())\nprint(number * 2)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use input(), int(), multiplication, and print the result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with double an input number. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "input_call",
+        "int_call",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use input(), int(), multiplication, and print the result."
+    }
+  },
+  {
+    "id": "py06q03",
+    "title": "Ask for two numbers and add them",
+    "level": "Beginner",
+    "description": "Use input() two times to get two numbers. Convert them with int(), add them, and print the total.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "12\n9",
+    "expectedOutput": "21",
+    "solution": "a = int(input())\nb = int(input())\nprint(a + b)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Call input() twice, add the numbers, and print the sum.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with add two input numbers. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "input_call",
+        "int_call",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {
+        "input_calls": 2
+      },
+      "output": "numeric",
+      "feedback": "Call input() twice, add the numbers, and print the sum."
+    }
+  },
+  {
+    "id": "py06q04",
+    "title": "Ask for an age and show next year’s age",
+    "level": "Beginner",
+    "description": "Use input() to get an age. Convert it with int(), add 1, and print the new age.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "19",
+    "expectedOutput": "20",
+    "solution": "age = int(input())\nprint(age + 1)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use input() and int(), then add 1 and print.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with age next year. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "input_call",
+        "int_call",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use input() and int(), then add 1 and print."
+    }
+  },
+  {
+    "id": "py06q05",
+    "title": "Ask for a decimal and multiply it",
+    "level": "Beginner",
+    "description": "Use input() to get the given decimal number 4. Convert it with float(), multiply it by 2, and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "4",
+    "expectedOutput": "8.0",
+    "solution": "value = float(input())\nprint(value * 2)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use input(), float(), multiplication, and print.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "float(input()) reads the decimal number 4 as 4.0. Multiplying by 2 gives 8.0.",
+    "commonMistakes": "Convert the input with float(), then multiply by 2 as the question asks.",
+    "validation": {
+      "required": [
+        "input_call",
+        "float_call",
+        "has_mult",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use input(), float(), multiplication, and print.",
+      "matchExpected": true
+    }
+  }
+]

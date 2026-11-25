@@ -1,0 +1,146 @@
+[
+  {
+    "id": "py11q01",
+    "title": "Make a dictionary with a name and age",
+    "level": "Beginner",
+    "description": "Create a dictionary with a name and an age. Use print() to show the dictionary.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "{'name': 'Ira', 'age': 20}",
+    "solution": "student = {\"name\": \"Ira\", \"age\": 20}\nprint(student)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create and display a dictionary.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "A dictionary stores key-value pairs. print(student) displays the complete dictionary.",
+    "commonMistakes": "Use curly braces { } with a colon between each key and its value. Print the dictionary variable itself.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create and display a dictionary.",
+      "oneOf": [
+        [
+          "has_dict",
+          "dict_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py11q02",
+    "title": "Print a value using its key",
+    "level": "Beginner",
+    "description": "Create a dictionary with a key, such as name. Use the key to get its value and print it.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "50",
+    "solution": "prices = {\"pen\": 10, \"book\": 50}\nprint(prices[\"book\"])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use dictionary[key] to read a value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with read a dictionary value. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_subscript",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use dictionary[key] to read a value.",
+      "oneOf": [
+        [
+          "has_dict",
+          "dict_call"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "py11q03",
+    "title": "Add a new item to a dictionary",
+    "level": "Beginner",
+    "description": "Create a dictionary and add one new key with a value. Print the updated dictionary.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "{'name': 'Dev', 'city': 'Delhi'}",
+    "solution": "profile = {\"name\": \"Dev\"}\nprofile[\"city\"] = \"Delhi\"\nprint(profile)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign a value using dictionary[new_key] = value.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "Assigning profile[\"city\"] adds a new key and value. print(profile) shows the updated dictionary.",
+    "commonMistakes": "Use dictionary[new_key] = value to add the item, then print the dictionary variable.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_dict_subscript_store",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Assign a value using dictionary[new_key] = value."
+    }
+  },
+  {
+    "id": "py11q04",
+    "title": "Change a value in a dictionary",
+    "level": "Beginner",
+    "description": "Create a dictionary and change the value of one key that is already there. Print the new value.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "solution": "stock = {\"apples\": 5}\nstock[\"apples\"] = 8\nprint(stock[\"apples\"])",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Assign a new value to an existing dictionary key.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with update a dictionary value. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_dict_subscript_store",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Assign a new value to an existing dictionary key."
+    }
+  },
+  {
+    "id": "py11q05",
+    "title": "Print all dictionary keys",
+    "level": "Beginner",
+    "description": "Create a dictionary with at least two items. Use a for loop to print each key.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "a\nb",
+    "solution": "data = {\"a\": 1, \"b\": 2}\nfor key in data:\n    print(key)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use for key in dictionary: and print each key.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with loop through dictionary keys. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_dict",
+        "has_for",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use for key in dictionary: and print each key."
+    }
+  }
+]

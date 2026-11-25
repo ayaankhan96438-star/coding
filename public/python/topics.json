@@ -1,0 +1,154 @@
+[
+  {
+    "id": "topic-01",
+    "order": 1,
+    "name": "What is Python?",
+    "description": "Understand Python statements, comments and basic program structure.",
+    "difficulty": "beginner",
+    "questionFile": "questions/01-what-is-python.json"
+  },
+  {
+    "id": "topic-02",
+    "order": 2,
+    "name": "Print Function",
+    "description": "Display text and values using print().",
+    "difficulty": "beginner",
+    "questionFile": "questions/02-print-function.json"
+  },
+  {
+    "id": "topic-03",
+    "order": 3,
+    "name": "Variable",
+    "description": "Create variables and update stored values.",
+    "difficulty": "beginner",
+    "questionFile": "questions/03-variables.json"
+  },
+  {
+    "id": "topic-04",
+    "order": 4,
+    "name": "Data Types",
+    "description": "Work with strings, integers, floats and booleans.",
+    "difficulty": "beginner",
+    "questionFile": "questions/04-data-types.json"
+  },
+  {
+    "id": "topic-05",
+    "order": 5,
+    "name": "Operators",
+    "description": "Use arithmetic, comparison and logical operators.",
+    "difficulty": "beginner",
+    "questionFile": "questions/05-operators.json"
+  },
+  {
+    "id": "topic-06",
+    "order": 6,
+    "name": "Input Function",
+    "description": "Read user input and convert it when needed.",
+    "difficulty": "beginner",
+    "questionFile": "questions/06-input-function.json"
+  },
+  {
+    "id": "topic-07",
+    "order": 7,
+    "name": "String Manipulation",
+    "description": "Join, slice and transform strings.",
+    "difficulty": "beginner",
+    "questionFile": "questions/07-string-manipulation.json"
+  },
+  {
+    "id": "topic-08",
+    "order": 8,
+    "name": "List Manipulation",
+    "description": "Create, access, update and process lists.",
+    "difficulty": "beginner",
+    "questionFile": "questions/08-list-manipulation.json"
+  },
+  {
+    "id": "topic-09",
+    "order": 9,
+    "name": "Tuple",
+    "description": "Store ordered immutable collections.",
+    "difficulty": "beginner",
+    "questionFile": "questions/09-tuple.json"
+  },
+  {
+    "id": "topic-10",
+    "order": 10,
+    "name": "Set",
+    "description": "Work with unique unordered values.",
+    "difficulty": "beginner",
+    "questionFile": "questions/10-set.json"
+  },
+  {
+    "id": "topic-11",
+    "order": 11,
+    "name": "Dictionary",
+    "description": "Store and retrieve values using key-value pairs.",
+    "difficulty": "beginner",
+    "questionFile": "questions/11-dictionary.json"
+  },
+  {
+    "id": "topic-12",
+    "order": 12,
+    "name": "If Else",
+    "description": "Make decisions using if, elif and else.",
+    "difficulty": "intermediate",
+    "questionFile": "questions/12-if-else.json"
+  },
+  {
+    "id": "topic-13",
+    "order": 13,
+    "name": "For Loop",
+    "description": "Repeat actions with for loops and range().",
+    "difficulty": "intermediate",
+    "questionFile": "questions/13-for-loop.json"
+  },
+  {
+    "id": "topic-14",
+    "order": 14,
+    "name": "While Loop",
+    "description": "Repeat actions while a condition is true.",
+    "difficulty": "intermediate",
+    "questionFile": "questions/14-while-loop.json"
+  },
+  {
+    "id": "topic-15",
+    "order": 15,
+    "name": "Functions",
+    "description": "Define and call reusable functions.",
+    "difficulty": "intermediate",
+    "questionFile": "questions/15-functions.json"
+  },
+  {
+    "id": "topic-16",
+    "order": 16,
+    "name": "Lambda Functions",
+    "description": "Create short functions with lambda expressions.",
+    "difficulty": "intermediate",
+    "questionFile": "questions/16-lambda-functions.json"
+  },
+  {
+    "id": "topic-17",
+    "order": 17,
+    "name": "Modules",
+    "description": "Import and use Python standard-library modules.",
+    "difficulty": "advanced",
+    "questionFile": "questions/17-modules.json"
+  },
+  {
+    "id": "topic-18",
+    "order": 18,
+    "name": "Error Handling",
+    "description": "Handle runtime errors with try and except.",
+    "difficulty": "advanced",
+    "questionFile": "questions/18-error-handling.json"
+  },
+  {
+    "id": "topic-19",
+    "order": 19,
+    "name": "File Handling",
+    "description": "Read and write text files safely.",
+    "difficulty": "advanced",
+    "questionFile": "questions/19-file-handling.json"
+  }
+]

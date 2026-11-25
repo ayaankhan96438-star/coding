@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "select-statement",
+    "title": "SELECT Statement",
+    "subtitle": "Choose student, teacher and marks information from one simple school table.",
+    "concept": "A SELECT statement shows information stored in a table. Write the column names after SELECT, then write the table name after FROM. In this lesson, the school table has eight students and five easy columns: id, student, teacher, marks and class.",
+    "questions": [
+      {
+        "id": "l1-courses-q1",
+        "text": "Show the name of every student.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student FROM school;",
+        "orderMatters": false,
+        "hint": "The student names are in the student column. Select that column from school.",
+        "explanation": "SELECT student returns the name recorded in each row of the school table.",
+        "example": "SELECT student FROM school"
+      },
+      {
+        "id": "l1-courses-q2",
+        "text": "Show the teacher's name for every student.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT teacher FROM school;",
+        "orderMatters": false,
+        "hint": "Choose the teacher column from the school table.",
+        "explanation": "The teacher column stores the name of the teacher assigned to each student.",
+        "example": "SELECT teacher FROM school"
+      },
+      {
+        "id": "l1-courses-q3",
+        "text": "Show the marks scored by every student.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT marks FROM school;",
+        "orderMatters": false,
+        "hint": "The marks column contains each student’s score.",
+        "explanation": "SELECT marks returns the score from every row.",
+        "example": "SELECT marks FROM school"
+      },
+      {
+        "id": "l1-courses-q4",
+        "text": "Show each student name with their marks.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school;",
+        "orderMatters": false,
+        "hint": "Select student and marks, separated by a comma.",
+        "explanation": "You can select more than one column. Write the two column names after SELECT and separate them with a comma.",
+        "example": "SELECT student, marks FROM school"
+      },
+      {
+        "id": "l1-courses-q5",
+        "text": "Show all the information stored for every student.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT * FROM school;",
+        "orderMatters": false,
+        "hint": "Use the * symbol to select every column from school.",
+        "explanation": "The asterisk (*) means all columns. This returns id, student, teacher, marks and class.",
+        "example": "SELECT * FROM school"
+      },
+      {
+        "id": "l1-courses-q6",
+        "text": "Show every student with their class number.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, class FROM school;",
+        "orderMatters": false,
+        "hint": "Choose student and class from school.",
+        "explanation": "The class column tells which class each student belongs to.",
+        "example": "SELECT student, class FROM school"
+      },
+      {
+        "id": "l1-courses-q7",
+        "text": "Show each teacher together with the marks of their students.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT teacher, marks FROM school;",
+        "orderMatters": false,
+        "hint": "Select teacher and marks from the same table.",
+        "explanation": "The result shows the teacher name next to the score for each student.",
+        "example": "SELECT teacher, marks FROM school"
+      },
+      {
+        "id": "l1-courses-q8",
+        "text": "Show each student with their teacher.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school;",
+        "orderMatters": false,
+        "hint": "Choose the student and teacher columns.",
+        "explanation": "This query displays the student name and the assigned teacher side by side.",
+        "example": "SELECT student, teacher FROM school"
+      },
+      {
+        "id": "l1-courses-q9",
+        "text": "Show the student name, class and marks.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, class, marks FROM school;",
+        "orderMatters": false,
+        "hint": "Select student, class and marks in that order.",
+        "explanation": "A SELECT statement can return three columns. Separate each column name with a comma.",
+        "example": "SELECT student, class, marks FROM school"
+      },
+      {
+        "id": "l1-courses-q10",
+        "text": "Show the ID and name of every student.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT id, student FROM school;",
+        "orderMatters": false,
+        "hint": "Select the id and student columns.",
+        "explanation": "The id is the student record number. The student column stores the name.",
+        "example": "SELECT id, student FROM school"
+      }
+    ]
+  },
+  {
+    "id": "where-clause",
+    "title": "WHERE Clause",
+    "subtitle": "Find students by their marks, teacher or class.",
+    "concept": "WHERE filters rows. It keeps only the students whose information matches your condition. Use > to find values above a number, < for values below it, and = to find an exact match.",
+    "questions": [
+      {
+        "id": "l3-where-q1",
+        "text": "Find students who scored more than 80 marks.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks > 80;",
+        "orderMatters": false,
+        "hint": "Use WHERE marks > 80. The > sign means greater than.",
+        "explanation": "This returns the names and scores of students whose marks are above 80.",
+        "example": "SELECT student, marks FROM school WHERE marks > 80"
+      },
+      {
+        "id": "l3-where-q2",
+        "text": "Find students who scored less than 70 marks.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks < 70;",
+        "orderMatters": false,
+        "hint": "Use WHERE marks < 70. The < sign means less than.",
+        "explanation": "Only students with a score below 70 are returned.",
+        "example": "SELECT student, marks FROM school WHERE marks < 70"
+      },
+      {
+        "id": "l3-where-q3",
+        "text": "Find the student who scored exactly 95 marks.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks = 95;",
+        "orderMatters": false,
+        "hint": "Use the equals sign with marks = 95.",
+        "explanation": "The equals sign finds the row whose marks value is exactly 95.",
+        "example": "SELECT student, marks FROM school WHERE marks = 95"
+      },
+      {
+        "id": "l3-where-q4",
+        "text": "Find all students who are in class 5.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, class FROM school WHERE class = 5;",
+        "orderMatters": false,
+        "hint": "Filter the class column using WHERE class = 5.",
+        "explanation": "This returns the students whose class value is 5.",
+        "example": "SELECT student, class FROM school WHERE class = 5"
+      },
+      {
+        "id": "l3-where-q5",
+        "text": "Find all students whose teacher is Neha.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher = 'Neha';",
+        "orderMatters": false,
+        "hint": "Text values need single quotes: teacher = 'Neha'.",
+        "explanation": "The condition matches rows where the teacher name is Neha.",
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha'"
+      },
+      {
+        "id": "l3-where-q6",
+        "text": "Find students who scored 90 marks or more.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks >= 90;",
+        "orderMatters": false,
+        "hint": "Use >= to include 90 and any higher score.",
+        "explanation": "Greater than or equal to includes the boundary value 90.",
+        "example": "SELECT student, marks FROM school WHERE marks >= 90"
+      },
+      {
+        "id": "l3-where-q7",
+        "text": "Find students whose marks are from 70 to 90.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90;",
+        "orderMatters": false,
+        "hint": "Use BETWEEN 70 AND 90 on the marks column.",
+        "explanation": "BETWEEN includes both 70 and 90.",
+        "example": "SELECT student, marks FROM school WHERE marks BETWEEN 70 AND 90"
+      },
+      {
+        "id": "l3-where-q8",
+        "text": "Find students taught by Ravi.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher = 'Ravi';",
+        "orderMatters": false,
+        "hint": "Compare teacher with the text value Ravi in single quotes.",
+        "explanation": "This returns students whose teacher is Ravi.",
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Ravi'"
+      },
+      {
+        "id": "l3-where-q9",
+        "text": "Find students who are in class 6.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, class FROM school WHERE class = 6;",
+        "orderMatters": false,
+        "hint": "Use WHERE class = 6.",
+        "explanation": "The filter keeps only students in class 6.",
+        "example": "SELECT student, class FROM school WHERE class = 6"
+      },
+      {
+        "id": "l3-where-q10",
+        "text": "Find students who scored exactly 68 marks.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school WHERE marks = 68;",
+        "orderMatters": false,
+        "hint": "Use an exact match: marks = 68.",
+        "explanation": "The query returns the student row with 68 marks.",
+        "example": "SELECT student, marks FROM school WHERE marks = 68"
+      }
+    ]
+  },
+  {
+    "id": "l5",
+    "title": "ORDER BY",
+    "subtitle": "Put student names and marks in a useful order.",
+    "concept": "ORDER BY sorts rows using the column you choose. ASC means ascending (low to high or A to Z). DESC means descending (high to low or Z to A).",
+    "questions": [
+      {
+        "id": "l5-q1",
+        "text": "Show students from the highest marks to the lowest.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school ORDER BY marks DESC;",
+        "orderMatters": false,
+        "hint": "Sort the marks column using DESC.",
+        "explanation": "DESC puts the highest score first.",
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q2",
+        "text": "Show students from the lowest marks to the highest.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school ORDER BY marks ASC;",
+        "orderMatters": false,
+        "hint": "Sort marks using ASC.",
+        "explanation": "ASC puts the smallest score first.",
+        "example": "SELECT student, marks FROM school ORDER BY marks ASC",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q3",
+        "text": "Show student names from A to Z.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student FROM school ORDER BY student ASC;",
+        "orderMatters": false,
+        "hint": "Sort the student column in ascending order.",
+        "explanation": "ASC sorts text from A to Z.",
+        "example": "SELECT student FROM school ORDER BY student ASC",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q4",
+        "text": "Show students from class 5 first, then class 6.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, class FROM school ORDER BY class ASC;",
+        "orderMatters": false,
+        "hint": "Sort by class using ASC.",
+        "explanation": "Ascending order places class 5 before class 6.",
+        "example": "SELECT student, class FROM school ORDER BY class ASC",
+        "orderBy": [
+          {
+            "column": "class",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q5",
+        "text": "Show the three students with the highest marks, highest first.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3;",
+        "orderMatters": false,
+        "hint": "Sort marks from highest to lowest, then use LIMIT 3.",
+        "explanation": "ORDER BY sorts the marks and LIMIT keeps the first three rows.",
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 3",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q6",
+        "text": "Show teacher names from A to Z.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT teacher FROM school ORDER BY teacher ASC;",
+        "orderMatters": false,
+        "hint": "Sort the teacher column using ASC.",
+        "explanation": "Teacher names appear in alphabetical order.",
+        "example": "SELECT teacher FROM school ORDER BY teacher ASC",
+        "orderBy": [
+          {
+            "column": "teacher",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q7",
+        "text": "Show student names from Z to A.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student FROM school ORDER BY student DESC;",
+        "orderMatters": false,
+        "hint": "Use DESC to reverse the alphabetical order.",
+        "explanation": "DESC sorts names from Z to A.",
+        "example": "SELECT student FROM school ORDER BY student DESC",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "DESC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q8",
+        "text": "Show the two students with the lowest marks.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school ORDER BY marks ASC LIMIT 2;",
+        "orderMatters": false,
+        "hint": "Sort marks from low to high and use LIMIT 2.",
+        "explanation": "This returns the two smallest marks.",
+        "example": "SELECT student, marks FROM school ORDER BY marks ASC LIMIT 2"
+      },
+      {
+        "id": "l5-q9",
+        "text": "Show students by class, then by name.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, class FROM school ORDER BY class ASC, student ASC;",
+        "orderMatters": false,
+        "hint": "Use two sort columns: class first, then student.",
+        "explanation": "SQL sorts by class first and uses student name to order rows within each class.",
+        "example": "SELECT student, class FROM school ORDER BY class ASC, student ASC",
+        "orderBy": [
+          {
+            "column": "class",
+            "direction": "ASC"
+          },
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l5-q10",
+        "text": "Show the top four marks, highest first.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4;",
+        "orderMatters": false,
+        "hint": "Sort marks in descending order and limit to four rows.",
+        "explanation": "The result contains the four highest marks.",
+        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 4",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "distinct-limit",
+    "title": "DISTINCT & LIMIT",
+    "subtitle": "See teacher names once and control how many school records are shown.",
+    "concept": "DISTINCT removes repeated values from the result. LIMIT sets the maximum number of rows to show. The school table has repeated teacher names, so it is useful for practising DISTINCT.",
+    "questions": [
+      {
+        "id": "l2-distinct-q1",
+        "text": "Show each teacher name only once.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT DISTINCT teacher FROM school;",
+        "orderMatters": false,
+        "hint": "Put DISTINCT immediately after SELECT.",
+        "explanation": "DISTINCT removes repeated teacher names, so each teacher appears once.",
+        "example": "SELECT DISTINCT teacher FROM school"
+      },
+      {
+        "id": "l2-distinct-q2",
+        "text": "Show each class number only once.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT DISTINCT class FROM school;",
+        "orderMatters": false,
+        "hint": "Use DISTINCT with the class column.",
+        "explanation": "Some students are in the same class. DISTINCT shows each class value one time.",
+        "example": "SELECT DISTINCT class FROM school"
+      },
+      {
+        "id": "l2-distinct-q3",
+        "text": "Show the first five student names in ID order.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student FROM school ORDER BY id LIMIT 5;",
+        "orderMatters": true,
+        "hint": "Sort by id, then use LIMIT 5.",
+        "explanation": "ORDER BY id gives a clear row order. LIMIT 5 returns only the first five names.",
+        "example": "SELECT student FROM school ORDER BY id LIMIT 5"
+      },
+      {
+        "id": "l2-distinct-q4",
+        "text": "Show the first three student names from A to Z.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student FROM school ORDER BY student ASC LIMIT 3;",
+        "orderMatters": false,
+        "hint": "Sort student in ascending order, then limit to three rows.",
+        "explanation": "ASC sorts names alphabetically. LIMIT 3 keeps only the first three names.",
+        "example": "SELECT student FROM school ORDER BY student ASC LIMIT 3",
+        "orderBy": [
+          {
+            "column": "student",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l2-distinct-q5",
+        "text": "Show the three highest marks.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT marks FROM school ORDER BY marks DESC LIMIT 3;",
+        "orderMatters": false,
+        "hint": "Sort marks from highest to lowest and show three rows.",
+        "explanation": "DESC places the largest marks first. LIMIT 3 returns the top three scores.",
+        "example": "SELECT marks FROM school ORDER BY marks DESC LIMIT 3"
+      },
+      {
+        "id": "l2-distinct-q6",
+        "text": "Show each marks value only once.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT DISTINCT marks FROM school;",
+        "orderMatters": false,
+        "hint": "Use DISTINCT with marks.",
+        "explanation": "DISTINCT removes repeated score values.",
+        "example": "SELECT DISTINCT marks FROM school"
+      },
+      {
+        "id": "l2-distinct-q7",
+        "text": "Show the first four student names by ID.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student FROM school ORDER BY id LIMIT 4;",
+        "orderMatters": true,
+        "hint": "Order by id and limit the result to four rows.",
+        "explanation": "LIMIT 4 keeps the first four records in ID order.",
+        "example": "SELECT student FROM school ORDER BY id LIMIT 4"
+      },
+      {
+        "id": "l2-distinct-q8",
+        "text": "Show the top five students and their marks, highest marks first.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5;",
+        "orderMatters": false,
+        "hint": "Select student and marks, sort by marks DESC, and add LIMIT 5.",
+        "explanation": "This returns the five highest scores with each student name.",
+        "example": "SELECT student, marks FROM school ORDER BY marks DESC LIMIT 5",
+        "orderBy": [
+          {
+            "column": "marks",
+            "direction": "DESC"
+          }
+        ]
+      },
+      {
+        "id": "l2-distinct-q9",
+        "text": "Show each teacher name once in A-to-Z order.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC;",
+        "orderMatters": false,
+        "hint": "Use DISTINCT teacher and then ORDER BY teacher ASC.",
+        "explanation": "DISTINCT removes duplicates and ORDER BY sorts the remaining names.",
+        "example": "SELECT DISTINCT teacher FROM school ORDER BY teacher ASC",
+        "orderBy": [
+          {
+            "column": "teacher",
+            "direction": "ASC"
+          }
+        ]
+      },
+      {
+        "id": "l2-distinct-q10",
+        "text": "Show the two lowest marks.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT marks FROM school ORDER BY marks ASC LIMIT 2;",
+        "orderMatters": false,
+        "hint": "Sort marks from low to high and limit to two rows.",
+        "explanation": "ASC places the smallest score first. LIMIT 2 returns two scores.",
+        "example": "SELECT marks FROM school ORDER BY marks ASC LIMIT 2"
+      }
+    ]
+  },
+  {
+    "id": "l4",
+    "title": "Filtering & Conditions",
+    "subtitle": "Use text comparisons, lists and pattern matching in WHERE.",
+    "concept": "WHERE can compare text exactly with =, != or <>. LIKE and NOT LIKE match text patterns; % stands for zero or more characters and _ stands for exactly one character. IN and NOT IN check whether a text value is inside or outside a list. In this SQLite practice database, LIKE is case-insensitive for ordinary ASCII text by default.",
+    "questions": [
+      {
+        "id": "l4-text-q1",
+        "text": "Find students whose teacher is exactly Neha using =.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher = 'Neha';",
+        "orderMatters": false,
+        "hint": "Use = for an exact text match and put the text in single quotes: teacher = 'Neha'.",
+        "explanation": "= compares the text exactly. With the default SQLite collation used here, this match is case-sensitive.",
+        "example": "SELECT student, teacher FROM school WHERE teacher = 'Neha'"
+      },
+      {
+        "id": "l4-text-q2",
+        "text": "Find students whose teacher is not Neha using !=.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher != 'Neha';",
+        "orderMatters": false,
+        "hint": "Use != to find text values that are not equal to 'Neha'.",
+        "explanation": "!= is the not-equal operator. It returns rows whose teacher value is different from Neha.",
+        "example": "SELECT student, teacher FROM school WHERE teacher != 'Neha'"
+      },
+      {
+        "id": "l4-text-q3",
+        "text": "Find students whose name is not Aarav using <>.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student FROM school WHERE student <> 'Aarav';",
+        "orderMatters": false,
+        "hint": "<> also means not equal to. Compare student with the quoted text 'Aarav'.",
+        "explanation": "<> and != are two spellings of the same not-equal comparison in SQL.",
+        "example": "SELECT student FROM school WHERE student <> 'Aarav'"
+      },
+      {
+        "id": "l4-text-q4",
+        "text": "Find students whose teacher matches NEHA using LIKE.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher LIKE 'NEHA';",
+        "orderMatters": false,
+        "hint": "Use LIKE 'NEHA'. In this SQLite lesson, LIKE matches ordinary ASCII text without case sensitivity by default.",
+        "explanation": "LIKE can compare text without case sensitivity for ordinary ASCII letters in this SQLite practice database. Without wildcards, it checks the whole value.",
+        "example": "SELECT student, teacher FROM school WHERE teacher LIKE 'NEHA'"
+      },
+      {
+        "id": "l4-text-q5",
+        "text": "Find students whose teacher does not match NEHA using NOT LIKE.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher NOT LIKE 'NEHA';",
+        "orderMatters": false,
+        "hint": "Use NOT LIKE 'NEHA' to exclude that text match.",
+        "explanation": "NOT LIKE returns rows that do not match the pattern. In this database the comparison is case-insensitive for ordinary ASCII letters.",
+        "example": "SELECT student, teacher FROM school WHERE teacher NOT LIKE 'NEHA'"
+      },
+      {
+        "id": "l4-text-q6",
+        "text": "Find students whose names start with A using the % wildcard.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student FROM school WHERE student LIKE 'A%';",
+        "orderMatters": false,
+        "hint": "A% means the name starts with A and can have any number of characters after it.",
+        "explanation": "% matches a sequence of zero or more characters. It is used with LIKE or NOT LIKE.",
+        "example": "SELECT student FROM school WHERE student LIKE 'A%'"
+      },
+      {
+        "id": "l4-text-q7",
+        "text": "Find students whose names start with A and have exactly five characters using _.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student FROM school WHERE student LIKE 'A____';",
+        "orderMatters": false,
+        "hint": "After A, write four underscores. Each underscore matches exactly one character.",
+        "explanation": "_ matches exactly one character. A____ means A followed by exactly four more characters.",
+        "example": "SELECT student FROM school WHERE student LIKE 'A____'"
+      },
+      {
+        "id": "l4-text-q8",
+        "text": "Find students taught by either Neha or Ravi using IN.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher IN ('Neha', 'Ravi');",
+        "orderMatters": false,
+        "hint": "Put both teacher names in the IN list and quote each name.",
+        "explanation": "IN checks whether the teacher value matches one of the values in the list. It is a shorter way to express these alternatives with OR.",
+        "example": "SELECT student, teacher FROM school WHERE teacher IN ('Neha', 'Ravi')"
+      },
+      {
+        "id": "l4-text-q9",
+        "text": "Find students whose teacher is neither Neha nor Ravi using NOT IN.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, teacher FROM school WHERE teacher NOT IN ('Neha', 'Ravi');",
+        "orderMatters": false,
+        "hint": "Use NOT IN with a list containing 'Neha' and 'Ravi'.",
+        "explanation": "NOT IN keeps rows whose teacher value does not appear in the supplied list.",
+        "example": "SELECT student, teacher FROM school WHERE teacher NOT IN ('Neha', 'Ravi')"
+      },
+      {
+        "id": "l4-text-q10",
+        "text": "Find students whose teacher name starts with N and who are in class 5.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student, teacher, class FROM school WHERE teacher LIKE 'N%' AND class = 5;",
+        "orderMatters": false,
+        "hint": "Use LIKE 'N%' for the teacher name and join it with class = 5 using AND.",
+        "explanation": "This combines a text pattern with another WHERE condition. AND requires both conditions to be true.",
+        "example": "SELECT student, teacher, class FROM school WHERE teacher LIKE 'N%' AND class = 5"
+      }
+    ]
+  },
+  {
+    "id": "l6",
+    "title": "Joins",
+    "subtitle": "Combine related information from two tables using a shared key.",
+    "concept": "JOIN connects related rows. An INNER JOIN returns rows where the join condition matches in both tables. Use the matching id columns to connect records.",
+    "questions": [
+      {
+        "id": "l6-q1",
+        "text": "Join students with enrollments using student id.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT students.id, students.name, enrollments.id AS enrollment_id, enrollments.course_id FROM students JOIN enrollments ON students.id = enrollments.student_id;",
+        "orderMatters": false,
+        "hint": "Match students.id with enrollments.student_id.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q2",
+        "text": "Show student names with their course ids.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT students.name, enrollments.course_id FROM students JOIN enrollments ON students.id = enrollments.student_id;",
+        "orderMatters": false,
+        "hint": "Join students to enrollments through the student id.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q3",
+        "text": "Join courses and enrollments using course id.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT courses.id, courses.title, enrollments.id AS enrollment_id, enrollments.student_id FROM courses JOIN enrollments ON courses.id = enrollments.course_id;",
+        "orderMatters": false,
+        "hint": "Match courses.id with enrollments.course_id.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q4",
+        "text": "Show course titles with enrollment status.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT courses.title, enrollments.status FROM courses JOIN enrollments ON courses.id = enrollments.course_id;",
+        "orderMatters": false,
+        "hint": "Join courses and enrollments, then select title and status.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q5",
+        "text": "Show teacher names with their matching department names.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT teachers.name, departments.department_name FROM teachers JOIN departments ON teachers.department = departments.department_name;",
+        "orderMatters": false,
+        "hint": "The text in teachers.department matches departments.department_name.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q6",
+        "text": "Join students and courses through enrollments.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT students.name, courses.title FROM students JOIN enrollments ON students.id = enrollments.student_id JOIN courses ON courses.id = enrollments.course_id;",
+        "orderMatters": false,
+        "hint": "Use enrollments as the bridge between students and courses.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q7",
+        "text": "Show student name and enrolled_on date.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT students.name, enrollments.enrolled_on FROM students JOIN enrollments ON students.id = enrollments.student_id;",
+        "orderMatters": false,
+        "hint": "Join by student id, then select name and enrolled_on.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q8",
+        "text": "Show course title and student id for each enrollment.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT courses.title, enrollments.student_id FROM courses JOIN enrollments ON courses.id = enrollments.course_id;",
+        "orderMatters": false,
+        "hint": "Join on course id and select the course title plus student_id.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q9",
+        "text": "Join teachers to courses using teacher_id.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT teachers.name, courses.title FROM teachers JOIN courses ON teachers.id = courses.teacher_id;",
+        "orderMatters": false,
+        "hint": "Match teachers.id to courses.teacher_id.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      },
+      {
+        "id": "l6-q10",
+        "text": "Show student names and course titles for each enrollment.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT students.name, courses.title FROM students JOIN enrollments ON students.id = enrollments.student_id JOIN courses ON courses.id = enrollments.course_id;",
+        "orderMatters": false,
+        "hint": "Use two joins: students to enrollments, then enrollments to courses.",
+        "explanation": "JOIN combines related rows from two tables. The ON expression matches the key in one table with its related key in the other; only matching pairs are returned by this INNER JOIN.",
+        "example": "SELECT a.column_name, b.column_name\nFROM table_a AS a\nJOIN table_b AS b ON a.id = b.a_id;"
+      }
+    ]
+  },
+  {
+    "id": "l7",
+    "title": "Aggregate Functions",
+    "subtitle": "Summarize rows with COUNT, AVG, MIN, MAX and SUM.",
+    "concept": "Aggregate functions calculate a summary. COUNT counts rows, AVG calculates an average, and MIN/MAX find the smallest and largest values. SUM adds numeric values.",
+    "questions": [
+      {
+        "id": "l7-q1",
+        "text": "Count all students.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT COUNT(*) AS student_count FROM students;",
+        "orderMatters": false,
+        "hint": "COUNT(*) returns the number of rows in the table.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q2",
+        "text": "Find the average student age.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT AVG(age) AS average_age FROM students;",
+        "orderMatters": false,
+        "hint": "AVG calculates the mean of the numeric age values.",
+        "explanation": "The SELECT list uses AVG to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q3",
+        "text": "Find the youngest student age.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT MIN(age) AS youngest_age FROM students;",
+        "orderMatters": false,
+        "hint": "MIN returns the smallest age.",
+        "explanation": "The SELECT list uses MIN to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q4",
+        "text": "Find the oldest student age.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT MAX(age) AS oldest_age FROM students;",
+        "orderMatters": false,
+        "hint": "MAX returns the largest age.",
+        "explanation": "The SELECT list uses MAX to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q5",
+        "text": "Count all courses.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT COUNT(*) AS course_count FROM courses;",
+        "orderMatters": false,
+        "hint": "Use COUNT(*) with the courses table.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q6",
+        "text": "Find the total number of lessons across courses.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT SUM(lesson_count) AS total_lessons FROM courses;",
+        "orderMatters": false,
+        "hint": "SUM adds lesson_count across all course rows.",
+        "explanation": "The SELECT list uses SUM to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q7",
+        "text": "Find the average lesson count across courses.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT AVG(lesson_count) AS average_lessons FROM courses;",
+        "orderMatters": false,
+        "hint": "Use AVG on courses.lesson_count.",
+        "explanation": "The SELECT list uses AVG to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q8",
+        "text": "Count all teachers.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT COUNT(*) AS teacher_count FROM teachers;",
+        "orderMatters": false,
+        "hint": "COUNT(*) counts all teacher rows, including Sana.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM teachers tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q9",
+        "text": "Find the highest student id.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT MAX(id) AS highest_student_id FROM students;",
+        "orderMatters": false,
+        "hint": "Use MAX on the students id column.",
+        "explanation": "The SELECT list uses MAX to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      },
+      {
+        "id": "l7-q10",
+        "text": "Find the lowest course id.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT MIN(id) AS lowest_course_id FROM courses;",
+        "orderMatters": false,
+        "hint": "Use MIN on the courses id column.",
+        "explanation": "The SELECT list uses MIN to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT COUNT(*) AS total_rows\nFROM table_name;"
+      }
+    ]
+  },
+  {
+    "id": "l8",
+    "title": "GROUP BY and HAVING",
+    "subtitle": "Group similar rows and filter the resulting groups.",
+    "concept": "GROUP BY creates one group for each distinct value. HAVING filters groups after aggregation; WHERE filters rows before grouping.",
+    "questions": [
+      {
+        "id": "l8-q1",
+        "text": "Count students in each city.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT city, COUNT(*) AS student_count FROM students GROUP BY city;",
+        "orderMatters": false,
+        "hint": "Group by city and count the rows in each group.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY city puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q2",
+        "text": "Find the average age in each city.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT city, AVG(age) AS average_age FROM students GROUP BY city;",
+        "orderMatters": false,
+        "hint": "Group students by city, then calculate AVG(age) for each group.",
+        "explanation": "The SELECT list uses AVG to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY city puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q3",
+        "text": "Count courses by teacher_id.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT teacher_id, COUNT(*) AS course_count FROM courses GROUP BY teacher_id;",
+        "orderMatters": false,
+        "hint": "Group courses by teacher_id and count each group.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY teacher_id puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q4",
+        "text": "Count enrollments by status.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT status, COUNT(*) AS enrollment_count FROM enrollments GROUP BY status;",
+        "orderMatters": false,
+        "hint": "Group on status so active and complete receive separate counts.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM enrollments tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY status puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q5",
+        "text": "Show cities with more than 2 students.",
+        "free": true,
+        "type": "query",
+        "solution": "SELECT city, COUNT(*) AS student_count FROM students GROUP BY city HAVING COUNT(*) > 2;",
+        "orderMatters": false,
+        "hint": "HAVING filters grouped results after COUNT(*).",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM students tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY city puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. HAVING filters the groups after aggregation. Here, COUNT(*) > 2 keeps only groups that meet the summary condition; WHERE is used to filter individual rows before grouping. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q6",
+        "text": "Find departments with at least 2 teachers.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT department, COUNT(*) AS teacher_count FROM teachers GROUP BY department HAVING COUNT(*) >= 2;",
+        "orderMatters": false,
+        "hint": "Group teachers by department and keep groups with a count of at least two.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM teachers tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY department puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. HAVING filters the groups after aggregation. Here, COUNT(*) >= 2 keeps only groups that meet the summary condition; WHERE is used to filter individual rows before grouping. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q7",
+        "text": "Count courses by difficulty.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT difficulty, COUNT(*) AS course_count FROM courses GROUP BY difficulty;",
+        "orderMatters": false,
+        "hint": "Group on the difficulty column and count each group.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY difficulty puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q8",
+        "text": "Find student ids with more than 1 enrollment.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT student_id, COUNT(*) AS enrollment_count FROM enrollments GROUP BY student_id HAVING COUNT(*) > 1;",
+        "orderMatters": false,
+        "hint": "Group enrollments by student_id and filter counts with HAVING.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM enrollments tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY student_id puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. HAVING filters the groups after aggregation. Here, COUNT(*) > 1 keeps only groups that meet the summary condition; WHERE is used to filter individual rows before grouping. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q9",
+        "text": "Find the average lesson count by category.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT category, AVG(lesson_count) AS average_lessons FROM courses GROUP BY category;",
+        "orderMatters": false,
+        "hint": "Group by category and calculate AVG(lesson_count).",
+        "explanation": "The SELECT list uses AVG to calculate a summary instead of returning each original row. FROM courses tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY category puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      },
+      {
+        "id": "l8-q10",
+        "text": "Count enrollments for each course id.",
+        "free": false,
+        "type": "query",
+        "solution": "SELECT course_id, COUNT(*) AS enrollment_count FROM enrollments GROUP BY course_id;",
+        "orderMatters": false,
+        "hint": "Group enrollments by course_id and count each group.",
+        "explanation": "The SELECT list uses COUNT to calculate a summary instead of returning each original row. FROM enrollments tells SQL which records to summarize; an alias after AS gives the calculated column a readable name. GROUP BY course_id puts rows with the same value into one group, allowing an aggregate such as COUNT or AVG to calculate one result per group. AS assigns a temporary, readable label to a result column. It changes the output heading, not the stored column name.",
+        "example": "SELECT group_column, COUNT(*) AS total\nFROM table_name\nGROUP BY group_column\nHAVING COUNT(*) > 1;"
+      }
+    ]
+  },
+  {
+    "id": "l9",
+    "title": "Data Manipulation (DML)",
+    "subtitle": "Add new rows, change existing data and remove records.",
+    "concept": "INSERT adds rows. UPDATE changes rows and should normally use WHERE. DELETE removes rows; without WHERE it can remove every row.",
+    "questions": [
+      {
+        "id": "l9-q1",
+        "text": "Insert a student named Asha, age 21, city Delhi.",
+        "free": true,
+        "type": "state",
+        "solution": "INSERT INTO students (name, age, city) VALUES ('Asha', 21, 'Delhi');",
+        "orderMatters": false,
+        "hint": "Insert a row into students and provide the name, age and city values.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT id, name, age, city, email FROM students WHERE NOT (name = 'Asha' AND age = 21 AND city = 'Delhi'); SELECT name, age, city FROM students WHERE name = 'Asha' AND age = 21 AND city = 'Delhi'; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "INSERT INTO adds a new row to students. The column list (name, age, city) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT name, age, city FROM students WHERE name = 'Asha' AND age = 21 AND city = 'Delhi';"
+      },
+      {
+        "id": "l9-q2",
+        "text": "Insert a course titled SQL Basics with 8 lessons, teacher_id 1, created_year 2025, difficulty Beginner and category Databases.",
+        "free": true,
+        "type": "state",
+        "solution": "INSERT INTO courses (title, lesson_count, teacher_id, created_year, difficulty, category) VALUES ('SQL Basics', 8, 1, 2025, 'Beginner', 'Databases');",
+        "orderMatters": false,
+        "hint": "Insert into courses and include the title, lesson count, teacher_id 1, year, difficulty and category.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT id, title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE NOT (title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025 AND difficulty = 'Beginner' AND category = 'Databases'); SELECT title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025 AND difficulty = 'Beginner' AND category = 'Databases'; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "INSERT INTO adds a new row to courses. The column list (title, lesson_count, teacher_id, created_year, difficulty, category) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT title, lesson_count, teacher_id, created_year, difficulty, category FROM courses WHERE title = 'SQL Basics' AND lesson_count = 8 AND teacher_id = 1 AND created_year = 2025;"
+      },
+      {
+        "id": "l9-q3",
+        "text": "Update Asha's city from Pune to Jaipur.",
+        "free": true,
+        "type": "state",
+        "solution": "UPDATE students SET city = 'Jaipur' WHERE name = 'Asha' AND city = 'Pune';",
+        "orderMatters": false,
+        "hint": "Use UPDATE students, set city to Jaipur, and match Asha's current Pune city in WHERE.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "UPDATE changes existing rows in students. SET applies the new value(s) (city = 'Jaipur'); WHERE limits the change to rows matching name = 'Asha' AND city = 'Pune'. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, city FROM students WHERE id = 4;"
+      },
+      {
+        "id": "l9-q4",
+        "text": "Change course 1 lesson_count to 12.",
+        "free": true,
+        "type": "state",
+        "solution": "UPDATE courses SET lesson_count = 12 WHERE id = 1;",
+        "orderMatters": false,
+        "hint": "Update the lesson_count column and target course id 1.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "UPDATE changes existing rows in courses. SET applies the new value(s) (lesson_count = 12); WHERE limits the change to rows matching id = 1. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, lesson_count FROM courses WHERE id = 1;"
+      },
+      {
+        "id": "l9-q5",
+        "text": "Set student 2 age to 22.",
+        "free": true,
+        "type": "state",
+        "solution": "UPDATE students SET age = 22 WHERE id = 2;",
+        "orderMatters": false,
+        "hint": "Use UPDATE with SET age = 22 and WHERE id = 2.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "UPDATE changes existing rows in students. SET applies the new value(s) (age = 22); WHERE limits the change to rows matching id = 2. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, age FROM students WHERE id = 2;"
+      },
+      {
+        "id": "l9-q6",
+        "text": "Delete the student with id 6.",
+        "free": false,
+        "type": "state",
+        "solution": "DELETE FROM students WHERE id = 6;",
+        "orderMatters": false,
+        "hint": "DELETE FROM names the table; WHERE id = 6 limits which row is removed.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "DELETE FROM removes rows from students. The WHERE condition (id = 6) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM students WHERE id = 6;"
+      },
+      {
+        "id": "l9-q7",
+        "text": "Delete the course with id 4.",
+        "free": false,
+        "type": "state",
+        "solution": "DELETE FROM courses WHERE id = 4;",
+        "orderMatters": false,
+        "hint": "Use DELETE FROM courses with a WHERE clause for id 4.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "DELETE FROM removes rows from courses. The WHERE condition (id = 4) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM courses WHERE id = 4;"
+      },
+      {
+        "id": "l9-q8",
+        "text": "Insert a new teacher with id 5 named Ravi in the Science department.",
+        "free": false,
+        "type": "state",
+        "solution": "INSERT INTO teachers (id, name, department) VALUES (5, 'Ravi', 'Science');",
+        "orderMatters": false,
+        "hint": "Insert a row in teachers and supply the specified id, name and department.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "INSERT INTO adds a new row to teachers. The column list (id, name, department) tells SQL where each value belongs; VALUES supplies those values in the same order. Put text inside single quotes and leave numeric values unquoted. Check the target columns and value order before running an INSERT.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, name, department FROM teachers WHERE id = 5;"
+      },
+      {
+        "id": "l9-q9",
+        "text": "Update teacher 1 department to Maths.",
+        "free": false,
+        "type": "state",
+        "solution": "UPDATE teachers SET department = 'Maths' WHERE id = 1;",
+        "orderMatters": false,
+        "hint": "Set department to the text value Maths for teacher id 1.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "UPDATE changes existing rows in teachers. SET applies the new value(s) (department = 'Maths'); WHERE limits the change to rows matching id = 1. Without a WHERE clause, every row in the table could be changed, so always check the filter carefully.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT id, department FROM teachers WHERE id = 1;"
+      },
+      {
+        "id": "l9-q10",
+        "text": "Delete the enrollment with id 5.",
+        "free": false,
+        "type": "state",
+        "solution": "DELETE FROM enrollments WHERE id = 5;",
+        "orderMatters": false,
+        "hint": "Delete from enrollments and target id 5 in the WHERE clause.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT 'school' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('school') UNION ALL SELECT 'movies' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('movies') UNION ALL SELECT 'students' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('students') UNION ALL SELECT 'courses' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('courses') UNION ALL SELECT 'teachers' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teachers') UNION ALL SELECT 'departments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('departments') UNION ALL SELECT 'enrollments' AS table_name, cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('enrollments'); SELECT * FROM school; SELECT * FROM movies; SELECT * FROM students; SELECT * FROM courses; SELECT * FROM teachers; SELECT * FROM departments; SELECT * FROM enrollments;",
+        "explanation": "DELETE FROM removes rows from enrollments. The WHERE condition (id = 5) chooses which records are removed. A DELETE without WHERE removes every row, so verify the condition before executing it.",
+        "example": "-- Add a row\nINSERT INTO table_name (column_a, column_b)\nVALUES ('text', 10);\n\n-- Change matching rows\nUPDATE table_name SET column_a = 'new value' WHERE id = 1;\n\n-- Remove matching rows\nDELETE FROM table_name WHERE id = 1;",
+        "displayVerify": "SELECT COUNT(*) AS remaining FROM enrollments WHERE id = 5;"
+      }
+    ]
+  },
+  {
+    "id": "l10",
+    "title": "Database & Table Basics (DDL)",
+    "subtitle": "Create tables, choose column types and understand primary keys.",
+    "concept": "CREATE TABLE defines columns. A PRIMARY KEY uniquely identifies each row. Common SQLite types include INTEGER, TEXT and REAL.",
+    "questions": [
+      {
+        "id": "l10-q1",
+        "text": "Create a books table with id INTEGER PRIMARY KEY, title TEXT.",
+        "free": true,
+        "type": "state",
+        "solution": "CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE books (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('books');",
+        "explanation": "CREATE TABLE defines a new table named books. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'books'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('books');"
+      },
+      {
+        "id": "l10-q2",
+        "text": "Create a pets table with id INTEGER PRIMARY KEY, name TEXT.",
+        "free": true,
+        "type": "state",
+        "solution": "CREATE TABLE pets (id INTEGER PRIMARY KEY, name TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE pets (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('pets');",
+        "explanation": "CREATE TABLE defines a new table named pets. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'pets'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('pets');"
+      },
+      {
+        "id": "l10-q3",
+        "text": "Create a teams table with id INTEGER PRIMARY KEY, name TEXT.",
+        "free": true,
+        "type": "state",
+        "solution": "CREATE TABLE teams (id INTEGER PRIMARY KEY, name TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE teams (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('teams');",
+        "explanation": "CREATE TABLE defines a new table named teams. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'teams'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('teams');"
+      },
+      {
+        "id": "l10-q4",
+        "text": "Create a notes table with id INTEGER PRIMARY KEY, body TEXT.",
+        "free": true,
+        "type": "state",
+        "solution": "CREATE TABLE notes (id INTEGER PRIMARY KEY, body TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE notes (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('notes');",
+        "explanation": "CREATE TABLE defines a new table named notes. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'notes'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('notes');"
+      },
+      {
+        "id": "l10-q5",
+        "text": "Create an events table with id INTEGER PRIMARY KEY, title TEXT, event_date TEXT.",
+        "free": true,
+        "type": "state",
+        "solution": "CREATE TABLE events (id INTEGER PRIMARY KEY, title TEXT, event_date TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE events (...). Separate the three column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('events');",
+        "explanation": "CREATE TABLE defines a new table named events. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'events'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('events');"
+      },
+      {
+        "id": "l10-q6",
+        "text": "Create a products table with id INTEGER PRIMARY KEY, name TEXT, price REAL.",
+        "free": false,
+        "type": "state",
+        "solution": "CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, price REAL);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE products (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('products');",
+        "explanation": "CREATE TABLE defines a new table named products. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'products'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('products');"
+      },
+      {
+        "id": "l10-q7",
+        "text": "Create a rooms table with id INTEGER PRIMARY KEY, room_name TEXT.",
+        "free": false,
+        "type": "state",
+        "solution": "CREATE TABLE rooms (id INTEGER PRIMARY KEY, room_name TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE rooms (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('rooms');",
+        "explanation": "CREATE TABLE defines a new table named rooms. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'rooms'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('rooms');"
+      },
+      {
+        "id": "l10-q8",
+        "text": "Create a tasks table with id INTEGER PRIMARY KEY, done INTEGER.",
+        "free": false,
+        "type": "state",
+        "solution": "CREATE TABLE tasks (id INTEGER PRIMARY KEY, done INTEGER);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE tasks (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('tasks');",
+        "explanation": "CREATE TABLE defines a new table named tasks. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'tasks'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('tasks');"
+      },
+      {
+        "id": "l10-q9",
+        "text": "Create a members table with id INTEGER PRIMARY KEY, email TEXT.",
+        "free": false,
+        "type": "state",
+        "solution": "CREATE TABLE members (id INTEGER PRIMARY KEY, email TEXT);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE members (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('members');",
+        "explanation": "CREATE TABLE defines a new table named members. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'members'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('members');"
+      },
+      {
+        "id": "l10-q10",
+        "text": "Create a trips table with id INTEGER PRIMARY KEY, destination TEXT, days INTEGER.",
+        "free": false,
+        "type": "state",
+        "solution": "CREATE TABLE trips (id INTEGER PRIMARY KEY, destination TEXT, days INTEGER);",
+        "orderMatters": false,
+        "hint": "Use CREATE TABLE trips (...). Separate column definitions with commas and mark id as PRIMARY KEY.",
+        "verify": "SELECT type, name, tbl_name FROM sqlite_master WHERE type IN ('table', 'index', 'view', 'trigger') AND name NOT LIKE 'sqlite_%'; SELECT cid, name, upper(type) AS type, \"notnull\", dflt_value, pk FROM pragma_table_info('trips');",
+        "explanation": "CREATE TABLE defines a new table named trips. Each definition gives a column name and a data type. INTEGER stores whole numbers, TEXT stores strings, and REAL stores decimal numbers. PRIMARY KEY marks a column as the row's unique identifier.",
+        "example": "CREATE TABLE table_name (\n  id INTEGER PRIMARY KEY,\n  name TEXT\n);",
+        "displayVerify": "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'trips'; SELECT name, upper(type) AS type, pk FROM pragma_table_info('trips');"
+      }
+    ]
+  }
+]

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "py17q01",
+    "title": "Find the square root of 81",
+    "level": "Beginner",
+    "description": "Import math. Use math.sqrt(81) and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "9.0",
+    "solution": "import math\nprint(math.sqrt(81))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Import math and call math.sqrt(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use the math module. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "import_math",
+        "sqrt_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Import math and call math.sqrt(...)."
+    }
+  },
+  {
+    "id": "py17q02",
+    "title": "Round 4.2 up to 5",
+    "level": "Beginner",
+    "description": "Import math. Use math.ceil(4.2) to round the number up and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "5",
+    "solution": "import math\nprint(math.ceil(4.2))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Import math and call math.ceil(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with round up with math. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "import_math",
+        "ceil_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Import math and call math.ceil(...)."
+    }
+  },
+  {
+    "id": "py17q03",
+    "title": "Print a random number from 1 to 10",
+    "level": "Beginner",
+    "description": "Import random. Use random.randint(1, 10) and print the number.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "4",
+    "solution": "import random\nrandom.seed(4)\nprint(random.randint(1, 10))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Import random and use randint(...).",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use the random module. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "import_random",
+        "randint_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Import random and use randint(...)."
+    }
+  },
+  {
+    "id": "py17q04",
+    "title": "Print today’s date",
+    "level": "Beginner",
+    "description": "Import datetime. Use it to get today’s date and print the date or its year, month, or day.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Today's date (YYYY-MM-DD)",
+    "solution": "from datetime import date\nprint(date.today())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Import datetime and use one of its date/time features.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "date.today() gets the current date each time the program runs. It does not use a fixed date.",
+    "commonMistakes": "Use date.today() instead of typing a date that will become old.",
+    "validation": {
+      "required": [
+        "import_datetime",
+        "has_datetime_use",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Import datetime and use one of its date/time features."
+    }
+  },
+  {
+    "id": "py17q05",
+    "title": "Print math.pi",
+    "level": "Beginner",
+    "description": "Import math and use print() to show math.pi or math.e.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "3.14",
+    "solution": "import math\nprint(round(math.pi, 2))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Import math and access a constant such as math.pi.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use a math constant. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "import_math",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Import math and access a constant such as math.pi.",
+      "oneOf": [
+        [
+          "has_math_constant"
+        ]
+      ]
+    }
+  }
+]

@@ -1,129 +1,65 @@
-# Codeora — Interactive SQL Learning
+# CodeBolt — Next.js App Router
 
-A browser-based SQL learning course built with vanilla HTML, CSS and JavaScript. The first five beginner lessons practice SQL against one consistent `school` table with eight student records.
+CodeBolt is now packaged as a Next.js App Router project with static export support for GitHub Pages. It carries forward the existing SQL course, Python practice track, learner account pages and browser-based tools.
 
-## Run on Kali Linux
+## Requirements
+
+- Node.js 22 or newer
+- npm
+
+## Run locally
 
 ```bash
 cd /home/coding1
-python3 -m http.server 5173
+npm install
+npm run dev
 ```
 
-Open `http://localhost:5173`.
+Open `http://localhost:3000`.
 
-## Beginner lessons: school table
-
-The first five lessons use the same simple `school` table with eight records and five columns: `id`, `student`, `teacher`, `marks`, and `class`. Every question, hint, example, answer and table preview in these lessons uses those exact fields.
-
-The Foundation · Basic SQL Queries topic menu is ordered as SELECT Statement → WHERE Clause → LIKE Operator → ORDER BY → DISTINCT & LIMIT. BETWEEN and IN remain in Foundation · Filtering & Conditions. Each data lesson contains Free and Premium questions.
-
-## Branding
-
-The course shell now uses the **Codeora** name and the new custom Codeora path-mark logo (`codeora-logo.svg`) in the header and browser tab.
-
-## Existing functionality
-
-- Interactive Tutorial remains a popover with sections and topics.
-- The selected question determines which table is previewed above the SQL editor.
-- The SQL editor checks automatically after a complete query ending in a semicolon. Enter adds a new line.
-- Reset restores a clean sample database for the selected question.
-- All lessons can be opened in any order. Premium questions remain locked individually; completing one lesson is not required to enter another.
-- Progress and XP remain stored in browser localStorage.
-
-## Technical notes
-
-- SQL execution uses SQL.js 1.10.3 from cdnjs, so an internet connection is needed for the engine to load.
-- Premium tasks are front-end locked only. Real subscription security requires server-side authentication and entitlement checks.
-
-
-## Latest interface update — 22 November 2026
-
-- Fixed Interactive Tutorial section selection with a dedicated click handler on the persistent tutorial menu. Selecting one of the seven sections now updates the topic list without closing the menu.
-- Topic selection and the tutorial close control are handled by the same menu-level event delegate, while clicks outside the menu still close it.
-- Expanded the course canvas to use the full browser width. The exercise table/editor and task panel now use the available horizontal space, and the tutorial menu is wider on desktop while remaining responsive on smaller screens.
-- Added a version query to the course CSS and app module URLs so browsers request the updated assets after extraction.
-
-
-## Re-extracting this update without stale browser assets
-
-This package uses a fresh cache-busting version (20261122-codeora-brand-01) on its local CSS, JavaScript and logo references. After extraction, stop any old server and open the versioned URL directly:
+## Build for deployment
 
 ```bash
-fuser -k 5173/tcp 2>/dev/null || true
-cd /home/coding1
-python3 -m http.server 5173
+npm run build
 ```
 
-Open `http://localhost:5173/index.html?fresh=20261122-codeora-brand-01` and hard-refresh once. This avoids a previously cached `/` document reusing old asset URLs.
+The static website is generated in `out/`. To preview that export locally:
 
+```bash
+python3 -m http.server 3000 --directory out
+```
 
-## Beginner sample dataset correction
+Then open `http://localhost:3000`.
 
-The first five lessons now use one beginner-friendly `school` table with eight students and the columns `id`, `student`, `teacher`, `marks`, and `class`. The question prompts, hints, examples, expected queries, and visible table preview use those same names. The existing question IDs are preserved so saved progress remains attached to the same question positions. Other supporting tables remain for later lessons and the project tools.
+## GitHub Pages
 
+A GitHub Actions workflow is included at `.github/workflows/deploy.yml`. It builds with the repository name as the base path, then deploys `out/` to GitHub Pages whenever `main` is pushed. In the repository, select **Settings → Pages → Build and deployment → GitHub Actions**.
 
-## SQL and Python track navigation
+The current repository is `coding`, so the deployed base path will be `/coding/`. If the repository is renamed, the workflow uses the new repository name automatically.
 
-The dark full-width top navigation bar has been removed. Simple, visible SQL and Python text links now sit directly below the Codeora logo and tagline on the SQL course page. SQL returns to `index.html`; Python opens the intentionally blank `python.html` placeholder. The Foundation · Basic SQL Queries topic order is SELECT Statement → WHERE Clause → LIKE Operator → ORDER BY → DISTINCT & LIMIT. BETWEEN & IN remains in Foundation · Filtering & Conditions. Existing question IDs and saved progress keys are preserved.
+## Website routes
 
+All 25 existing site views are included: SQL practice, lessons, solutions, dashboard, account/login, profile, rewards, bookmarks, query history, projects, challenges, visualizer, quiz, help, shortcuts, certificates, Premium, Python practice and related pages. Their existing `.html` URLs remain supported. The root route `/` opens SQL Practice.
 
-## Account sign-in and cloud progress (Firebase setup required)
+## Question refresh behaviour
 
-Codeora now includes `login.html` with Google (including Gmail accounts), Facebook, GitHub, email/password, and phone/SMS verification flows. Authentication is wired to Firebase Authentication. A signed-in learner's progress, XP, streak, selected question, bookmarks, and profile are stored in that learner's own Cloud Firestore document. Existing local progress is imported to the first account signed in on that browser once.
+- A full browser refresh clears all SQL question statuses (solved and attempted) in the browser and in the signed-in Firestore progress record.
+- The current SQL lesson/topic is remembered, but it reopens at that topic's first question.
+- XP, streaks, bookmarks and profile data are preserved. Previously awarded question XP is not awarded a second time.
+- Python solved marks are held in memory and therefore also clear on a full browser refresh.
+- The shared SQL editor draft is preserved, as before.
 
-**Important:** OAuth and SMS sign-in cannot work until the site owner connects a Firebase project and enables the matching sign-in providers. The included `firebase-config.js` intentionally contains placeholders, not fake credentials. See `FIREBASE_SETUP.md` and deploy `firestore.rules` before inviting learners. Google and Gmail are the same Google sign-in provider; there is no separate Gmail OAuth option.
+## Quality checks
 
-## Question resume behavior
+```bash
+npm test
+npm run test:python
+```
 
-Solved questions remain marked as completed after refresh or reopening. Refreshing the practice page returns to the first question of the same lesson/topic without deleting solved progress, XP or streaks. The shared SQL editor keeps its text until the learner edits or deletes it.
+These run navigation, question flow, refresh reset, SQL equivalent-answer, all 100 SQL reference-solution and all 95 Python reference-solution tests.
 
-## Codeora monogram update — 22 November 2026
+## Implementation notes
 
-The shared `codeora-logo.svg` asset is the selected C + O orbital monogram. It is used by the site header, sign-in page, and browser favicon through the existing shared asset references. The SVG is vector-based and scales cleanly at small and large sizes. Cache-busting references were updated so browsers fetch the new artwork.
+The Next.js App Router owns page routing, metadata and static export. The 25 existing page views are currently mounted from their preserved markup, with the original CSS and browser-side modules kept under `public/`, to avoid losing existing SQL.js, Python worker, Firebase, editor and tool behaviour during the framework migration. This is a Next.js migration that preserves the existing front end; the individual screens have not yet been rewritten as separate React component trees.
 
-## Original Codeora monogram asset
-
-The selected brand mark is concept #7 from the first Codeora logo sheet: a deep-green hexagon enclosing a dark lowercase C and code symbol. The mark is extracted from the supplied concept artwork and embedded in `codeora-logo.svg`; the `DIGITAL PRODUCTS` tagline is intentionally omitted from the brand lockup.
-
-## Login controls and Firebase activation
-
-The login screen keeps Google, Facebook, GitHub, email/password, signup-toggle, forgot-password, and phone OTP controls interactive even before Firebase is configured. Until `firebase-config.js` contains the real Firebase Web App settings and the providers are enabled in Firebase Authentication, submissions show an explicit setup message; the site never fakes a successful login. See `FIREBASE_SETUP.md` for the one-time setup.
-
-
-## Latest task reset and browser refresh behavior
-
-- Lesson SQL editors and the SQL Playground open blank.
-- The editor button is **Reset progress** and resets only the currently selected question, including that question's attempts and its one-time XP award. Other question progress remains intact.
-- A browser reload preserves local and cloud question progress, XP and streaks; it opens the first question of the current lesson/topic.
-- The course header action is labelled **Lessons**.
-- The reset button is bound directly after each editor render so it remains active after changing questions.
-
-
-## Languages Studio (Python, HTML, CSS and JavaScript)
-
-Open `python.html` (the navigation label is **Languages**) to use the Codeora Languages Studio. The page follows the existing SQL course colour and typography system and provides:
-
-- A CodeMirror editor with line numbers, language modes, bracket matching, indentation and a fallback plain editor if the editor CDN is unavailable.
-- Python execution in the browser through Pyodide (the first Python run downloads its runtime; an internet connection is needed for that first load).
-- HTML, CSS and JavaScript together in an isolated live-preview iframe, plus a console output panel.
-- Practice and Build Project modes, starter exercises, a default `codeora-project` file tree, new files/folders, and language switching.
-- Browser autosave using local storage. **Save to laptop** uses the browser's File System Access API: in Chrome/Edge on `localhost` or HTTPS, choose a parent folder and Codeora writes a `codeora-project` folder with its real file/folder structure. **Open folder** imports an existing project folder. The alternative Download project action creates a ZIP when JSZip is available.
-- A starter `package.json`, `.vscode/extensions.json` and README for continuing in desktop VS Code.
-
-### Important browser/runtime boundaries
-
-This is a browser IDE, not a full desktop VS Code installation. The browser can run Python via Pyodide and HTML/CSS/JavaScript preview, but it cannot start arbitrary local OS processes or run a real Node/npm installation inside the page. Save the project to the laptop, open it in desktop VS Code, then run `npm install` and `npm run dev` in the local terminal to install/use npm packages. The built-in terminal explains this rather than pretending to execute native commands. Folder read/write access requires an explicit user folder selection and browser permission.
-
-## Languages Studio workspace update
-
-- The Languages page uses a full-width bottom panel spanning the editor and project preview columns.
-- Bottom panel tabs: Problems, Output, Debug Console, and Terminal.
-- New Terminal creates a separate browser-workspace terminal session; Split Terminal displays two sessions side by side.
-- The shell selector distinguishes the browser workspace command runner from Bash on the local laptop. A browser page cannot launch a user's OS shell; save the project and open it in VS Code to use real Bash and npm.
-- The SQL landing page no longer flashes the temporary “Loading your SQL lesson…” placeholder or the tagline footer while its lesson module starts.
-- The SQL Lessons shortcut is omitted from the Languages page header.
-
-
-## Lesson navigation
-
-Lessons can be opened in any order. Only questions marked Premium are locked. Refreshing the practice page opens the first question in the current lesson/topic while preserving solved progress, XP and streaks.
+SQL.js and Firebase SDK modules continue to load from their configured CDN URLs. The Python runner continues to use its browser worker. Premium access remains front-end gated; real subscription enforcement needs server-side entitlement checks.

@@ -1,0 +1,151 @@
+[
+  {
+    "id": "py19q01",
+    "title": "Write a message to a file and read it",
+    "level": "Beginner",
+    "description": "Open notes.txt in write mode and save a short message. Open the same file in read mode and print the message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hello file",
+    "solution": "with open(\"notes.txt\", \"w\") as file:\n    file.write(\"Hello file\")\nwith open(\"notes.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a with-open block to write text, read it back and print it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "The first with block writes the message to notes.txt. The second opens that same file and prints its contents.",
+    "commonMistakes": "Use the same filename in both open() calls. Use w to write and r to read.",
+    "validation": {
+      "required": [
+        "has_with",
+        "open_call",
+        "has_write",
+        "has_read",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use a with-open block to write text, read it back and print it."
+    }
+  },
+  {
+    "id": "py19q02",
+    "title": "Add another message to a file",
+    "level": "Beginner",
+    "description": "Write one message to notes.txt. Open the same file in append mode to add a second message. Read and print both messages.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "AB",
+    "solution": "with open(\"notes.txt\", \"w\") as file:\n    file.write(\"A\")\nwith open(\"notes.txt\", \"a\") as file:\n    file.write(\"B\")\nwith open(\"notes.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use file mode a to append text, then read it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "Mode w creates the first content. Mode a adds more content without deleting it. Mode r reads both messages.",
+    "commonMistakes": "Use the same filename for writing, appending and reading. Use a for append mode.",
+    "validation": {
+      "required": [
+        "has_with",
+        "open_call",
+        "has_file_append_mode",
+        "has_write",
+        "has_read",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use file mode a to append text, then read it."
+    }
+  },
+  {
+    "id": "py19q03",
+    "title": "Write and print two file lines",
+    "level": "Beginner",
+    "description": "Write two lines in a file. Read the file with a for loop and print each line.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "pen\nbook",
+    "solution": "with open(\"items.txt\", \"w\") as file:\n    file.write(\"pen\\nbook\")\nwith open(\"items.txt\", \"r\") as file:\n    for line in file:\n        print(line.strip())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use a file and a for loop to print its lines.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with read file lines. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_with",
+        "open_call",
+        "has_write",
+        "has_for",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Use a file and a for loop to print its lines."
+    }
+  },
+  {
+    "id": "py19q04",
+    "title": "Count the characters in a file",
+    "level": "Beginner",
+    "description": "Write some text to a file. Read it, use len() to count the characters, and print the count.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "8",
+    "solution": "with open(\"data.txt\", \"w\") as file:\n    file.write(\"CodeBolt\")\nwith open(\"data.txt\", \"r\") as file:\n    text = file.read()\nprint(len(text))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Read the file contents, call len(...), and print the number.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with count file characters. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_with",
+        "open_call",
+        "has_write",
+        "has_read",
+        "print_call",
+        "len_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Read the file contents, call len(...), and print the number."
+    }
+  },
+  {
+    "id": "py19q05",
+    "title": "Read and print the whole file",
+    "level": "Beginner",
+    "description": "Write at least two lines to a file. Read the whole file at once and print all its text.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "one\ntwo\nthree",
+    "solution": "lines = [\"one\", \"two\", \"three\"]\nwith open(\"list.txt\", \"w\") as file:\n    file.write(\"\\n\".join(lines))\nwith open(\"list.txt\", \"r\") as file:\n    print(file.read())",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Write multiple lines to a file and display them after reading.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with write multiple lines. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_with",
+        "open_call",
+        "has_write",
+        "has_read",
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Write multiple lines to a file and display them after reading."
+    }
+  }
+]

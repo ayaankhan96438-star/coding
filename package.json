@@ -1,6 +1,24 @@
 {
+  "name": "codebolt-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "test:python": "python3 tests/sql-question-audit.test.py && python3 tests/python-question-audit.test.py"
+  },
   "dependencies": {
-    "@dataconnect/generated": "file:src/dataconnect-generated",
-    "firebase": "^13.4.0"
-  }
+    "next": "15.5.29",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.7",
+    "typescript": "^5.9.2"
+  },
+  "type": "module"
 }

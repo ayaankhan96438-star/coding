@@ -1,0 +1,140 @@
+[
+  {
+    "id": "py05q01",
+    "title": "Add and subtract two numbers",
+    "level": "Beginner",
+    "description": "Choose two numbers. Use + to add them and - to subtract them. Print both answers.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "22\n12",
+    "solution": "a, b = 17, 5\nprint(a + b)\nprint(a - b)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use both addition and subtraction and show both answers.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with add and subtract. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_add",
+        "has_sub"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Use both addition and subtraction and show both answers."
+    }
+  },
+  {
+    "id": "py05q02",
+    "title": "Try / and //",
+    "level": "Beginner",
+    "description": "Divide two numbers with /, then divide them with //. Print both answers to see the difference.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "3.4\n3",
+    "solution": "print(17 / 5)\nprint(17 // 5)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Show both normal division and floor division.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with division and floor division. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_div",
+        "has_floordiv"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Show both normal division and floor division."
+    }
+  },
+  {
+    "id": "py05q03",
+    "title": "Find the remainder",
+    "level": "Beginner",
+    "description": "Use % to find the remainder of 17 divided by 5. Print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "2",
+    "solution": "print(17 % 5)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use the modulo operator % and display its numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "17 divided by 5 leaves a remainder of 2. The % operator gives that remainder.",
+    "commonMistakes": "Use % for the remainder and use the same two numbers shown in the question.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_mod"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use the modulo operator % and display its numeric result.",
+      "matchExpected": true
+    }
+  },
+  {
+    "id": "py05q04",
+    "title": "Calculate 2 to the power of 5",
+    "level": "Beginner",
+    "description": "Use ** to calculate 2 ** 5 and print the answer. You can try a different number too.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "32",
+    "solution": "print(2 ** 5)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use ** to calculate a power.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use the power operator. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_pow"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use ** to calculate a power."
+    }
+  },
+  {
+    "id": "py05q05",
+    "title": "Check two conditions",
+    "level": "Beginner",
+    "description": "Use a comparison, such as age >= 18, with and, or, or not. Print the True or False result.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "True",
+    "solution": "age = 20\nprint(age >= 18 and age < 60)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Your code should use a comparison and a logical operator.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with compare two values. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_compare",
+        "has_and_or"
+      ],
+      "minimums": {},
+      "output": "boolean",
+      "feedback": "Your code should use a comparison and a logical operator."
+    }
+  }
+]

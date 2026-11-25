@@ -1,0 +1,133 @@
+[
+  {
+    "id": "py01q01",
+    "title": "Print a number",
+    "level": "Beginner",
+    "description": "Use print() to show any number you choose. For example, print(100) or print(25).",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "100",
+    "solution": "print(100)",
+    "hints": [
+      "Write print() in the code area.",
+      "Put any number inside the brackets, for example print(100).",
+      "Run your code. Any number printed with print() is accepted."
+    ],
+    "explanation": "Use print() to display a number on the screen. You can choose 100, 25, 7, or any other number.",
+    "commonMistakes": "Make sure you write print, add opening and closing brackets, and put a number inside them.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use print(...) to display any number you choose."
+    }
+  },
+  {
+    "id": "py01q02",
+    "title": "Print a character",
+    "level": "Beginner",
+    "description": "Use print() to show one character on the screen. For example, print(\"A\") or print(\"#\"). You can choose any character.",
+    "starterCode": "",
+    "testInput": "",
+    "expectedOutput": "A",
+    "solution": "print(\"A\")",
+    "hints": [
+      "Write print() in the code area.",
+      "Put one character inside quotation marks and brackets.",
+      "Run your code. Any single character printed with print() is accepted."
+    ],
+    "explanation": "A character can be a letter, number, or symbol. Use print() to show the character you choose.",
+    "commonMistakes": "Write print with brackets and put the character inside single or double quotation marks.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "character",
+      "feedback": "Use print(...) to display one character."
+    }
+  },
+  {
+    "id": "py01q03",
+    "title": "Print two messages on two lines",
+    "level": "Beginner",
+    "description": "Use print() on two separate lines. Write one message in each print() statement.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Start\nFinish",
+    "solution": "print(\"Start\")\nprint(\"Finish\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Your program should display at least two non-empty lines.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with print two lines. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call"
+      ],
+      "minimums": {
+        "output_lines": 2
+      },
+      "output": "two_lines",
+      "feedback": "Your program should display at least two non-empty lines."
+    }
+  },
+  {
+    "id": "py01q04",
+    "title": "Print the answer to 8 + 5",
+    "level": "Beginner",
+    "description": "Use print() to show the answer to 8 + 5.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "13",
+    "solution": "print(8 + 5)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use + in a calculation and display the numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with print a calculation. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_add"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use + in a calculation and display the numeric result.",
+      "matchExpected": true
+    }
+  },
+  {
+    "id": "py01q05",
+    "title": "Print the answer to 4 * 3",
+    "level": "Beginner",
+    "description": "Use print() to show the answer to 4 * 3.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "12",
+    "solution": "print(4 * 3)",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use * in a calculation and display the numeric result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "Use * to multiply 4 by 3. Python calculates the answer first, then print() displays 12.",
+    "commonMistakes": "Use * for multiplication, not x. Check that the numbers in your code match the question (4 and 3).",
+    "validation": {
+      "required": [
+        "print_call",
+        "has_mult"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use * in a calculation and display the numeric result.",
+      "matchExpected": true
+    }
+  }
+]

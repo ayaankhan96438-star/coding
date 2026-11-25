@@ -1,0 +1,14 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  isolation: isolate;
+}
+
+/* Keep the preserved CodeBolt page styles in control of the visual design. */
+#legacy-page-root {
+  min-height: 100vh;
+}

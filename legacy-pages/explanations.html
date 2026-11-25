@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-task-reset-lessons-02">
+  <meta name="theme-color" content="#fbfcfe">
+  <meta name="description" content="CodeBolt — learn, code and build.">
+  <title>Guided Explanations · CodeBolt</title>
+  <link rel="stylesheet" href="style.css?v=20261124-sql-practice-bugfix-v3">
+<link rel="stylesheet" href="site-header.css?v=codebolt-minimal-v1">
+</head>
+<body data-page="explanations" data-track="sql">
+  
+
+<div id="site-header"></div>
+<div id="load-error" class="load-error page-error" role="alert" hidden></div>
+<main class="page-shell">
+  <section class="page-hero compact-hero"><p class="eyebrow">CONCEPTS, EXAMPLES AND OUTPUT</p><h1>Understand the <em>why.</em></h1><p class="lead">Choose a question from the practice page and review its concept, reusable SQL pattern and expected sample output here.</p><a class="page-button secondary" href="practice.html">Back to practice →</a></section>
+  <section id="explanation-content" class="explanation-page-content"><p class="dashboard-loading">Loading the explanation…</p></section>
+  <footer>CodeBolt · Guided explanations</footer>
+</main>
+  
+  <script>
+    (() => {
+      const showBootError = (message) => {
+        const target = document.getElementById('load-error');
+        if (target) { target.hidden = false; target.textContent = message; }
+      };
+      if (window.location.protocol === 'file:') {
+        showBootError('Open CodeBolt through a local web server: python3 -m http.server 5173, then visit http://localhost:5173.');
+      } else {
+        window.addEventListener('error', (event) => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
+            showBootError('CodeBolt could not load app.js. Re-extract the complete ZIP so all project files are in the same folder.');
+          }
+        }, true);
+        window.setTimeout(() => {
+          if (!window.CodeBoltStarted && !window.CodeBoltFailed) showBootError('CodeBolt did not start. Check that app.js and lessons.json are beside this page.');
+        }, 8000);
+      }
+    })();
+  </script>
+  <script src="site-header.js?v=codebolt-minimal-v1"></script><script src="account-bootstrap.js?v=next-session-progress-reset-01"></script>
+  <script src="professional.js?v=20261123-unified-header-02"></script>
+  <script type="module" src="app.js?v=20261124-course-navigation-any-order-02"></script>
+</body>
+</html>

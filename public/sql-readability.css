@@ -1,0 +1,306 @@
+/* CodeBolt SQL readability update — typography and contrast aligned with the Python workspace.
+   Loaded only by the SQL workspace pages (index.html and practice.html). */
+body[data-page="home"],
+body[data-page="practice"] {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #101812;
+}
+
+/* Lesson title and table preview */
+.course-panel-heading h2,
+.task-panel-heading h2 {
+  color: #101812;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.course-panel-heading small,
+.table-heading-row small {
+  color: #28332c;
+  font-size: 14px;
+  font-weight: 600;
+}
+.table-preview-unit .table-caption,
+.table-caption {
+  color: #202a23;
+  font-size: 14px;
+  font-weight: 700;
+}
+.table-preview-unit table,
+.table-preview table,
+.table-wrap table,
+.result table {
+  color: #101812;
+  font-size: 15px;
+}
+.table-preview-unit th,
+.table-preview-unit td,
+.table-preview th,
+.table-preview td,
+.table-wrap th,
+.table-wrap td,
+.result th,
+.result td {
+  padding: 8px 11px;
+  color: #101812;
+}
+.table-preview-unit th,
+.table-preview th,
+.table-wrap th,
+.result th {
+  color: #101812;
+  font-weight: 800;
+}
+
+/* SQL editor: dark, clearly visible typing color on a light surface */
+.editor-label {
+  color: #101812;
+  font-size: 15px;
+  font-weight: 800;
+  padding-bottom: 8px;
+}
+.editor {
+  min-height: 190px;
+  padding: 13px 14px;
+  border: 1px solid #aeb9b1;
+  border-radius: 7px;
+  background: #fff;
+  color: #080d09;
+  caret-color: #080d09;
+  font: 16px/1.7 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  letter-spacing: 0;
+}
+.editor:focus {
+  border-color: #1769dc;
+  outline: 3px solid rgba(23, 105, 220, .15);
+}
+.editor::placeholder {
+  color: #4a554d;
+  opacity: 1;
+}
+.editor:disabled {
+  background: #f4f6f4;
+  color: #343d36;
+}
+
+/* Run/reset actions and feedback */
+.practice-actions { gap: 9px; padding-top: 11px; padding-bottom: 12px; }
+.course-button {
+  min-height: 42px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.editor-footer { min-height: 46px; }
+.answer-message {
+  color: #202a23;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.status {
+  min-height: 38px;
+  padding: 9px 12px;
+  color: #202a23;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.status.good { color: #14532d; font-weight: 700; }
+.status.bad { color: #101812; }
+.feedback {
+  padding: 11px 12px;
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.hint-panel,
+.solution-panel {
+  padding: 11px 12px;
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.hint-panel p,
+.solution-panel p { color: #202a23; }
+.solution-panel pre {
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.output-heading {
+  color: #202a23;
+  font-size: 13px;
+  font-weight: 800;
+}
+.result {
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.result-count { color: #303b33; font-size: 13px; }
+.comparison-card h4 { color: #101812; font-size: 14px; font-weight: 700; }
+.question-navigation span { color: #303b33; font-size: 13px; }
+.question-navigation button { min-height: 34px; padding: 6px 10px; font-size: 13px; }
+
+/* Right-side task list */
+.task-panel-heading h2 { font-size: 21px; }
+.task-panel-heading small {
+  color: #202a23;
+  font-size: 14px;
+  font-weight: 700;
+}
+.task-group h3 {
+  color: #101812;
+  font-size: 15px;
+  font-weight: 800;
+}
+.task-group h3 span { color: #303b33; font-size: 14px; }
+.task-choice {
+  color: #101812;
+  padding: 9px 7px;
+  gap: 8px;
+}
+.task-choice:disabled { opacity: 1; }
+.task-choice .task-number {
+  color: #303b33;
+  font-size: 13px;
+  font-weight: 800;
+}
+.task-choice .task-text {
+  color: #101812;
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.task-choice.active .task-text,
+.task-choice:hover:not(:disabled) .task-text {
+  color: #123f78;
+  font-weight: 800;
+}
+.task-choice.locked .task-text { color: #303b33; }
+.task-choice .task-state { color: #303b33; font-size: 13px; }
+.task-empty { color: #303b33; font-size: 14px; }
+.task-stuck-copy p,
+.stuck-copy p {
+  color: #202a23;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.task-stuck-copy .continue-note,
+.stuck-copy .continue-note {
+  color: #303b33;
+  font-size: 13px;
+}
+.finish-lesson {
+  min-height: 42px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Lesson explanation below the exercise */
+.lesson-heading .lesson-kicker {
+  color: #14532d;
+  font-size: 13px;
+  font-weight: 800;
+}
+.lesson-reading .lesson-heading h1,
+.reading-column h1 {
+  color: #101812;
+  font-size: clamp(28px, 2.5vw, 34px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+.lesson-reading p,
+.reading-column p {
+  color: #202a23;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.lesson-reading .reading-section h2,
+.reading-section h2,
+.reading-subhead {
+  color: #101812;
+  font-size: 21px;
+  font-weight: 750;
+}
+.syntax-card small { color: #303b33; font-size: 13px; }
+.syntax-card pre {
+  color: #101812;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .course-panel-heading h2,
+  .task-panel-heading h2 { font-size: 19px; }
+  .table-preview-unit table,
+  .table-preview table,
+  .table-wrap table,
+  .result table { font-size: 14px; }
+  .editor { min-height: 170px; font-size: 15px; }
+  .task-choice .task-text { font-size: 14px; }
+  .lesson-reading p,
+  .reading-column p { font-size: 16px; }
+}
+
+
+/* Text constraints reference table and learning note */
+.operator-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 18px 0 24px;
+  border: 1px solid #d9e2dc;
+  border-radius: 12px;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+.operator-reference-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  color: #101812;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.operator-reference-table th,
+.operator-reference-table td {
+  padding: 13px 15px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e3e9e5;
+}
+.operator-reference-table th {
+  background: #f1f6f2;
+  color: #14251a;
+  font-weight: 800;
+}
+.operator-reference-table tr:last-child td { border-bottom: 0; }
+.operator-reference-table code,
+.reading-section code,
+.did-you-know code {
+  color: #123f78;
+  font-size: .95em;
+  font-weight: 700;
+}
+.did-you-know {
+  margin: 24px 0 8px;
+  padding: 18px 20px;
+  border: 1px solid #cbd9ce;
+  border-left: 4px solid #276749;
+  border-radius: 12px;
+  background: #f4f8f4;
+}
+.did-you-know h2 {
+  margin: 0 0 8px;
+  color: #153d32;
+  font-size: 19px;
+  font-weight: 800;
+}
+.did-you-know p { margin: 0; }
+@media (max-width: 760px) {
+  .operator-reference-table { min-width: 700px; font-size: 13px; }
+  .operator-reference-table th,
+  .operator-reference-table td { padding: 10px 12px; }
+  .did-you-know { padding: 15px; }
+}

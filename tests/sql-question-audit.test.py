@@ -7,8 +7,8 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LESSONS = json.loads((ROOT / 'lessons.json').read_text(encoding='utf-8'))
-DATABASE_SOURCE = (ROOT / 'database.js').read_text(encoding='utf-8')
+LESSONS = json.loads((ROOT / 'public' / 'lessons.json').read_text(encoding='utf-8'))
+DATABASE_SOURCE = (ROOT / 'public' / 'database.js').read_text(encoding='utf-8')
 MATCH = re.search(r'const SAMPLE_DATABASE_SQL = `([\s\S]*?)`;', DATABASE_SOURCE)
 assert MATCH, 'Could not find the sample SQL database definition.'
 SAMPLE_SQL = MATCH.group(1)
@@ -139,9 +139,9 @@ class SqlQuestionAuditTests(unittest.TestCase):
             wrong_db.close()
 
     def test_practice_interaction_contracts_are_present(self):
-        app = (ROOT / 'app.js').read_text(encoding='utf-8')
-        css = (ROOT / 'course.css').read_text(encoding='utf-8')
-        site_css = (ROOT / 'style.css').read_text(encoding='utf-8')
+        app = (ROOT / 'public' / 'app.js').read_text(encoding='utf-8')
+        css = (ROOT / 'public' / 'course.css').read_text(encoding='utf-8')
+        site_css = (ROOT / 'public' / 'style.css').read_text(encoding='utf-8')
         self.assertIn("if (event.target?.id === 'query') {\n    saveSharedEditorDraft(event.target.value);\n    scheduleAutoCheck();\n  }", app)
         self.assertIn("event.target?.id === 'query' && event.key === 'Enter' && (event.ctrlKey || event.metaKey) && event.shiftKey", app)
         self.assertIn("// Plain Enter is deliberately left alone", app)
@@ -157,7 +157,7 @@ class SqlQuestionAuditTests(unittest.TestCase):
         self.assertIn('getSavedQuestionDraft(currentQuestionId)', app)
         self.assertIn("const preferredQuestion = availableQuestions.find((question) => question.id === preferredQuestionId) || null;", app)
         self.assertIn("if (message) {\n          message.hidden = false;\n          message.className = 'answer-message';", app)
-        self.assertIn('You can practise it again; your saved progress will stay intact.', app)
+        self.assertIn('This question is already completed in this session. You can practise it again.', app)
         self.assertIn(".task-choice.locked .task-text {\n  filter: blur(3px);", css)
         self.assertIn(".solution-card-locked .solution-card-heading p {\n  filter: blur(3px);", css)
         self.assertIn("width: 30px;\n  height: 30px;", css)

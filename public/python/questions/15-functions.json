@@ -1,0 +1,142 @@
+[
+  {
+    "id": "py15q01",
+    "title": "Make a function that says Hello",
+    "level": "Beginner",
+    "description": "Use def to make a function. Put print(\"Hello\") inside it, then call the function.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hello",
+    "solution": "def greet():\n    print(\"Hello\")\ngreet()",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Define a function and call it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "def creates the greet function. Calling greet() runs the print statement inside it and displays Hello.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Define a function and call it."
+    }
+  },
+  {
+    "id": "py15q02",
+    "title": "Make a function that prints a name",
+    "level": "Beginner",
+    "description": "Make a function with a name parameter. Pass a name to it and print that name.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Hi Sara",
+    "solution": "def greet(name):\n    print(\"Hi\", name)\ngreet(\"Sara\")",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a function parameter and pass an argument when calling it.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with function with a parameter. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_function_parameter",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Create a function parameter and pass an argument when calling it."
+    }
+  },
+  {
+    "id": "py15q03",
+    "title": "Make a function that adds two numbers",
+    "level": "Beginner",
+    "description": "Make a function that takes two numbers and returns their sum. Call it and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "15",
+    "solution": "def add(a, b):\n    return a + b\nprint(add(7, 8))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Use return inside a function and print the function call result.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with return a sum. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_return",
+        "has_function_call",
+        "has_add",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Use return inside a function and print the function call result."
+    }
+  },
+  {
+    "id": "py15q04",
+    "title": "Make a function that squares a number",
+    "level": "Beginner",
+    "description": "Make a function that returns a number multiplied by itself. Call it and print the answer.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "36",
+    "solution": "def square(number):\n    return number ** 2\nprint(square(6))",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Create a function that returns number multiplied by itself.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with return a square. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_return",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "numeric",
+      "feedback": "Create a function that returns number multiplied by itself."
+    }
+  },
+  {
+    "id": "py15q05",
+    "title": "Make a function with a default name",
+    "level": "Beginner",
+    "description": "Make a function with a default name, such as Friend. Call it without giving a name and print the message.",
+    "starterCode": "# Write your Python code below\n",
+    "testInput": "",
+    "expectedOutput": "Welcome Friend",
+    "solution": "def welcome(name=\"Friend\"):\n    print(\"Welcome\", name)\nwelcome()",
+    "hints": [
+      "Read the task once and identify the Python feature it asks you to practise.",
+      "Give a parameter a default value and call the function.",
+      "Write your own code, press Run, and fix any syntax or runtime error shown."
+    ],
+    "explanation": "This task gives you practice with use a default argument. The reference solution is only one example; other working approaches are accepted when they use the required Python feature.",
+    "commonMistakes": "Check brackets and quotes, use the correct indentation, and make sure you actually use the Python feature asked for in the task.",
+    "validation": {
+      "required": [
+        "has_function",
+        "has_default_argument",
+        "has_function_call",
+        "print_call"
+      ],
+      "minimums": {},
+      "output": "nonempty",
+      "feedback": "Give a parameter a default value and call the function."
+    }
+  }
+]

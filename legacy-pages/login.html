@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="Sign in to CodeBolt to sync XP, streaks, bookmarks and profile details across devices.">
+  <title>Sign in · CodeBolt</title>
+  <link rel="icon" type="image/svg+xml" href="codeora-logo.svg?v=20261122-task-reset-lessons-02">
+  <link rel="stylesheet" href="style.css?v=20261124-sql-practice-bugfix-v3">
+  <link rel="stylesheet" href="login.css?v=20261122-task-reset-lessons-02">
+</head>
+<body class="login-page" data-page="login">
+  <main class="login-shell">
+    <a class="login-brand" href="./">
+      <img src="codeora-logo.svg?v=20261122-task-reset-lessons-02" alt="">
+      <span><strong>codebolt</strong><small>Learn. Code. Build.</small></span>
+    </a>
+    <section class="login-card" aria-labelledby="login-heading">
+      <div class="login-card-head">
+        <p class="login-eyebrow">YOUR LEARNING, SAVED</p>
+        <h1 id="login-heading">Welcome back</h1>
+        <p id="login-subtitle">Pick up your learning exactly where you left off.</p>
+      </div>
+      <div id="signed-in-panel" class="signed-in-panel" hidden>
+        <span class="signed-in-check">✓</span>
+        <div><b>You're already signed in</b><p id="signed-in-name">CodeBolt learner</p></div>
+        <button id="signed-out-continue" class="login-primary" type="button">Continue learning</button><button id="login-signout" class="text-action" type="button">Sign out</button>
+      </div>
+      <div class="login-methods">
+        <button id="google-login" class="provider-button google-provider" type="button">
+          <span class="provider-mark google-mark" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path fill="#4285F4" d="M21.35 12.25c0-.71-.06-1.4-.18-2.06H12v3.9h5.24c-.23 1.25-.94 2.31-2.03 3.02v2.53h3.28c1.92-1.77 3.02-4.37 3.02-7.39z"/><path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.63-2.36l-3.28-2.53c-.91.61-2.07.97-3.35.97-2.58 0-4.77-1.74-5.55-4.08H3.06v2.61C4.7 19.81 8.06 22 12 22z"/><path fill="#FBBC05" d="M6.45 14c-.2-.61-.32-1.29-.32-2s.12-1.39.32-2V7.39H3.06C2.38 8.75 2 10.34 2 12s.38 3.25 1.06 4.61L6.45 14z"/><path fill="#EA4335" d="M12 5.92c1.47 0 2.79.5 3.83 1.5l2.87-2.87C16.96 2.99 14.7 2 12 2 8.06 2 4.7 4.19 3.06 7.39l3.39 2.61c.78-2.34 2.97-4.08 5.55-4.08z"/></svg></span>
+          <span class="provider-label">Continue with Google / Gmail</span>
+        </button>
+        <button id="facebook-login" class="provider-button facebook-provider" type="button">
+          <span class="provider-mark facebook-mark" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="12" cy="12" r="11" fill="#1877F2"/><path fill="#fff" d="M13.55 20v-7.3h2.45l.37-2.85h-2.82V8.03c0-.83.23-1.4 1.42-1.4h1.51V4.08c-.26-.04-1.16-.11-2.2-.11-2.18 0-3.67 1.33-3.67 3.77v2.11H8.15v2.85h2.46V20h2.94z"/></svg></span>
+          <span class="provider-label">Continue with Facebook</span>
+        </button>
+        <button id="github-login" class="provider-button github-provider" type="button">
+          <span class="provider-mark github-mark" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path fill="#24292f" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.68-3.75-1.32-3.75-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.14a10.6 10.6 0 0 1 5.57 0c2.12-1.44 3.06-1.14 3.06-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.5.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9z"/></svg></span>
+          <span class="provider-label">Continue with GitHub</span>
+        </button>
+      </div>
+      <div class="login-divider"><span>or use email</span></div>
+      <form id="email-login-form" class="login-form">
+        <label for="email-address">Email address</label>
+        <input id="email-address" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="email-password">Password</label>
+        <input id="email-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+        <div class="login-form-meta"><button id="forgot-password" class="text-action" type="button">Forgot password?</button></div>
+        <button id="email-submit" class="login-primary" type="submit">Sign in with email</button>
+        <button id="create-account-toggle" class="text-action create-toggle" type="button">New here? Create account</button>
+      </form>
+      <div class="login-divider"><span>or use your phone</span></div>
+      <form id="phone-login-form" class="login-form phone-form">
+        <label for="phone-number">Phone number with country code</label>
+        <input id="phone-number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required>
+        <div id="recaptcha-container" class="recaptcha-container"></div><p class="phone-consent-note">We’ll send an SMS verification code. Message and data rates may apply. Your number is used for sign-in and verification.</p>
+        <button id="phone-send-code" class="login-primary" type="submit">Send verification code</button>
+      </form>
+      <form id="phone-verify-form" class="login-form phone-form" hidden>
+        <label for="phone-code">6-digit verification code</label>
+        <input id="phone-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="123456" required>
+        <button id="phone-verify-code" class="login-primary" type="submit">Verify and sign in</button>
+      </form>
+      <p id="login-status" class="login-status" role="status" aria-live="polite">Choose a sign-in method to sync XP, streaks, bookmarks and profile details between devices. Question completion resets after refresh.</p>
+      <p class="login-legal">By continuing, you agree to use CodeBolt responsibly. Your XP, streaks, bookmarks and profile data are saved to your own account. Question completion resets after refresh.</p>
+    </section>
+    <a class="login-back-link" href="./">← Back to CodeBolt</a>
+  </main>
+  <script src="account-bootstrap.js?v=next-session-progress-reset-01"></script>
+  <script type="module" src="login.js?v=20261122-task-reset-lessons-02"></script>
+</body>
+</html>

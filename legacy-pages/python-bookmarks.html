@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Python Bookmarks | CodeBolt</title>
+  <link rel="stylesheet" href="course.css">
+  <link rel="stylesheet" href="python-practice.css?v=codebolt-readable-v2">
+  <link rel="stylesheet" href="site-header.css?v=codebolt-minimal-v1">
+</head>
+<body data-track="languages" data-page="python-bookmarks">
+  <div id="site-header"></div>
+  <main class="py-page">
+    <a href="python.html">← Python practice</a>
+    <h1>Bookmarked questions</h1>
+    <div id="saved">Loading bookmarks…</div>
+  </main>
+  <script src="site-header.js?v=codebolt-minimal-v1"></script>
+  <script src="account-bootstrap.js?v=next-session-progress-reset-01"></script>
+  <script>
+    (async () => {
+      const ids = JSON.parse(localStorage.getItem('codeora.python.bookmarks.v1') || '[]');
+      const box = document.getElementById('saved');
+      if (!ids.length) {
+        box.textContent = 'No bookmarked questions yet.';
+        return;
+      }
+      try {
+        const response = await fetch('python/topics.json');
+        if (!response.ok) throw new Error('Could not load topics.');
+        const topics = await response.json();
+        const groups = await Promise.all(topics.map(async (topic) => {
+          const questionResponse = await fetch(`python/${topic.questionFile}`);
+          if (!questionResponse.ok) throw new Error(`Could not load ${topic.name}.`);
+          const questions = await questionResponse.json();
+          return questions.map((question) => ({ ...question, topic: topic.name }));
+        }));
+        const saved = groups.flat().filter((question) => ids.includes(question.id));
+        box.innerHTML = saved.map((question) =>
+          `<p><a href="python.html">${question.topic} · ${question.title}</a></p>`
+        ).join('') || 'No bookmarked questions yet.';
+      } catch (error) {
+        box.textContent = error.message;
+      }
+    })();
+  </script>
+</body>
+</html>
