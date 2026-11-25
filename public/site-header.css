@@ -72,12 +72,12 @@ body[data-page="python-bookmarks"] { margin: 0; }
 .site-track-links .track-link {
   display: inline-flex;
   align-items: center;
-  min-height: 27px;
-  padding: 2px 8px;
+  min-height: 32px;
+  padding: 4px 10px;
   border-radius: 6px;
   color: #26382d;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   transition: color .15s, background .15s;
 }
@@ -146,7 +146,7 @@ body.dark-mode .site-topic-toggle { background: #1d2b22; border-color: #536b58; 
   .site-brand-copy strong { font-size: 18px; }
   .site-brand-copy small { font-size: 11px; }
   .site-track-links { margin-left: 37px; gap: 4px; }
-  .site-track-links .track-link { min-height: 24px; font-size: 12px; padding: 2px 6px; }
+  .site-track-links .track-link { min-height: 29px; font-size: 14px; padding: 3px 8px; }
   .site-header-actions { gap: 6px; }
   .site-header-actions > .site-account-link,
   .site-topic-toggle { min-height: 36px; padding: 6px 9px; font-size: 12px; }

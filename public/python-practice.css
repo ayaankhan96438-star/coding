@@ -105,6 +105,14 @@ body[data-page="python-practice"] {
 .cb-q-number { flex-basis: 26px; font-size: 12px; color: #27342c; }
 .cb-q-name { font-size: 14px; line-height: 1.45; color: #111a14; }
 .cb-q-state { font-size: 17px; }
+.cb-question-link.is-solved .cb-q-state {
+  display: inline-block;
+  min-width: 20px;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
 .cb-no-match { padding: 8px 10px; font-size: 14px; color: #29372e; }
 
 .cb-solution-panel { padding: 19px; }

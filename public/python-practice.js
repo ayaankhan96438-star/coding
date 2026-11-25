@@ -63,7 +63,7 @@
     }).join('');
   }
 
-  function selectQuestion(topicIndex, questionIndex) {
+  function selectQuestion(topicIndex, questionIndex, options = {}) {
     const topic = state.topics[topicIndex];
     if (!topic || !topic.questions[questionIndex]) return;
 
@@ -76,7 +76,7 @@
     $('question-description').textContent = question.description;
     $('python-code').value = question.starterCode || '';
     $('expected-output').textContent = question.expectedOutput || '';
-    $('your-output').textContent = 'Your output will appear here.';
+    if (!options.preserveOutput) $('your-output').textContent = 'Your output will appear here.';
     $('run-result').textContent = '';
     $('error-help').hidden = true;
 
@@ -88,6 +88,36 @@
     $('show-solution').setAttribute('aria-expanded', 'false');
 
     renderQuestionBank();
+  }
+
+  function findNextUnsolvedQuestion() {
+    let currentTopicIndex = -1;
+    let currentQuestionIndex = -1;
+
+    for (let topicIndex = 0; topicIndex < state.topics.length; topicIndex += 1) {
+      const questionIndex = state.topics[topicIndex].questions.findIndex(
+        (question) => question.id === state.current?.id
+      );
+      if (questionIndex !== -1) {
+        currentTopicIndex = topicIndex;
+        currentQuestionIndex = questionIndex;
+        break;
+      }
+    }
+
+    if (currentTopicIndex === -1) return null;
+
+    for (let topicIndex = currentTopicIndex; topicIndex < state.topics.length; topicIndex += 1) {
+      const firstQuestionIndex = topicIndex === currentTopicIndex ? currentQuestionIndex + 1 : 0;
+      const questions = state.topics[topicIndex].questions;
+      for (let questionIndex = firstQuestionIndex; questionIndex < questions.length; questionIndex += 1) {
+        if (!state.solved.has(questions[questionIndex].id)) {
+          return { topicIndex, questionIndex };
+        }
+      }
+    }
+
+    return null;
   }
 
   function explainError(rawError) {
@@ -282,6 +312,11 @@
       state.solved.add(job.question.id);
       updateProgress();
       renderQuestionBank();
+
+      const nextQuestion = findNextUnsolvedQuestion();
+      if (nextQuestion) {
+        selectQuestion(nextQuestion.topicIndex, nextQuestion.questionIndex, { preserveOutput: true });
+      }
     } else {
       $('run-result').textContent = 'Not solved yet — check the hint';
       $('error-help').hidden = false;
