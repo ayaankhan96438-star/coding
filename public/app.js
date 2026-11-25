@@ -39,7 +39,11 @@ let solutionVisible = false;
 let autoAdvanceTimer = null;
 let autoCheckTimer = null;
 let autoCheckVersion = 0;
+let queryPreviewTimer = null;
+let queryPreviewVersion = 0;
+let queryPreviewVisible = false;
 const AUTO_CHECK_DELAY_MS = 750;
+const QUERY_PREVIEW_DELAY_MS = 350;
 let navigationVersion = 0;
 let currentTopicSlug = 'select-statement';
 
@@ -1155,9 +1159,75 @@ function render() {
   }
 }
 
+function cancelQueryPreview() {
+  queryPreviewVersion += 1;
+  if (queryPreviewTimer !== null) {
+    window.clearTimeout(queryPreviewTimer);
+    queryPreviewTimer = null;
+  }
+}
+
+/** Show the exact result columns returned by the user's SELECT / WITH query. */
+function renderQueryResultsInSchemaViewer(resultSets) {
+  const root = $('#schema-viewer');
+  const heading = $('#table-heading');
+  const tabularResults = Array.isArray(resultSets)
+    ? resultSets.filter((resultSet) => Array.isArray(resultSet?.columns) && Array.isArray(resultSet?.values))
+    : [];
+  if (!root || !tabularResults.length) return false;
+
+  if (heading) heading.textContent = 'Query result';
+  root.innerHTML = `
+    <section class="table-preview-unit query-result-preview">
+      <p class="table-caption">Result of your SQL query · showing selected columns only</p>
+      ${renderResultSets(tabularResults)}
+    </section>
+  `;
+  queryPreviewVisible = true;
+  return true;
+}
+
+/**
+ * Preview a complete query in an isolated database so typing never mutates the
+ * learner's working database. Invalid/incomplete SQL leaves the source table
+ * visible; SELECT results use sql.js's returned columns and rows verbatim.
+ */
+function scheduleQueryPreview() {
+  cancelQueryPreview();
+  const sql = String($('#query')?.value || '').trim();
+  if (!sql || !hasRequiredSemicolon(sql)) {
+    if (queryPreviewVisible) renderSchemaViewer();
+    return;
+  }
+
+  const previewVersion = queryPreviewVersion;
+  const selectedQuestionId = currentQuestionId;
+  queryPreviewTimer = window.setTimeout(async () => {
+    queryPreviewTimer = null;
+    let previewDb;
+    try {
+      previewDb = await createFreshDatabase();
+      const results = previewDb.exec(sql);
+      if (previewVersion !== queryPreviewVersion
+        || currentQuestionId !== selectedQuestionId
+        || String($('#query')?.value || '').trim() !== sql) return;
+
+      if (!renderQueryResultsInSchemaViewer(results) && queryPreviewVisible) {
+        renderSchemaViewer();
+      }
+    } catch {
+      // Keep the full source table visible while the learner is correcting SQL.
+      if (previewVersion === queryPreviewVersion && queryPreviewVisible) renderSchemaViewer();
+    } finally {
+      previewDb?.close();
+    }
+  }, QUERY_PREVIEW_DELAY_MS);
+}
+
 function renderSchemaViewer() {
   const root = $('#schema-viewer');
   if (!root || !db) return;
+  queryPreviewVisible = false;
   try {
     const tableResult = db.exec("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name;")[0];
     const availableTables = tableResult ? tableResult.values.map((row) => String(row[0])) : [];
@@ -1225,7 +1295,7 @@ async function init() {
 }
 
 
-async function openLesson(index, shouldScroll = true, preferredQuestionId = null, preferredTopicSlug = null) {
+async function openLesson(index, shouldScroll = true, preferredQuestionId = null, preferredTopicSlug = null, checkExistingDraft = false) {
   const requestedIndex = Math.max(0, Math.min(lessons.length - 1, Number(index) || 0));
   if (!isLessonUnlocked(requestedIndex)) return;
   const message = $('#lesson-access-message');
@@ -1299,6 +1369,11 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
         answerMessage.textContent = 'Your previous SQL is still in the shared editor. Select the query and delete it yourself before writing this answer.';
       } else answerMessage.hidden = true;
     }
+    // The table preview always reflects the current shared SQL when it is a valid
+    // result-producing query. A manually selected question also re-checks the
+    // retained SQL against that selected question (never the question left behind).
+    scheduleQueryPreview();
+    if (checkExistingDraft && $('#query')?.value.trim()) scheduleAutoCheck();
   } catch (error) {
     if (requestId !== openRequest) return;
     console.error(error);
@@ -1336,7 +1411,7 @@ function selectQuestion(id) {
   const targetTopicSlug = belongsToActiveTopic ? currentTopicSlug : getDefaultTopicForLesson(match.lessonIndex).slug;
   // Selecting a task changes only the prompt/database context. The one shared SQL
   // editor and its current text are intentionally retained for the learner to edit.
-  openLesson(targetLessonIndex, false, id, targetTopicSlug);
+  openLesson(targetLessonIndex, false, id, targetTopicSlug, true);
 }
 
 function runQuery() {
@@ -1354,9 +1429,9 @@ function runQuery() {
     const results = db.exec(sql);
     saveQueryHistory(sql, 'Lesson practice', true, 'Executed successfully');
     output.innerHTML = renderResultSets(results);
-    // Refresh after every successful statement so INSERT/UPDATE/DELETE and
-    // CREATE TABLE changes are immediately reflected in the live schema panel.
-    renderSchemaViewer();
+    // SELECT results replace the full-table preview with exactly the columns
+    // returned by the user's query. Non-result statements keep the schema view.
+    if (!renderQueryResultsInSchemaViewer(results)) renderSchemaViewer();
     status.textContent = '✓ Query executed successfully. Database previews refreshed.';
     status.className = 'status good';
   } catch (error) {
@@ -1867,6 +1942,7 @@ document.addEventListener('input', (event) => {
   if (event.target?.id === 'query') {
     saveSharedEditorDraft(event.target.value);
     scheduleAutoCheck();
+    scheduleQueryPreview();
   }
 });
 

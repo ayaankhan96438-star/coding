@@ -138,11 +138,37 @@ class SqlQuestionAuditTests(unittest.TestCase):
             correct_db.close()
             wrong_db.close()
 
+    def test_select_projection_returns_only_requested_columns_for_preview(self):
+        connection = sqlite3.connect(':memory:')
+        try:
+            connection.executescript(SAMPLE_SQL)
+            cases = (
+                ('SELECT student FROM school;', ['student']),
+                ('SELECT teacher FROM school;', ['teacher']),
+                ('SELECT student, marks FROM school;', ['student', 'marks']),
+                ('SELECT * FROM school;', ['id', 'student', 'teacher', 'marks', 'class']),
+            )
+            for sql, expected_columns in cases:
+                cursor = connection.execute(sql)
+                actual_columns = [column[0] for column in cursor.description]
+                self.assertEqual(actual_columns, expected_columns, sql)
+                self.assertEqual(len(cursor.fetchall()), 8, sql)
+        finally:
+            connection.close()
+
     def test_practice_interaction_contracts_are_present(self):
         app = (ROOT / 'public' / 'app.js').read_text(encoding='utf-8')
         css = (ROOT / 'public' / 'course.css').read_text(encoding='utf-8')
         site_css = (ROOT / 'public' / 'style.css').read_text(encoding='utf-8')
-        self.assertIn("if (event.target?.id === 'query') {\n    saveSharedEditorDraft(event.target.value);\n    scheduleAutoCheck();\n  }", app)
+        input_listener = app[app.index("document.addEventListener('input'"):app.index("document.addEventListener('click'")]
+        self.assertIn("if (event.target?.id === 'query') {\n    saveSharedEditorDraft(event.target.value);\n    scheduleAutoCheck();\n    scheduleQueryPreview();\n  }", input_listener)
+        self.assertIn('function scheduleQueryPreview()', app)
+        self.assertIn('const results = previewDb.exec(sql);', app)
+        self.assertIn('renderQueryResultsInSchemaViewer(results)', app)
+        preview_fn = app[app.index('function renderQueryResultsInSchemaViewer('):app.index('function scheduleQueryPreview(')]
+        self.assertIn('resultSet?.columns', preview_fn)
+        self.assertIn('resultSet?.values', preview_fn)
+        self.assertIn("heading.textContent = 'Query result';", preview_fn)
         self.assertIn("event.target?.id === 'query' && event.key === 'Enter' && (event.ctrlKey || event.metaKey) && event.shiftKey", app)
         self.assertIn("// Plain Enter is deliberately left alone", app)
         self.assertNotIn("textarea.value = '';", app, 'solving must not clear the learner query')
@@ -160,6 +186,13 @@ class SqlQuestionAuditTests(unittest.TestCase):
         self.assertIn('scheduleAutoAdvance(question.id);', complete_fn)
         self.assertNotIn('getActiveFreeTaskSolvedCount() === getActiveFreeTaskCount()', complete_fn, 'finishing a topic must still auto-advance to the next unanswered course question')
         self.assertIn("const preferredQuestion = availableQuestions.find((question) => question.id === preferredQuestionId) || null;", app)
+        select_question_fn = app[app.index('function selectQuestion(id)'):app.index('function runQuery()')]
+        self.assertIn('openLesson(targetLessonIndex, false, id, targetTopicSlug, true);', select_question_fn)
+        self.assertIn('checkExistingDraft = false', app)
+        self.assertIn('if (checkExistingDraft && $(\'#query\')?.value.trim()) scheduleAutoCheck();', app)
+        submit_fn = app[app.index('async function submitAnswer()'):app.index('function toggleHint()')]
+        self.assertIn('const selection = getQuestionById(currentQuestionId);', submit_fn)
+        self.assertIn('if (currentQuestionId !== questionId || $(\'#query\')?.value.trim() !== sql)', submit_fn)
         self.assertIn("if (message) {\n          message.hidden = false;\n          message.className = 'answer-message';", app)
         self.assertIn('This question is already completed in this session. You can practise it again.', app)
         self.assertIn(".task-choice.locked .task-text {\n  filter: blur(3px);", css)
