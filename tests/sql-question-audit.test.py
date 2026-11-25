@@ -163,12 +163,28 @@ class SqlQuestionAuditTests(unittest.TestCase):
         input_listener = app[app.index("document.addEventListener('input'"):app.index("document.addEventListener('click'")]
         self.assertIn("if (event.target?.id === 'query') {\n    saveSharedEditorDraft(event.target.value);\n    scheduleAutoCheck();\n    scheduleQueryPreview();\n  }", input_listener)
         self.assertIn('function scheduleQueryPreview()', app)
-        self.assertIn('const results = previewDb.exec(sql);', app)
+        self.assertIn("import { cloneDatabase, createFreshDatabase, loadSqlModule }", app)
+        self.assertIn('const QUERY_PREVIEW_DELAY_MS = 20;', app)
+        self.assertIn('function isSingleReadOnlySelect(sql)', app)
+        self.assertIn('resultSets = sourceDb.exec(sql);', app, 'simple SELECT previews must reuse the loaded database synchronously')
+        self.assertIn('isolatedDb = await cloneDatabase(sourceDb);', app, 'mutating/multi-statement previews must use a fast isolated snapshot')
+        self.assertIn('renderSchemaViewer(previewSource, true);', app)
+        self.assertIn('function renderSchemaViewer(sourceDb = db, isQueryPreview = false)', app)
+        self.assertIn('queryPreviewVisible = Boolean(isQueryPreview);', app)
         self.assertIn('renderQueryResultsInSchemaViewer(results)', app)
-        preview_fn = app[app.index('function renderQueryResultsInSchemaViewer('):app.index('function scheduleQueryPreview(')]
+        preview_fn = app[app.index('function renderQueryResultsInSchemaViewer('):app.index('function isSingleReadOnlySelect(')]
         self.assertIn('resultSet?.columns', preview_fn)
         self.assertIn('resultSet?.values', preview_fn)
         self.assertIn("heading.textContent = 'Query result';", preview_fn)
+        preview_schedule = app[app.index('function scheduleQueryPreview('):app.index('function renderSchemaViewer(')]
+        self.assertNotIn('createFreshDatabase(', preview_schedule, 'preview must not rebuild/reseed the whole sample database on each keystroke')
+        self.assertIn('if (!hasRequiredSemicolon(sql)) return;', preview_schedule, 'incomplete SQL must leave the last successful preview visible')
+        self.assertIn('if (!queryPreviewVisible) renderSchemaViewer();', app, 'question rerenders must not flash the full source table over the active query result')
+        open_lesson = app[app.index('async function openLesson('):app.index('function setPracticeEnabled(')]
+        self.assertIn('await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)', open_lesson)
+        self.assertLess(open_lesson.index('await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)'), open_lesson.index('if (!retainedPreviewShown) renderSchemaViewer();'))
+        database_source = (ROOT / 'public' / 'database.js').read_text(encoding='utf-8')
+        self.assertIn('export async function cloneDatabase(sourceDb)', database_source)
         self.assertIn("event.target?.id === 'query' && event.key === 'Enter' && (event.ctrlKey || event.metaKey) && event.shiftKey", app)
         self.assertIn("// Plain Enter is deliberately left alone", app)
         self.assertNotIn("textarea.value = '';", app, 'solving must not clear the learner query')

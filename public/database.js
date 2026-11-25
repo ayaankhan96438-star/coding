@@ -142,3 +142,13 @@ export async function createFreshDatabase() {
     throw error;
   }
 }
+
+
+/** Create a fast isolated snapshot of the current database for safe query previews. */
+export async function cloneDatabase(sourceDb) {
+  if (!sourceDb || typeof sourceDb.export !== 'function') {
+    throw new TypeError('A live SQL database is required to create a preview snapshot.');
+  }
+  const SQL = await loadSqlModule();
+  return new SQL.Database(sourceDb.export());
+}

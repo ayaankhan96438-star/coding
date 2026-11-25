@@ -1,5 +1,5 @@
 import { isLessonAccessible, isUnlocked } from './access.js?v=20261124-course-navigation-any-order-02';
-import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql-preload-04';
+import { cloneDatabase, createFreshDatabase, loadSqlModule } from './database.js?v=20261125-fast-query-preview-01';
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261124-refresh-preserve-progress-01';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
@@ -43,7 +43,7 @@ let queryPreviewTimer = null;
 let queryPreviewVersion = 0;
 let queryPreviewVisible = false;
 const AUTO_CHECK_DELAY_MS = 750;
-const QUERY_PREVIEW_DELAY_MS = 350;
+const QUERY_PREVIEW_DELAY_MS = 20;
 let navigationVersion = 0;
 let currentTopicSlug = 'select-statement';
 
@@ -1134,7 +1134,9 @@ function render() {
   if (queryEditor) queryEditor.value = getSavedQuestionDraft(currentQuestionId);
   renderInteractiveTutorial();
   renderQuestionList();
-  renderSchemaViewer();
+  // Keep the last valid shared-query result visible while a question is
+  // re-rendered. openLesson will refresh it against the newly loaded database.
+  if (!queryPreviewVisible) renderSchemaViewer();
   refreshFinishLessonButton();
 
   // The editor is re-rendered on every task navigation, so bind the reset action
@@ -1187,56 +1189,90 @@ function renderQueryResultsInSchemaViewer(resultSets) {
   return true;
 }
 
-/**
- * Preview a complete query in an isolated database so typing never mutates the
- * learner's working database. Invalid/incomplete SQL leaves the source table
- * visible; SELECT results use sql.js's returned columns and rows verbatim.
+/** Identify simple, single-statement SELECT queries that are safe to preview
+ * directly against the already-loaded database without cloning or reseeding it.
  */
+function isSingleReadOnlySelect(sql) {
+  const normalized = String(sql || '').trim();
+  if (!/^SELECT\b/i.test(normalized)) return false;
+  const withoutTerminator = normalized.replace(/;\s*$/, '');
+  // Only a single SELECT is safe to run against the learner's working DB.
+  // Multiple statements and all writes run against an isolated snapshot.
+  return !withoutTerminator.includes(';');
+}
+
+async function applyQueryPreview(sql, previewVersion = queryPreviewVersion, selectedQuestionId = currentQuestionId) {
+  const sourceDb = db;
+  if (!sourceDb || !sql || !hasRequiredSemicolon(sql)) return false;
+
+  let isolatedDb = null;
+  try {
+    let resultSets;
+    let previewSource = sourceDb;
+    if (isSingleReadOnlySelect(sql)) {
+      // SELECT previews are synchronous and reuse the loaded database. This
+      // avoids downloading/re-seeding SQL.js databases on every editor input.
+      resultSets = sourceDb.exec(sql);
+    } else {
+      // DML/DDL previews run against a fast snapshot so typing never mutates
+      // the real task database or contaminates answer validation.
+      isolatedDb = await cloneDatabase(sourceDb);
+      previewSource = isolatedDb;
+      resultSets = isolatedDb.exec(sql);
+    }
+
+    if (previewVersion !== queryPreviewVersion
+      || currentQuestionId !== selectedQuestionId
+      || String($('#query')?.value || '').trim() !== sql) return false;
+
+    if (!renderQueryResultsInSchemaViewer(resultSets)) {
+      // Non-result statements still get a preview of the changed tables. Mark
+      // it as an active query preview so navigation does not flash base tables.
+      renderSchemaViewer(previewSource, true);
+    }
+    return true;
+  } catch {
+    // Keep the last valid preview on screen while the learner corrects SQL.
+    // Never flash the unfiltered source table between preview attempts.
+    return false;
+  } finally {
+    isolatedDb?.close();
+  }
+}
+
+/** Update the preview quickly without rebuilding the whole sample database. */
 function scheduleQueryPreview() {
   cancelQueryPreview();
   const sql = String($('#query')?.value || '').trim();
-  if (!sql || !hasRequiredSemicolon(sql)) {
+  if (!sql) {
     if (queryPreviewVisible) renderSchemaViewer();
     return;
   }
+  // Preserve the last successful preview while a query is incomplete or being
+  // edited. Restore the source table only when the user explicitly clears it.
+  if (!hasRequiredSemicolon(sql)) return;
 
   const previewVersion = queryPreviewVersion;
   const selectedQuestionId = currentQuestionId;
-  queryPreviewTimer = window.setTimeout(async () => {
+  queryPreviewTimer = window.setTimeout(() => {
     queryPreviewTimer = null;
-    let previewDb;
-    try {
-      previewDb = await createFreshDatabase();
-      const results = previewDb.exec(sql);
-      if (previewVersion !== queryPreviewVersion
-        || currentQuestionId !== selectedQuestionId
-        || String($('#query')?.value || '').trim() !== sql) return;
-
-      if (!renderQueryResultsInSchemaViewer(results) && queryPreviewVisible) {
-        renderSchemaViewer();
-      }
-    } catch {
-      // Keep the full source table visible while the learner is correcting SQL.
-      if (previewVersion === queryPreviewVersion && queryPreviewVisible) renderSchemaViewer();
-    } finally {
-      previewDb?.close();
-    }
+    applyQueryPreview(sql, previewVersion, selectedQuestionId);
   }, QUERY_PREVIEW_DELAY_MS);
 }
 
-function renderSchemaViewer() {
+function renderSchemaViewer(sourceDb = db, isQueryPreview = false) {
   const root = $('#schema-viewer');
-  if (!root || !db) return;
-  queryPreviewVisible = false;
+  if (!root || !sourceDb) return;
+  queryPreviewVisible = Boolean(isQueryPreview);
   try {
-    const tableResult = db.exec("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name;")[0];
+    const tableResult = sourceDb.exec("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name;")[0];
     const availableTables = tableResult ? tableResult.values.map((row) => String(row[0])) : [];
     const relevantTables = activeTableNames.filter((name) => availableTables.includes(name));
 
     if (relevantTables.length) {
       root.innerHTML = relevantTables.map((tableName) => {
         const safeIdentifier = `"${tableName.replace(/"/g, '""')}"`;
-        const preview = db.exec(`SELECT * FROM ${safeIdentifier} LIMIT 10;`)[0];
+        const preview = sourceDb.exec(`SELECT * FROM ${safeIdentifier} LIMIT 10;`)[0];
         const tableHtml = preview ? `<table><thead><tr>${preview.columns.map((column) => `<th>${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${preview.values.map((row) => `<tr>${row.map((value) => `<td>${escapeHtml(displayValue(value))}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '<p class="task-empty">This table has no rows yet.</p>';
         return `<section class="table-preview-unit"><p class="table-caption">Table: ${escapeHtml(tableName)}</p>${tableHtml}</section>`;
       }).join('');
@@ -1258,7 +1294,7 @@ function renderSchemaViewer() {
       root.innerHTML = '<p class="task-empty">No sample table is available for this task.</p>';
       return;
     }
-    const result = db.exec(`SELECT * FROM "${fallback.replace(/"/g, '""')}" LIMIT 10;`)[0];
+    const result = sourceDb.exec(`SELECT * FROM "${fallback.replace(/"/g, '""')}" LIMIT 10;`)[0];
     root.innerHTML = result ? `<section class="table-preview-unit"><p class="table-caption">Table: ${escapeHtml(fallback)}</p><table><thead><tr>${result.columns.map((column) => `<th>${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${result.values.map((row) => `<tr>${row.map((value) => `<td>${escapeHtml(displayValue(value))}</td>`).join('')}</tr>`).join('')}</tbody></table></section>` : '<p class="task-empty">No sample table is available.</p>';
     const heading = $('#table-heading');
     if (heading) heading.textContent = `Table: ${fallback}`;
@@ -1303,6 +1339,7 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
   saveCurrentQuestionDraft();
   cancelAutoAdvance();
   cancelAutoCheck();
+  cancelQueryPreview();
   navigationVersion += 1;
   currentLessonIndex = requestedIndex;
   const requestedTopic = preferredTopicSlug ? TOPIC_BY_SLUG[preferredTopicSlug] : null;
@@ -1350,7 +1387,11 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
     }
     if (db) db.close();
     db = freshDb;
-    renderSchemaViewer();
+    const retainedSql = String($('#query')?.value || '').trim();
+    const retainedPreviewShown = retainedSql && hasRequiredSemicolon(retainedSql)
+      ? await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)
+      : false;
+    if (!retainedPreviewShown) renderSchemaViewer();
     setPracticeEnabled(true);
     if (answerMessage) {
       const selectedProgress = currentQuestionId ? getQuestionProgress(currentQuestionId) : null;
@@ -1369,10 +1410,9 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
         answerMessage.textContent = 'Your previous SQL is still in the shared editor. Select the query and delete it yourself before writing this answer.';
       } else answerMessage.hidden = true;
     }
-    // The table preview always reflects the current shared SQL when it is a valid
-    // result-producing query. A manually selected question also re-checks the
-    // retained SQL against that selected question (never the question left behind).
-    scheduleQueryPreview();
+    // The retained shared SQL has already been re-applied to the new database
+    // above, before any source-table fallback can flash on screen. A manually
+    // selected question also re-checks it against that selected question.
     if (checkExistingDraft && $('#query')?.value.trim()) scheduleAutoCheck();
   } catch (error) {
     if (requestId !== openRequest) return;
