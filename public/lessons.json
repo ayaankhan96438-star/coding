@@ -128,11 +128,11 @@
         "text": "Find the student with a row id of 6.",
         "free": true,
         "type": "query",
-        "solution": "SELECT student FROM school WHERE id = 6;",
+        "solution": "SELECT id, student FROM school WHERE id = 6;",
         "orderMatters": false,
         "hint": "Use WHERE id = 6 to find the student in row 6.",
-        "explanation": "The condition id = 6 selects only the row whose id is 6. The student in that row is Sara.",
-        "example": "SELECT student FROM school WHERE id = 6"
+        "explanation": "The condition id = 6 selects only the row whose id is 6. The result shows both the id (6) and the student name (Ayaan).",
+        "example": "SELECT id, student FROM school WHERE id = 6"
       },
       {
         "id": "l3-where-q2",

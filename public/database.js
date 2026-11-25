@@ -12,7 +12,7 @@ INSERT INTO school VALUES
   (3,'Kabir','Neha',68,5),
   (4,'Meera','Imran',74,6),
   (5,'Rohan','Ravi',88,6),
-  (6,'Sara','Neha',95,6),
+  (6,'Ayaan','Neha',95,6),
   (7,'Arjun','Imran',57,5),
   (8,'Isha','Ravi',79,6);
 
