@@ -153,8 +153,12 @@ class SqlQuestionAuditTests(unittest.TestCase):
         self.assertIn('sharedEditorDraft = getSharedEditorDraft(null, questionDrafts, questionId, legacyFallback);', app)
         self.assertIn('if (!hasRequiredSemicolon(sql))', app)
         self.assertIn('!hasRequiredSemicolon(sql)', app)
-        self.assertIn('getNextUnsolvedQuestion(', app)
+        self.assertIn('getNextUnsolvedQuestionAfter(', app)
+        self.assertIn('const allCourseQuestions = lessons.flatMap((lesson) => lesson.questions);', app)
         self.assertIn('getSavedQuestionDraft(currentQuestionId)', app)
+        complete_fn = app[app.index('function completeCorrectAnswer('):app.index('function scheduleAutoCheck(')]
+        self.assertIn('scheduleAutoAdvance(question.id);', complete_fn)
+        self.assertNotIn('getActiveFreeTaskSolvedCount() === getActiveFreeTaskCount()', complete_fn, 'finishing a topic must still auto-advance to the next unanswered course question')
         self.assertIn("const preferredQuestion = availableQuestions.find((question) => question.id === preferredQuestionId) || null;", app)
         self.assertIn("if (message) {\n          message.hidden = false;\n          message.className = 'answer-message';", app)
         self.assertIn('This question is already completed in this session. You can practise it again.', app)

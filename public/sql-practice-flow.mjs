@@ -10,6 +10,24 @@ export function getNextUnsolvedQuestion(questions, isUnlocked, getStatus) {
   ) || null;
 }
 
+/**
+ * Find the next unanswered accessible question after the one just completed.
+ * Search in course order and wrap once, so solving out of order always advances
+ * to the next unanswered question instead of stopping at a topic boundary.
+ */
+export function getNextUnsolvedQuestionAfter(questions, currentQuestionId, isUnlocked, getStatus) {
+  const list = Array.isArray(questions) ? questions : [];
+  if (!list.length) return null;
+  const currentIndex = list.findIndex((question) => question?.id === currentQuestionId);
+  const startIndex = currentIndex >= 0 ? currentIndex : -1;
+
+  for (let offset = 1; offset <= list.length; offset += 1) {
+    const question = list[(startIndex + offset + list.length) % list.length];
+    if (Boolean(isUnlocked?.(question)) && getStatus?.(question.id) !== 'solved') return question;
+  }
+  return null;
+}
+
 /** Return the first accessible question in a topic, regardless of completion. */
 export function getFirstAvailableQuestion(questions, isAvailable) {
   return (Array.isArray(questions) ? questions : []).find((question) => Boolean(isAvailable?.(question))) || null;

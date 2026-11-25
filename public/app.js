@@ -3,7 +3,7 @@ import { createFreshDatabase, loadSqlModule } from './database.js?v=20261122-sql
 import { saveQueryHistory } from './tools.js?v=20261122-platform-tracks-sequence-02';
 import { resetSingleTaskProgress, wasBrowserReload } from './progress-state.mjs?v=20261124-refresh-preserve-progress-01';
 import { compareResults } from './sql-answer-checker.mjs?v=20261124-answer-based-checker-03';
-import { getFirstAvailableQuestion, getNextCourseTopic, getNextUnsolvedQuestion, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261124-next-topic-navigation-02';
+import { getFirstAvailableQuestion, getNextCourseTopic, getNextUnsolvedQuestionAfter, getSharedEditorDraft, hasRequiredSemicolon, normalizeSharedEditorDraft } from './sql-practice-flow.mjs?v=20261125-global-auto-advance-01';
 
 const PROGRESS_KEY = 'querypath-progress-v2';
 const GAMIFICATION_KEY = 'querypath-gamification-v1';
@@ -671,6 +671,19 @@ function getDefaultTopicForLesson(index) {
   if (index === 4 && TOPIC_BY_SLUG['logical-operators']) return TOPIC_BY_SLUG['logical-operators'];
   if (index === 9 && TOPIC_BY_SLUG['creating-tables']) return TOPIC_BY_SLUG['creating-tables'];
   return SQL_TOPICS.find((topic) => topic.lessonIndex === index) || SQL_TOPICS[0];
+}
+
+function getTopicSlugForQuestion(questionId, lessonIndex) {
+  const explicitlyMappedTopic = SQL_TOPICS.find((topic) =>
+    topic.lessonIndex === lessonIndex && Array.isArray(topic.questionIds) && topic.questionIds.includes(questionId)
+  );
+  if (explicitlyMappedTopic) return explicitlyMappedTopic.slug;
+
+  const activeTopic = TOPIC_BY_SLUG[currentTopicSlug];
+  if (activeTopic?.lessonIndex === lessonIndex && !Array.isArray(activeTopic.questionIds)) {
+    return activeTopic.slug;
+  }
+  return getDefaultTopicForLesson(lessonIndex).slug;
 }
 
 function renderInteractiveTutorial() {
@@ -1470,10 +1483,9 @@ function completeCorrectAnswer(question, sql) {
   }
 
   if (alreadySolved) return;
-  if (getActiveFreeTaskCount() > 0 && getActiveFreeTaskSolvedCount() === getActiveFreeTaskCount()) {
-    feedbackMessageForCompletion();
-    return;
-  }
+  // Do not stop at the end of a lesson/topic. Continue to the next unanswered
+  // free question anywhere in the course, preserving the learner's one shared
+  // SQL editor text for manual deletion/editing.
   scheduleAutoAdvance(question.id);
 }
 
@@ -1515,8 +1527,14 @@ function scheduleAutoAdvance(questionId) {
   cancelAutoAdvance();
   const selection = getQuestionById(questionId);
   if (!selection) return;
-  const nextQuestion = getNextUnsolvedQuestion(
-    getActiveTopicQuestions(),
+
+  // Search all 100 questions in canonical lesson order, not only the current
+  // topic. This keeps automatic progression working when a topic ends or when
+  // the learner has solved questions out of order. Premium questions are skipped.
+  const allCourseQuestions = lessons.flatMap((lesson) => lesson.questions);
+  const nextQuestion = getNextUnsolvedQuestionAfter(
+    allCourseQuestions,
+    questionId,
     isUnlocked,
     (id) => getQuestionProgress(id).status
   );
@@ -1525,17 +1543,20 @@ function scheduleAutoAdvance(questionId) {
     if (status) {
       status.hidden = false;
       status.className = 'answer-message good';
-      status.textContent = 'All free questions in this topic are complete. You can choose any other lesson from the Lessons menu.';
+      status.textContent = 'All free questions in the course are complete. You can revisit any question or review a lesson.';
     }
     refreshFinishLessonButton();
     return;
   }
 
+  const nextSelection = getQuestionById(nextQuestion.id);
+  if (!nextSelection) return;
+  const nextTopicSlug = getTopicSlugForQuestion(nextQuestion.id, nextSelection.lessonIndex);
   const expectedNavigationVersion = navigationVersion;
   autoAdvanceTimer = window.setTimeout(() => {
     autoAdvanceTimer = null;
     if (currentQuestionId !== questionId || navigationVersion !== expectedNavigationVersion) return;
-    selectQuestion(nextQuestion.id);
+    openLesson(nextSelection.lessonIndex, false, nextQuestion.id, nextTopicSlug);
   }, 900);
 }
 

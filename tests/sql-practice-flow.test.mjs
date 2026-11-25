@@ -3,6 +3,7 @@ import {
   getFirstAvailableQuestion,
   getNextCourseTopic,
   getNextUnsolvedQuestion,
+  getNextUnsolvedQuestionAfter,
   getSharedEditorDraft,
   hasRequiredSemicolon,
   normalizeSharedEditorDraft
@@ -33,6 +34,34 @@ const nextAfterQ2 = getNextUnsolvedQuestion(
 assert.equal(nextAfterQ2.id, 'q4', 'after solving q2, the app skips already-solved q3 and opens q4');
 solved.add('q4');
 assert.equal(getNextUnsolvedQuestion(questions, () => true, (id) => solved.has(id) ? 'solved' : 'not started'), null);
+
+// Auto-advance must continue across topic/lesson boundaries and skip already-solved or Premium questions.
+const courseQuestions = [
+  { id: 'lesson1-q1', free: true },
+  { id: 'lesson1-q2', free: true },
+  { id: 'lesson1-q3', free: false },
+  { id: 'lesson2-q1', free: true },
+  { id: 'lesson2-q2', free: true },
+  { id: 'lesson3-q1', free: true }
+];
+const courseSolved = new Set(['lesson1-q1', 'lesson1-q3', 'lesson2-q1']);
+assert.equal(
+  getNextUnsolvedQuestionAfter(courseQuestions, 'lesson1-q2', (q) => q.free, (id) => courseSolved.has(id) ? 'solved' : 'not started').id,
+  'lesson2-q2',
+  'solving the last free question in a topic continues to the next unanswered free question across lessons'
+);
+courseSolved.add('lesson2-q2');
+assert.equal(
+  getNextUnsolvedQuestionAfter(courseQuestions, 'lesson2-q2', (q) => q.free, (id) => courseSolved.has(id) ? 'solved' : 'not started').id,
+  'lesson3-q1',
+  'advance continues across lesson boundaries and skips Premium questions'
+);
+const wrapSolved = new Set(['lesson1-q1', 'lesson1-q2', 'lesson2-q1', 'lesson2-q2', 'lesson3-q1']);
+assert.equal(
+  getNextUnsolvedQuestionAfter(courseQuestions, 'lesson3-q1', (q) => q.free, (id) => wrapSolved.has(id) ? 'solved' : 'not started'),
+  null,
+  'returns null only after every accessible free course question is solved'
+);
 
 const courseTopics = [{ slug: 'select' }, { slug: 'where' }, { slug: 'like' }, { slug: 'order' }];
 assert.equal(getNextCourseTopic(courseTopics, 'where').slug, 'like', 'Continue works even when the current topic is not complete');
