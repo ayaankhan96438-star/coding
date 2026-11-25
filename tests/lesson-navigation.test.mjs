@@ -11,7 +11,11 @@ assert.equal(isUnlocked({ free: false }), false, 'Premium questions remain locke
 
 const app = readFileSync(new URL('../public/app.js', import.meta.url), 'utf8');
 const lessons = JSON.parse(readFileSync(new URL('../public/lessons.json', import.meta.url), 'utf8'));
-const allQuestionIds = new Set(lessons.flatMap((lesson) => lesson.questions.map((question) => question.id)));
+const filteringQuestions = JSON.parse(readFileSync(new URL('../public/filtering-questions.json', import.meta.url), 'utf8'));
+assert.equal(lessons.length, 10, 'course has exactly ten lessons');
+assert.ok(lessons.every((lesson) => lesson.questions.length === 10), 'every lesson has exactly ten questions');
+assert.equal(filteringQuestions.length, 24, 'additional Filtering questions are kept in a separate bank');
+const allQuestionIds = new Set([...lessons.flatMap((lesson) => lesson.questions.map((question) => question.id)), ...filteringQuestions.map((question) => question.id)]);
 for (const match of app.matchAll(/questionIds:\s*\[([^\]]+)\]/g)) {
   const ids = [...match[1].matchAll(/'([^']+)'/g)].map((entry) => entry[1]);
   for (const id of ids) assert.ok(allQuestionIds.has(id), `topic references existing question ${id}`);
@@ -21,7 +25,7 @@ assert.match(app, /const refreshedByBrowser = wasBrowserReload\(window\.performa
 assert.match(app, /getFirstAvailableQuestion\(/, 'refresh should choose the first available question in the current topic');
 assert.match(app, /getNextCourseTopic\(SQL_TOPICS, currentTopicSlug\)/, 'next topic navigation is independent of completion');
 assert.match(app, /if \(requestId !== openRequest\) return;\s+if \(!retainedPreviewShown\) renderSchemaViewer\(\);/, 'a stale async preview cannot overwrite a newly selected topic');
-assert.match(readFileSync(new URL('../legacy-pages/practice.html', import.meta.url), 'utf8'), /app\.js\?v=20261125-filtering-topic-navigation-03/, 'topic navigation fix gets a fresh browser asset URL');
+assert.match(readFileSync(new URL('../legacy-pages/practice.html', import.meta.url), 'utf8'), /app\.js\?v=20261125-filtering-bank-10x10-04/, 'topic navigation fix gets a fresh browser asset URL');
 assert.doesNotMatch(app, /Solve all \$\{getFreeTaskCount\(lesson\)\} free tasks before moving to the next lesson/, 'incomplete lesson does not block next-topic navigation');
 
 const basicStart = app.indexOf("{ title: 'Foundation · Basic SQL Queries'");

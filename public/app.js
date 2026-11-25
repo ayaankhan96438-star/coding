@@ -21,6 +21,7 @@ const LEVELS = [
   { level: 6, name: 'SQL Master', minXP: 1000 }
 ];
 let lessons = [];
+let filteringQuestions = [];
 let currentLessonIndex = 0;
 let currentQuestionId = null;
 let db = null;
@@ -106,13 +107,13 @@ function daysBetweenDateKeys(olderKey, newerKey) {
 function syncHistoricalXP() {
   // Existing solved questions receive their one-time XP when upgrading from the earlier course build.
   let changed = false;
-  lessons.forEach((lesson) => lesson.questions.forEach((question) => {
+  getAllCourseQuestions().forEach((question) => {
     if (getQuestionProgress(question.id).status === 'solved' && !gamificationData.awardedQuestionIds.includes(question.id)) {
       gamificationData.awardedQuestionIds.push(question.id);
       gamificationData.xp += XP_PER_QUESTION;
       changed = true;
     }
-  }));
+  });
   if (changed) saveGamification();
 }
 
@@ -142,11 +143,15 @@ function awardCorrectAnswer(question) {
 }
 
 function getCourseStats() {
-  const allQuestions = lessons.flatMap((lesson) => lesson.questions);
+  const allQuestions = getAllCourseQuestions();
   const solved = allQuestions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
-  const lessonsStarted = lessons.filter((lesson) => lesson.questions.some((question) => getQuestionProgress(question.id).status !== 'not started')).length;
-  const freeLessonsCompleted = lessons.filter((lesson) => lesson.questions.filter((question) => question.free).every((question) => getQuestionProgress(question.id).status === 'solved')).length;
-  return { solved, lessonsStarted, freeLessonsCompleted };
+  const freeTotal = allQuestions.filter((question) => isUnlocked(question)).length;
+  const lessonsStarted = lessons.filter((lesson, index) => getLessonQuestions(index).some((question) => getQuestionProgress(question.id).status !== 'not started')).length;
+  const freeLessonsCompleted = lessons.filter((lesson, index) => {
+    const freeQuestions = getLessonQuestions(index).filter((question) => isUnlocked(question));
+    return freeQuestions.length > 0 && freeQuestions.every((question) => getQuestionProgress(question.id).status === 'solved');
+  }).length;
+  return { solved, freeTotal, lessonsStarted, freeLessonsCompleted };
 }
 
 function getFreeTaskCount(lesson) {
@@ -170,7 +175,7 @@ function getAchievementState(stats) {
     { id: 'ten-queries', icon: '◈', title: 'Query Curious', detail: 'Solve 10 questions.', unlocked: stats.solved >= 10, progress: Math.min(stats.solved, 10), target: 10 },
     { id: 'five-lessons', icon: '▤', title: 'Path Explorer', detail: 'Start learning in 5 different lessons.', unlocked: stats.lessonsStarted >= 5, progress: Math.min(stats.lessonsStarted, 5), target: 5 },
     { id: 'quarter-way', icon: '◎', title: 'Data Pathfinder', detail: 'Solve 25 questions.', unlocked: stats.solved >= 25, progress: Math.min(stats.solved, 25), target: 25 },
-    { id: 'free-finish', icon: '★', title: 'Free Track Finisher', detail: 'Complete all 50 free questions.', unlocked: stats.solved >= 50, progress: Math.min(stats.solved, 50), target: 50 },
+    { id: 'free-finish', icon: '★', title: 'Free Track Finisher', detail: `Complete all ${stats.freeTotal} free questions.`, unlocked: stats.solved >= stats.freeTotal, progress: Math.min(stats.solved, stats.freeTotal), target: stats.freeTotal },
     { id: 'streak-three', icon: '🔥', title: 'Three-Day Spark', detail: 'Practice on 3 consecutive days.', unlocked: gamificationData.bestStreak >= 3, progress: Math.min(gamificationData.bestStreak, 3), target: 3 },
     { id: 'streak-seven', icon: '🏆', title: 'Week of Wisdom', detail: 'Practice on 7 consecutive days.', unlocked: gamificationData.bestStreak >= 7, progress: Math.min(gamificationData.bestStreak, 7), target: 7 }
   ];
@@ -190,7 +195,7 @@ function renderDashboard() {
   const levelEnd = nextLevel ? nextLevel.minXP : currentLevel.minXP + 1;
   const levelPercent = nextLevel ? Math.max(0, Math.min(100, Math.round(((gamificationData.xp - levelStart) / (levelEnd - levelStart)) * 100))) : 100;
   const stats = getCourseStats();
-  const solvedPercent = Math.round((stats.solved / 50) * 100);
+  const solvedPercent = stats.freeTotal ? Math.round((stats.solved / stats.freeTotal) * 100) : 0;
   const levelName = $('#dashboard-level-name');
   const levelTitle = $('#level-progress-title');
   const levelCaption = $('#level-progress-caption');
@@ -210,7 +215,7 @@ function renderDashboard() {
   } catch {}
   if (root) {
     root.innerHTML = `
-      <article class="dashboard-stat stat-completed"><span>QUESTIONS SOLVED</span><strong>${stats.solved}<small> / 50</small></strong><div class="mini-progress"><i style="width:${solvedPercent}%"></i></div><small>${solvedPercent}% of the free learning track</small></article>
+      <article class="dashboard-stat stat-completed"><span>QUESTIONS SOLVED</span><strong>${stats.solved}<small> / ${stats.freeTotal}</small></strong><div class="mini-progress"><i style="width:${solvedPercent}%"></i></div><small>${solvedPercent}% of the free learning track</small></article>
       <article class="dashboard-stat stat-xp"><span>TOTAL EXPERIENCE</span><strong>${gamificationData.xp.toLocaleString('en-IN')}<small> XP</small></strong><small>+${XP_PER_QUESTION} XP for each new solved question</small></article>
       <article class="dashboard-stat stat-streak"><span>DAILY STREAK</span><strong>${gamificationData.streak}<small> day${gamificationData.streak === 1 ? '' : 's'}</small></strong><small>Best streak: ${gamificationData.bestStreak} day${gamificationData.bestStreak === 1 ? '' : 's'}</small></article>
       <article class="dashboard-stat stat-current"><span>CURRENT LESSON</span><strong class="current-lesson-name">${escapeHtml(currentLessonTitle)}</strong><small>Your most recently opened lesson</small></article>
@@ -221,7 +226,7 @@ function renderDashboard() {
   const homeSolved = $('#home-solved');
   const homeXP = $('#home-xp');
   const homeStreak = $('#home-streak');
-  if (homeSolved) homeSolved.textContent = `${stats.solved} / 50`;
+  if (homeSolved) homeSolved.textContent = `${stats.solved} / ${stats.freeTotal}`;
   if (homeXP) homeXP.textContent = `${gamificationData.xp.toLocaleString('en-IN')} XP`;
   if (homeStreak) homeStreak.textContent = `${gamificationData.streak} days`;
 
@@ -254,16 +259,17 @@ function renderLessonsCatalog() {
   const root = $('#lesson-catalog');
   if (!root || !lessons.length) return;
   root.innerHTML = lessons.map((lesson, index) => {
-    const solved = lesson.questions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
-    const available = lesson.questions.filter((question) => isUnlocked(question)).length;
-    const percent = Math.round((solved / available) * 100);
+    const lessonQuestions = getLessonQuestions(index);
+    const solved = lessonQuestions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
+    const available = lessonQuestions.filter((question) => isUnlocked(question)).length;
+    const percent = available ? Math.round((solved / available) * 100) : 0;
     return `
       <article class="catalog-card">
         <div class="catalog-card-top"><span class="catalog-number">LESSON ${String(index + 1).padStart(2, '0')}</span><span class="catalog-status">${solved}/${available} free done</span></div>
         <h2>${escapeHtml(lesson.title)}</h2>
         <p>${escapeHtml(lesson.subtitle)}</p>
         <div class="catalog-progress"><span style="width:${percent}%"></span></div>
-        <div class="catalog-card-bottom"><small>${available} free · ${lesson.questions.length - available} premium locked</small><a class="page-button" href="practice.html?lesson=${index}">Open lesson <span aria-hidden="true">→</span></a></div>
+        <div class="catalog-card-bottom"><small>${available} free · ${lessonQuestions.length - available} premium locked</small><a class="page-button" href="practice.html?lesson=${index}">Open lesson <span aria-hidden="true">→</span></a></div>
       </article>
     `;
   }).join('');
@@ -352,7 +358,24 @@ function getQuestionById(id) {
       return { question: lessons[lessonIndex].questions[questionIndex], lessonIndex, questionIndex };
     }
   }
+  const filteringQuestionIndex = filteringQuestions.findIndex((question) => question.id === id);
+  if (filteringQuestionIndex !== -1) {
+    return {
+      question: filteringQuestions[filteringQuestionIndex],
+      lessonIndex: 4,
+      questionIndex: lessons[4].questions.length + filteringQuestionIndex
+    };
+  }
   return null;
+}
+
+function getLessonQuestions(lessonIndex) {
+  const baseQuestions = lessons[lessonIndex]?.questions || [];
+  return lessonIndex === 4 ? [...baseQuestions, ...filteringQuestions] : baseQuestions;
+}
+
+function getAllCourseQuestions() {
+  return lessons.flatMap((lesson, index) => getLessonQuestions(index));
 }
 
 function getQuestionProgress(id) {
@@ -434,7 +457,7 @@ function loadProgress() {
 
 function initializeProgressRecords() {
   const normalized = {};
-  lessons.forEach((lesson) => lesson.questions.forEach((question) => {
+  getAllCourseQuestions().forEach((question) => {
     const saved = progressData[question.id];
     normalized[question.id] = {
       status: saved?.status === 'solved' || saved?.status === 'attempted' ? saved.status : 'not started',
@@ -442,7 +465,7 @@ function initializeProgressRecords() {
       wrongAttempts: Number.isInteger(saved?.wrongAttempts) && saved.wrongAttempts > 0 ? saved.wrongAttempts : 0,
       updatedAt: typeof saved?.updatedAt === 'string' ? saved.updatedAt : null
     };
-  }));
+  });
   progressData = normalized;
   saveProgress();
 }
@@ -475,17 +498,18 @@ function recordAttempt(question, correct) {
 
 function updateProgress() {
   let solved = 0;
-  lessons.forEach((lesson) => lesson.questions.forEach((question) => {
+  getAllCourseQuestions().forEach((question) => {
     if (getQuestionProgress(question.id).status === 'solved') solved += 1;
-  }));
+  });
   const counter = $('#progress');
-  if (counter) counter.textContent = `${solved} / 100`;
+  if (counter) counter.textContent = `${solved} / ${getAllCourseQuestions().length}`;
   lessons.forEach((lesson, index) => {
-    const count = lesson.questions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
+    const lessonQuestions = getLessonQuestions(index);
+    const count = lessonQuestions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
     const fill = $(`#lesson-progress-${index}`);
     const label = $(`#lesson-progress-label-${index}`);
-    if (fill) fill.style.width = `${count * 10}%`;
-    if (label) label.textContent = `${count}/10 solved`;
+    if (fill) fill.style.width = `${lessonQuestions.length ? (count / lessonQuestions.length) * 100 : 0}%`;
+    if (label) label.textContent = `${count}/${lessonQuestions.length} solved`;
   });
   renderDashboard();
   if (document.body.dataset.page === 'practice') {
@@ -498,15 +522,16 @@ function nav() {
   const navRoot = $('#nav');
   if (!navRoot || !lessons.length) return;
   navRoot.innerHTML = lessons.map((item, index) => {
-    const solved = item.questions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
+    const lessonQuestions = getLessonQuestions(index);
+    const solved = lessonQuestions.filter((question) => getQuestionProgress(question.id).status === 'solved').length;
     const unlocked = isLessonUnlocked(index);
     return `
       <button type="button" class="lesson-link ${index === currentLessonIndex ? 'active' : ''} ${unlocked ? '' : 'locked'}" ${unlocked ? '' : 'disabled aria-disabled="true"'}
         aria-current="${index === currentLessonIndex ? 'page' : 'false'}"
         data-action="open-lesson" data-lesson-index="${index}">
         <span class="lesson-link-title">${String(index + 1).padStart(2, '0')}　${escapeHtml(item.title)}</span>
-        <span class="lesson-progress-track"><span id="lesson-progress-${index}" style="width:${solved * 10}%"></span></span>
-        <span class="lesson-progress-label" id="lesson-progress-label-${index}">${solved}/10 solved</span>
+        <span class="lesson-progress-track"><span id="lesson-progress-${index}" style="width:${lessonQuestions.length ? (solved / lessonQuestions.length) * 100 : 0}%"></span></span>
+        <span class="lesson-progress-label" id="lesson-progress-label-${index}">${solved}/${lessonQuestions.length} solved</span>
       </button>
     `;
   }).join('');
@@ -516,8 +541,9 @@ function renderSolutions() {
   const root = $('#solution-library');
   if (!root || !lessons.length) return;
 
-  const freeCount = lessons.reduce((total, lesson) => total + lesson.questions.filter((question) => isUnlocked(question)).length, 0);
-  const premiumCount = lessons.reduce((total, lesson) => total + lesson.questions.filter((question) => !isUnlocked(question)).length, 0);
+  const allQuestions = getAllCourseQuestions();
+  const freeCount = allQuestions.filter((question) => isUnlocked(question)).length;
+  const premiumCount = allQuestions.filter((question) => !isUnlocked(question)).length;
 
   root.innerHTML = `
     <div class="solutions-heading">
@@ -531,8 +557,9 @@ function renderSolutions() {
     </div>
     <div class="solution-lessons">
       ${lessons.map((lesson, lessonIndex) => {
-        const lessonFreeCount = lesson.questions.filter((question) => isUnlocked(question)).length;
-        const lessonPremiumCount = lesson.questions.length - lessonFreeCount;
+        const lessonQuestions = getLessonQuestions(lessonIndex);
+        const lessonFreeCount = lessonQuestions.filter((question) => isUnlocked(question)).length;
+        const lessonPremiumCount = lessonQuestions.length - lessonFreeCount;
         return `
           <details class="solution-lesson" ${lessonIndex === 0 ? 'open' : ''}>
             <summary>
@@ -540,7 +567,7 @@ function renderSolutions() {
               <span class="solution-lesson-meta">${lessonFreeCount} free · ${lessonPremiumCount} premium</span>
             </summary>
             <div class="solution-question-list">
-              ${lesson.questions.map((question, questionIndex) => {
+              ${lessonQuestions.map((question, questionIndex) => {
                 const unlocked = isUnlocked(question);
                 return `
                   <article class="solution-card ${unlocked ? 'solution-card-free' : 'solution-card-locked'}">
@@ -1647,7 +1674,7 @@ function scheduleAutoAdvance(questionId) {
   // Search all 100 questions in canonical lesson order, not only the current
   // topic. This keeps automatic progression working when a topic ends or when
   // the learner has solved questions out of order. Premium questions are skipped.
-  const allCourseQuestions = lessons.flatMap((lesson) => lesson.questions);
+  const allCourseQuestions = getAllCourseQuestions();
   const nextQuestion = getNextUnsolvedQuestionAfter(
     allCourseQuestions,
     questionId,
@@ -1865,7 +1892,11 @@ async function start() {
   // Fetch lesson data while Firebase restores the learner's account in parallel.
   const lessonsController = new AbortController();
   const lessonsTimeoutId = window.setTimeout(() => lessonsController.abort(), 15000);
-  const lessonsRequest = fetch(new URL('./lessons.json?v=20261124-course-navigation-any-order-02', document.baseURI), {
+  const lessonsRequest = fetch(new URL('./lessons.json?v=20261125-lessons-10x10-01', document.baseURI), {
+    cache: 'default',
+    signal: lessonsController.signal
+  }).catch((error) => ({ requestError: error }));
+  const filteringQuestionsRequest = fetch(new URL('./filtering-questions.json?v=20261125-filtering-bank-01', document.baseURI), {
     cache: 'default',
     signal: lessonsController.signal
   }).catch((error) => ({ requestError: error }));
@@ -1883,14 +1914,20 @@ async function start() {
     loadQuestionDrafts();
     let response;
     try {
-      const result = await lessonsRequest;
+      const [result, filteringResult] = await Promise.all([lessonsRequest, filteringQuestionsRequest]);
       if (result?.requestError) throw result.requestError;
+      if (filteringResult?.requestError) throw filteringResult.requestError;
       response = result;
+      if (!filteringResult.ok) throw new Error(`Could not load filtering-questions.json (HTTP ${filteringResult.status}). Make sure the complete Codeora ZIP was extracted into one folder.`);
+      filteringQuestions = await filteringResult.json();
+      if (!Array.isArray(filteringQuestions) || filteringQuestions.length !== 24 || filteringQuestions.some((question) => !question || typeof question.id !== 'string')) {
+        throw new Error('filtering-questions.json must contain the 24 additional Filtering & Conditions questions. Re-extract the complete Codeora ZIP into one folder.');
+      }
     } catch (error) {
       if (error.name === 'AbortError') {
-        throw new Error('Loading lessons.json timed out after 15 seconds. Check that the local server is running and that lessons.json is in the same folder as index.html.');
+        throw new Error('Loading course data timed out after 15 seconds. Check that the local server is running and that lessons.json and filtering-questions.json are both in the public folder.');
       }
-      throw new Error(`Could not request lessons.json: ${error.message}. Open Codeora through its local web server, not by double-clicking index.html.`);
+      throw new Error(`Could not load course data: ${error.message}. Open Codeora through its local web server, not by double-clicking index.html.`);
     } finally {
       window.clearTimeout(lessonsTimeoutId);
     }
@@ -1903,6 +1940,12 @@ async function start() {
     }
     if (!Array.isArray(lessons) || lessons.length !== 10 || lessons.some((item) => !Array.isArray(item.questions) || item.questions.length !== 10)) {
       throw new Error('lessons.json must contain exactly 10 lessons with 10 questions each. Re-extract the complete Codeora ZIP into one folder.');
+    }
+    const baseQuestionIds = new Set(lessons.flatMap((lesson) => lesson.questions.map((question) => question.id)));
+    const additionalQuestionIds = filteringQuestions.map((question) => question.id);
+    if (filteringQuestions.some((question) => baseQuestionIds.has(question.id) || typeof question.free !== 'boolean' || typeof question.text !== 'string' || typeof question.solution !== 'string')
+      || new Set(additionalQuestionIds).size !== filteringQuestions.length) {
+      throw new Error('filtering-questions.json contains duplicate or invalid question records. Re-extract the complete Codeora ZIP into one folder.');
     }
 
     initializeProgressRecords();

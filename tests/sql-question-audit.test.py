@@ -8,6 +8,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LESSONS = json.loads((ROOT / 'public' / 'lessons.json').read_text(encoding='utf-8'))
+FILTERING_QUESTIONS = json.loads((ROOT / 'public' / 'filtering-questions.json').read_text(encoding='utf-8'))
+ALL_QUESTIONS = [question for lesson in LESSONS for question in lesson['questions']] + FILTERING_QUESTIONS
+QUESTIONS_BY_ID = {question['id']: question for question in ALL_QUESTIONS}
 DATABASE_SOURCE = (ROOT / 'public' / 'database.js').read_text(encoding='utf-8')
 MATCH = re.search(r'const SAMPLE_DATABASE_SQL = `([\s\S]*?)`;', DATABASE_SOURCE)
 assert MATCH, 'Could not find the sample SQL database definition.'
@@ -24,16 +27,17 @@ def canonical_result_sets(result_sets):
 
 
 class SqlQuestionAuditTests(unittest.TestCase):
-    def test_course_has_ten_lessons_and_filtering_topics_have_ten_questions_each(self):
+    def test_course_has_ten_lessons_with_ten_questions_each_and_three_filtering_topics(self):
         self.assertEqual(len(LESSONS), 10)
-        self.assertTrue(all(len(lesson['questions']) == 10 for index, lesson in enumerate(LESSONS) if index != 4))
-        self.assertEqual(len(LESSONS[4]['questions']), 34)
+        self.assertTrue(all(len(lesson['questions']) == 10 for lesson in LESSONS))
+        self.assertEqual(len(FILTERING_QUESTIONS), 24)
+        self.assertEqual(len(ALL_QUESTIONS), 124)
         app = (ROOT / 'public' / 'app.js').read_text(encoding='utf-8')
         for slug in ('logical-operators', 'between-in-like', 'text-constraints'):
             match = re.search("slug: '" + slug + r"'[^}]*?questionIds: \[([^]]+)\]", app)
             self.assertIsNotNone(match, f'{slug} topic must have a question list')
             ids = re.findall(r"'([^']+)'", match.group(1))
-            questions = [next((q for q in LESSONS[4]['questions'] if q['id'] == question_id), None) for question_id in ids]
+            questions = [QUESTIONS_BY_ID.get(question_id) for question_id in ids]
             self.assertEqual(len(questions), 10, f'{slug} must have ten questions')
             self.assertTrue(all(questions), f'{slug} must reference existing questions')
             self.assertEqual(sum(bool(q.get('free')) for q in questions), 5, f'{slug} must have five free questions')
@@ -41,41 +45,40 @@ class SqlQuestionAuditTests(unittest.TestCase):
 
     def test_all_reference_solutions_execute(self):
         seen = set()
-        for lesson in LESSONS:
-            for question in lesson['questions']:
-                self.assertNotIn(question['id'], seen, f"Duplicate question id: {question['id']}")
-                seen.add(question['id'])
-                connection = sqlite3.connect(':memory:')
-                try:
-                    connection.executescript(SAMPLE_SQL)
-                    if question.get('type') == 'state':
-                        connection.executescript(question['solution'])
-                        result_sets = execute_result_sets(connection, question['verify'])
-                        display_sets = execute_result_sets(connection, question['displayVerify'])
-                        self.assertTrue(display_sets, f"{question['id']} display output returned no result sets")
-                        self.assertTrue(result_sets, f"{question['id']} verification returned no result sets")
-                        self.assertTrue(all(rows is not None for rows in result_sets), question['id'])
-                        if question['id'].startswith('l9-'):
-                            self.assertEqual(len(display_sets), 1, f"{question['id']} should display a concise change summary")
-                            expected_count = 10 if question['id'] in {'l9-q1', 'l9-q2'} else 9
-                            self.assertEqual(len(result_sets), expected_count, f"{question['id']} must verify catalog, schemas and all table contents")
-                        if question['id'].startswith('l10-'):
-                            self.assertEqual(len(display_sets), 2, f"{question['id']} should display only the new table and its schema")
-                            self.assertEqual(len(result_sets), 2, f"{question['id']} must verify table catalog and requested schema")
-                            table_match = re.search(r'CREATE\s+TABLE\s+([A-Za-z_][A-Za-z0-9_]*)', question['solution'], re.I)
-                            self.assertIsNotNone(table_match, question['id'])
-                            self.assertIn(('table', table_match.group(1), table_match.group(1)), result_sets[0], question['id'])
-                    else:
-                        rows = connection.execute(question['solution']).fetchall()
-                        self.assertIsNotNone(rows)
-                except Exception as error:
-                    self.fail(f"{question['id']} reference answer failed: {error}")
-                finally:
-                    connection.close()
+        for question in ALL_QUESTIONS:
+            self.assertNotIn(question['id'], seen, f"Duplicate question id: {question['id']}")
+            seen.add(question['id'])
+            connection = sqlite3.connect(':memory:')
+            try:
+                connection.executescript(SAMPLE_SQL)
+                if question.get('type') == 'state':
+                    connection.executescript(question['solution'])
+                    result_sets = execute_result_sets(connection, question['verify'])
+                    display_sets = execute_result_sets(connection, question['displayVerify'])
+                    self.assertTrue(display_sets, f"{question['id']} display output returned no result sets")
+                    self.assertTrue(result_sets, f"{question['id']} verification returned no result sets")
+                    self.assertTrue(all(rows is not None for rows in result_sets), question['id'])
+                    if question['id'].startswith('l9-'):
+                        self.assertEqual(len(display_sets), 1, f"{question['id']} should display a concise change summary")
+                        expected_count = 10 if question['id'] in {'l9-q1', 'l9-q2'} else 9
+                        self.assertEqual(len(result_sets), expected_count, f"{question['id']} must verify catalog, schemas and all table contents")
+                    if question['id'].startswith('l10-'):
+                        self.assertEqual(len(display_sets), 2, f"{question['id']} should display only the new table and its schema")
+                        self.assertEqual(len(result_sets), 2, f"{question['id']} must verify table catalog and requested schema")
+                        table_match = re.search(r'CREATE\s+TABLE\s+([A-Za-z_][A-Za-z0-9_]*)', question['solution'], re.I)
+                        self.assertIsNotNone(table_match, question['id'])
+                        self.assertIn(('table', table_match.group(1), table_match.group(1)), result_sets[0], question['id'])
+                else:
+                    rows = connection.execute(question['solution']).fetchall()
+                    self.assertIsNotNone(rows)
+            except Exception as error:
+                self.fail(f"{question['id']} reference answer failed: {error}")
+            finally:
+                connection.close()
         self.assertEqual(len(seen), 124)
 
     def test_ordering_questions_have_explicit_grading_rules(self):
-        questions = {q['id']: q for lesson in LESSONS for q in lesson['questions']}
+        questions = QUESTIONS_BY_ID
         for question_id in ('l5-q1', 'l5-q2', 'l5-q3', 'l5-q4', 'l5-q5', 'l5-q6', 'l5-q7', 'l5-q9', 'l5-q10', 'l2-distinct-q4', 'l2-distinct-q8', 'l2-distinct-q9'):
             self.assertTrue(questions[question_id].get('orderBy'), f'{question_id} must check the requested sort order')
         for question_id in ('l2-distinct-q3', 'l2-distinct-q7'):
@@ -207,7 +210,7 @@ class SqlQuestionAuditTests(unittest.TestCase):
         self.assertIn('if (!hasRequiredSemicolon(sql))', app)
         self.assertIn('!hasRequiredSemicolon(sql)', app)
         self.assertIn('getNextUnsolvedQuestionAfter(', app)
-        self.assertIn('const allCourseQuestions = lessons.flatMap((lesson) => lesson.questions);', app)
+        self.assertIn('const allCourseQuestions = getAllCourseQuestions();', app)
         self.assertIn('getSavedQuestionDraft(currentQuestionId)', app)
         complete_fn = app[app.index('function completeCorrectAnswer('):app.index('function scheduleAutoCheck(')]
         self.assertIn('scheduleAutoAdvance(question.id);', complete_fn)
