@@ -6,6 +6,7 @@
     topics: [],
     current: null,
     solved: new Set(),
+    outputByQuestion: new Map(),
     worker: null,
     runtimeReady: false,
     busy: false,
@@ -76,7 +77,10 @@
     $('question-description').textContent = question.description;
     $('python-code').value = question.starterCode || '';
     $('expected-output').textContent = question.expectedOutput || '';
-    // Keep the last program output visible when the learner changes questions.
+    // Each question owns its output; never show another question's result here.
+    $('your-output').textContent = state.outputByQuestion.has(question.id)
+      ? state.outputByQuestion.get(question.id)
+      : 'Your output will appear here.';
     $('run-result').textContent = '';
     $('error-help').hidden = true;
 
@@ -304,7 +308,9 @@
     }
 
     const output = data.output || '';
-    $('your-output').textContent = output || '(no output)';
+    const displayedOutput = output || '(no output)';
+    state.outputByQuestion.set(job.question.id, displayedOutput);
+    $('your-output').textContent = displayedOutput;
 
     const check = validateQuestion(job.question, data);
     if (check.passed) {
@@ -413,6 +419,7 @@
   function resetCode() {
     if (!state.current) return;
     $('python-code').value = state.current.starterCode || '';
+    state.outputByQuestion.set(state.current.id, 'Code reset.');
     $('your-output').textContent = 'Code reset.';
     $('run-result').textContent = '';
     $('error-help').hidden = true;
