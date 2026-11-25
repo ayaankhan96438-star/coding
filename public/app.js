@@ -1367,6 +1367,10 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
   cancelAutoAdvance();
   cancelAutoCheck();
   cancelQueryPreview();
+  // A query result belongs to the question/database context where it was run.
+  // Keep the shared editor text, but never carry the previous topic's result
+  // table into the newly selected lesson or question.
+  queryPreviewVisible = false;
   navigationVersion += 1;
   currentLessonIndex = requestedIndex;
   const requestedTopic = preferredTopicSlug ? TOPIC_BY_SLUG[preferredTopicSlug] : null;
@@ -1414,12 +1418,13 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
     }
     if (db) db.close();
     db = freshDb;
-    const retainedSql = String($('#query')?.value || '').trim();
-    const retainedPreviewShown = retainedSql && hasRequiredSemicolon(retainedSql)
-      ? await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)
-      : false;
+    // Navigation always starts with the selected question's source table(s).
+    // The shared editor remains untouched; its old query result is not replayed
+    // against a different topic, which previously left stale COUNT/SELECT output
+    // visible until the learner refreshed the page.
     if (requestId !== openRequest) return;
-    if (!retainedPreviewShown) renderSchemaViewer();
+    queryPreviewVisible = false;
+    renderSchemaViewer();
     setPracticeEnabled(true);
     if (answerMessage) {
       const selectedProgress = currentQuestionId ? getQuestionProgress(currentQuestionId) : null;
@@ -1438,9 +1443,8 @@ async function openLesson(index, shouldScroll = true, preferredQuestionId = null
         answerMessage.textContent = 'Your previous SQL is still in the shared editor. Select the query and delete it yourself before writing this answer.';
       } else answerMessage.hidden = true;
     }
-    // The retained shared SQL has already been re-applied to the new database
-    // above, before any source-table fallback can flash on screen. A manually
-    // selected question also re-checks it against that selected question.
+    // Keep the shared SQL draft, but only preview it again after the learner
+    // edits/runs it in this newly selected context.
     if (checkExistingDraft && $('#query')?.value.trim()) scheduleAutoCheck();
   } catch (error) {
     if (requestId !== openRequest) return;

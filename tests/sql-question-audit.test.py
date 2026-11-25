@@ -195,8 +195,10 @@ class SqlQuestionAuditTests(unittest.TestCase):
         self.assertIn('if (!hasRequiredSemicolon(sql)) return;', preview_schedule, 'incomplete SQL must leave the last successful preview visible')
         self.assertIn('if (!queryPreviewVisible) renderSchemaViewer();', app, 'question rerenders must not flash the full source table over the active query result')
         open_lesson = app[app.index('async function openLesson('):app.index('function setPracticeEnabled(')]
-        self.assertIn('await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)', open_lesson)
-        self.assertLess(open_lesson.index('await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)'), open_lesson.index('if (!retainedPreviewShown) renderSchemaViewer();'))
+        self.assertIn('queryPreviewVisible = false;', open_lesson, 'topic navigation must discard the prior topic preview')
+        self.assertIn('renderSchemaViewer();', open_lesson, 'topic navigation must show the selected question source tables')
+        self.assertNotIn('await applyQueryPreview(retainedSql, queryPreviewVersion, currentQuestionId)', open_lesson, 'the old query result must not be replayed into a new topic')
+        self.assertIn('The shared editor remains untouched', open_lesson, 'shared editor text must remain available after navigation')
         database_source = (ROOT / 'public' / 'database.js').read_text(encoding='utf-8')
         self.assertIn('export async function cloneDatabase(sourceDb)', database_source)
         self.assertIn("event.target?.id === 'query' && event.key === 'Enter' && (event.ctrlKey || event.metaKey) && event.shiftKey", app)
